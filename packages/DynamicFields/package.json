@@ -1,0 +1,23 @@
+{
+  "name": "@duik/dynamic-fields",
+  "version": "0.1.0",
+  "description": "Dynamic Fields",
+  "main": "lib/index.js",
+  "repository": "https://github.com/march08/duik",
+  "homepage": "https://github.com/march08/duik",
+  "author": "Roman Nguyen <march08@outlook.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
+  "dependencies": {
+    "@types/jest": "24.0.9",
+    "@types/node": "11.9.5",
+    "@types/react": "16.8.5",
+    "@types/react-dom": "16.8.2",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "typescript": "3.3.3333"
+  }
+}
