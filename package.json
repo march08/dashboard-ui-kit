@@ -1,16 +1,27 @@
 {
   "name": "root",
   "npmClient": "yarn",
+  "scripts": {
+    "clean": "rimraf build/** build packages/**/dist/",
+    "clean-modules": "rimraf node_modules/** node_modules packages/**/node_modules/",
+    "build": "npm run clean && mkdirp build && node --max_old_space_size=8192 node_modules/.bin/webpack --config packages/webpack.config.js --progress --colors"
+  },
   "devDependencies": {
-    "lerna": "^3.13.1"
+    "copy-webpack-plugin": "^5.0.3",
+    "lerna": "^3.13.1",
+    "rimraf": "^2.6.3",
+    "ts-loader": "^5.3.3",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
     "@types/jest": "24.0.9",
     "@types/node": "11.9.5",
-    "@types/react": "16.8.5",
-    "@types/react-dom": "16.8.2",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "typescript": "3.3.3333"
+    "@types/react": "^16.8.6",
+    "@types/react-dom": "^16.8.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "typescript": "^3.3.3333"
   }
 }

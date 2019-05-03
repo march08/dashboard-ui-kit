@@ -1,23 +1,19 @@
 {
   "compilerOptions": {
-    "outDir": "./lib",
     "target": "es5",
     "module": "commonjs",
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "removeComments": true,
     "declaration": true,
+    "noEmit": false,
     "jsx": "react",
     "typeRoots": [
       "src/index.d.ts",
       "node_modules/@types"
     ]
   },
-  "include": [
-    "./packages/*/src/**/*.tsx",
-    "./packages/*/src/**/*.ts"
-  ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "./docs/*"
   ]
 }

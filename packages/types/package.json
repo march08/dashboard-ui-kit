@@ -1,8 +1,8 @@
 {
-  "name": "@duik/dynamic-fields",
+  "name": "@duik/types",
   "version": "0.1.0",
-  "description": "Dynamic Fields",
-  "main": "dist/index.js",
+  "description": "Dynamic Fields Types",
+  "main": "lib/index.tsx",
   "repository": "https://github.com/march08/duik",
   "homepage": "https://github.com/march08/duik",
   "author": "Roman Nguyen <march08@outlook.com>",
@@ -16,7 +16,8 @@
     "@types/node": "11.10.4",
     "@types/react": "16.8.6",
     "@types/react-dom": "16.8.2",
-    "@duik/types": "0.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "typescript": "3.3.3333"
   }
 }
