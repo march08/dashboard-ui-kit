@@ -35,7 +35,9 @@ const postCssLoader = {
 
 
 const modules = [
-  'DynamicFields'
+  'DynamicFields',
+  'kit',
+  'Button'
 ]
 
 const entry = modules.reduce((res, m) => {

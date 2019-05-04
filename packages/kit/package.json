@@ -1,0 +1,10 @@
+{
+  "name": "@duik/react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@duik/dynamic-fields": "0.1.0",
+    "@duik/types": "0.1.0",
+    "@duik/button": "0.1.0"
+  }
+}

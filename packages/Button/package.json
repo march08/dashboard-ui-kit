@@ -1,8 +1,8 @@
 {
-  "name": "@duik/types",
+  "name": "@duik/button",
   "version": "0.1.0",
-  "description": "Dashboard UI Kit Types",
-  "main": "lib/index.tsx",
+  "description": "Dashboard UI Kit Button",
+  "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
   "homepage": "https://github.com/march08/duik",
   "author": "Roman Nguyen <march08@outlook.com>",
@@ -13,6 +13,7 @@
   "private": false,
   "dependencies": {
     "@types/react": "16.8.6",
-    "@types/react-dom": "16.8.2"
+    "@types/react-dom": "16.8.2",
+    "@duik/types": "0.1.0"
   }
 }

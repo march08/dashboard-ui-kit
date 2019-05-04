@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "tslint-config-airbnb",
+    "tslint-react"
+  ],
+  "rules": {
+    "jsx-no-multiline-js": false,
+    "no-any": true,
+    "import-name": false,
+    "variable-name": false,
+    "jsx-boolean-value": false,
+    "function-name": false
+  }
+}
