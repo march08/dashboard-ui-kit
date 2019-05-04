@@ -2,6 +2,7 @@ import React, { Component, useState } from 'react';
 import logo from './logo.svg';
 
 import DynamicFields from '@duik/dynamic-fields'
+import '@duik/dynamic-fields/dist/styles.css'
 import './App.css';
 
 const App = () => {

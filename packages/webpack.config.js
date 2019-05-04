@@ -1,8 +1,37 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
-const DeclarationBundlerPlugin = require('declaration-bundler-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const autoprefixer = require('autoprefixer');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const sassLoader = {
+  loader: 'sass-loader',
+};
+
+const cssLoader = (isHashed = true) => ({
+  loader: 'css-loader',
+  options: {
+    // minimize: true,
+    modules: true,
+    camelCase: false,
+    importLoaders: 3,
+    localIdentName: isHashed ? 'duik-[folder]__[local]__[hash:4]' : '[local]',
+  },
+});
+
+const postCssLoader = {
+  loader: 'postcss-loader',
+  options: {
+    ident: 'postcss',
+    plugins: () => [
+      autoprefixer({
+        browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie < 9'],
+      }),
+    ],
+  },
+};
 
 
 const modules = [
@@ -16,20 +45,23 @@ const entry = modules.reduce((res, m) => {
   }
 }, {})
 
+
+
 module.exports = {
+  resolve: {
+    extensions: [ '.tsx', '.ts', '.js' ],
+  },
   entry: entry,
   output: {
-    libraryTarget: 'commonjs2',
+    libraryTarget: 'umd',
     filename: '[name]/dist/index.js',
     path: path.resolve(__dirname)
   },
+  mode: process.env.NODE_ENV,
   node: {
     fs: 'empty',
   },
-  externals: [nodeExternals({
-    modulesDir: 'node_modules',
-  })],
-  mode: 'production',
+  externals: [nodeExternals()],
   optimization: {
     // We no not want to minimize npm code.
     minimize: false,
@@ -50,10 +82,67 @@ module.exports = {
             jsx: 'react'
           },
         },
-      }
+      },
+
+      {
+        test: /^((?!module).)*(scss|css)$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [cssLoader(false), postCssLoader, sassLoader],
+        }),
+      },
+      {
+        test: /module.(scss|css)$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [cssLoader(true), postCssLoader, sassLoader],
+        }),
+      },
+      // {
+      //   test: /^((?!module).)*(scss|css)$/,
+      //   use: [
+      //     {
+      //       loader: MiniCssExtractPlugin.loader,
+      //       options: {
+      //         hmr: process.env.NODE_ENV === 'development',
+      //       },
+      //     },
+      //     cssLoader(false),
+      //     postCssLoader,
+      //     sassLoader
+      //   ],
+      // },
+      // {
+      //   test: /module.(scss|css)$/,
+      //   use: [
+      //     {
+      //       loader: MiniCssExtractPlugin.loader,
+      //       options: {
+      //         hmr: process.env.NODE_ENV === 'development',
+      //       },
+      //     },
+      //     cssLoader(true),
+      //     postCssLoader,
+      //     sassLoader
+      //   ],
+      // },
     ]
   },
   plugins: [
+    // new MiniCssExtractPlugin({
+    //   // Options similar to the same options in webpackOptions.output
+    //   // both options are optional
+    //   filename: './[name]/dist/styles.css',
+    //   chunkFilename: '[id].css',
+    // }),
+
+    new ExtractTextPlugin('./[name]/dist/styles.css'),
+    new OptimizeCssAssetsPlugin({
+      assetNameRegExp: /\.css$/g,
+      cssProcessor: require('cssnano'), // eslint-disable-line
+      cssProcessorOptions: { discardComments: { removeAll: true } },
+      canPrint: true,
+    }),
     new CopyPlugin([
       {
         from: './**/*.d.ts',
@@ -70,11 +159,4 @@ module.exports = {
       },
     ]),
   ],
-  resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ],
-    // alias: {
-    //   react: path.resolve(__dirname, './docs/node_modules/react'),
-    //   "react-dom": path.resolve(__dirname, './docs/node_modules/react-dom')
-    // }
-  },
 };
