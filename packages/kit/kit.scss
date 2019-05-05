@@ -3,9 +3,9 @@
 
 /** Text Colors **/
 :root {
-  --text-main: $textMain;
-  --text-base: $textBase;
-  --text-secondary: $textSecondary;
+  --text-main: #{$textMain};
+  --text-base: #{$textBase};
+  --text-secondary: #{$textSecondary};
 }
 
 
@@ -37,7 +37,6 @@ body {
   background: $bg;
   color: $text-base;
   font-size: 16px;
-  overflow: hidden;
   font-weight: 400; // font smoothing
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
