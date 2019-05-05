@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DynamicFields, Button } from '@duik/react'
+import { DynamicFields, Button, Widget } from '@duik/react'
 
 import { PropTable, properties } from './components'
 
@@ -7,10 +7,6 @@ import { PropTable, properties } from './components'
 const itemProps = [
   properties.children(),
   properties.className(),
-  properties.className({
-    prop: 'contentClassName',
-    desc: 'classname for content wrapper inside button',
-  }),
   properties.Component({
     defaultValue: '"button"',
   }),
@@ -21,76 +17,50 @@ const itemProps = [
     defaultValue: '"button"',
     desc: 'Applicable for button',
   },
-  {
-    prop: 'isExpanded',
-    propType: 'Boolean',
-    required: false,
-    defaultValue: 'false',
+  properties.bool({
+    prop: 'isExpanded | block',
     desc: 'Applies width: 100% and extra styling cases when used with icons etc.',
-  },
-  {
-    prop: 'xs',
-    propType: 'Boolean',
-    required: false,
-    defaultValue: 'false',
+  }),
+  properties.bool({
+    prop: 'xs | sm',
     desc: 'Renders smaller button with height 30px',
-  },
-  {
+  }),
+  properties.bool({
     prop: 'lg',
-    propType: 'Boolean',
-    required: false,
-    defaultValue: 'false',
     desc: 'Renders larger button with height 50px',
-  },
-  {
+  }),
+  properties.bool({
     prop: 'primary',
-    propType: 'Boolean',
-    required: false,
-    defaultValue: 'false',
     desc: 'Has blue color',
-  },
-  {
-    prop: 'error',
-    propType: 'Boolean',
-    required: false,
-    defaultValue: 'false',
+  }),
+  properties.bool({
+    prop: 'error | danger',
     desc: 'Has red color',
-  },
-  {
+  }),
+  properties.bool({
     prop: 'success',
-    propType: 'Boolean',
-    required: false,
-    defaultValue: 'false',
     desc: 'Has green color',
-  },
-  {
+  }),
+  properties.bool({
     prop: 'dark',
-    propType: 'Boolean',
-    required: false,
-    defaultValue: 'false',
     desc: 'Has dark color',
-  },
-  {
+  }),
+  properties.bool({
     prop: 'clear',
-    propType: 'Boolean',
-    required: false,
-    defaultValue: 'false',
     desc: 'White with light shadow.',
-  },
-  {
+  }),
+  properties.bool({
     prop: 'transparent',
-    propType: 'Boolean',
-    required: false,
-    defaultValue: 'false',
     desc: 'Button background is transparent with borders.',
-  },
-  {
+  }),
+  properties.bool({
+    prop: 'transparent',
+    desc: 'Button background is transparent with borders.',
+  }),
+  properties.bool({
     prop: 'isLoading',
-    propType: 'Boolean',
-    required: false,
-    defaultValue: 'false',
     desc: 'Will render loading state',
-  },
+  }),
   // icon properties
   {
     prop: 'icon',
@@ -113,12 +83,7 @@ const itemProps = [
     defaultValue: 'false',
     desc: 'Renders a squared button with centered icon',
   },
-  {
-    prop: '...rest',
-    propType: 'Object',
-    required: false,
-    desc: 'Other properties are passed down to the root element',
-  },
+  properties.rest(),
 ]
 
 
@@ -126,13 +91,13 @@ export const ReactDocsButton = () => {
 
   return (
 
-    <div className="App">
+    <Widget margin>
       <DynamicFields />
       <Button onClick={() => { console.log('click') }}>Hello</Button>
       <Button primary>Hello</Button>
       <Button isLoading success>Hello</Button>
       <PropTable itemProps={itemProps} />
-    </div >
+    </Widget >
   )
 }
 

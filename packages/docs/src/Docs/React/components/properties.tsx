@@ -11,7 +11,7 @@ export type ReactDocsPropertyOptional = {
 export const properties = {
   children: (data?: ReactDocsPropertyOptional) => ({
     prop: 'children',
-    propType: 'React.Node',
+    propType: 'React.ReactNode',
     required: false,
     defaultValue: 'null',
     desc: '',
@@ -19,7 +19,7 @@ export const properties = {
   }),
   node: (data?: ReactDocsPropertyOptional) => (
     {
-      propType: 'React.Node',
+      propType: 'React.ReactNode',
       required: false,
       defaultValue: 'null',
       desc: 'React node, same as children',
@@ -28,7 +28,7 @@ export const properties = {
   ),
   className: (data?: ReactDocsPropertyOptional) => ({
     prop: 'className',
-    propType: 'String',
+    propType: 'string',
     required: false,
     defaultValue: 'null',
     desc: 'className, e.g. "my-custom-styling"',
@@ -36,7 +36,7 @@ export const properties = {
   }),
   cls: (data?: ReactDocsPropertyOptional) => ({
     prop: 'className',
-    propType: 'String',
+    propType: 'string',
     required: false,
     defaultValue: 'null',
     desc: 'className, e.g. "my-custom-styling"',
@@ -44,11 +44,11 @@ export const properties = {
   }),
   Component: (data?: ReactDocsPropertyOptional) => ({
     prop: 'Component',
-    propType: 'React.ElementType',
+    propType: 'React.ComponentType',
     required: false,
     desc: (
       <span>
-        {`Renders the component with a given react element. By default, the component renders <${(data.defaultValue || '').replace(/"/g, '')} />. This is usefull when you want to use a same style but render a different HTML element or your custom component. `}
+        {`Renders the component with a given react element. By default, the component renders <${(data && data.defaultValue || '').replace(/"/g, '')} />. This is usefull when you want to use a same style but render a different HTML element or your custom component. `}
         <Link to="/docs/react/component-property" >
           Read and see more examples here.
         </Link>
@@ -60,6 +60,13 @@ export const properties = {
     propType: 'any',
     required: false,
     desc: 'Other properties are passed down to the wrapping element',
+    ...data,
+  }),
+  bool: (data?: ReactDocsPropertyOptional & { prop: string }) => ({
+    prop: '?',
+    propType: 'boolean',
+    defaultValue: 'false',
+    required: false,
     ...data,
   }),
   childProps: (data?: ReactDocsPropertyOptional) => ({

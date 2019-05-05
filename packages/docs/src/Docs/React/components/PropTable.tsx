@@ -34,7 +34,7 @@ export const PropTable = ({
           itemProps && itemProps.map(item => (
             <tr key={Math.random()}>
               <td>
-                <code>
+                <code style={{ whiteSpace: 'nowrap' }}>
                   {item.prop}
                 </code>
               </td>

@@ -6,6 +6,10 @@
     "@duik/dynamic-fields": "0.1.0",
     "@duik/types": "0.1.0",
     "@duik/button": "0.1.0",
-    "@duik/widget-table": "0.1.0"
+    "@duik/widget": "0.1.0",
+    "@duik/widget-header": "0.1.0",
+    "@duik/widget-content": "0.1.0",
+    "@duik/widget-table": "0.1.0",
+    "@duik/widget-container": "0.1.0"
   }
 }

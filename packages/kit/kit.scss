@@ -3,11 +3,16 @@
 
 /** Text Colors **/
 :root {
-  --text-main: #{$textMain};
-  --text-base: #{$textBase};
-  --text-secondary: #{$textSecondary};
+  @include themeVars();
 }
 
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
 :root {
 

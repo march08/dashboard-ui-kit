@@ -1,0 +1,9 @@
+@import '../vars.scss';
+
+.card-body {
+  padding: 25px 30px;
+
+  &+& {
+    border-top: $border-default;
+  }
+}

@@ -1,0 +1,11 @@
+@import '../vars.scss';
+
+.widget-container {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+
+  &>*:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}

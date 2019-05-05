@@ -7,13 +7,15 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const fs = require('fs')
 
-fs.readdir(__dirname, function(err, items) {
-  console.log(items);
-
-  for (let i=0; i<items.length; i++) {
-      console.log(items[i]);
-  }
-});
+const packages = fs.readdirSync(__dirname).filter(item => ![
+'_vars.scss',
+'dist',
+'docs',
+'module.d.ts',
+'packages',
+'tsconfig.json',
+'webpack.config.js'
+].includes(item))
 
 const sassLoader = {
   loader: 'sass-loader',
@@ -43,16 +45,7 @@ const postCssLoader = {
 };
 
 
-const modules = [
-  'DynamicFields',
-  'kit',
-  'Button',
-  'LoaderDots',
-  'createSimpleComponent',
-  'WidgetTable',
-]
-
-const entry = modules.reduce((res, m) => {
+const entry = packages.reduce((res, m) => {
   return {
     ...res,
     [m]: path.resolve(__dirname, m)

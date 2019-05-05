@@ -9,8 +9,9 @@
     td,
     th {
       text-align: left;
-      // padding: 10px 15px;
-      border-bottom: $borderDefault;
+      padding-left: 15px;
+      padding-right: 15px;
+      border-bottom: $border-default;
       line-height: 1.5;
 
       &:first-child {
@@ -27,7 +28,7 @@
       font-size: .75rem;
       padding: 5px 15px;
       text-transform: uppercase;
-      color: $textSecondary;
+      color: $text-secondary;
       line-height: 1.125rem;
       height: 44px;
       align-items: center;
@@ -35,8 +36,10 @@
 
     td {
       font-size: .875rem;
-      height: 70px;
-      color: $textMain;
+      min-height: 40px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      color: $text-main;
     }
   }
 }

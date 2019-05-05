@@ -1,0 +1,30 @@
+@import '../vars.scss';
+
+.card {
+  border: $border-default;
+  box-shadow: $boxShadow;
+  border-radius: 4px;
+  background: $bg-primary;
+  display: block;
+
+  &.card-padding {
+    padding: 30px;
+  }
+
+  &.card-margin {
+    margin: 15px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-weight: 500;
+  }
+
+  h3 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}

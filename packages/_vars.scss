@@ -1,3 +1,15 @@
+$blue: #1665D8 !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #E6492D !default;
+$orange: #F6AB2F !default;
+$yellow: #FACF55 !default;
+$green: #38B249 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+
+
 // media
 $mediaMobile: "screen and (max-width: 768px)";
 $mediaTablet: "screen and (max-width: 1024px)";
@@ -7,15 +19,6 @@ sans-serif;
 // basic
 $bg: #FBFBFD;
 $bgDark: #252529;
-$borderColor: #EAEDF3;
-$borderColorDarker: #D8DCE6;
-$borderDefault: 1px solid $borderColor;
-$borderColorDark: #2E2E33;
-// text
-$textMain: #3E3F42;
-$textBase: #6B6C6F;
-$textSecondary: #9EA0A5;
-$textLight: #CECFD2;
 // colors
 $green: #38B249;
 $blue: #1665D8;
@@ -68,18 +71,44 @@ $boxShadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
 // UIKIT
 
 $bg: #FBFBFD;
+$bgPrimary: #FFFFFF;
 $fontFamily: 'Roboto',
 sans-serif;
 
-
+// Text colors
 $textMain: #3E3F42;
 $textBase: #6B6C6F;
 $textSecondary: #9EA0A5;
 $textLight: #CECFD2;
 
-$text-main: (---text-primary);
-$text-base: (---text-base);
-$text-secondary: (---text-base);
+// border colors
+$borderColor: #EAEDF3;
+$borderColorDarker: #D8DCE6;
+$borderColorDark: #2E2E33;
+
+
+@mixin themeVars {
+  --text-main: #{$textMain};
+  --text-base: #{$textBase};
+  --text-secondary: #{$textSecondary};
+  --border-color: #{$borderColor};
+  --border-color-darker: #{$borderColorDarker};
+  --border-color-dark: #{$borderColorDark};
+  --bg-base: #{$bg};
+  --bg-primary: #{$bgPrimary};
+}
+
+// USE THESE
+$text-main: var(--text-primary);
+$text-base: var(--text-base);
+$text-secondary: var(--text-secondary);
+$border-color: var(--border-color);
+$border-color-darker: var(--border-color-darker);
+$border-color-dark: var(--border-color-dark);
+$border-default: 1px solid var(--border-color);
+$bg-base: var(--bg-base);
+$bg-primary: var(--bg-primary);
+
 
 $white: #fff !default;
 $gray-100: #f8f9fa !default;
@@ -105,17 +134,6 @@ $grays: map-merge(("100": $gray-100,
 "800": $gray-800,
 "900": $gray-900),
 $grays);
-
-$blue: #1665D8 !default;
-$indigo: #6610f2 !default;
-$purple: #6f42c1 !default;
-$pink: #e83e8c !default;
-$red: #E6492D !default;
-$orange: #F6AB2F !default;
-$yellow: #FACF55 !default;
-$green: #38B249 !default;
-$teal: #20c997 !default;
-$cyan: #17a2b8 !default;
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
