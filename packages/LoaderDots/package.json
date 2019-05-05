@@ -1,7 +1,7 @@
 {
-  "name": "@duik/button",
+  "name": "@duik/loader-dots",
   "version": "0.1.0",
-  "description": "Dashboard UI Kit Button",
+  "description": "Dashboard UI Kit Loader Dots",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
   "homepage": "https://github.com/march08/duik",
@@ -10,11 +10,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "private": false,
-  "dependencies": {
-    "@types/react": "^16.8.16",
-    "@types/react-dom": "^16.8.4",
-    "@duik/types": "0.1.0",
-    "@duik/loader-dots": "0.1.0"
-  }
+  "private": false
 }

@@ -5,6 +5,15 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const fs = require('fs')
+
+fs.readdir(__dirname, function(err, items) {
+  console.log(items);
+
+  for (let i=0; i<items.length; i++) {
+      console.log(items[i]);
+  }
+});
 
 const sassLoader = {
   loader: 'sass-loader',
@@ -37,7 +46,10 @@ const postCssLoader = {
 const modules = [
   'DynamicFields',
   'kit',
-  'Button'
+  'Button',
+  'LoaderDots',
+  'createSimpleComponent',
+  'WidgetTable',
 ]
 
 const entry = modules.reduce((res, m) => {
@@ -139,12 +151,12 @@ module.exports = {
     // }),
 
     new ExtractTextPlugin('./[name]/dist/styles.css'),
-    new OptimizeCssAssetsPlugin({
-      assetNameRegExp: /\.css$/g,
-      cssProcessor: require('cssnano'), // eslint-disable-line
-      cssProcessorOptions: { discardComments: { removeAll: true } },
-      canPrint: true,
-    }),
+    // new OptimizeCssAssetsPlugin({
+    //   assetNameRegExp: /\.css$/g,
+    //   cssProcessor: require('cssnano'), // eslint-disable-line
+    //   cssProcessorOptions: { discardComments: { removeAll: true } },
+    //   canPrint: true,
+    // }),
     new CopyPlugin([
       {
         from: './**/*.d.ts',

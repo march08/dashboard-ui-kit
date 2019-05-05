@@ -1,0 +1,42 @@
+.loader-dot {
+  display: inline-block;
+  width: 70px;
+  text-align: center;
+
+  &>div {
+    width: 7px;
+    height: 7px;
+    background-color: white;
+    border-radius: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    animation: bouncedelay 1s infinite ease-in-out both;
+  }
+
+  .loader-dot-1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+    margin-right: 2px;
+  }
+
+  .loader-dot-2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+    margin-right: 2px;
+  }
+}
+
+@keyframes bouncedelay {
+
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}

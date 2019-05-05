@@ -1,31 +1,25 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
-
-import { DynamicFields, Button } from '@duik/react'
 import '@duik/react/dist/styles.css'
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
+
+import '@duik/react/dist/styles.css'
+
+import Docs from './Docs'
 
 const App = () => {
 
-  const [count, setCount] = useState(0);
-
   return (
-
-    <div className="App">
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-      <button onClick={() => setCount(count + 1)}>{count}</button>
-      <DynamicFields />
-      <Button onClick={() => { console.log('click') }}>Hello</Button>
-      <Button primary>Hello</Button>
-      <Button success>Hello</Button>
-      <Button error>Hello</Button>
-    </div >
+    <BrowserRouter>
+      <Switch>
+        <Route path="/docs" component={Docs} />
+        <Redirect to="/docs" />
+      </Switch>
+    </BrowserRouter>
   )
 }
 

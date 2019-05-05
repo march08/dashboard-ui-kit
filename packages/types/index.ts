@@ -13,6 +13,6 @@ export type TagProps<T extends AnyTag> = React.ComponentProps<T>
 /**
  * Merge props with tag props
  */
-export type PropsWithTagProps<T extends AnyTag, Props> = Props & React.ComponentProps<T>
+export type PropsWithTagProps<T extends AnyTag, Props = {}> = React.ComponentProps<T> & Props;
 
-export default () => { console.log('hello')}
+export default () => { console.log('hello') }

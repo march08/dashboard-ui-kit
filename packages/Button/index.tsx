@@ -1,18 +1,39 @@
 import * as React from 'react'
 import classnames from 'classnames'
+import { Link } from 'react-router-dom'
 import { AnyTag, PropsWithTagProps } from '@duik/types'
+import { LoaderDots } from '@duik/loader-dots'
 
-import * as cls from './styles.module.scss'
+import * as cls from './styles.scss'
+
+const Test = () => (
+  <>
+    <Button>Hello</Button>
+    <Button to="/" Component={Link} >Hello</Button>
+  </>
+)
 
 
-export type ButtonProps<T extends AnyTag> = PropsWithTagProps<T, {
+export type ButtonPropsBase = {
   children?: React.ReactNode,
   className?: string,
-  contentClassName?: string,
+  // contentClassName?: string, DEPRECATED
   href?: string,
   type?: string,
+  /**
+   * Sizes
+   */
+
+  /**
+   * @deprecated use sm instead
+   */
   xs?: boolean,
+  sm?: boolean,
   lg?: boolean,
+
+  /**
+   * Appearence
+   */
   primary?: boolean,
   error?: boolean,
   success?: boolean,
@@ -20,16 +41,20 @@ export type ButtonProps<T extends AnyTag> = PropsWithTagProps<T, {
   clear?: boolean,
   isLoading?: boolean,
   // icon properties
-  icon?: React.ReactNode,
-  iconRight?: boolean,
-  iconOnly?: boolean,
+  // DEPRECATED icon?: React.ReactNode,
+  // DEPRECATED iconRight?: boolean,
+  // DEPRECATED iconOnly?: boolean,
   noBorder?: boolean,
   dark?: boolean,
+  // display block
   isExpanded?: boolean,
-  Component?: T,
-}>
+  block?: boolean,
+}
 
-export function Button<T extends AnyTag = 'button'>(props: ButtonProps<T>) {
+export type ButtonProps<T extends AnyTag> = PropsWithTagProps<T, ButtonPropsBase & { Component: T }>
+
+
+export const Button = <T extends AnyTag = 'button'>(props: ButtonProps<T>) => {
   const {
     primary,
     error,
@@ -38,39 +63,34 @@ export function Button<T extends AnyTag = 'button'>(props: ButtonProps<T>) {
     transparent,
     children,
     className,
-    contentClassName,
     xs,
+    sm,
     lg,
     clear,
     isLoading,
     type,
-    icon,
-    iconRight,
-    iconOnly,
     noBorder,
     isExpanded,
+    block,
     Component,
     ...rest
-  } = props
+  } = props;
 
 
   const classes = classnames(
-    cls.base,
+    cls['btn'],
     {
-      [cls.primary]: primary,
-      [cls.error]: error,
-      [cls.success]: success,
+      [cls['btn-primary']]: primary,
+      [cls['btn-error']]: error,
+      [cls['btn-success']]: success,
       [cls.dark]: dark,
-      [cls.xs]: xs,
-      [cls.lg]: lg,
+      [cls['bth-sm']]: xs | sm,
+      [cls['btn-lg']]: lg,
       [cls.clear]: clear,
-      [cls.isLoading]: isLoading,
-      [cls.hasIcon]: icon,
-      [cls.iconRight]: iconRight,
-      [cls.iconOnly]: iconOnly,
+      [cls['btn-loading']]: isLoading,
       [cls.transparent]: transparent,
       [cls.noBorder]: noBorder,
-      [cls.isExpanded]: isExpanded,
+      [cls['btn-block']]: isExpanded || block,
     },
     className,
   )
@@ -87,16 +107,8 @@ export function Button<T extends AnyTag = 'button'>(props: ButtonProps<T>) {
       {...btnProps}
       type={Component === 'button' ? type : null}
     >
-      {
-        icon && (
-          <span className={cls.iconWrapper}>
-            {icon}
-          </span>
-        )
-      }
-      <span className={classnames(cls.content, contentClassName)}>
-        {children}
-      </span>
+      {children}
+      <LoaderDots className={cls['btn-loader']} />
     </Component>
   )
 }
