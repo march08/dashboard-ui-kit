@@ -1,7 +1,14 @@
 import * as React from 'react';
-import { DynamicFields, Button, Widget } from '@duik/react'
+import { Link } from 'react-router-dom'
+import {
+  DynamicFields,
+  Button,
+  Widget,
+  WidgetContent,
+  ButtonGroup,
+} from '@duik/react'
 
-import { PropTable, properties } from './components'
+import { PropTable, properties, DocsContentPage } from './components'
 
 
 const itemProps = [
@@ -12,7 +19,7 @@ const itemProps = [
   }),
   {
     prop: 'type',
-    propType: 'String',
+    propType: 'string',
     required: false,
     defaultValue: '"button"',
     desc: 'Applicable for button',
@@ -71,7 +78,7 @@ const itemProps = [
   },
   {
     prop: 'iconRight',
-    propType: 'Boolean',
+    propType: 'boolean',
     required: false,
     defaultValue: 'false',
     desc: 'Renders icon on right side',
@@ -90,14 +97,50 @@ const itemProps = [
 export const ReactDocsButton = () => {
 
   return (
+    <DocsContentPage>
+      <h1>Button</h1>
+      <p>Use buttons in forms, as links with many varieties.</p>
+      <ol>
+        <li><Link to="#props">Prop table</Link></li>
+        <li><Link to="#example">Examples</Link></li>
+      </ol>
+      <Widget id="props">
+        <WidgetContent>
+          <h2>Button Props</h2>
+        </WidgetContent>
+        <PropTable itemProps={itemProps} />
+      </Widget >
+      <h2>Examples</h2>
 
-    <Widget margin>
       <DynamicFields />
       <Button onClick={() => { console.log('click') }}>Hello</Button>
       <Button primary>Hello</Button>
       <Button isLoading success>Hello</Button>
-      <PropTable itemProps={itemProps} />
-    </Widget >
+      <div className="btn-group">
+        <Button primary>Hello</Button>
+        <Button primary isLoading>Hello</Button>
+      </div>
+      <ButtonGroup>
+        <Button primary>Hello</Button>
+        <Button primary isLoading>Hello</Button>
+      </ButtonGroup>
+      <ButtonGroup vertical>
+        <Button primary>This is a button</Button>
+        <Button primary isLoading>Hello</Button>
+      </ButtonGroup>
+
+      <div className="btn-group" id="example">
+        <button className="btn btn-lg" type="button">
+          Large split button
+  </button>
+        <button type="button" className="btn btn-lg dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span className="sr-only">Toggle Dropdown</span>
+        </button>
+        <div className="dropdown-menu">
+          ...
+  </div>
+      </div>
+    </DocsContentPage>
   )
 }
 

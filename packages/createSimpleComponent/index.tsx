@@ -21,19 +21,19 @@ export type ComponentProps = React.PropsWithChildren<{
 
 export function createSimpleComponent<T extends AnyTag>(
   options: { Component?: T } & PropsWithTagProps<T, CreateSimpleComponentProps>
-): React.ComponentType<{ Component?: T } & PropsWithTagProps<T>> {
+): React.ComponentType<PropsWithTagProps<T>> {
 
   const {
     displayName,
     className: defaultClassName,
-    Component: DefaultComponent,
+    Component,
     defaultProps,
   } = options
 
   function SimpleComponent<Tag extends AnyTag>(
-    props: { Component?: Tag } & PropsWithTagProps<Tag>,
+    props: PropsWithTagProps<Tag>,
   ) {
-    const { className, Component, children, ...rest } = props;
+    const { className, children, ...rest } = props;
     return (
       <Component
         className={
@@ -51,7 +51,6 @@ export function createSimpleComponent<T extends AnyTag>(
 
   SimpleComponent.defaultProps = {
     className: null,
-    Component: DefaultComponent,
     children: null,
     ...defaultProps,
   };

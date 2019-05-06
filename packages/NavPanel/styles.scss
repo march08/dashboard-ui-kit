@@ -1,0 +1,37 @@
+@import '../vars.scss';
+
+.nav-panel {
+  /* Menu Base: */
+  background-color: $bg-primary;
+  height: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 270px;
+  width: 270px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &.dark {
+    background-color: $bg-primary-dark;
+  }
+
+  &:not(.nav-panel-right) {
+    &:not(.dark) {
+      border-right: $border-default;
+    }
+
+    &.dark {
+      border-right: $border-default-dark;
+    }
+  }
+
+  &.nav-panel-right {
+    &:not(.dark) {
+      border-left: $border-default;
+    }
+
+    &.dark {
+      border-left: $border-default-dark;
+    }
+  }
+}

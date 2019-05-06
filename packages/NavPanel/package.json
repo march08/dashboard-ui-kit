@@ -1,7 +1,7 @@
 {
-  "name": "@duik/button",
+  "name": "@duik/nav-panel",
   "version": "0.1.0",
-  "description": "Dashboard UI Kit Button",
+  "description": "Dashboard UI Kit Nav Panel",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
   "homepage": "https://github.com/march08/duik",
@@ -12,7 +12,6 @@
   },
   "private": false,
   "dependencies": {
-    "@duik/types": "0.1.0",
-    "@duik/loader-dots": "0.1.0"
+    "@duik/types": "0.1.0"
   }
 }

@@ -5,9 +5,7 @@ import * as cls from './styles.scss'
 
 // @flow
 
-export type WidgetProps = {
-  className?: string,
-  children?: React.ReactNode,
+export type WidgetProps = JSX.IntrinsicElements['div'] & {
   padding?: boolean,
   margin?: boolean
 }

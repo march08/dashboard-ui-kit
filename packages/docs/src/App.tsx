@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './bootstrap.css'
 import '@duik/react/dist/styles.css'
 import {
   BrowserRouter,
@@ -6,8 +7,6 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
-
-import '@duik/react/dist/styles.css'
 
 import Docs from './Docs'
 

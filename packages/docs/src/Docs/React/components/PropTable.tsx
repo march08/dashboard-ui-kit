@@ -34,26 +34,27 @@ export const PropTable = ({
           itemProps && itemProps.map(item => (
             <tr key={Math.random()}>
               <td>
-                <code style={{ whiteSpace: 'nowrap' }}>
+                <strong style={{ whiteSpace: 'nowrap' }}>
                   {item.prop}
-                </code>
+                </strong>
               </td>
               <td>
-                <code>
-                  {item.propType}
-                </code>
+                {item.propType}
               </td>
               <td>
-                <code>
+                <p>
                   {item.required ? 'true' : 'false'}
-                </code>
+                </p>
               </td>
               <td>
-                {item.defaultValue === 'null' || item.defaultValue === 'false' ? (
-                  <em>
-                    {item.defaultValue}
-                  </em>
-                ) : item.defaultValue}
+                <p>
+
+                  {item.defaultValue === 'null' || item.defaultValue === 'false' ? (
+                    <em>
+                      {item.defaultValue}
+                    </em>
+                  ) : item.defaultValue}
+                </p>
               </td>
               <td>
                 {item.desc}

@@ -11,10 +11,7 @@ a.base:hover {
   white-space: nowrap;
   vertical-align: middle;
   user-select: none;
-  height: 38px;
-  padding: 0 18px;
   transition: all 0.1s ease-in-out 0s;
-  font-size: 0.875rem;
   font-weight: 400;
   position: relative;
 
@@ -31,18 +28,16 @@ a.base:hover {
     display: flex;
   }
 
+  @include btn;
 
   &.btn-sm {
-    height: 28px;
-    padding: 0 15px;
-    font-size: 12px;
+    @include btn-lg;
   }
 
   &.btn-lg {
-    height: 48px;
-    padding: 0 40px;
-    font-size: 16px;
+    @include btn-lg;
   }
+
 
 
   &>* {
@@ -155,7 +150,9 @@ a.base:hover {
     }
   }
 
-  &:focus {
+  &:focus,
+  &:checked,
+  &.active {
     background: rgba(#3E3F42, .75);
     border: 1px solid rgba(#3E3F42, .9);
     border: 1px solid #1A8628;
@@ -184,7 +181,9 @@ a.base:hover {
     }
   }
 
-  &:focus {
+  &:focus,
+  &:checked,
+  &.active {
     background-image: linear-gradient(0deg, #259835 0%, #27A337 100%);
     border: 1px solid #1A8628;
     box-shadow: 0 1px 1px 0 rgba(19, 31, 21, 0.10), inset 0 2px 0 0 rgba(255, 255, 255, 0.06);
@@ -213,7 +212,9 @@ a.base:hover {
     }
   }
 
-  &:focus {
+  &:focus,
+  &:checked,
+  &.active {
     background-image: linear-gradient(-179deg, #C22B10 0%, #B8280E 100%);
     border: 1px solid #A00A13;
     box-shadow: 0 1px 1px 0 rgba(43, 26, 24, 0.10), inset 0 2px 0 0 rgba(255, 255, 255, 0.08);
@@ -243,7 +244,9 @@ a.base:hover {
     }
   }
 
-  &:focus {
+  &:focus,
+  &:checked,
+  &.active {
     background-image: linear-gradient(0deg, #0E55BD 0%, #0F5BCA 100%);
     border: 1px solid #0B4AA5;
     box-shadow: 0 1px 1px 0 rgba(22, 29, 37, 0.10), inset 0 2px 0 0 rgba(255, 255, 255, 0.06);

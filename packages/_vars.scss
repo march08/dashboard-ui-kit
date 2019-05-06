@@ -1,3 +1,32 @@
+/** Radius Mixins **/
+@mixin border-right-radius($radius) {
+  border-top-right-radius: $radius;
+  border-bottom-lerightft-radius: $radius;
+}
+
+@mixin border-left-radius($radius) {
+  border-top-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+@mixin border-top-radius($radius) {
+  border-top-right-radius: $radius;
+  border-top-left-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius) {
+  border-bottom-right-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+@mixin padding-x($paddingX) {
+  padding-left: $paddingX;
+  padding-right: $paddingX;
+}
+
+$space: 30px;
+$space-half: 30px;
+
 $blue: #1665D8 !default;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
@@ -18,7 +47,6 @@ $fontFamily: 'Roboto',
 sans-serif;
 // basic
 $bg: #FBFBFD;
-$bgDark: #252529;
 // colors
 $green: #38B249;
 $blue: #1665D8;
@@ -74,6 +102,7 @@ $bg: #FBFBFD;
 $bgPrimary: #FFFFFF;
 $fontFamily: 'Roboto',
 sans-serif;
+$bgPrimaryDark: #252529;
 
 // Text colors
 $textMain: #3E3F42;
@@ -96,6 +125,7 @@ $borderColorDark: #2E2E33;
   --border-color-dark: #{$borderColorDark};
   --bg-base: #{$bg};
   --bg-primary: #{$bgPrimary};
+  --bg-primary-dark: #{$bgPrimaryDark};
 }
 
 // USE THESE
@@ -106,8 +136,10 @@ $border-color: var(--border-color);
 $border-color-darker: var(--border-color-darker);
 $border-color-dark: var(--border-color-dark);
 $border-default: 1px solid var(--border-color);
+$border-default-dark: 1px solid var(--border-color-dark);
 $bg-base: var(--bg-base);
 $bg-primary: var(--bg-primary);
+$bg-primary-dark: var(--bg-primary-dark);
 
 
 $white: #fff !default;
@@ -172,3 +204,60 @@ $theme-colors: map-merge(("primary": $primary,
 "light": $light,
 "dark": $dark),
 $theme-colors);
+
+
+/** Button **/
+
+$btn-height-base: 38px;
+$btn-padding-base-x: 18px;
+$btn-font-size-base: 14px;
+
+$btn-height-sm: 28px;
+$btn-padding-sm-x: 15px;
+$btn-font-size-sm: 12px;
+
+$btn-height-lg: 48px;
+$btn-padding-lg-x: 40px;
+$btn-font-size-lg: 16px;
+
+@mixin btn {
+  height: $btn-height-base;
+  padding-left: $btn-padding-base-x;
+  padding-right: $btn-padding-base-x;
+  font-size: $btn-font-size-base;
+
+  &.square,
+  &.dropdown-toggle-split {
+    width: $btn-height-base;
+    @include padding-x(0);
+    justify-content: center;
+  }
+}
+
+@mixin btn-sm {
+  height: $btn-height-sm;
+  padding-left: $btn-padding-sm-x;
+  padding-right: $btn-padding-sm-x;
+  font-size: $btn-font-size-sm;
+
+  &.square,
+  &.dropdown-toggle-split {
+    width: $btn-height-sm;
+    @include padding-x(0);
+    justify-content: center;
+  }
+}
+
+@mixin btn-lg {
+  height: $btn-height-lg;
+  padding-left: $btn-padding-lg-x;
+  padding-right: $btn-padding-lg-x;
+  font-size: $btn-font-size-lg;
+
+  &.square,
+  &.dropdown-toggle-split {
+    width: $btn-height-lg;
+    @include padding-x(0);
+    justify-content: center;
+  }
+}
