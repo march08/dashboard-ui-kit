@@ -3,7 +3,6 @@ import classnames from 'classnames'
 
 import * as cls from './styles.scss'
 
-// @flow
 export type NavPanelProps = JSX.IntrinsicElements['div'] & {
   positionRight?: boolean,
   onRight?: boolean,

@@ -3,8 +3,6 @@ import classnames from 'classnames'
 
 import * as cls from './styles.scss'
 
-// @flow
-
 export type WidgetProps = JSX.IntrinsicElements['div'] & {
   padding?: boolean,
   margin?: boolean
