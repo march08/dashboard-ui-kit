@@ -8,6 +8,7 @@ import {
   ButtonGroup,
 } from '@duik/react'
 
+
 import { PropTable, properties, DocsContentPage } from './components'
 
 
@@ -71,24 +72,24 @@ const itemProps = [
   // icon properties
   {
     prop: 'icon',
-    propType: 'React.Node',
+    propType: 'DEPRECATED',
     required: false,
     defaultValue: 'null',
-    desc: 'Renders icon on left side by default',
+    desc: 'Pass your icon as children instead',
   },
   {
     prop: 'iconRight',
-    propType: 'boolean',
+    propType: 'DEPRECATED',
     required: false,
     defaultValue: 'false',
-    desc: 'Renders icon on right side',
+    desc: 'Pass your icon as children instead',
   },
   {
     prop: 'iconOnly',
-    propType: 'Boolean',
+    propType: 'DEPRECATED',
     required: false,
     defaultValue: 'false',
-    desc: 'Renders a squared button with centered icon',
+    desc: 'Use "square" property to render squared shape instead',
   },
   properties.rest(),
 ]
@@ -140,6 +141,16 @@ export const ReactDocsButton = () => {
           ...
   </div>
       </div>
+      <h2>Button Colors</h2>
+      <div>
+        <Button primary>Primary</Button>
+        <Button success>Success</Button>
+        <Button error>Danger</Button>
+        <Button dark>Dark</Button>
+        <Button primary square>[i]</Button>
+      </div>
+      <h2>Migration from v1</h2>
+      <p>Icon properties are removed in favor to use icons as children instead. "iconOnly" property rendered button in square shape. Use "square" property instead.</p>
     </DocsContentPage>
   )
 }

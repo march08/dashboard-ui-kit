@@ -226,7 +226,7 @@ $btn-font-size-lg: 16px;
   padding-right: $btn-padding-base-x;
   font-size: $btn-font-size-base;
 
-  &.square,
+  &.btn-square,
   &.dropdown-toggle-split {
     width: $btn-height-base;
     @include padding-x(0);
@@ -240,7 +240,7 @@ $btn-font-size-lg: 16px;
   padding-right: $btn-padding-sm-x;
   font-size: $btn-font-size-sm;
 
-  &.square,
+  &.btn-square,
   &.dropdown-toggle-split {
     width: $btn-height-sm;
     @include padding-x(0);
@@ -254,7 +254,7 @@ $btn-font-size-lg: 16px;
   padding-right: $btn-padding-lg-x;
   font-size: $btn-font-size-lg;
 
-  &.square,
+  &.btn-square,
   &.dropdown-toggle-split {
     width: $btn-height-lg;
     @include padding-x(0);

@@ -1,4 +1,16 @@
 .content {
-  padding: 30px;
+  padding: 70px;
   background: white;
+  max-width: 1200px;
+
+  p {
+    max-width: 760px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: rgba(0, 0, 0, 0.8);
+  }
 }

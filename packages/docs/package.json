@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@duik/react": "0.1.0"
+    "@duik/react": "0.1.0",
+    "@duik/button": "0.1.0"
   },
   "scripts": {
     "start": "../../node_modules/.bin/react-scripts start",

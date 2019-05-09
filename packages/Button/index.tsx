@@ -1,18 +1,9 @@
 import * as React from 'react'
 import classnames from 'classnames'
-import { Link } from 'react-router-dom'
 import { AnyTag, PropsWithTagProps } from '@duik/types'
 import { LoaderDots } from '@duik/loader-dots'
 
 import * as cls from './styles.scss'
-
-const Test = () => (
-  <>
-    <Button>Hello</Button>
-    <Button to="/" Component={Link} >Hello</Button>
-  </>
-)
-
 
 export type ButtonPropsBase = {
   children?: React.ReactNode,
@@ -36,6 +27,7 @@ export type ButtonPropsBase = {
    */
   primary?: boolean,
   error?: boolean,
+  danger?: boolean,
   success?: boolean,
   transparent?: boolean,
   clear?: boolean,
@@ -46,9 +38,11 @@ export type ButtonPropsBase = {
   // DEPRECATED iconOnly?: boolean,
   noBorder?: boolean,
   dark?: boolean,
+  secondary?: boolean,
   // display block
   isExpanded?: boolean,
   block?: boolean,
+  square?: boolean,
 }
 
 export type ButtonProps<T extends AnyTag> = PropsWithTagProps<T, ButtonPropsBase & { Component: T }>
@@ -58,7 +52,9 @@ export const Button = <T extends AnyTag = 'button'>(props: ButtonProps<T>) => {
   const {
     primary,
     error,
+    danger,
     success,
+    secondary,
     dark,
     transparent,
     children,
@@ -73,6 +69,7 @@ export const Button = <T extends AnyTag = 'button'>(props: ButtonProps<T>) => {
     isExpanded,
     block,
     Component,
+    square,
     ...rest
   } = props;
 
@@ -81,9 +78,9 @@ export const Button = <T extends AnyTag = 'button'>(props: ButtonProps<T>) => {
     cls['btn'],
     {
       [cls['btn-primary']]: primary,
-      [cls['btn-error']]: error,
+      [cls['btn-error']]: error || danger,
       [cls['btn-success']]: success,
-      [cls.dark]: dark,
+      [cls['btn-secondary']]: dark || secondary,
       [cls['bth-sm']]: xs | sm,
       [cls['btn-lg']]: lg,
       [cls.clear]: clear,
@@ -91,6 +88,7 @@ export const Button = <T extends AnyTag = 'button'>(props: ButtonProps<T>) => {
       [cls.transparent]: transparent,
       [cls.noBorder]: noBorder,
       [cls['btn-block']]: isExpanded || block,
+      [cls['btn-square']]: square
     },
     className,
   )

@@ -13,10 +13,12 @@ export const Docs = (props: RouteComponentProps) => {
       <NavPanel dark>
         Something here
       </NavPanel>
-      <Switch>
-        <Route path={`${match.path}/react`} component={DocsReact} />
-        <Redirect to={`${match.path}/react`} />
-      </Switch>
+      <div style={{ overflow: 'scroll' }}>
+        <Switch>
+          <Route path={`${match.path}/react`} component={DocsReact} />
+          <Redirect to={`${match.path}/react`} />
+        </Switch>
+      </div>
     </div>
   )
 }
