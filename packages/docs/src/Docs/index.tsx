@@ -3,6 +3,8 @@ import { RouteComponentProps, Switch, Route, Redirect } from 'react-router-dom';
 
 import { NavPanel } from '@duik/react'
 
+import { PageScroll } from 'components';
+
 import DocsReact from './React'
 
 export const Docs = (props: RouteComponentProps) => {
@@ -13,12 +15,12 @@ export const Docs = (props: RouteComponentProps) => {
       <NavPanel dark>
         Something here
       </NavPanel>
-      <div style={{ overflow: 'scroll' }}>
+      <PageScroll>
         <Switch>
           <Route path={`${match.path}/react`} component={DocsReact} />
           <Redirect to={`${match.path}/react`} />
         </Switch>
-      </div>
+      </PageScroll>
     </div>
   )
 }
