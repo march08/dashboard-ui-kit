@@ -8,6 +8,9 @@ import {
   ButtonGroup,
 } from '@duik/react'
 
+import { Icon } from '@duik/icon'
+
+
 
 import { PropTable, properties, DocsContentPage } from './components'
 
@@ -147,7 +150,7 @@ export const ReactDocsButton = () => {
         <Button success>Success</Button>
         <Button error>Danger</Button>
         <Button dark>Dark</Button>
-        <Button primary square>[i]</Button>
+        <Button primary square><Icon>rocket</Icon></Button>
       </div>
       <h2>Migration from v1</h2>
       <p>Icon properties are removed in favor to use icons as children instead. "iconOnly" property rendered button in square shape. Use "square" property instead.</p>

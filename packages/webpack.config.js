@@ -91,7 +91,37 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.(png|jpg|gif|eot|svg|ttf|woff|otf)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10,
+              name: '[hash].[ext]',
+              publicPath: './',
+              outputPath: (url, resourcePath, context) => {
+                // `resourcePath` is original absolute path to asset
+                // `context` is directory where stored asset (`rootContext`) or `context` option
 
+                // To get relative path you can use
+                // const relativePath = path.relative(context, resourcePath);
+
+                console.log('url', url)
+                console.log('resourcePath', resourcePath)
+                console.log('context', context)
+                const relativePath = path.relative(path.resolve(context, 'packages'), resourcePath);
+                const [packageName] = relativePath.split('/')
+                console.log('relativePath', relativePath)
+
+                
+
+                return `./${packageName}/dist/${url}`;
+              }
+            },
+          },
+        ],
+      },
       {
         test: /^((?!module).)*(scss|css)$/,
         use: ExtractTextPlugin.extract({

@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@duik/react": "0.1.0",
-    "@duik/button": "0.1.0"
+    "@duik/icon": "0.1.0"
   },
   "scripts": {
     "start": "../../node_modules/.bin/react-scripts start",

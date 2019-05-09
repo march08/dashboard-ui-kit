@@ -1,0 +1,455 @@
+$font-path: "./" !default;
+$uikon-dropdown_arrow: "\e922";
+$uikon-arrow_left: "\e920";
+$uikon-arrow_right: "\e921";
+$uikon-plus_rounded: "\e900";
+$uikon-pin_rounded_circle: "\e901";
+$uikon-message_2: "\e902";
+$uikon-calendar_2: "\e903";
+$uikon-building_plan: "\e904";
+$uikon-tap_click_force_touch: "\e905";
+$uikon-ruler: "\e906";
+$uikon-video_camera: "\e907";
+$uikon-phone_two: "\e908";
+$uikon-smile: "\e909";
+$uikon-attachment: "\e90a";
+$uikon-picture: "\e90b";
+$uikon-view_simple: "\e90c";
+$uikon-lightbulb: "\e90d";
+$uikon-wallet: "\e90e";
+$uikon-view_grid: "\e90f";
+$uikon-view_list: "\e910";
+$uikon-profile_card: "\e911";
+$uikon-front_store: "\e912";
+$uikon-rocket: "\e913";
+$uikon-buildings: "\e914";
+$uikon-building: "\e915";
+$uikon-shopping_bag: "\e916";
+$uikon-arrow-dropdown: "\e917";
+$uikon-check: "\e918";
+$uikon-more: "\e919";
+$uikon-trending_down: "\e91a";
+$uikon-trending_up: "\e91b";
+$uikon-star: "\e91c";
+$uikon-star-filled: "\e91d";
+$uikon-add: "\e91e";
+$uikon-help: "\e91f";
+$uikon-message: "\e9df";
+$uikon-send_round: "\e9e8";
+$uikon-inbox_paper_round: "\e9f5";
+$uikon-search_left: "\ea27";
+$uikon-settings: "\ea36";
+$uikon-love: "\ea38";
+$uikon-love-fill: "\ea39";
+$uikon-edit: "\ea3e";
+$uikon-multitasking: "\ea69";
+$uikon-gallery_grid_view: "\ea8c";
+$uikon-home: "\ea9a";
+$uikon-profile_round: "\eacb";
+$uikon-profile_plus_round: "\eadd";
+$uikon-clock: "\eae6";
+$uikon-container: "\eae9";
+$uikon-globe_network: "\eafb";
+$uikon-calendar: "\eb5c";
+$uikon-stats: "\eb61";
+$uikon-money_round: "\eb69";
+$uikon-cloud_up: "\ebe3";
+$uikon-image_picture: "\ec3c";
+$uikon-camera: "\ec47";
+$uikon-desktop: "\ef22";
+$uikon-phone: "\ef28";
+
+@font-face {
+  font-family: 'uikon';
+  src: url('#{$font-path}/uikon.eot?65atsz');
+  src: url('#{$font-path}/uikon.eot?65atsz#iefix') format('embedded-opentype'),
+  url('#{$font-path}/uikon.ttf?65atsz') format('truetype'),
+  url('#{$font-path}/uikon.woff?65atsz') format('woff'),
+  url('#{$font-path}/uikon.svg?65atsz#uikon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:global {
+
+
+  [class^="uikon"],
+  [class*="uikon"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'uikon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Enable Ligatures ================ */
+    letter-spacing: 0;
+    -webkit-font-feature-settings: "liga";
+    -moz-font-feature-settings: "liga=1";
+    -moz-font-feature-settings: "liga";
+    -ms-font-feature-settings: "liga"1;
+    font-feature-settings: "liga";
+    -webkit-font-variant-ligatures: discretionary-ligatures;
+    font-variant-ligatures: discretionary-ligatures;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .uikon-dropdown_arrow {
+    &:before {
+      content: $uikon-dropdown_arrow;
+    }
+  }
+
+  .uikon-arrow_left {
+    &:before {
+      content: $uikon-arrow_left;
+    }
+  }
+
+  .uikon-arrow_right {
+    &:before {
+      content: $uikon-arrow_right;
+    }
+  }
+
+  .uikon-plus_rounded {
+    &:before {
+      content: $uikon-plus_rounded;
+    }
+  }
+
+  .uikon-pin_rounded_circle {
+    &:before {
+      content: $uikon-pin_rounded_circle;
+    }
+  }
+
+  .uikon-message_2 {
+    &:before {
+      content: $uikon-message_2;
+    }
+  }
+
+  .uikon-calendar_2 {
+    &:before {
+      content: $uikon-calendar_2;
+    }
+  }
+
+  .uikon-building_plan {
+    &:before {
+      content: $uikon-building_plan;
+      color: #9ea0a5;
+    }
+  }
+
+  .uikon-tap_click_force_touch {
+    &:before {
+      content: $uikon-tap_click_force_touch;
+    }
+  }
+
+  .uikon-ruler {
+    &:before {
+      content: $uikon-ruler;
+    }
+  }
+
+  .uikon-video_camera {
+    &:before {
+      content: $uikon-video_camera;
+    }
+  }
+
+  .uikon-phone_two {
+    &:before {
+      content: $uikon-phone_two;
+    }
+  }
+
+  .uikon-smile {
+    &:before {
+      content: $uikon-smile;
+    }
+  }
+
+  .uikon-attachment {
+    &:before {
+      content: $uikon-attachment;
+    }
+  }
+
+  .uikon-picture {
+    &:before {
+      content: $uikon-picture;
+    }
+  }
+
+  .uikon-view_simple {
+    &:before {
+      content: $uikon-view_simple;
+    }
+  }
+
+  .uikon-lightbulb {
+    &:before {
+      content: $uikon-lightbulb;
+    }
+  }
+
+  .uikon-wallet {
+    &:before {
+      content: $uikon-wallet;
+    }
+  }
+
+  .uikon-view_grid {
+    &:before {
+      content: $uikon-view_grid;
+    }
+  }
+
+  .uikon-view_list {
+    &:before {
+      content: $uikon-view_list;
+    }
+  }
+
+  .uikon-profile_card {
+    &:before {
+      content: $uikon-profile_card;
+    }
+  }
+
+  .uikon-front_store {
+    &:before {
+      content: $uikon-front_store;
+    }
+  }
+
+  .uikon-rocket {
+    &:before {
+      content: $uikon-rocket;
+    }
+  }
+
+  .uikon-buildings {
+    &:before {
+      content: $uikon-buildings;
+    }
+  }
+
+  .uikon-building {
+    &:before {
+      content: $uikon-building;
+    }
+  }
+
+  .uikon-shopping_bag {
+    &:before {
+      content: $uikon-shopping_bag;
+    }
+  }
+
+  .uikon-arrow-dropdown {
+    &:before {
+      content: $uikon-arrow-dropdown;
+    }
+  }
+
+  .uikon-check {
+    &:before {
+      content: $uikon-check;
+    }
+  }
+
+  .uikon-more {
+    &:before {
+      content: $uikon-more;
+    }
+  }
+
+  .uikon-trending_down {
+    &:before {
+      content: $uikon-trending_down;
+    }
+  }
+
+  .uikon-trending_up {
+    &:before {
+      content: $uikon-trending_up;
+    }
+  }
+
+  .uikon-star {
+    &:before {
+      content: $uikon-star;
+    }
+  }
+
+  .uikon-star-filled {
+    &:before {
+      content: $uikon-star-filled;
+    }
+  }
+
+  .uikon-add {
+    &:before {
+      content: $uikon-add;
+    }
+  }
+
+  .uikon-help {
+    &:before {
+      content: $uikon-help;
+    }
+  }
+
+  .uikon-message {
+    &:before {
+      content: $uikon-message;
+    }
+  }
+
+  .uikon-send_round {
+    &:before {
+      content: $uikon-send_round;
+    }
+  }
+
+  .uikon-inbox_paper_round {
+    &:before {
+      content: $uikon-inbox_paper_round;
+    }
+  }
+
+  .uikon-search_left {
+    &:before {
+      content: $uikon-search_left;
+    }
+  }
+
+  .uikon-settings {
+    &:before {
+      content: $uikon-settings;
+    }
+  }
+
+  .uikon-love {
+    &:before {
+      content: $uikon-love;
+    }
+  }
+
+  .uikon-love-fill {
+    &:before {
+      content: $uikon-love-fill;
+    }
+  }
+
+  .uikon-edit {
+    &:before {
+      content: $uikon-edit;
+    }
+  }
+
+  .uikon-multitasking {
+    &:before {
+      content: $uikon-multitasking;
+    }
+  }
+
+  .uikon-gallery_grid_view {
+    &:before {
+      content: $uikon-gallery_grid_view;
+    }
+  }
+
+  .uikon-home {
+    &:before {
+      content: $uikon-home;
+    }
+  }
+
+  .uikon-profile_round {
+    &:before {
+      content: $uikon-profile_round;
+    }
+  }
+
+  .uikon-profile_plus_round {
+    &:before {
+      content: $uikon-profile_plus_round;
+    }
+  }
+
+  .uikon-clock {
+    &:before {
+      content: $uikon-clock;
+    }
+  }
+
+  .uikon-container {
+    &:before {
+      content: $uikon-container;
+    }
+  }
+
+  .uikon-globe_network {
+    &:before {
+      content: $uikon-globe_network;
+    }
+  }
+
+  .uikon-calendar {
+    &:before {
+      content: $uikon-calendar;
+    }
+  }
+
+  .uikon-stats {
+    &:before {
+      content: $uikon-stats;
+    }
+  }
+
+  .uikon-money_round {
+    &:before {
+      content: $uikon-money_round;
+    }
+  }
+
+  .uikon-cloud_up {
+    &:before {
+      content: $uikon-cloud_up;
+    }
+  }
+
+  .uikon-image_picture {
+    &:before {
+      content: $uikon-image_picture;
+    }
+  }
+
+  .uikon-camera {
+    &:before {
+      content: $uikon-camera;
+    }
+  }
+
+  .uikon-desktop {
+    &:before {
+      content: $uikon-desktop;
+    }
+  }
+
+  .uikon-phone {
+    &:before {
+      content: $uikon-phone;
+    }
+  }
+
+}

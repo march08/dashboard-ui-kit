@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './bootstrap.css'
 import '@duik/react/dist/styles.css'
+import '@duik/icon/dist/styles.css'
+
+
 import {
   BrowserRouter,
   Switch,
