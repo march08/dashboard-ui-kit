@@ -103,15 +103,14 @@ export const ReactDocsButton = () => {
   return (
     <DocsContentPage>
       <h1>Button</h1>
+      <p>{`import Button from '@duik/button'`}</p>
       <p>Use buttons in forms, as links with many varieties.</p>
       <ol>
         <li><Link to="#props">Prop table</Link></li>
         <li><Link to="#example">Examples</Link></li>
       </ol>
+      <h2>Prop table</h2>
       <Widget id="props">
-        <WidgetContent>
-          <h2>Button Props</h2>
-        </WidgetContent>
         <PropTable itemProps={itemProps} />
       </Widget >
       <h2>Examples</h2>

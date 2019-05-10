@@ -8,23 +8,12 @@ import * as cls from './styles.scss'
 export type ButtonPropsBase = {
   children?: React.ReactNode,
   className?: string,
-  // contentClassName?: string, DEPRECATED
-  href?: string,
   type?: string,
-  /**
-   * Sizes
-   */
-
-  /**
-   * @deprecated use sm instead
-   */
+  // sizes
   xs?: boolean,
   sm?: boolean,
   lg?: boolean,
-
-  /**
-   * Appearence
-   */
+  // Appearence
   primary?: boolean,
   error?: boolean,
   danger?: boolean,
@@ -93,17 +82,12 @@ export const Button = <T extends AnyTag = 'button'>(props: ButtonProps<T>) => {
     className,
   )
 
-  // put props together so we don't have to repeat it
-  const btnProps = {
-    className: classes,
-    ...rest,
-  }
-
   return (
 
     <Component
-      {...btnProps}
-      type={Component === 'button' ? type : null}
+      className={classes}
+      {...rest}
+      type={Component === 'button' ? type : undefined}
     >
       {children}
       <LoaderDots className={cls['btn-loader']} />
