@@ -21,6 +21,7 @@ export type ButtonPropsBase = {
   transparent?: boolean,
   clear?: boolean,
   isLoading?: boolean,
+  loading?: boolean,
   // icon properties
   // DEPRECATED icon?: React.ReactNode,
   // DEPRECATED iconRight?: boolean,
@@ -34,7 +35,7 @@ export type ButtonPropsBase = {
   square?: boolean,
 }
 
-export type ButtonProps<T extends AnyTag> = PropsWithTagProps<T, ButtonPropsBase & { Component: T }>
+export type ButtonProps<T extends AnyTag> = PropsWithTagProps<T, ButtonPropsBase & { Component?: T }>
 
 
 export const Button = <T extends AnyTag = 'button'>(props: ButtonProps<T>) => {
@@ -53,15 +54,17 @@ export const Button = <T extends AnyTag = 'button'>(props: ButtonProps<T>) => {
     lg,
     clear,
     isLoading,
+    loading,
     type,
     noBorder,
     isExpanded,
     block,
-    Component,
+    Component = 'button',
     square,
     ...rest
   } = props;
 
+  const loadingState = isLoading || loading
 
   const classes = classnames(
     cls['btn'],
@@ -70,10 +73,10 @@ export const Button = <T extends AnyTag = 'button'>(props: ButtonProps<T>) => {
       [cls['btn-error']]: error || danger,
       [cls['btn-success']]: success,
       [cls['btn-secondary']]: dark || secondary,
-      [cls['bth-sm']]: xs | sm,
+      [cls['btn-sm']]: xs | sm,
       [cls['btn-lg']]: lg,
-      [cls.clear]: clear,
-      [cls['btn-loading']]: isLoading,
+      [cls['btn-clear']]: clear,
+      [cls['btn-loading']]: loadingState,
       [cls.transparent]: transparent,
       [cls.noBorder]: noBorder,
       [cls['btn-block']]: isExpanded || block,
@@ -81,6 +84,16 @@ export const Button = <T extends AnyTag = 'button'>(props: ButtonProps<T>) => {
     },
     className,
   )
+
+  if (Component === 'input') {
+    return (
+      <Component
+        className={classes}
+        {...rest}
+        type={type}
+      />
+    )
+  }
 
   return (
 
@@ -90,13 +103,11 @@ export const Button = <T extends AnyTag = 'button'>(props: ButtonProps<T>) => {
       type={Component === 'button' ? type : undefined}
     >
       {children}
-      <LoaderDots className={cls['btn-loader']} />
+      {loadingState && <LoaderDots className={cls['btn-loader']} /> || null}
     </Component>
   )
 }
 
-Button.defaultProps = {
-  Component: 'button'
-}
+Button.displayName = "Button"
 
 export default Button;
