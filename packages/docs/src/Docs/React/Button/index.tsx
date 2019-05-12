@@ -55,8 +55,6 @@ export const ReactDocsButton = () => {
         { content: <Button disabled>Disabled</Button> },
         { content: <Button loading>Loading</Button> },
         { content: <Button loading primary>Loading primary</Button> },
-        { content: <Button lg>Large Button</Button> },
-        { content: <Button square><Icon>rocket</Icon></Button> },
       ]} />
 
 
