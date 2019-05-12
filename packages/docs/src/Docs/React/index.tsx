@@ -7,7 +7,7 @@ import { Icon } from '@duik/icon'
 import links from './links'
 
 export const DocsReact = (props: RouteComponentProps) => {
-  const { match } = props
+  const { match, location } = props
 
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
@@ -29,9 +29,8 @@ export const DocsReact = (props: RouteComponentProps) => {
             )
           })}
         </NavSection>
-        Something here
       </NavPanel>
-      <PageScroll>
+      <PageScroll key={location.pathname}>
         <Switch>
           {links.map(item => {
             return (
