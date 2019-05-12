@@ -1,11 +1,22 @@
-import createSimpleComponent from '@duik/create-simple-component';
-import './styles.scss';
+import * as React from 'react'
+import classnames from 'classnames'
+import * as cls from './styles.scss';
 
-export const Icon: React.ComponentType<JSX.IntrinsicElements['i']> = createSimpleComponent<'i'>({
-  displayName: 'Icon',
-  className: 'uikon',
-  Component: 'i',
-})
+export type IconProps = JSX.IntrinsicElements['i'] & {
+  mr?: boolean,
+  ml?: boolean,
+}
 
+export const Icon = (props: IconProps) => {
+  const { mr, ml, className, ...rest } = props
+
+  return <i className={classnames('uikon', className, {
+    [cls.mr]: mr,
+    [cls.ml]: ml
+  })} {...rest} />
+}
+
+
+Icon.displayName = 'Icon'
 
 export default Icon

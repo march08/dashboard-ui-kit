@@ -33,4 +33,8 @@ Widget.defaultProps = {
   margin: false,
 }
 
+
+
+Widget.displayName = "Widget"
+
 export default Widget

@@ -1,7 +1,7 @@
 import createSimpleComponent from '@duik/create-simple-component';
 import * as cls from './styles.scss';
 
-export const WidgetHeader: React.ComponentType<JSX.IntrinsicElements['div']> = createSimpleComponent<'div'>({
+export const WidgetHeader = createSimpleComponent({
   displayName: 'WidgetHeader',
   className: cls['card-header'],
   Component: 'div',

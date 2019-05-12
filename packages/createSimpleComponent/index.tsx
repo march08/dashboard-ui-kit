@@ -4,6 +4,7 @@ import * as React from 'react';
 import classnames from 'classnames';
 
 import { AnyTag, PropsWithTagProps } from '@duik/types';
+import { JSXElement } from '@babel/types';
 
 type Props = {
   displayName: string,
@@ -19,9 +20,13 @@ export type ComponentProps = React.PropsWithChildren<{
 }>;
 
 
+
+
+
+
 export function createSimpleComponent<T extends AnyTag>(
   options: { Component?: T } & PropsWithTagProps<T, CreateSimpleComponentProps>
-): React.ComponentType<PropsWithTagProps<T>> {
+) {
 
   const {
     displayName,
@@ -30,9 +35,8 @@ export function createSimpleComponent<T extends AnyTag>(
     defaultProps,
   } = options
 
-  function SimpleComponent<Tag extends AnyTag>(
-    props: PropsWithTagProps<Tag>,
-  ) {
+
+  function SimpleComponent<Tag extends AnyTag>(props: PropsWithTagProps<Tag>): JSX.Element {
     const { className, children, ...rest } = props;
     return (
       <Component

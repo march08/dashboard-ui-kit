@@ -6,12 +6,15 @@ export type LoaderDotsProps = JSX.IntrinsicElements['div']
 
 export function LoaderDots({ className, ...rest }: LoaderDotsProps) {
   return (
-    <div className={classnames(cls['loader-dot'], className)} {...rest}>
-      <div className={cls['loader-dot-1']} />
-      <div className={cls['loader-dot-2']} />
-      <div className={cls['loader-dot-3']} />
-    </div>
+    <span className={classnames(cls['loader-dot'], className)} {...rest}>
+      <span className={cls['loader-dot-1']} />
+      <span className={cls['loader-dot-2']} />
+      <span className={cls['loader-dot-3']} />
+    </span>
   )
 }
+
+
+LoaderDots.displayName = "LoaderDots"
 
 export default LoaderDots

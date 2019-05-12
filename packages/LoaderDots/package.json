@@ -10,5 +10,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "private": false
+  "private": false,
+  "dependencies": {
+    "@types/react": "^16.8.16"
+  }
 }
