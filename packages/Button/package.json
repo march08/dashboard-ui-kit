@@ -12,7 +12,7 @@
   },
   "private": false,
   "dependencies": {
-    "@duik/types": "0.1.0",
+    "@duik/core": "0.1.0",
     "@duik/loader-dots": "0.1.0"
   }
 }

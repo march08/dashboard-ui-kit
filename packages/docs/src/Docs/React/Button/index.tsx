@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import { Button } from '@duik/react'
+import { Button } from '@duik/it'
 
 import { Icon } from '@duik/icon'
 

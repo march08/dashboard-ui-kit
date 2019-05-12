@@ -13,6 +13,6 @@
   "private": false,
   "dependencies": {
     "@duik/create-simple-component": "0.1.0",
-    "@duik/types": "0.1.0"
+    "@duik/core": "0.1.0"
   }
 }

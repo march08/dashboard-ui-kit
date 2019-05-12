@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { WidgetTable, Button } from '@duik/react';
+import { WidgetTable, Button } from '@duik/it';
 import { jsxToString } from 'utils'
 import { Code } from 'components'
 import cls from './docspage.module.scss'

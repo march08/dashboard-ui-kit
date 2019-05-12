@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { RouteComponentProps, Switch, Route, Redirect } from 'react-router-dom';
 
-import { NavPanel } from '@duik/react'
+import { NavPanel } from '@duik/it'
 
 import { PageScroll } from 'components';
 

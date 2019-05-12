@@ -10,7 +10,7 @@ export const ImportPath = (props: ImportPathProps) => {
 
   return (
     <div style={{ marginBottom: 10 }}>
-      <code>{`import { ${name} } from '@duik/react'`}</code> or <code>{`import ${name} from '@duik/${camelToSnake(name)}'`}</code>
+      <code>{`import { ${name} } from '@duik/it'`}</code> or <code>{`import ${name} from '@duik/${camelToSnake(name)}'`}</code>
     </div>
 
   )

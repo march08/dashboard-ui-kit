@@ -2,7 +2,7 @@ import * as React from 'react'
 import prism from 'prismjs'
 import classnames from 'classnames'
 
-import { Button } from '@duik/react'
+import { Button } from '@duik/it'
 import { Icon } from '@duik/icon'
 import { copyToClipboard } from 'utils'
 import cls from './code.module.scss'

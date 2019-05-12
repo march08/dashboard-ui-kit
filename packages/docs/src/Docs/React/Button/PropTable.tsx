@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Widget } from '@duik/react/index'
+import { Widget } from '@duik/it/index'
 
 
 import { PropTable, properties } from '../../components'

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Button, ButtonGroup } from '@duik/react'
+import { Button, ButtonGroup } from '@duik/it'
 
 import { Icon } from '@duik/icon'
 

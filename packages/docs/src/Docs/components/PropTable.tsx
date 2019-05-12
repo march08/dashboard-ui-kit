@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { WidgetTable } from '@duik/react'
+import { WidgetTable } from '@duik/it'
 import { ReactDocsProperty } from './types'
 
 type PropTableProps = {

@@ -1,4 +1,4 @@
-@import '~@duik/react/kit.scss';
+@import '~@duik/it/kit.scss';
 
 
 .content {
@@ -80,6 +80,10 @@
   tr:not(:last-child) {
     td {
       border-bottom: $border-default;
+    }
+
+    td:last-child {
+      border-bottom: $border-default-dark;
     }
   }
 }

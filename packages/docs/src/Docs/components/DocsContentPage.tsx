@@ -1,4 +1,4 @@
-import { createSimpleComponent } from '@duik/react'
+import { createSimpleComponent } from '@duik/it'
 
 import cls from './docspage.module.scss'
 

@@ -3,7 +3,7 @@
 import * as React from 'react';
 import classnames from 'classnames';
 
-import { AnyTag, PropsWithTagProps } from '@duik/types';
+import { AnyTag, PropsWithTagProps } from '@duik/core';
 import { JSXElement } from '@babel/types';
 
 type Props = {
