@@ -92,8 +92,8 @@ export const ReactDocsButton = () => {
 
   return (
     <>
-      <h2>Prop table</h2>
-      <Widget id="props">
+      <h2 id="props">Prop table</h2>
+      <Widget>
         <PropTable itemProps={itemProps} />
       </Widget >
     </>
