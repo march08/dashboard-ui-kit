@@ -11,9 +11,6 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
-  &.dark {
-    background-color: $bg-primary-dark;
-  }
 
   &:not(.nav-panel-right) {
     &:not(.dark) {
@@ -34,4 +31,12 @@
       border-left: $border-default-dark;
     }
   }
+
+
+  &.dark {
+    background-color: $bg-primary-dark;
+    --nav-link-color: white;
+    --nav-text-main: white;
+  }
+
 }

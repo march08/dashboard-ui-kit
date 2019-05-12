@@ -9,14 +9,15 @@ export type NavPanelProps = JSX.IntrinsicElements['div'] & {
   dark?: boolean
 }
 
-export const NavPanel = ({
+export function NavPanel({
   children,
   className,
   positionRight,
   onRight,
   dark,
   ...rest
-}: NavPanelProps) => (
+}: NavPanelProps) {
+  return (
     <div
       className={classnames(cls['nav-panel'], className, {
         [cls['nav-panel-right']]: positionRight || onRight,
@@ -27,6 +28,7 @@ export const NavPanel = ({
       {children}
     </div>
   )
+}
 
 NavPanel.defaultProps = {
   className: null,
@@ -35,5 +37,7 @@ NavPanel.defaultProps = {
   onRight: false,
   dark: false,
 }
+
+NavPanel.displayName = "NavPanel"
 
 export default NavPanel

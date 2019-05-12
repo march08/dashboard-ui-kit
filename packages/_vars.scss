@@ -126,10 +126,14 @@ $borderColorDark: #2E2E33;
   --bg-base: #{$bg};
   --bg-primary: #{$bgPrimary};
   --bg-primary-dark: #{$bgPrimaryDark};
+  --color-danger: #{$red};
+  --color-primary: #{$blue};
+  --color-success: #{$green};
+  --color-warning: #{$orange};
 }
 
 // USE THESE
-$text-main: var(--text-primary);
+$text-main: var(--text-main);
 $text-base: var(--text-base);
 $text-secondary: var(--text-secondary);
 $border-color: var(--border-color);
@@ -140,6 +144,10 @@ $border-default-dark: 1px solid var(--border-color-dark);
 $bg-base: var(--bg-base);
 $bg-primary: var(--bg-primary);
 $bg-primary-dark: var(--bg-primary-dark);
+$color-danger: var(--color-danger);
+$color-primary: var(--color-primary);
+$color-success: var(--color-success);
+$color-warning: var(--color-warning);
 
 
 $white: #fff !default;

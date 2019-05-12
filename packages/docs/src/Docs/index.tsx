@@ -11,17 +11,10 @@ export const Docs = (props: RouteComponentProps) => {
   const { match } = props
 
   return (
-    <div style={{ display: 'flex', height: '100vh' }}>
-      <NavPanel dark>
-        Something here
-      </NavPanel>
-      <PageScroll>
-        <Switch>
-          <Route path={`${match.path}/react`} component={DocsReact} />
-          <Redirect to={`${match.path}/react`} />
-        </Switch>
-      </PageScroll>
-    </div>
+    <Switch>
+      <Route path={`${match.path}/react`} component={DocsReact} />
+      <Redirect to={`${match.path}/react`} />
+    </Switch>
   )
 }
 

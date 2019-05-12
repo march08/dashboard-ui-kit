@@ -1,7 +1,7 @@
 {
-  "name": "@duik/nav-panel",
+  "name": "@duik/nav-title",
   "version": "0.1.0",
-  "description": "Dashboard UI Kit Nav Panel",
+  "description": "Dashboard UI Kit Nav Title",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
   "homepage": "https://github.com/march08/duik",
@@ -10,5 +10,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "private": false
+  "private": false,
+  "dependencies": {
+    "@duik/create-simple-component": "0.1.0"
+  }
 }

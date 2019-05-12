@@ -1,0 +1,76 @@
+@import '../vars.scss';
+
+.nav-link {
+  font-size: .875rem;
+  color: var(--nav-link-color, #{$text-main});
+  display: block;
+  padding: 0 30px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .left-el-wrapper {
+    display: inline-block;
+    margin-right: 12px;
+    width: 18px;
+    text-align: center;
+  }
+
+  .right-el-wrapper {
+    font-size: 0.75rem;
+    color: $text-secondary;
+    color: var(--nav-link-color-el, #{$text-secondary});
+    line-height: 1rem;
+    display: flex;
+  }
+
+  &.highlighted {
+    .text {
+      font-weight: 500;
+    }
+  }
+
+  // active
+  &:global(.active) {
+    font-weight: 500;
+    color: $color-primary;
+    background: rgba(84, 147, 245, .05);
+    box-shadow: inset 3px 0 0 0 $color-primary;
+  }
+
+  &:hover {
+    color: $color-primary;
+    background: rgba(84, 147, 245, .05);
+  }
+}
+
+.nav-link.nav-link-dark {
+
+  margin: 0 15px;
+  border: none;
+  border-radius: 4px;
+  padding: 0 15px;
+  font-weight: 500;
+  color: var(--nav-link-color, #{$text-main});
+
+  &>* {
+    color: var(--nav-link-color, #{$text-main});
+  }
+
+  &:global(.active) {
+    background: $color-primary;
+    color: white;
+
+    &>* {
+      color: white;
+    }
+  }
+
+  &:not(:global(.active)):hover {
+    color: var(--nav-link-color, #{$text-main});
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    box-shadow: none;
+  }
+}

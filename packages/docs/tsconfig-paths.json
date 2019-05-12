@@ -8,6 +8,9 @@
       "components/*": [
         "components/*"
       ],
+      "Docs/*": [
+        "Docs/*"
+      ],
       "helpers/*": [
         "helpers/*"
       ],

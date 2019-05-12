@@ -1,4 +1,4 @@
-@import 'normalize.css';
+@import './normalize';
 @import '../vars';
 
 /** Text Colors **/
@@ -14,23 +14,10 @@
   margin: 0;
 }
 
-:root {
-
-  // Custom variable values only support SassScript inside `#{}`.
-  @each $color,
-  $value in $colors {
-    --#{$color}: #{$value};
-  }
-
-  @each $color,
-  $value in $theme-colors {
-    --#{$color}: #{$value};
-  }
-}
 
 html {
   height: 100%;
-  background: $bg;
+  background: $bg-base;
 }
 
 body {
@@ -39,7 +26,7 @@ body {
   padding: 0;
   position: relative;
   font-family: $fontFamily;
-  background: $bg;
+  background: $bg-base;
   color: $text-base;
   font-size: 16px;
   font-weight: 400; // font smoothing
@@ -184,19 +171,23 @@ body {
 
   code:not([class]) {
     display: inline-block;
-    background: #FBFBFD;
     border: 1px solid #DADEE7;
     border-radius: 4px;
-    font-weight: 500;
-    font-size: 0.875rem;
-    color: #34AA44;
+    font-size: inherit;
     line-height: 1.375rem;
-    padding: 4px 12px;
-    font-family: $fontFamily;
+    padding: 0px 5px;
+    font-family: monospace;
     word-break: inherit;
+    color: $color-primary;
+    margin-left: 1px;
+    margin-right: 1px;
   }
 }
 
 :global #root {
   height: 100%;
+}
+
+pre {
+  margin-bottom: 0;
 }

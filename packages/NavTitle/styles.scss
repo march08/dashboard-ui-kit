@@ -1,0 +1,10 @@
+@import '../vars.scss';
+
+.nav-title {
+  padding: 25px 30px 20px;
+  font-size: 1.125rem;
+  color: var(--nav-text-main, #{$text-main});
+  display: block;
+  font-weight: 500;
+  line-height: 1;
+}

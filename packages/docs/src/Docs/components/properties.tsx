@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom';
 
-import { ReactDocsProperty } from '../types'
+import { ReactDocsProperty } from './types'
 
 export type ReactDocsPropertyOptional = {
   [K in keyof ReactDocsProperty]?: ReactDocsProperty[K]

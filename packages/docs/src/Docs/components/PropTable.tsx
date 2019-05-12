@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { WidgetTable } from '@duik/react'
-import { ReactDocsProperty } from '../types'
+import { ReactDocsProperty } from './types'
 
 type PropTableProps = {
   itemProps?: ReactDocsProperty[]

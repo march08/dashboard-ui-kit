@@ -24,12 +24,11 @@ const PageScrollBase = (props: PageScroll & RouteComponentProps) => {
 
         if (targetEl && ref.current) {
           const targetRect = targetEl.getBoundingClientRect()
-
-          ref.current.scrollTop = targetRect.top - 50
+          ref.current.scrollTo(0, ref.current.scrollTop + targetRect.top - 50)
         }
       }
     },
-    [location.hash]
+    [location.key]
   )
 
   const ref = React.createRef<HTMLDivElement>()

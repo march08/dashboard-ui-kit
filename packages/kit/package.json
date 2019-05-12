@@ -13,6 +13,10 @@
     "@duik/widget-table": "0.1.0",
     "@duik/widget-container": "0.1.0",
     "@duik/create-simple-component": "0.1.0",
-    "@duik/nav-panel": "0.1.0"
+    "@duik/nav-panel": "0.1.0",
+    "@duik/nav-link": "0.1.0",
+    "@duik/nav-section": "0.1.0",
+    "@duik/nav-section-title": "0.1.0",
+    "@duik/nav-title": "0.1.0"
   }
 }
