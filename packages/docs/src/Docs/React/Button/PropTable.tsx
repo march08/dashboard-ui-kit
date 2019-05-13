@@ -16,7 +16,7 @@ const itemProps = [
     propType: 'string',
     required: false,
     defaultValue: '"button"',
-    desc: 'Applicable for button',
+    desc: 'Applicable for button or input, otherwise button will be omitted.',
   },
   properties.bool({
     prop: 'isExpanded | block',

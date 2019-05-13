@@ -73,17 +73,14 @@
     padding-left: 70px;
   }
 
-  td:last-child {
-    // padding-left: 70px;
+  td:not(:last-child) {
+    // border-right: $border-default;
+    border-right: 1px solid rgba(0, 0, 0, 0.02)
   }
 
   tr:not(:last-child) {
     td {
       border-bottom: $border-default;
-    }
-
-    td:last-child {
-      border-bottom: $border-default-dark;
     }
   }
 }
@@ -111,4 +108,10 @@
     margin-left: 20px;
   }
 
+}
+
+.propTable {
+  td {
+    font-family: 'Roboto Mono', monospace;
+  }
 }

@@ -16,6 +16,7 @@ import 'prismjs/components/prism-json'
 
 
 import './atom-dark.scss'
+import './vs.scss'
 
 export enum CodeLang {
   javascript = 'javascript',

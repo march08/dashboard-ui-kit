@@ -2,6 +2,8 @@ import * as React from 'react'
 import { WidgetTable } from '@duik/it'
 import { ReactDocsProperty } from './types'
 
+import cls from './docspage.module.scss';
+
 type PropTableProps = {
   itemProps?: ReactDocsProperty[]
 }
@@ -9,7 +11,7 @@ type PropTableProps = {
 export const PropTable = ({
   itemProps,
 }: PropTableProps) => (
-    <WidgetTable>
+    <WidgetTable className={cls.propTable}>
       <thead>
         <tr>
           <th>
@@ -49,10 +51,8 @@ export const PropTable = ({
               <td>
                 <p>
 
-                  {item.defaultValue === 'null' || item.defaultValue === 'false' ? (
-                    <em>
-                      {item.defaultValue}
-                    </em>
+                  {item.defaultValue === 'null' || item.defaultValue === 'false' || !item.defaultValue ? (
+                    ''
                   ) : item.defaultValue}
                 </p>
               </td>

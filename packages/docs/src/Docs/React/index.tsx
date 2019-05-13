@@ -4,7 +4,7 @@ import { NavPanel, NavSection, NavLink, NavSectionTitle, NavTitle } from '@duik/
 import { PageScroll } from 'components';
 import { Icon } from '@duik/icon'
 
-import links from './links'
+import navSections, { GeneratedLinkData } from './links'
 
 export const DocsReact = (props: RouteComponentProps) => {
   const { match, location } = props
@@ -13,28 +13,39 @@ export const DocsReact = (props: RouteComponentProps) => {
     <div style={{ display: 'flex', height: '100vh' }}>
       <NavPanel dark>
         <NavTitle>React Docs</NavTitle>
-        <NavSection>
-          <NavSectionTitle>Components</NavSectionTitle>
-          {links.map(item => {
-            return (
-              <NavLink
-                to={`${match.path}${item.to}`}
-                Component={RRNavLink}
-                dark
-                key={item.to}
-                rightEl={<Icon>arrow_right</Icon>}
-              >
-                {item.text}
-              </NavLink>
-            )
-          })}
-        </NavSection>
+
+        {
+          navSections.map(section => (
+            <NavSection>
+              <NavSectionTitle>{section.title}</NavSectionTitle>
+              {section.links.map(item => {
+                return (
+                  <NavLink
+                    to={`${match.path}${item.to}`}
+                    Component={RRNavLink}
+                    dark
+                    key={item.to}
+                    rightEl={<Icon>arrow_right</Icon>}
+                  >
+                    {item.text}
+                  </NavLink>
+                )
+              })}
+            </NavSection>
+          ))
+        }
+
       </NavPanel>
       <PageScroll key={location.pathname}>
         <Switch>
-          {links.map(item => {
+          {navSections.reduce(
+            (res: GeneratedLinkData[], next) => {
+              return [...res, ...next.links]
+            },
+            []
+          ).map(item => {
             return (
-              <Route key={item.to} path={`${match.path}${item.to}`} component={item.component} />
+              <Route key={item.to} path={`${match.path}${item.to}`} component={item.component as any} />
             )
           })}
           <Redirect to={`${match.path}/button`} />

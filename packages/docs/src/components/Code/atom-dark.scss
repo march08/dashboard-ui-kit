@@ -15,8 +15,6 @@ hue-6:   #d19a66
 hue-6-2: #e6c07b
 */
 
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,500');
-
 pre.refractor {
   overflow-x: auto;
   width: 100%;
@@ -39,8 +37,8 @@ pre[class*="language-"] {
   border-radius: 4px;
   color: #9cdcfe;
   /* background: #282c34; */
-  background: #303136;
-  font-family: 'Roboto Mono', monospace;
+  background: #303136;font-family: 'Roboto Mono',
+monospace;
   font-size: .75rem;
   line-height: 1.25rem;
 }

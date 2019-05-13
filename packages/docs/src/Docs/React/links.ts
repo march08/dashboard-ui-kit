@@ -1,16 +1,45 @@
 import { camelToSnake, camelToText } from 'utils'
+import { RouteComponentProps } from 'react-router-dom'
 
-const listOfComponents = [
+export type ComponentType = React.ComponentType<RouteComponentProps<any>> | React.ComponentType<any>
+
+export type GeneratedLinkData = {
+  text: string,
+  to: string,
+  component: RouteComponentProps, // eslint-disable-line
+}
+
+const components = [
   'Button',
   'ButtonGroup',
 ]
+const guides = [
+  'UseInCreateReactApp',
+  'UseWithTypescript',
+  'CustomizingTheme',
+]
 
-const generateLinks = () => listOfComponents.sort().map(item => {
-  return {
-    text: camelToText(item),
-    to: `/${camelToSnake(item)}`,
-    component: require(`./${item}`).default, // eslint-disable-line
+function generateLinks(list: string[]): GeneratedLinkData[] {
+  return list
+    .sort()
+    .map((item: string) => {
+      return {
+        text: camelToText(item),
+        to: `/${camelToSnake(item)}`,
+        component: require(`./${item}`).default as RouteComponentProps, // eslint-disable-line
+      }
+    })
+}
+
+export const generateMenuLinks = () => ([
+  {
+    title: 'Guides',
+    links: generateLinks(guides)
+  },
+  {
+    title: 'Basic Components',
+    links: generateLinks(components)
   }
-})
+])
 
-export default generateLinks()
+export default generateMenuLinks()

@@ -2,7 +2,7 @@
   "name": "@duik/core",
   "version": "0.1.0",
   "description": "Dashboard UI Kit Core",
-  "main": "dist/index.tsx",
+  "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
   "homepage": "https://github.com/march08/duik",
   "author": "Roman Nguyen <march08@outlook.com>",

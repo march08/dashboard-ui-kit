@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './bootstrap.css'
 import '@duik/it/dist/styles.css'
 import '@duik/icon/dist/styles.css'
+import './App.css'
 
 
 import {
