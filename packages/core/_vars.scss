@@ -123,13 +123,16 @@ $borderColorDark: #2E2E33;
   --border-color: #{$borderColor};
   --border-color-darker: #{$borderColorDarker};
   --border-color-dark: #{$borderColorDark};
+  --border-color-secondary: #2D9C3C;
   --bg-base: #{$bg};
   --bg-primary: #{$bgPrimary};
   --bg-primary-dark: #{$bgPrimaryDark};
   --color-danger: #{$red};
   --color-primary: #{$blue};
+  --color-secondary: #{$green};
   --color-success: #{$green};
   --color-warning: #{$orange};
+  --gradient-secondary: linear-gradient(0deg, #34AA44 0%, #38B249 100%);
 }
 
 // USE THESE
@@ -139,8 +142,10 @@ $text-secondary: var(--text-secondary);
 $border-color: var(--border-color);
 $border-color-darker: var(--border-color-darker);
 $border-color-dark: var(--border-color-dark);
+$border-color-secondary: var(--border-color-secondary);
 $border-default: 1px solid var(--border-color);
 $border-default-dark: 1px solid var(--border-color-dark);
+$border-default-darker: 1px solid var(--border-color-darker);
 $bg-base: var(--bg-base);
 $bg-primary: var(--bg-primary);
 $bg-primary-dark: var(--bg-primary-dark);
@@ -148,6 +153,8 @@ $color-danger: var(--color-danger);
 $color-primary: var(--color-primary);
 $color-success: var(--color-success);
 $color-warning: var(--color-warning);
+$color-secondary: var(--color-secondary);
+$gradient-secondary: var(--gradient-secondary);
 
 
 $white: #fff !default;

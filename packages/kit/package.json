@@ -18,6 +18,8 @@
     "@duik/nav-section": "0.1.0",
     "@duik/nav-section-title": "0.1.0",
     "@duik/nav-title": "0.1.0",
-    "@duik/checkbox": "0.1.0"
+    "@duik/checkbox": "0.1.0",
+    "@duik/radio": "0.1.0",
+    "@duik/toggle": "0.1.0"
   }
 }

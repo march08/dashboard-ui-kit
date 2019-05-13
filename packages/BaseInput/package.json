@@ -1,7 +1,7 @@
 {
-  "name": "@duik/checkbox",
+  "name": "@duik/base-input",
   "version": "0.1.0",
-  "description": "Dashboard UI Kit Checkbox",
+  "description": "Dashboard UI Kit Base input for checkbox, toggle and radio",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
   "homepage": "https://github.com/march08/duik",
@@ -12,6 +12,6 @@
   },
   "private": false,
   "dependencies": {
-    "@duik/base-input": "0.1.0"
+    "@duik/core": "0.1.0"
   }
 }

@@ -21,3 +21,5 @@ export * from '@duik/core';
 
 // forms
 export * from '@duik/checkbox';
+export * from '@duik/toggle';
+export * from '@duik/radio';

@@ -8,11 +8,15 @@ export type GeneratedLinkData = {
   to: string,
   component: RouteComponentProps, // eslint-disable-line
 }
+const form = [
+  'Checkbox',
+  'Toggle',
+  'Radio'
+]
 
 const components = [
   'Button',
   'ButtonGroup',
-  'Checkbox',
 ]
 const guides = [
   'UseInCreateReactApp',
@@ -40,6 +44,10 @@ export const generateMenuLinks = () => ([
   {
     title: 'Basic Components',
     links: generateLinks(components)
+  },
+  {
+    title: 'Form',
+    links: generateLinks(form)
   }
 ])
 

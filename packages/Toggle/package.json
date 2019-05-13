@@ -1,7 +1,7 @@
 {
-  "name": "@duik/checkbox",
+  "name": "@duik/toggle",
   "version": "0.1.0",
-  "description": "Dashboard UI Kit Checkbox",
+  "description": "Dashboard UI Kit Toggle",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
   "homepage": "https://github.com/march08/duik",
