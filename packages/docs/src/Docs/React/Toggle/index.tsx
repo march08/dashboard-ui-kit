@@ -15,7 +15,7 @@ export const ReactDocsButton = () => {
       ]} />
       <h1>Toggle</h1>
       <ImportPath name="Toggle" />
-      <p>Umm. toggles?</p>
+      <p>Toggles work the same way as checkboxes, e.g. you can group them with "name" property in your forms.</p>
 
       <h2 id="basic-usage">Basic Usage</h2>
 

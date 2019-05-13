@@ -1,0 +1,31 @@
+@import "@duik/it/kit.scss";
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px 0;
+  justify-content: space-evenly;
+
+  &>* {
+    flex-basis: 250px;
+  }
+}
+
+.iconWrapper {
+  display: flex;
+  height: 90px;
+  align-items: center;
+}
+
+.icon {
+  flex-basis: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0;
+}
+
+.ligature {
+  font-size: .875rem;
+  color: $text-main;
+}

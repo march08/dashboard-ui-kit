@@ -24,7 +24,7 @@ export const PropTable = ({
             Required
         </th>
           <th>
-            Default Value
+            Default
         </th>
           <th>
             Description

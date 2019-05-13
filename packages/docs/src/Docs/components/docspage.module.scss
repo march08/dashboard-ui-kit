@@ -7,6 +7,8 @@
   max-width: 1200px;
   position: relative;
   border-right: $border-default;
+  margin-right: 350px;
+  min-height: 100vh;
 
   p {
     max-width: 760px;
@@ -98,6 +100,7 @@
   position: absolute;
   top: 0;
   left: calc(100% + 100px);
+  width: 250px;
 
   li,
   li * {

@@ -3,14 +3,20 @@ import { camelToSnake } from 'utils'
 
 export type ImportPathProps = {
   name: string,
+  isIncludedInKit?: boolean
 }
 
 export const ImportPath = (props: ImportPathProps) => {
-  const { name } = props
+  const { name, isIncludedInKit = true } = props
 
   return (
     <div style={{ marginBottom: 10 }}>
-      <code>{`import { ${name} } from '@duik/it'`}</code> or <code>{`import ${name} from '@duik/${camelToSnake(name)}'`}</code>
+      {isIncludedInKit ? (
+        <>
+          <code>{`import { ${name} } from '@duik/it'`}</code> `or `
+        </>
+      ) : null}
+      <code>{`import ${name} from '@duik/${camelToSnake(name)}'`}</code>
     </div>
 
   )
