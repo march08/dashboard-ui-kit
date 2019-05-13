@@ -18,3 +18,6 @@ export * from '@duik/nav-link';
 export * from '@duik/nav-title';
 export * from '@duik/nav-section-title';
 export * from '@duik/core';
+
+// forms
+export * from '@duik/checkbox';

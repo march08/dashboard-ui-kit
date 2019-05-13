@@ -1,0 +1,214 @@
+@import '@duik/core/_vars.scss';
+
+.form-check {
+  display: inline-block;
+  line-height: 17px;
+  user-select: none;
+  padding: 0;
+}
+
+.form-check-input {
+  width: 0px;
+  height: 0px;
+  overflow: hidden;
+  position: absolute;
+  visibility: hidden;
+}
+
+.form-check-input[disabled]+.form-check-label {
+  cursor: not-allowed;
+}
+
+.form-check-input:checked+.form-check-label {
+  color: $textMain;
+
+  &:hover {
+    color: $textBase;
+  }
+}
+
+
+.form-check-description {
+  margin-top: 2px;
+  margin-left: 26px;
+  color: $textSecondary;
+}
+
+.form-check-label {
+  color: $textBase;
+  font-size: 0.875rem;
+  line-height: 19px;
+  color: $textBase;
+  display: inline-flex;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    color: $textMain;
+  }
+}
+
+
+.form-check:not(.toggle):not(.radio) {
+  .form-check-label {
+    &:before {
+      text-align: center;
+      line-height: 14px;
+      padding-left: 1px;
+      color: #fff;
+      width: 16px;
+      height: 16px;
+      content: "";
+      font-size: 7px;
+      background-color: #FFF;
+      border: 1px solid #DFE3E9;
+      border-radius: 3px;
+      margin-right: 10px;
+      display: inline-block;
+      transition: border .2s, background .2s;
+      vertical-align: middle;
+      transform: translateY(1px)
+    }
+
+    .form-check-icon {
+      position: absolute;
+      left: 4px;
+      top: 6px;
+      display: none;
+    }
+  }
+
+  input[disabled]+.form-check-label:before {
+    /* Checkbox: */
+    background-image: linear-gradient(0deg, #F6F7F9 0%, #FFFFFF 100%);
+    border: 1px solid $borderColorDarker;
+    box-shadow: 0 1px 1px 0 rgba(22, 29, 37, 0.05), inset 0 2px 0 0 rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+    /* Rectangle: */
+    background: rgba(#BCBCBC, .25);
+  }
+
+  .form-check-input:checked+.form-check-label {
+    &:before {
+      background-color: $green;
+      border-color: $green;
+    }
+
+    @each $name,
+    $color in $colorPairs {
+      &:global(.#{$name}) {
+        &:before {
+          color: white;
+          background-color: $color;
+          border-color: $color;
+        }
+      }
+    }
+
+    // extra
+    .form-check-icon {
+      display: block;
+    }
+  }
+}
+
+.form-check.toggle {
+  .form-check-description {
+    margin-left: 50px;
+  }
+
+  .form-check-label {
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      border-radius: 100px;
+      transition: .2s;
+    }
+
+    &:before {
+      width: 38px;
+      height: 20px;
+      background: $borderColor;
+      border: 1px solid $borderColor;
+      margin-right: 12px;
+    }
+
+    &:after {
+      height: 16px;
+      width: 16px;
+      background: #FFFFFF;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+      position: absolute;
+      top: 2px;
+      left: 2px;
+    }
+  }
+
+  .form-check-input:checked+.form-check-label {
+    &:before {
+      background: #34AA44;
+      border: 1px solid #2F9E3E;
+    }
+
+    &:after {
+      transform: translateX(18px);
+    }
+  }
+
+  .form-check-input[disabled]+.form-check-label {
+    &:after {
+      opacity: 0.6;
+    }
+  }
+}
+
+.form-check-input[type="radio"]+.form-check-label {
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    border-radius: 50%;
+    transition: .2s;
+  }
+
+  &:before {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px; // margin-right: 12px;
+    /* Radio: */
+    background-image: linear-gradient(0deg, #F6F7F9 0%, #FFFFFF 100%);
+    border: 1px solid #D8DCE6;
+    box-shadow: 0 1px 1px 0 rgba(22, 29, 37, 0.05), inset 0 2px 0 0 rgba(255, 255, 255, 0.05);
+  }
+
+  &:after {
+    height: 6px;
+    width: 6px;
+    background: #FFFFFF;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    opacity: 0;
+  }
+}
+
+.form-check-input[type="radio"]:checked+.form-check-label {
+  &:before {
+    background-image: linear-gradient(0deg, #34AA44 0%, #38B249 100%);
+    border: 1px solid #2D9C3C;
+    box-shadow: 0 1px 1px 0 rgba(19, 31, 21, 0.10), inset 0 2px 0 0 rgba(255, 255, 255, 0.06);
+  }
+
+  &:after {
+    opacity: 1;
+  }
+}
+
+.form-check-input[disabled]+.form-check-label {
+  &:before {
+    background: rgba(#BCBCBC, .25);
+  }
+}

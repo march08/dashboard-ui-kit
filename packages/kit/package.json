@@ -17,6 +17,7 @@
     "@duik/nav-link": "0.1.0",
     "@duik/nav-section": "0.1.0",
     "@duik/nav-section-title": "0.1.0",
-    "@duik/nav-title": "0.1.0"
+    "@duik/nav-title": "0.1.0",
+    "@duik/checkbox": "0.1.0"
   }
 }

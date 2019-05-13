@@ -12,6 +12,7 @@ export type GeneratedLinkData = {
 const components = [
   'Button',
   'ButtonGroup',
+  'Checkbox',
 ]
 const guides = [
   'UseInCreateReactApp',
