@@ -15,31 +15,52 @@ export type DropdownMenuProps<P extends {} = {}> =
   & JSX.IntrinsicElements['div']
   & P
 
+export class DropdownMenu extends React.PureComponent<DropdownMenuProps> {
 
-const DropdownMenu = (props: DropdownMenuProps) => {
-  const {
-    // remove this from ...rest
-    handleClose,
-    handleOpen,
-    setOpenState,
-    handleToggle,
-    // using
-    className,
-    isOpen,
-    children
-  } = props
+  displayName = 'DropdownMenu'
 
-  return (
-    <div
-      className={classnames(cls['dropdown-menu'], className, {
-        [cls['show']]: isOpen,
-      })}
-    >
-      {children}
-    </div>
-  )
+  ref = React.createRef<HTMLDivElement>()
+
+  componentDidUpdate() {
+    console.log(this.ref.current)
+
+    if (this.ref.current) {
+      const rect = this.ref.current.getBoundingClientRect()
+      console.log(rect)
+      const windowHeight = window.innerHeight
+
+      const elBottom = rect.height + rect.top
+      const isBottomVisible = windowHeight > elBottom;
+
+      console.log('isBottomVisible', isBottomVisible)
+    }
+  }
+
+  render() {
+
+    const {
+      // remove this from ...rest
+      handleClose,
+      handleOpen,
+      setOpenState,
+      handleToggle,
+      // using
+      className,
+      isOpen,
+      children
+    } = this.props
+
+    return (
+      <div
+        ref={this.ref}
+        className={classnames(cls['dropdown-menu'], className, {
+          [cls['show']]: isOpen,
+        })}
+      >
+        {children}
+      </div>
+    )
+  }
 }
-
-DropdownMenu.displayName = 'DropdownMenu'
 
 export default DropdownMenu;

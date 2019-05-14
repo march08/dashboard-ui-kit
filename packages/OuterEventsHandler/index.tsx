@@ -43,7 +43,7 @@ export class OuterEventsHandler extends React.PureComponent<OuterEventsHandlerPr
 
   componentDidUpdate(prevProps: OuterEventsHandlerProps) {
     const { onOuterEvent } = this.props;
-    if (typeof onOuterEvent !== 'function' && prevProps.onOuterEvent !== onOuterEvent) {
+    if (typeof onOuterEvent === 'function' && prevProps.onOuterEvent !== onOuterEvent) {
       this.removeListeners();
       this.bindListeners();
     } else if (typeof onOuterEvent !== 'function') {
@@ -73,6 +73,7 @@ export class OuterEventsHandler extends React.PureComponent<OuterEventsHandlerPr
 
     const isDescendantOfRoot =
       !!e.target && containerEl && containerEl.contains(e.target as Node);
+
     if (!isDescendantOfRoot) {
       onOuterEvent(e);
     }
@@ -93,6 +94,7 @@ export class OuterEventsHandler extends React.PureComponent<OuterEventsHandlerPr
       triggerOnWindowResize,
       triggerOnEsc
     } = this.props;
+
     if (typeof document !== 'undefined') {
       if (triggerOnEsc) {
         document.addEventListener('keydown', this.handleEscKeydown, true);

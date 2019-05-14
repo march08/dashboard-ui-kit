@@ -89,7 +89,28 @@
 
 .dropdown-toggle {
   background: $bg-primary;
-  border-color: $border-color-main
+  border-color: $border-color-main;
+  position: relative;
+  padding-right: 1.8rem;
+
+  &:after,
+  &:before {
+    color: $text-secondary;
+    display: flex;
+    font-size: .6rem;
+    content: "▸";
+    border: none;
+    position: absolute;
+    right: 10px;
+  }
+
+  &:after {
+    transform: translateY(-3px)rotate(270deg);
+  }
+
+  &:before {
+    transform: translateY(3px) rotateY(180deg) rotate(90deg);
+  }
 }
 
 .dropdown-item {
