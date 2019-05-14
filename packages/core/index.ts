@@ -15,4 +15,7 @@ export type TagProps<T extends AnyTag> = React.ComponentProps<T>
  */
 export type PropsWithTagProps<T extends AnyTag, Props = {}> = React.ComponentProps<T> & Props;
 
+
+export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
+
 export default () => { console.log('hello') }

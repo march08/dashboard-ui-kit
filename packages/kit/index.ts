@@ -7,6 +7,7 @@ export * from '@duik/widget-table';
 export * from '@duik/widget-header';
 export * from '@duik/widget-content';
 export * from '@duik/widget-container';
+export * from '@duik/dropdown';
 
 // utils
 export * from '@duik/create-simple-component';
@@ -23,3 +24,7 @@ export * from '@duik/core';
 export * from '@duik/checkbox';
 export * from '@duik/toggle';
 export * from '@duik/radio';
+
+
+// util components
+export * from '@duik/outer-events-handler'

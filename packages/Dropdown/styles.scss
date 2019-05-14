@@ -1,0 +1,99 @@
+@import '@duik/core/_vars.scss';
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  z-index: 500;
+
+  z-index: 50;
+  background: $bg-primary;
+  border: $border-default-darker;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  list-style: none;
+  min-width: 140px;
+
+  // default position
+  top: 100%;
+  margin-top: 4px;
+  right: 0;
+
+
+  &>* {
+    &:first-child {
+      border-top-left-radius: 4px !important;
+      border-top-right-radius: 4px !important;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: 4px !important;
+      border-bottom-right-radius: 4px !important;
+    }
+  }
+
+  &.show {
+    display: block;
+  }
+
+  &:after {
+    position: absolute;
+    content: '';
+    display: block;
+    left: -5px;
+    right: -5px;
+    top: -5px;
+    bottom: -5px;
+    background: transparent;
+    z-index: -1;
+  }
+
+  &.bottom-left {
+    top: calc(100% + 5px);
+    left: 0;
+    right: auto;
+  }
+
+  &.bottom-right {
+    top: calc(100% + 5px);
+    left: auto;
+    right: 0;
+  }
+
+  &.bottom-center {
+    top: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.top-left {
+    bottom: calc(100% + 5px);
+    left: 0;
+    right: auto;
+  }
+
+  &.top-right {
+    bottom: calc(100% + 5px);
+    left: auto;
+    right: 0;
+  }
+
+  &.top-center {
+    bottom: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.dropdown-item {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}

@@ -17,7 +17,8 @@ const form = [
 const components = [
   'Button',
   'ButtonGroup',
-  'Icon'
+  'Icon',
+  'Dropdown'
 ]
 const guides = [
   'UseInCreateReactApp',
