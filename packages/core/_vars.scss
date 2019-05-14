@@ -112,7 +112,9 @@ $textLight: #CECFD2;
 
 // border colors
 $borderColor: #EAEDF3;
+$borderColorBase: #EAEDF3;
 $borderColorDarker: #D8DCE6;
+$borderColorMain: #D8DCE6;
 $borderColorDark: #2E2E33;
 
 
@@ -121,6 +123,8 @@ $borderColorDark: #2E2E33;
   --text-base: #{$textBase};
   --text-secondary: #{$textSecondary};
   --border-color: #{$borderColor};
+  --border-color-base: #{$borderColorBase};
+  --border-color-main: #{$borderColorDarker};
   --border-color-darker: #{$borderColorDarker};
   --border-color-dark: #{$borderColorDark};
   --border-color-secondary: #2D9C3C;
@@ -140,6 +144,8 @@ $text-main: var(--text-main);
 $text-base: var(--text-base);
 $text-secondary: var(--text-secondary);
 $border-color: var(--border-color);
+$border-color-base: var(--border-color-base);
+$border-color-main: var(--border-color-main);
 $border-color-darker: var(--border-color-darker);
 $border-color-dark: var(--border-color-dark);
 $border-color-secondary: var(--border-color-secondary);

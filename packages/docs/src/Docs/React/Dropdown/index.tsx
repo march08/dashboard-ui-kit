@@ -37,9 +37,10 @@ export const ReactDocsButton = () => {
         {
           content: (
             <Dropdown>
-              {({ }) => (
+              {({ handleClose }) => (
                 <>
-                  <DropdownItem>Test</DropdownItem>
+                  <DropdownItem>Item 1</DropdownItem>
+                  <DropdownItem onClick={handleClose}>Item 2 with close</DropdownItem>
                 </>
               )}
             </Dropdown>

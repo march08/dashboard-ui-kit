@@ -15,10 +15,10 @@
   border-radius: 4px;
   list-style: none;
   min-width: 140px;
+  padding: 0;
 
   // default position
   top: 100%;
-  margin-top: 4px;
   right: 0;
 
 
@@ -51,49 +51,73 @@
   }
 
   &.bottom-left {
-    top: calc(100% + 5px);
+    top: calc(100% + 3px);
     left: 0;
     right: auto;
   }
 
   &.bottom-right {
-    top: calc(100% + 5px);
+    top: calc(100% + 3px);
     left: auto;
     right: 0;
   }
 
   &.bottom-center {
-    top: calc(100% + 5px);
+    top: calc(100% + 3px);
     left: 50%;
     transform: translateX(-50%);
   }
 
   &.top-left {
-    bottom: calc(100% + 5px);
+    bottom: calc(100% + 3px);
     left: 0;
     right: auto;
   }
 
   &.top-right {
-    bottom: calc(100% + 5px);
+    bottom: calc(100% + 3px);
     left: auto;
     right: 0;
   }
 
   &.top-center {
-    bottom: calc(100% + 5px);
+    bottom: calc(100% + 3px);
     left: 50%;
     transform: translateX(-50%);
   }
 }
 
-.dropdown-item {
-  border-radius: 0;
-  border-left: none;
-  border-right: none;
-  border-top: none;
+.dropdown-toggle {
+  background: $bg-primary;
+  border-color: $border-color-main
+}
 
-  &:last-child {
-    border-bottom: none;
+.dropdown-item {
+
+  background: $bg-primary;
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom-color: $border-color-base;
+    color: $text-main;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    background: $bg-base;
+  }
+
+  &:active {
+    transform: translateY(1px);
   }
 }
