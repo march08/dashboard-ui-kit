@@ -11,7 +11,7 @@ import { useOpenState, OpenStateControls } from '@duik/use-open-state'
 import { AnyTag } from '@duik/core'
 
 import DropdownMenu from './DropdownMenu';
-import DropdownButton from './DropdownButton';
+import DropdownButton, { DropdownButtonProps } from './DropdownButton';
 
 export * from './DropdownButton'
 export * from './DropdownItem'
@@ -32,9 +32,9 @@ export enum DropdownMenuPosition {
 
 export type DropdownProps<BC extends AnyTag, MC extends AnyTag> = OuterEventsHandlerProps & {
   ButtonComponent?: BC;
-  buttonComponentProps?: React.ComponentProps<BC> & OpenStateControls;
+  buttonProps?: React.ComponentProps<BC>;
   MenuComponent?: MC;
-  menuComponentProps?: React.ComponentProps<MC> & OpenStateControls;
+  menuProps?: React.ComponentProps<MC>;
   menuPosition?: DropdownMenuPosition,
   buttonText?: React.ReactNode,
   block?: boolean,
@@ -49,7 +49,7 @@ type Children =
  */
 
 export function Dropdown<
-  BC extends AnyTag = 'button',
+  BC extends AnyTag = DropdownButton,
   MC extends AnyTag = 'div'
 >(props: DropdownProps<BC, MC>) {
 
@@ -57,9 +57,9 @@ export function Dropdown<
 
   const {
     ButtonComponent = DropdownButton,
-    buttonComponentProps = {},
+    buttonProps = {},
     MenuComponent = DropdownMenu,
-    menuComponentProps = {},
+    menuProps = {},
     children,
     menuPosition = DropdownMenuPosition["bottom-right"],
     buttonText,
@@ -79,12 +79,12 @@ export function Dropdown<
     >
       <ButtonComponent
         {...openControls}
-        {...buttonComponentProps}>
+        {...buttonProps}>
         {buttonText}
       </ButtonComponent>
       <MenuComponent
-        {...menuComponentProps}
-        className={classnames((menuComponentProps as any).className, {
+        {...menuProps}
+        className={classnames((menuProps as any).className, {
           [cls[menuPosition]]: menuPosition,
         })}
         {...openControls}

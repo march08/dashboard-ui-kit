@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Dropdown, DropdownItem } from '@duik/it'
+import { Button, Dropdown, DropdownItem, DropdownMenuPosition, DropdownButtonProps } from '@duik/it'
 
 import { Icon } from '@duik/icon'
 
@@ -9,7 +9,13 @@ import { Icon } from '@duik/icon'
 import { DocsContentPage, ExampleTable, PageContent, ImportPath } from '../../components'
 
 import PropTable from './PropTable'
-import CustomRendering from './CustomRendering';
+
+
+const ExampleButton = ({ handleToggle, handleClose, handleOpen, setOpenState, isOpen }: DropdownButtonProps) => (
+  <Button success onClick={handleToggle} square>
+    <Icon>edit</Icon>
+  </Button>
+)
 
 
 export const ReactDocsButton = () => {
@@ -17,68 +23,140 @@ export const ReactDocsButton = () => {
   return (
     <DocsContentPage>
       <PageContent data={[
-        { id: 'appearence', label: 'Appearence' },
-        { id: 'sizes', label: 'Sizes' },
-        { id: 'states', label: 'States' },
-        { id: 'custom-rendering', label: 'Custom DOM Rendering' },
-        { id: 'with-icons', label: 'With Icons' },
-        { id: 'props', label: 'Prop Table' },
-        { id: 'migration', label: 'Migration from Dashboard UI Kit 3' },
+        { id: 'basics', label: 'Basic Usage' },
+        { id: 'control', label: 'Dropdown UI state control' },
+        { id: 'dropdown-content', label: 'Custom content in the dropdown' },
+        { id: 'button', label: 'Custom Button Element' },
       ]} />
-      <h1>Button</h1>
-      <ImportPath name="Button" />
+      <h1>Dropdown</h1>
+      <ImportPath name="Dropdown" subComponents={['DropdownItem', 'DropdownMenu']} />
       <br />
       <p>Use buttons in forms, as links with many varieties.</p>
 
-      <h2 id="appearence">Appearence</h2>
+      <h2 id="basics">Basic Usage</h2>
       <p>You can control apperence by simply passing boolean props to render some predefined stylings or you can pass your className or style props as well.</p>
 
       <ExampleTable fixed data={[
         {
           content: (
+            <Dropdown menuPosition={DropdownMenuPosition["bottom-left"]} buttonText={<strong>Click me</strong>}>
+              <DropdownItem>Item 1</DropdownItem>
+              <DropdownItem>Item 2</DropdownItem>
+            </Dropdown>
+          )
+        }
+      ]} />
+      <h2 id="control">Better control over the dropdown</h2>
+      <p>It wouldn't be really useful if you cannot control the state of the dropdown, for example you want to close the dropdown on selecting an option. Surely this could be implemented directly, but with this approach, we are giving you a better control over the state rather than enforcing the behaviour, especially when there are many use cases where you don't really want to close the dropdown.</p>
+      <ExampleTable data={[
+        {
+          content: (
             <Dropdown>
-              {({ handleClose }) => (
+              {({ handleClose, handleOpen, handleToggle, setOpenState, isOpen }) => (
                 <>
                   <DropdownItem>Item 1</DropdownItem>
                   <DropdownItem onClick={handleClose}>Item 2 with close</DropdownItem>
                 </>
               )}
             </Dropdown>
+          ),
+          code: `<Dropdown>
+  {({ handleClose, handleOpen, handleToggle, setOpenState, isOpen }) => (
+    <>
+      <DropdownItem>Item 1</DropdownItem>
+      <DropdownItem onClick={handleClose}>Item 2 with close</DropdownItem>
+    </>
+  )}
+</Dropdown>`
+        },
+      ]} />
+
+      <p>As it is clear from example, children can be a classic ReactNode or in this case a functional component format <code>{`(props) => <>Something</>`}</code> which can accept several handlers. In most cases, you want to use handleClose or handleToggle, but for conveniency, other handlers are exposed as well. </p>
+      <p>The handlers are documented in <Link to="/docs/react/use-open-state">useOpenState</Link> hook documentation, which is used for handling the state of the dropdown.</p>
+
+      <h2 id="dropdown-content">Rendering Custom Content</h2>
+      <p>In the previous examples, only <code>DropdownItem</code> has been used. However this doesn't mean that <code>Dropdown</code> limited to it. Let's render custom dropdown content.</p>
+      <ExampleTable data={[
+        {
+          content: (
+            <Dropdown buttonText="Upgrade Account" menuPosition={DropdownMenuPosition["bottom-left"]} >
+              {({ handleClose, handleOpen, handleToggle, setOpenState, isOpen }) => (
+                <div style={{ padding: 30, minWidth: 360 }}>
+                  <h3>Would you like to upgrade your account for $10?</h3>
+                  <div>
+                    <Button primary onClick={handleClose}>Upgrade to PRO</Button>&nbsp;
+                    <Button onClick={handleClose}>Maybe later</Button>
+                  </div>
+                </div>
+              )}
+            </Dropdown>
+          ),
+          code: `<Dropdown
+  buttonText="Upgrade Account"
+  menuPosition="bottom-left"
+>
+  {({ handleClose, handleOpen, handleToggle, setOpenState, isOpen }) => (
+    <div style={{ padding: 30, minWidth: 360 }}>
+      <h3>Would you like to upgrade your account for $10?</h3>
+      <div>
+        <Button primary onClick={handleClose}>Upgrade to PRO</Button>
+        <Button onClick={handleClose}>Maybe later</Button>
+      </div>
+    </div>
+  )}
+</Dropdown>`
+        },
+      ]} />
+
+
+      <h2 id="button">Custom Button Component</h2>
+      <p>You have 2 ways how to customize the button.</p>
+      <p>Simpler way, the clickable button component is <Link to="/docs/react/button">@duik/Button</Link> in it's core. You can customize it by passing props to it with "buttonProps". See example below.</p>
+
+      <ExampleTable data={[
+        {
+          content: (
+            <Dropdown
+              buttonProps={{
+                primary: true,
+              }}
+              menuPosition={DropdownMenuPosition["bottom-left"]}>
+              <DropdownItem>Item to click</DropdownItem>
+            </Dropdown>
           )
         },
-        { content: <Button transparent>Transparent</Button> },
-        { content: <Button clear>Clear</Button> },
-        { content: <Button primary>Primary</Button> },
-        { content: <Button success>Success</Button> },
-        { content: <Button danger>Danger</Button> },
-      ]} />
-      <h2 id="sizes">Sizes &amp; Shapes</h2>
-      <p>Same as appearence, you can use set of predefined boolean props to quickly achieve the result</p>
-
-      <ExampleTable fixed data={[
-        { content: <Button sm>Small Button</Button> },
-        { content: <Button>Default Size</Button> },
-        { content: <Button lg>Large Button</Button> },
-        { content: <Button square><Icon>rocket</Icon></Button> },
-      ]} />
-      <h2 id="states">States</h2>
-      <ExampleTable fixed data={[
-        { content: <Button disabled>Disabled</Button> },
-        { content: <Button loading>Loading</Button> },
-        { content: <Button loading primary>Loading primary</Button> },
       ]} />
 
+      <p>You can also define totally new Button component and pass it to the <code>Dropdown</code>! Your component should accept <Link to="/docs/react/use-open-state">useOpenState</Link> handlers. See example below.</p>
 
-      <CustomRendering />
+      <ExampleTable data={[
+        {
+          content: (
+            <Dropdown
+              ButtonComponent={ExampleButton}
+              menuPosition={DropdownMenuPosition["bottom-left"]}>
+              <DropdownItem>Item to click</DropdownItem>
+            </Dropdown>
+          ),
+          code: `import { DropdownButtonProps, Button } from '@duik/it'
 
-      <h2 id="with-icons">Button with Icons</h2>
-      <p>You can easily compose buttons with icons. You can pass Icon (or any other component) as a children of the Button component. Check the details about importing and using <Link to="/docs/react/icon">Icon component here</Link>.</p>
+// Defining button (TS)
+const ExampleButton = ({
+  // useOpenState hook handlers
+  handleToggle, handleClose, handleOpen, setOpenState, isOpen
+}: DropdownButtonProps) => (
+  <Button success onClick={handleToggle} square>
+    <Icon>edit</Icon>
+  </Button>
+)
 
-      <ExampleTable fixed data={[
-        { content: <Button primary><Icon mr>message</Icon> With Icon on left</Button> },
-        { content: <Button primary>With Icon on right<Icon ml>attachment</Icon></Button> },
-        { content: <Button success square><Icon>check</Icon></Button> },
+// Using custom button
+<Dropdown ButtonComponent={ExampleButton}>
+  <DropdownItem>Item to click</DropdownItem>
+</Dropdown>`
+        },
       ]} />
+
 
       <PropTable />
 

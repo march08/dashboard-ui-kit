@@ -6,5 +6,7 @@ export const jsxToString = (node: React.ReactNode, options?: ReactElementToJSXSt
   return reactElToString(node, {
     ...options,
     showDefaultProps: false,
+    showFunctions: true,
+    maxInlineAttributesLineLength: 70,
   })
 }

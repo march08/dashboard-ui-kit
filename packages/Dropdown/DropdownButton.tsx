@@ -16,7 +16,7 @@ export type DropdownButtonProps<P extends {} = {}> =
   & JSX.IntrinsicElements['button']
   & P
 
-const DropdownButton = (props: DropdownButtonProps) => {
+export const DropdownButton = (props: DropdownButtonProps) => {
   const {
     // remove this from ...rest
     handleClose,

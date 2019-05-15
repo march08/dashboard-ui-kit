@@ -1,22 +1,24 @@
 import * as React from 'react';
-import { camelToSnake } from 'utils'
+import { camelToSnake, combineText } from 'utils'
 
 export type ImportPathProps = {
   name: string,
-  isIncludedInKit?: boolean
+  isIncludedInKit?: boolean,
+  subComponents?: string[],
 }
 
 export const ImportPath = (props: ImportPathProps) => {
-  const { name, isIncludedInKit = true } = props
+  const { name, subComponents, isIncludedInKit = true } = props
 
   return (
     <div style={{ marginBottom: 10 }}>
       {isIncludedInKit ? (
         <>
-          <code>{`import { ${name} } from '@duik/it'`}</code> `or `
+          <code style={{ marginBottom: 5 }}>{`import { ${name}${subComponents ? `, ${combineText(subComponents, ', ')}` : ''} } from '@duik/it'`}</code>
+          <br />
         </>
       ) : null}
-      <code>{`import ${name} from '@duik/${camelToSnake(name)}'`}</code>
+      <code>{`import ${name}${subComponents ? `, { ${combineText(subComponents, ', ')} } ` : ''} from '@duik/${camelToSnake(name)}'`}</code>
     </div>
 
   )

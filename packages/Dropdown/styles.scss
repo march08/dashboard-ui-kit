@@ -95,7 +95,8 @@
 
   &:after,
   &:before {
-    color: $text-secondary;
+    color: inherit;
+    opacity: .5;
     display: flex;
     font-size: .6rem;
     content: "▸";

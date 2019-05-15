@@ -8,7 +8,8 @@ import cls from './docspage.module.scss'
 export type ExampleTableProps = {
   fixed?: boolean,
   data?: {
-    content: React.ReactNode
+    content: React.ReactNode,
+    code?: string,
   }[]
 }
 
@@ -26,7 +27,7 @@ export const ExampleTable = (props: ExampleTableProps) => {
                 </td>
                 <td>
                   <Code>
-                    {jsxToString(item.content)}
+                    {item.code || jsxToString(item.content)}
                   </Code>
                 </td>
               </tr>
