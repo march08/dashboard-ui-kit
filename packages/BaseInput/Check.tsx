@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import * as cls from './styles.scss'
+import cls from './styles.scss'
 
 /* eslint-disable max-len */
 export const CheckboxIcon = () => (

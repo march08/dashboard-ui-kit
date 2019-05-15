@@ -11,7 +11,7 @@ import * as React from 'react';
 import classnames from 'classnames';
 import { Omit } from '@duik/core'
 
-import * as cls from './styles.scss';
+import cls from './styles.scss';
 
 export type OuterEventsHandlerProps = Omit<JSX.IntrinsicElements['div'], 'ref'> & {
   onOuterEvent?: EventListenerOrEventListenerObject | null,

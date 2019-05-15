@@ -8,7 +8,7 @@ import classnames from 'classnames'
 import { Button, ButtonPropsBase } from '@duik/Button'
 
 import { OpenStateControls } from '@duik/use-open-state'
-import * as cls from './styles.scss'
+import cls from './styles.scss'
 
 export type DropdownButtonProps<P extends {} = {}> =
   & OpenStateControls

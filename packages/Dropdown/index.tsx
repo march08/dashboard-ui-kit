@@ -18,7 +18,7 @@ export * from './DropdownItem'
 export * from './DropdownMenu'
 
 
-import * as cls from './styles.scss';
+import cls from './styles.scss';
 
 
 export enum DropdownMenuPosition {

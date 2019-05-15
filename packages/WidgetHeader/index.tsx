@@ -1,5 +1,5 @@
 import createSimpleComponent from '@duik/create-simple-component';
-import * as cls from './styles.scss';
+import cls from './styles.scss';
 
 export const WidgetHeader = createSimpleComponent({
   displayName: 'WidgetHeader',

@@ -1,7 +1,7 @@
 import * as React from 'react'
 import classnames from 'classnames'
 
-import * as cls from './styles.scss'
+import cls from './styles.scss'
 
 export type WidgetProps = JSX.IntrinsicElements['div'] & {
   padding?: boolean,

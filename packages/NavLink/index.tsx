@@ -2,7 +2,7 @@ import * as React from 'react'
 import classnames from 'classnames'
 import { AnyTag, PropsWithTagProps } from '@duik/core'
 
-import * as cls from './styles.scss'
+import cls from './styles.scss'
 
 type NavLinkBaseProps = {
   className?: string,

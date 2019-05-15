@@ -1,8 +1,17 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "module": "commonjs",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "module": "esnext",
     "noImplicitAny": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
     "strictNullChecks": true,
     "declaration": true,
     "noEmit": false,
