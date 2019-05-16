@@ -25,8 +25,10 @@ export const ReactDocsButton = () => {
       <PageContent data={[
         { id: 'basics', label: 'Basic Usage' },
         { id: 'control', label: 'Dropdown UI state control' },
+        { id: 'menu-position', label: 'Positioning the dropdown menu' },
         { id: 'dropdown-content', label: 'Custom content in the dropdown' },
-        { id: 'button', label: 'Custom Button Element' },
+        { id: 'button', label: 'Custom button component' },
+        { id: 'props', label: 'Prop Table' },
       ]} />
       <h1>Dropdown</h1>
       <ImportPath name="Dropdown" subComponents={['DropdownItem', 'DropdownMenu']} />
@@ -39,9 +41,10 @@ export const ReactDocsButton = () => {
       <ExampleTable fixed data={[
         {
           content: (
-            <Dropdown menuPosition={DropdownMenuPosition["bottom-left"]} buttonText={<strong>Click me</strong>}>
+            <Dropdown buttonText={<strong>Click me</strong>}>
               <DropdownItem>Item 1</DropdownItem>
               <DropdownItem>Item 2</DropdownItem>
+              <DropdownItem>Item 1</DropdownItem>
             </Dropdown>
           )
         }
@@ -74,12 +77,47 @@ export const ReactDocsButton = () => {
       <p>As it is clear from example, children can be a classic ReactNode or in this case a functional component format <code>{`(props) => <>Something</>`}</code> which can accept several handlers. In most cases, you want to use handleClose or handleToggle, but for conveniency, other handlers are exposed as well. </p>
       <p>The handlers are documented in <Link to="/docs/react/use-open-state">useOpenState</Link> hook documentation, which is used for handling the state of the dropdown.</p>
 
+      <h2 id="menu-position">Menu position</h2>
+      <p>By default, the menu position is set to bottom-right (bottom from the click element, overflowing to the right). You can change this by passing <code>menuPosition</code> prop. These values are supported</p>
+      <ul style={{ paddingLeft: 30 }}>
+        <li>bottom-left</li>
+        <li>bottom-center</li>
+        <li>bottom-right</li>
+        <li>top-left</li>
+        <li>top-center</li>
+        <li>top-right</li>
+      </ul>
+      <p>For Typescript, enum <code>DropdownMenuPosition</code> is available.</p>
+      <p>If the menu doesn't fit the window viewport, the default menu component will try to reposition itself automatically. You would need to perform this action by yourself if you use custom <code>MenuComponent</code> as a prop.</p>
+
+      <ExampleTable data={[
+        {
+          content: (
+            <Dropdown
+              buttonText="Bottom Left"
+              menuPosition={DropdownMenuPosition["bottom-left"]}>
+              <DropdownItem>Long Item to click</DropdownItem>
+            </Dropdown>
+          )
+        },
+        {
+          content: (
+            <Dropdown
+              buttonText="Top Center"
+              menuPosition={DropdownMenuPosition["top-center"]}>
+              <DropdownItem>Long Item to click</DropdownItem>
+            </Dropdown>
+          )
+        },
+      ]}
+      />
+
       <h2 id="dropdown-content">Rendering Custom Content</h2>
       <p>In the previous examples, only <code>DropdownItem</code> has been used. However this doesn't mean that <code>Dropdown</code> limited to it. Let's render custom dropdown content.</p>
       <ExampleTable data={[
         {
           content: (
-            <Dropdown buttonText="Upgrade Account" menuPosition={DropdownMenuPosition["bottom-left"]} >
+            <Dropdown buttonText="Upgrade Account" menuPosition={DropdownMenuPosition["top-right"]} >
               {({ handleClose, handleOpen, handleToggle, setOpenState, isOpen }) => (
                 <div style={{ padding: 30, minWidth: 360 }}>
                   <h3>Would you like to upgrade your account for $10?</h3>
@@ -134,7 +172,7 @@ export const ReactDocsButton = () => {
           content: (
             <Dropdown
               ButtonComponent={ExampleButton}
-              menuPosition={DropdownMenuPosition["bottom-left"]}>
+              menuPosition={DropdownMenuPosition["top-right"]}>
               <DropdownItem>Item to click</DropdownItem>
             </Dropdown>
           ),
@@ -159,9 +197,6 @@ const ExampleButton = ({
 
 
       <PropTable />
-
-      <h2 id="migration">Migration from Dashboard UI Kit 3</h2>
-      <p>Icon properties are removed in favor to use icons as children instead. "iconOnly" property rendered button in square shape. Use "square" property instead.</p>
     </DocsContentPage>
   )
 }

@@ -79,15 +79,14 @@ export function Dropdown<
     >
       <ButtonComponent
         {...openControls}
-        {...buttonProps}>
+        {...buttonProps}
+      >
         {buttonText}
       </ButtonComponent>
       <MenuComponent
         {...menuProps}
-        className={classnames((menuProps as any).className, {
-          [cls[menuPosition]]: menuPosition,
-        })}
         {...openControls}
+        menuPosition={menuPosition}
       >
         {typeof children === 'function' ? children(openControls) : children}
       </MenuComponent>

@@ -55,11 +55,7 @@ const itemProps = [
     desc: 'Button background is transparent with borders.',
   }),
   properties.bool({
-    prop: 'transparent',
-    desc: 'Button background is transparent with borders.',
-  }),
-  properties.bool({
-    prop: 'isLoading',
+    prop: 'isLoading | loading',
     desc: 'Will render loading state',
   }),
   // icon properties

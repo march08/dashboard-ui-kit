@@ -7,8 +7,6 @@
 .dropdown-menu {
   position: absolute;
   z-index: 500;
-
-  z-index: 50;
   background: $bg-primary;
   border: $border-default-darker;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.08);
@@ -16,6 +14,11 @@
   list-style: none;
   min-width: 140px;
   padding: 0;
+  margin: 0;
+  float: none;
+  max-height: 240px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 
   // default position
   top: 100%;
@@ -38,52 +41,49 @@
     display: block;
   }
 
-  &:after {
-    position: absolute;
-    content: '';
-    display: block;
-    left: -5px;
-    right: -5px;
-    top: -5px;
-    bottom: -5px;
-    background: transparent;
-    z-index: -1;
+
+  &.bottom-right {
+    top: calc(100% + 3px);
+    left: 0;
+    right: auto;
+    bottom: auto;
   }
 
   &.bottom-left {
     top: calc(100% + 3px);
-    left: 0;
-    right: auto;
-  }
-
-  &.bottom-right {
-    top: calc(100% + 3px);
     left: auto;
     right: 0;
+    bottom: auto;
   }
 
   &.bottom-center {
     top: calc(100% + 3px);
     left: 50%;
-    transform: translateX(-50%);
-  }
-
-  &.top-left {
-    bottom: calc(100% + 3px);
-    left: 0;
     right: auto;
+    bottom: auto;
+    transform: translateX(-50%);
   }
 
   &.top-right {
     bottom: calc(100% + 3px);
+    left: 0;
+    right: auto;
+    top: auto;
+  }
+
+  &.top-left {
+    bottom: calc(100% + 3px);
     left: auto;
     right: 0;
+    top: auto;
   }
 
   &.top-center {
     bottom: calc(100% + 3px);
     left: 50%;
     transform: translateX(-50%);
+    top: auto;
+    right: auto;
   }
 }
 
