@@ -1,103 +1,87 @@
 import * as React from 'react';
 import { Widget } from '@duik/it/index'
+import { Link } from 'react-router-dom'
 
 
 import { PropTable, properties } from '../../components'
 
 
 const itemProps = [
-  properties.children(),
-  properties.className(),
+  properties.children({
+    propType: 'React.ReactNode or React.FunctionalComponent',
+    desc: (
+      <>You can pass regular react node or a render prop which can accepts several handlers to control the UI state. Your functional component will receive <Link to="/docs/react/use-open-state">useOpenState</Link> controls as props.
+      </>
+    )
+  }),
+  properties.className({
+    desc: <>Passed to the wrapping element <Link to="/docs/react/outer-events-handler">OuterEventsHandler</Link></>
+
+  }),
+  {
+    prop: 'buttonText',
+    propType: 'React.ReactNode',
+    defaultValue: '"Actions"',
+    desc: 'Text or node you want to appear in the button.'
+  },
   properties.Component({
-    defaultValue: '"button"',
+    prop: 'ButtonComponent',
+    propType: 'React.FunctionalComponent',
+    defaultValue: 'DropdownButton',
+    desc: (
+      <>You can pass your custom button component. Your component will receive set of <Link to="/docs/react/use-open-state">useOpenState</Link> controls as props.</>
+    )
   }),
   {
-    prop: 'type',
-    propType: 'string',
+    prop: 'buttonProps',
+    propType: 'Props of ButtonComponent',
     required: false,
-    defaultValue: '"button"',
-    desc: 'Applicable for button or input, otherwise button will be omitted.',
-  },
-  properties.bool({
-    prop: 'isExpanded | block',
-    desc: 'Applies width: 100% and extra styling cases when used with icons etc.',
-  }),
-  properties.bool({
-    prop: 'xs | sm',
-    desc: 'Renders smaller button with height 30px',
-  }),
-  properties.bool({
-    prop: 'lg',
-    desc: 'Renders larger button with height 50px',
-  }),
-  properties.bool({
-    prop: 'primary',
-    desc: 'Has blue color',
-  }),
-  properties.bool({
-    prop: 'error | danger',
-    desc: 'Has red color',
-  }),
-  properties.bool({
-    prop: 'success',
-    desc: 'Has green color',
-  }),
-  properties.bool({
-    prop: 'dark',
-    desc: 'Has dark color',
-  }),
-  properties.bool({
-    prop: 'clear',
-    desc: 'White with light shadow.',
-  }),
-  properties.bool({
-    prop: 'transparent',
-    desc: 'Button background is transparent with borders.',
-  }),
-  properties.bool({
-    prop: 'transparent',
-    desc: 'Button background is transparent with borders.',
-  }),
-  properties.bool({
-    prop: 'isLoading',
-    desc: 'Will render loading state',
-  }),
-  // icon properties
-  {
-    prop: 'icon',
-    propType: 'DEPRECATED',
-    required: false,
-    defaultValue: 'null',
-    desc: 'Pass your icon as children instead',
+    desc: 'This comes handy if you want to pass some props to the button without defining a new ButtonComponent, such as className etc.'
   },
   {
-    prop: 'iconRight',
-    propType: 'DEPRECATED',
+    prop: 'menuPosition',
+    propType: 'DropdownMenuPosition',
     required: false,
-    defaultValue: 'false',
-    desc: 'Pass your icon as children instead',
+    defaultValue: '"bottom-right"',
+    desc: <>See <Link to="#menu-position">Menu Positioning</Link> for more details</>
   },
+  properties.Component({
+    prop: 'MenuComponent',
+    propType: 'React.FunctionalComponent',
+    defaultValue: 'DropdownButton',
+    desc: (
+      <>You can pass your custom menu component. Your component will receive set of <Link to="/docs/react/use-open-state">useOpenState</Link> controls as props.</>
+    )
+  }),
   {
-    prop: 'iconOnly',
-    propType: 'DEPRECATED',
+    prop: 'menuProps',
+    propType: 'Props of MenuComponent',
     required: false,
-    defaultValue: 'false',
-    desc: 'Use "square" property to render squared shape instead',
+    desc: 'This comes handy if you want to pass some props to the button without defining a new MenuComponent, such as className etc.'
   },
-  properties.rest(),
+
+  properties.rest({
+    desc: (
+      <>Other properties are passed down to the wrapping element <Link to="/docs/react/outer-events-handler">OuterEventsHandler</Link></>
+    )
+  }),
 ]
 
 
-export const ReactDocsButton = () => {
+export const PropTableDropdown = () => {
 
   return (
     <>
-      <h2 id="props">Prop table</h2>
+      <h2 id="props-dropdown">Dropdown Props</h2>
       <Widget>
         <PropTable itemProps={itemProps} />
       </Widget >
+
+      <h2 id="props-dropdown-item">DropdownItem Props</h2>
+      <p>DropdownItem is just a styled <Link to="/docs/react/button">Button</Link> component and it supports all the props that are accepted by the Button, including appearence, sizes, Component prop and others.</p>
     </>
   )
 }
 
-export default ReactDocsButton;
+export default PropTableDropdown;
+

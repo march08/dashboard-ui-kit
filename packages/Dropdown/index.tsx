@@ -37,7 +37,6 @@ export type DropdownProps<BC extends AnyTag, MC extends AnyTag> = OuterEventsHan
   menuProps?: React.ComponentProps<MC>;
   menuPosition?: DropdownMenuPosition,
   buttonText?: React.ReactNode,
-  block?: boolean,
 } & Children;
 
 type Children =
@@ -64,16 +63,13 @@ export function Dropdown<
     menuPosition = DropdownMenuPosition["bottom-right"],
     buttonText,
     className,
-    block,
     ...rest
   } = props;
 
   return (
 
     <OuterEventsHandler
-      className={classnames(cls['dropdown'], className, {
-        [cls.block]: block,
-      })}
+      className={classnames(cls['dropdown'], className)}
       onOuterEvent={openControls.isOpen ? openControls.handleToggle : null}
       {...rest}
     >

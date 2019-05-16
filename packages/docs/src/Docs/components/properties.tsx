@@ -55,13 +55,16 @@ export const properties = {
       </span>),
     ...data,
   }),
-  rest: (data?: ReactDocsPropertyOptional) => ({
-    prop: '...rest',
-    propType: 'any',
-    required: false,
-    desc: 'Other properties are passed down to the wrapping element',
-    ...data,
-  }),
+  rest: (data?: ReactDocsPropertyOptional) => {
+    console.log(data)
+    return {
+      prop: '...rest',
+      propType: 'any',
+      required: false,
+      desc: 'Other properties are passed down to the wrapping element',
+      ...data,
+    }
+  },
   bool: (data?: ReactDocsPropertyOptional & { prop: string }) => ({
     prop: '?',
     propType: 'boolean',

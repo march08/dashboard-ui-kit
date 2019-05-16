@@ -28,7 +28,8 @@ export const ReactDocsButton = () => {
         { id: 'menu-position', label: 'Positioning the dropdown menu' },
         { id: 'dropdown-content', label: 'Custom content in the dropdown' },
         { id: 'button', label: 'Custom button component' },
-        { id: 'props', label: 'Prop Table' },
+        { id: 'props-dropdown', label: 'Dropdown props' },
+        { id: 'props-dropdown-item', label: 'DropdownItem props' },
       ]} />
       <h1>Dropdown</h1>
       <ImportPath name="Dropdown" subComponents={['DropdownItem', 'DropdownMenu']} />
@@ -44,9 +45,14 @@ export const ReactDocsButton = () => {
             <Dropdown buttonText={<strong>Click me</strong>}>
               <DropdownItem>Item 1</DropdownItem>
               <DropdownItem>Item 2</DropdownItem>
-              <DropdownItem>Item 1</DropdownItem>
+              <DropdownItem Component={Link} to="#somewhere">Item as Link</DropdownItem>
             </Dropdown>
-          )
+          ),
+          code: `<Dropdown buttonText={<strong>Click me</strong>}>
+  <DropdownItem>Item 1</DropdownItem>
+  <DropdownItem>Item 2</DropdownItem>
+  <DropdownItem Component={Link} to="#somewhere">Item as Link</DropdownItem>
+</Dropdown>`
         }
       ]} />
       <h2 id="control">Better control over the dropdown</h2>
