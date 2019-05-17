@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@duik/it": "0.1.0",
+    "@duik/core": "0.1.0",
     "@duik/icon": "0.1.0",
     "@duik/utils": "0.1.0"
   },

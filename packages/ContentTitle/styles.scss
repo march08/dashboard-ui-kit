@@ -1,0 +1,5 @@
+@import "@duik/core/_vars.scss";
+
+.content-title {
+  @include content-title();
+}

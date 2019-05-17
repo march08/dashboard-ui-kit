@@ -191,3 +191,7 @@ body {
 pre {
   margin-bottom: 0;
 }
+
+label {
+  @include content-title();
+}

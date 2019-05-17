@@ -1,0 +1,10 @@
+.container-horizontal {
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+  min-width: 1px;
+
+  &>* {
+    min-width: 1px;
+  }
+}

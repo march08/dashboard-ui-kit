@@ -15,6 +15,15 @@ a.base:hover {
   font-weight: 400;
   position: relative;
 
+  // assume icon
+  &>i:first-child {
+    margin-left: -6px;
+  }
+
+  &>i:last-child {
+    margin-right: -6px;
+  }
+
 
   &:not(:disabled),
   &:not(:global(.disabled)),

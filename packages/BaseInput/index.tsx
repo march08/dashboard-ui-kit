@@ -23,7 +23,7 @@ export const BaseInput = ({
   const isRadio = type === 'radio'
   return (
     <label
-      className={classnames(cls['form-check'], className, {
+      className={classnames(cls['form-check'], 'form-group', className, {
         [cls.toggle]: toggle,
         [cls.radio]: type === 'radio',
       })}

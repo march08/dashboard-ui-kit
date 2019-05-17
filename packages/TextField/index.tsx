@@ -1,65 +1,76 @@
 import * as React from 'react'
 import classnames from 'classnames'
-import { AnyTag, PropsWithTagProps } from '@duik/core'
+import './styles.scss'
 
-import cls from './styles.scss'
-
-type NavLinkBaseProps = {
-  className?: string,
-  children?: React.ReactNode,
+export type TextFieldProps = JSX.IntrinsicElements['input'] & {
+  wrapperProps?: JSX.IntrinsicElements['div'],
+  label?: React.ReactNode,
+  clear?: boolean,
+  errorMessage?: React.ReactNode,
+  successMessage?: React.ReactNode,
+  leftEl?: React.ReactNode,
   rightEl?: React.ReactNode,
-  highlighted?: boolean,
-  icon?: React.ReactNode,
-  dark?: boolean
 }
 
+export const TextField = (props: TextFieldProps) => {
 
-export type NavLinkProps<T extends AnyTag> = PropsWithTagProps<T, NavLinkBaseProps & { Component?: T }>
+  const {
+    className,
+    wrapperProps,
+    label,
+    clear,
+    errorMessage,
+    successMessage,
+    leftEl,
+    rightEl,
+    id,
+    ...rest
+  } = props
 
-export function NavLink<T extends AnyTag>({
-  rightEl,
-  children,
-  className,
-  highlighted,
-  icon,
-  Component,
-  dark,
-  ...rest
-}: NavLinkProps<T>) {
   return (
-    <Component
-      className={classnames(cls['nav-link'], className, {
-        [cls.highlighted]: highlighted,
-        [cls['nav-link-dark']]: dark
-      })}
-      {...rest}
-    >
-      <span className={cls.text}>
-        {
-          icon && (
-            <span className={cls['left-el-wrapper']}>
-              {icon}
-            </span>
-          )
-        }
-        {children}
-      </span>
-      {rightEl && (
-        <span className={cls['right-el-wrapper']}>
-          {rightEl}
-        </span>
+    <>
+      {label && (
+        <label htmlFor={id}>
+          {label}
+        </label>
       )}
-    </Component>
+      <div
+        {...wrapperProps}
+        className={classnames(wrapperProps && wrapperProps.className, 'input-group', {
+          ['is-invalid']: errorMessage,
+          ['is-valid']: successMessage,
+          ['input-group-clear']: clear,
+        })}
+      >
+        {leftEl && (
+          <div className={'input-group-prepend'}>
+            {leftEl}
+          </div>
+        )}
+        <input
+          className={classnames(className, 'form-control')}
+          type="text"
+          id={id}
+          {...rest}
+        />
+        {rightEl && (
+          <div className={'input-group-append'}>
+            {rightEl}
+          </div>
+        )}
+      </div>
+      {errorMessage ? (
+        <div className={'invalid-feedback'}>
+          {errorMessage}
+        </div>
+      ) : null}
+      {successMessage ? (
+        <div className={'valid-feedback'}>
+          {successMessage}
+        </div>
+      ) : null}
+    </>
   )
 }
 
-NavLink.defaultProps = {
-  className: null,
-  rightEl: null,
-  highlighted: false,
-  icon: null,
-  children: null,
-  Component: 'a',
-}
-
-export default NavLink
+export default TextField

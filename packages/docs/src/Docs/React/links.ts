@@ -11,19 +11,20 @@ export type GeneratedLinkData = {
 const form = [
   'Checkbox',
   'Toggle',
-  'Radio'
+  'Radio',
+  'TextField'
 ]
 
 const components = [
   'Button',
   'ButtonGroup',
   'Icon',
-  'Dropdown'
+  'Dropdown',
 ]
 const guides = [
   'UseInCreateReactApp',
   'UseWithTypescript',
-  'CustomizingTheme',
+  'CustomizingTheme'
 ]
 const utilityComponents = [
   'OuterEventsHandler',

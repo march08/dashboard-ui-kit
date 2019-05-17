@@ -1,0 +1,10 @@
+@import '@duik/core/_vars.scss';
+
+.scroll-area {
+  min-height: 1px;
+  max-height: 100%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}

@@ -23,7 +23,15 @@ export * from '@duik/core';
 export * from '@duik/checkbox';
 export * from '@duik/toggle';
 export * from '@duik/radio';
-
+export * from '@duik/text-field';
 
 // util components
 export * from '@duik/outer-events-handler'
+
+// layout components
+export * from '@duik/scroll-area';
+export * from '@duik/container-vertical';
+export * from '@duik/container-horizontal';
+
+// typo
+export * from '@duik/content-title';

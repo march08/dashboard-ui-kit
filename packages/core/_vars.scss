@@ -110,6 +110,7 @@ $textBase: #6B6C6F;
 $textSecondary: #9EA0A5;
 $textLight: #CECFD2;
 
+
 // border colors
 $borderColor: #EAEDF3;
 $borderColorBase: #EAEDF3;
@@ -117,11 +118,13 @@ $borderColorDarker: #D8DCE6;
 $borderColorMain: #D8DCE6;
 $borderColorDark: #2E2E33;
 
+$textTertiary: #CECFD2;
 
 @mixin themeVars {
   --text-main: #{$textMain};
   --text-base: #{$textBase};
   --text-secondary: #{$textSecondary};
+  --text-tertiary: #{$textTertiary};
   --border-color: #{$borderColor};
   --border-color-base: #{$borderColorBase};
   --border-color-main: #{$borderColorDarker};
@@ -143,6 +146,7 @@ $borderColorDark: #2E2E33;
 $text-main: var(--text-main);
 $text-base: var(--text-base);
 $text-secondary: var(--text-secondary);
+$text-tertiary: var(--text-tertiary);
 $border-color: var(--border-color);
 $border-color-base: var(--border-color-base);
 $border-color-main: var(--border-color-main);
@@ -280,5 +284,18 @@ $btn-font-size-lg: 16px;
     width: $btn-height-lg;
     @include padding-x(0);
     justify-content: center;
+  }
+}
+
+@mixin content-title {
+  font-weight: 500;
+  font-size: .75rem;
+  color: $text-secondary;
+  line-height: 1.125rem;
+  text-transform: uppercase;
+  margin: 0;
+
+  &+* {
+    margin-top: .5rem;
   }
 }
