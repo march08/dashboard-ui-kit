@@ -43,8 +43,7 @@ export class OuterEventsHandler extends React.PureComponent<OuterEventsHandlerPr
 
   componentDidUpdate(prevProps: OuterEventsHandlerProps) {
     const { onOuterEvent } = this.props;
-    if (typeof onOuterEvent === 'function' && prevProps.onOuterEvent !== onOuterEvent) {
-      this.removeListeners();
+    if (typeof onOuterEvent === 'function') {
       this.bindListeners();
     } else if (typeof onOuterEvent !== 'function') {
       this.removeListeners();
@@ -58,7 +57,6 @@ export class OuterEventsHandler extends React.PureComponent<OuterEventsHandlerPr
   handleOuterActions = (e: Event): void => {
     const { onOuterEvent } = this.props;
     if (typeof onOuterEvent === 'function') {
-      e.preventDefault();
       onOuterEvent(e);
     }
   };
@@ -82,7 +80,6 @@ export class OuterEventsHandler extends React.PureComponent<OuterEventsHandlerPr
   handleEscKeydown = (e: KeyboardEvent): void => {
     const { onOuterEvent } = this.props;
     if (e.key === 'Escape' && typeof onOuterEvent === 'function') {
-      e.preventDefault();
       onOuterEvent(e);
     }
   }

@@ -39,7 +39,7 @@ export const ReactDocsButton = () => {
       <h2 id="basics">Basic Usage</h2>
       <p>You can control apperence by simply passing boolean props to render some predefined stylings or you can pass your className or style props as well.</p>
 
-      <ExampleTable fixed data={[
+      <ExampleTable data={[
         {
           content: (
             <Dropdown buttonText={<strong>Click me</strong>}>

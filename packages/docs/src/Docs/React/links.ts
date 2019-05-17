@@ -25,6 +25,9 @@ const guides = [
   'UseWithTypescript',
   'CustomizingTheme',
 ]
+const utilityComponents = [
+  'OuterEventsHandler',
+]
 
 function generateLinks(list: string[]): GeneratedLinkData[] {
   return list
@@ -50,6 +53,10 @@ export const generateMenuLinks = () => ([
   {
     title: 'Form',
     links: generateLinks(form)
+  },
+  {
+    title: 'Utility Components',
+    links: generateLinks(utilityComponents)
   }
 ])
 
