@@ -18,7 +18,7 @@
     }
 
     &.dark {
-      border-right: $border-default-dark;
+      border-right: $border-default-adverse;
     }
   }
 
@@ -28,13 +28,13 @@
     }
 
     &.dark {
-      border-left: $border-default-dark;
+      border-left: $border-default-adverse;
     }
   }
 
 
   &.dark {
-    background-color: $bg-primary-dark;
+    background-color: $bg-adverse-primary;
     --nav-link-color: white;
     --nav-text-main: white;
   }

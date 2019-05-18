@@ -45,8 +45,7 @@ $mediaTablet: "screen and (max-width: 1024px)";
 $mediaDesktopSmall: "screen and (max-width: 1366px)";
 $fontFamily: 'Roboto',
 sans-serif;
-// basic
-$bg: #FBFBFD;
+
 // colors
 $green: #38B249;
 $blue: #1665D8;
@@ -95,45 +94,30 @@ $colorPairs: (green, #38B249),
 // others
 $boxShadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
 
-
 // UIKIT
-
-$bg: #FBFBFD;
-$bgPrimary: #FFFFFF;
 $fontFamily: 'Roboto',
 sans-serif;
-$bgPrimaryDark: #252529;
 
-// Text colors
-$textMain: #3E3F42;
-$textBase: #6B6C6F;
-$textSecondary: #9EA0A5;
-$textLight: #CECFD2;
-
-
-// border colors
-$borderColor: #EAEDF3;
-$borderColorBase: #EAEDF3;
-$borderColorDarker: #D8DCE6;
-$borderColorMain: #D8DCE6;
-$borderColorDark: #2E2E33;
-
-$textTertiary: #CECFD2;
 
 @mixin themeVars {
-  --text-main: #{$textMain};
-  --text-base: #{$textBase};
-  --text-secondary: #{$textSecondary};
-  --text-tertiary: #{$textTertiary};
-  --border-color: #{$borderColor};
-  --border-color-base: #{$borderColorBase};
-  --border-color-main: #{$borderColorDarker};
-  --border-color-darker: #{$borderColorDarker};
-  --border-color-dark: #{$borderColorDark};
+  // text colors
+  --text-main: #3E3F42;
+  --text-base: #6B6C6F;
+  --text-secondary: #9EA0A5;
+  --text-tertiary: #CECFD2;
+
+  // borders
+  --border-color-base: #EAEDF3;
+  --border-color-main: #D8DCE6;
+  --border-color-adverse: #2E2E33;
   --border-color-secondary: #2D9C3C;
-  --bg-base: #{$bg};
-  --bg-primary: #{$bgPrimary};
-  --bg-primary-dark: #{$bgPrimaryDark};
+
+  // backgrounds
+  --bg-base: #FBFBFD;
+  --bg-primary: #FFFFFF;
+  --bg-adverse-primary: #252529;
+
+
   --color-danger: #{$red};
   --color-primary: #{$blue};
   --color-secondary: #{$green};
@@ -148,19 +132,18 @@ $text-base: var(--text-base);
 $text-secondary: var(--text-secondary);
 $text-tertiary: var(--text-tertiary);
 
-$border-color: var(--border-color);
 $border-color-base: var(--border-color-base);
 $border-color-main: var(--border-color-main);
-$border-color-darker: var(--border-color-darker);
-$border-color-dark: var(--border-color-dark);
+$border-color-adverse: var(--border-color-adverse);
 $border-color-secondary: var(--border-color-secondary);
+
 $border-default-base: 1px solid var(--border-color-base);
-$border-default-dark: 1px solid var(--border-color-dark);
-$border-default-darker: 1px solid var(--border-color-darker);
+$border-default-main: 1px solid var(--border-color-main);
+$border-default-adverse: 1px solid var(--border-color-adverse);
 
 $bg-base: var(--bg-base);
 $bg-primary: var(--bg-primary);
-$bg-primary-dark: var(--bg-primary-dark);
+$bg-adverse-primary: var(--bg-adverse-primary);
 
 $color-danger: var(--color-danger);
 $color-primary: var(--color-primary);
@@ -169,69 +152,6 @@ $color-warning: var(--color-warning);
 $color-secondary: var(--color-secondary);
 $gradient-secondary: var(--gradient-secondary);
 
-
-$white: #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$black: #000 !default;
-
-$grays: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
-$grays: map-merge(("100": $gray-100,
-"200": $gray-200,
-"300": $gray-300,
-"400": $gray-400,
-"500": $gray-500,
-"600": $gray-600,
-"700": $gray-700,
-"800": $gray-800,
-"900": $gray-900),
-$grays);
-
-$colors: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
-$colors: map-merge(("blue": $blue,
-"indigo": $indigo,
-"purple": $purple,
-"pink": $pink,
-"red": $red,
-"orange": $orange,
-"yellow": $yellow,
-"green": $green,
-"teal": $teal,
-"cyan": $cyan,
-"white": $white,
-"gray": $gray-600,
-"gray-dark": $gray-800),
-$colors);
-
-$primary: $blue !default;
-$secondary: $gray-600 !default;
-$success: $green !default;
-$info: $cyan !default;
-$warning: $yellow !default;
-$danger: $red !default;
-$light: $gray-100 !default;
-$dark: $gray-800 !default;
-
-$theme-colors: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
-$theme-colors: map-merge(("primary": $primary,
-"secondary": $secondary,
-"success": $success,
-"info": $info,
-"warning": $warning,
-"danger": $danger,
-"light": $light,
-"dark": $dark),
-$theme-colors);
 
 
 /** Button **/
