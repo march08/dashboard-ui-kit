@@ -93,16 +93,27 @@
   position: relative;
   padding-right: 1.8rem;
 
-  &:after,
-  &:before {
-    color: inherit;
-    opacity: .5;
-    display: flex;
-    font-size: .6rem;
-    content: "▸";
-    border: none;
-    position: absolute;
-    right: 10px;
+  &:not(.btn-square) {
+
+    &:after,
+    &:before {
+      color: inherit;
+      opacity: .5;
+      display: flex;
+      font-size: .6rem;
+      content: "▸";
+      border: none;
+      position: absolute;
+      right: 10px;
+    }
+  }
+
+  &.btn-square {
+
+    &:after,
+    &:before {
+      display: none;
+    }
   }
 
   &:after {

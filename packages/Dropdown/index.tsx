@@ -69,7 +69,7 @@ export function Dropdown<
   return (
 
     <OuterEventsHandler
-      className={classnames(cls['dropdown'], className)}
+      className={classnames(cls['dropdown'], 'btn-group', className)}
       onOuterEvent={openControls.isOpen ? openControls.handleToggle : null}
       {...rest}
     >

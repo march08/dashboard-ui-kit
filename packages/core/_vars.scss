@@ -147,6 +147,7 @@ $text-main: var(--text-main);
 $text-base: var(--text-base);
 $text-secondary: var(--text-secondary);
 $text-tertiary: var(--text-tertiary);
+
 $border-color: var(--border-color);
 $border-color-base: var(--border-color-base);
 $border-color-main: var(--border-color-main);
@@ -156,9 +157,11 @@ $border-color-secondary: var(--border-color-secondary);
 $border-default: 1px solid var(--border-color);
 $border-default-dark: 1px solid var(--border-color-dark);
 $border-default-darker: 1px solid var(--border-color-darker);
+
 $bg-base: var(--bg-base);
 $bg-primary: var(--bg-primary);
 $bg-primary-dark: var(--bg-primary-dark);
+
 $color-danger: var(--color-danger);
 $color-primary: var(--color-primary);
 $color-success: var(--color-success);

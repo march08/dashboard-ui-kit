@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Button, ButtonGroup } from '@duik/it'
+import { Button, ButtonGroup, Dropdown, DropdownMenuPosition, DropdownItem } from '@duik/it'
 
 import { Icon } from '@duik/icon'
 
@@ -78,10 +78,17 @@ export const ReactDocsButtonGroup = () => {
           content: (
             <ButtonGroup lg>
               <Button>Large Sized Buttons</Button>
-              <Button square>
-                <Icon>pen_edit</Icon>
-              </Button>
-            </ButtonGroup>)
+              <Dropdown
+                buttonProps={{
+                  square: true,
+                }}
+                buttonText={<Icon>pen_edit</Icon>}
+                menuPosition={DropdownMenuPosition['bottom-left']}
+              >
+                <DropdownItem><Icon mr>pen_edit</Icon>Something here</DropdownItem>
+              </Dropdown>
+            </ButtonGroup>
+          )
         },
       ]} />
 

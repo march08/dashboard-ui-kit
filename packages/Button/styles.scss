@@ -110,30 +110,39 @@ a.base:hover {
 
 /*Basic Appearence*/
 .btn {
-  background: #FFFFFF;
-  background-image: linear-gradient(0deg, #F6F7F9 0%, #FFFFFF 100%);
+  background: $bg-primary;
+  box-shadow: 0 1px 1px 0 rgba(22, 29, 37, 0.05);
+
+  &:not(.btn-flat) {
+    background-image: linear-gradient(0deg, #F6F7F9 0%, #FFFFFF 100%);
+    box-shadow: 0 1px 1px 0 rgba(22, 29, 37, 0.05),
+      inset 0 2px 0 0 rgba(255, 255, 255, 0.05);
+  }
+
   border: 1px solid $borderColorDarker;
-  box-shadow: 0 1px 1px 0 rgba(22, 29, 37, 0.05),
-    inset 0 2px 0 0 rgba(255, 255, 255, 0.05);
   color: $text-main;
   border-radius: 4px;
 
   &:hover {
-    background-image: linear-gradient(0deg, #F6F7F9 0%, #FFFFFF 100%);
+
+    &:not(.btn-flat) {
+      background-image: linear-gradient(0deg, #F6F7F9 0%, #FFFFFF 100%);
+    }
+
     border: 1px solid #CACEDB;
-    box-shadow: 0 1px 2px 0 rgba(22, 29, 37, 0.10), inset 0 2px 0 0 rgba(255, 255, 255, 0.05);
   }
 
   &:focus {
-    background-image: linear-gradient(0deg, #F6F7F9 0%, #FFFFFF 100%);
+    &:not(.btn-flat) {
+      background-image: linear-gradient(0deg, #F6F7F9 0%, #FFFFFF 100%);
+    }
+
     border: 1px solid #BDC2D1;
-    box-shadow: 0 0 1px 0 rgba(22, 29, 37, 0.10), inset 0 2px 0 0 rgba(255, 255, 255, 0.05);
   }
 
   &:active {
     transform: translate(1px, 1px);
   }
-
 }
 
 
@@ -170,16 +179,10 @@ a.base:hover {
   color: white;
   background: rgba(#3E3F42, .6);
   border: 1px solid rgba(#3E3F42, .8);
-  box-shadow: 0 1px 1px 0 rgba(19, 31, 21, 0.10), inset 0 2px 0 0 rgba(255, 255, 255, 0.06);
 
   &:hover {
     background: rgba(#3E3F42, .7);
     border: 1px solid rgba(#3E3F42, .9);
-    box-shadow: 0 1px 1px 0 rgba(19, 31, 21, 0.18), inset 0 2px 0 0 rgba(255, 255, 255, 0.06);
-
-    &.noBorder {
-      box-shadow: 0 1px 1px 0 rgba(19, 31, 21, 0.18);
-    }
   }
 
   &:focus,
@@ -198,10 +201,17 @@ a.base:hover {
 
 .btn.btn-success {
   color: white;
-  background: $green;
-  background-image: linear-gradient(0deg, #34AA44 0%, #38B249 100%);
+  background: $color-success;
+
+  box-shadow: 0 1px 1px 0 rgba(19, 31, 21, 0.10);
+
+  &:not(.btn-flat) {
+    background-image: linear-gradient(0deg, #34AA44 0%, #38B249 100%);
+    box-shadow: 0 1px 1px 0 rgba(19, 31, 21, 0.10),
+      inset 0 2px 0 0 rgba(255, 255, 255, 0.06);
+  }
+
   border: 1px solid #2D9C3C;
-  box-shadow: 0 1px 1px 0 rgba(19, 31, 21, 0.10), inset 0 2px 0 0 rgba(255, 255, 255, 0.06);
 
   &:hover {
     background-image: linear-gradient(0deg, #2CA13C 2%, #2FAE40 100%);

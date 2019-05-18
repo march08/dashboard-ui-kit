@@ -56,6 +56,10 @@
     background: $border-color-base !important;
   }
 
+  &:read-only {
+    background: $bg-base !important;
+  }
+
   &::-webkit-input-placeholder,
   &::-moz-placeholder,
   &:-ms-input-placeholder,

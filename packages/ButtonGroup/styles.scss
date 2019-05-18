@@ -21,14 +21,15 @@
 
 
 // Sizing
-.btn-group-sm>.btn {
+.btn-group-sm>.btn,
+.btn-group-sm>.btn-group>.btn {
   @include btn-sm;
 }
 
-.btn-group-lg>.btn {
+.btn-group-lg>.btn,
+.btn-group-lg>.btn-group>.btn {
   @include btn-lg;
 }
-
 
 
 .btn-group {
