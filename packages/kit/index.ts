@@ -24,6 +24,7 @@ export * from '@duik/checkbox';
 export * from '@duik/toggle';
 export * from '@duik/radio';
 export * from '@duik/text-field';
+export * from '@duik/text-area';
 
 // util components
 export * from '@duik/outer-events-handler'

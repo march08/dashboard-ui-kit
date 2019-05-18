@@ -24,6 +24,7 @@
     "@duik/container-vertical": "0.1.0",
     "@duik/container-horizontal": "0.1.0",
     "@duik/text-field": "0.1.0",
+    "@duik/text-area": "0.1.0",
     "@duik/content-title": "0.1.0",
     "@duik/scroll-area": "0.1.0",
     "@duik/outer-events-handler": "0.1.0"

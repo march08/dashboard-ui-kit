@@ -1,7 +1,7 @@
 /** Radius Mixins **/
 @mixin border-right-radius($radius) {
   border-top-right-radius: $radius;
-  border-bottom-lerightft-radius: $radius;
+  border-bottom-right-radius: $radius;
 }
 
 @mixin border-left-radius($radius) {

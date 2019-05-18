@@ -19,7 +19,7 @@
   max-height: 240px;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-
+  display: none;
   // default position
   top: 100%;
   right: 0;
@@ -131,6 +131,7 @@
   background: $bg-primary;
   box-shadow: none;
   @include btn();
+  display: block;
 
   &,
   &:hover,

@@ -12,7 +12,8 @@ const form = [
   'Checkbox',
   'Toggle',
   'Radio',
-  'TextField'
+  'TextField',
+  'TextArea'
 ]
 
 const components = [
@@ -24,7 +25,8 @@ const components = [
 const guides = [
   'UseInCreateReactApp',
   'UseWithTypescript',
-  'CustomizingTheme'
+  'CustomizingTheme',
+  'BuildingLayoutWithDuik'
 ]
 const utilityComponents = [
   'OuterEventsHandler',

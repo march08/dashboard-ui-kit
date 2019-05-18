@@ -1,0 +1,65 @@
+@import "@duik/core/_vars.scss";
+
+textarea.form-control {
+  position: relative;
+  background: $bg-primary;
+  border: $border-default-base;
+  border-radius: 4px;
+  display: flex;
+  outline: none;
+  box-shadow: none;
+  resize: none;
+  width: 100%;
+
+  &:not(:disabled),
+  &:not(:read-only) {
+
+    &:focus,
+    &:active {
+      border-color: $color-primary;
+      box-shadow: none;
+    }
+  }
+
+  &.is-valid {
+    border-color: $color-success;
+  }
+
+  &.is-invalid {
+    border-color: $color-danger;
+  }
+
+  font-size: 0.875rem;
+
+  &.clear {
+    background: transparent;
+    padding: 0;
+    border: none;
+  }
+}
+
+
+.valid-feedback,
+.invalid-feedback {
+  font-size: .875rem;
+  line-height: 1.375rem;
+  display: block;
+}
+
+.valid-feedback {
+  color: $color-success;
+}
+
+.invalid-feedback {
+  color: $color-danger;
+}
+
+
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+  transition: background-color 5500s ease-in-out 0s !important;
+  color: $text-base !important;
+  -webkit-text-fill-color: $text-base !important;
+}

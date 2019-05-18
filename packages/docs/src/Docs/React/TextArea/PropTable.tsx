@@ -28,24 +28,9 @@ const itemProps = [
     propType: 'React.ReactNode',
     desc: 'Displays success message and renders input in success state.'
   },
-  {
-    prop: 'leftEl',
-    propType: 'React.ReactNode',
-    desc: 'Displayes content on left side of the input, e.g. icon'
-  },
-  {
-    prop: 'rightEl',
-    propType: 'React.ReactNode',
-    desc: 'Displayes content on right side of the input, e.g. icon'
-  },
-  properties.rest({
-    prop: 'wrapperProps',
-    desc: 'Pass down properties to the element that wraps the input and icons.',
-    propType: 'Props of "div"'
-  }),
   properties.rest({
     desc: (
-      <>Other properties are passed down to the input element</>
+      <>Other properties are passed down to the wrapping textarea element</>
     )
   }),
 ]
