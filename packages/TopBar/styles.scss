@@ -1,0 +1,17 @@
+@import '@duik/core/_vars.scss';
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  background: $bg-primary;
+  flex-shrink: 0;
+  flex-grow: 0;
+  z-index: 100;
+  border-bottom: $border-default-base;
+
+  &.top-bar-center {
+    justify-content: center;
+  }
+}

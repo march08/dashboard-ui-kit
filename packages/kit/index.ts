@@ -33,6 +33,12 @@ export * from '@duik/outer-events-handler'
 export * from '@duik/scroll-area';
 export * from '@duik/container-vertical';
 export * from '@duik/container-horizontal';
+export * from '@duik/top-bar';
+export * from '@duik/top-bar-link';
+export * from '@duik/top-bar-link-container';
+export * from '@duik/top-bar-menu-divider';
+export * from '@duik/top-bar-section';
+export * from '@duik/top-bar-title';
 
 // typo
 export * from '@duik/content-title';

@@ -1,10 +1,60 @@
 import * as React from 'react'
-import { ContainerVertical, ContainerHorizontal } from '@duik/it'
+import {
+  ContainerVertical,
+  ContainerHorizontal,
+  NavPanel,
+  NavSection,
+  NavLink,
+  NavSectionTitle,
+  TopBar,
+  TopBarSection,
+  TopBarTitle,
+  Widget,
+  ScrollArea,
+  WidgetContainer,
+  TopBarLinkContainer,
+  TopBarLink
+} from '@duik/it'
 import { Link } from 'react-router-dom'
 import { Code } from 'components'
+import { jsxToString } from 'utils'
 import { DocsContentPage, PageContent } from '../../components'
 
 
+const fullExample = (
+
+  <div style={{ height: '400px', border: '1px solid var(--border-color-base)', background: 'var(--bg-base)' }}>
+    <ContainerVertical>
+      <TopBar>
+        <TopBarSection>
+          <TopBarTitle>Dashboard</TopBarTitle>
+        </TopBarSection>
+        <TopBarSection>
+          <TopBarLinkContainer>
+            <TopBarLink>Menu item 1</TopBarLink>
+            <TopBarLink href="#" className="active">Menu item 1</TopBarLink>
+          </TopBarLinkContainer>
+        </TopBarSection>
+      </TopBar>
+      <ContainerHorizontal>
+        <NavPanel>
+          <NavSection>
+            <NavSectionTitle>Menu</NavSectionTitle>
+            <NavLink highlighted>Hello item</NavLink>
+            <NavLink highlighted>Title for link</NavLink>
+          </NavSection>
+        </NavPanel>
+        <ScrollArea>
+          <WidgetContainer>
+            <Widget padding>
+              <h2>Title</h2>
+            </Widget>
+          </WidgetContainer>
+        </ScrollArea>
+      </ContainerHorizontal>
+    </ContainerVertical>
+  </div>
+)
 
 export const ReactDocsOuterEventsHandler = () => {
 
@@ -18,7 +68,7 @@ export const ReactDocsOuterEventsHandler = () => {
         { id: 'full-example', label: 'Full Example With DUIK' },
       ]} />
       <h1>
-        Building layouts with Uik
+        Building layouts with
         </h1>
       <p>
         First thing to know is that you don't have to use any of these components to make your layout work in your project.
@@ -75,30 +125,14 @@ export const ReactDocsOuterEventsHandler = () => {
           </div>
         </div>
       </div>
-      <br />
       <p>
-        For splitting the layout vertically, we can use
-          {' '}
-        <Link to="/docs/react/container-vertical">ContainerVertical</Link>
-        . The component has a
-          {' '}
-        <code>display: flex</code>
-        {' '}
-        property with
-          {' '}
-        <code>flex-direction: column</code>
-        . The behaviour is very similar to
-          {' '}
-        <code>{'<View />'}</code>
-        {' '}
-        component from react native.
-        </p>
-      <br />
+        For splitting the layout vertically, we can use <Link to="/docs/react/container-vertical">ContainerVertical</Link>. The component has a <code>display: flex</code> property with <code>flex-direction: column</code>. The behaviour is very similar to <code>{'<View />'}</code> component from react native.
+      </p>
       <h4>The code with ContainerVertical</h4>
       <Code>
         {`import {
   ContainerVertical
-} from '@uik'
+} from '@duik/it'
 
 ...
 
@@ -132,7 +166,6 @@ const MyLayout = () => (
 
       <h3 id="horizontal-split">Step 2: splitting the content horizontaly - navigation and the page</h3>
       <p>The vertical split is done, let's cut down the bottom part of our layout like this:</p>
-      <br />
 
       <div style={{ color: 'white' }}>
         <div style={{ height: '70px', background: '#34ace0' }}>
@@ -165,7 +198,7 @@ const MyLayout = () => (
         {`import {
   ContainerVertical,
   ContainerHorizontal,
-} from '@uik'
+} from '@duik/it'
 
 ...
 
@@ -215,15 +248,15 @@ const MyLayout = () => (
           <Link to="/docs/react/container-vertical">ContainerVertical</Link>
         </li>
         <li>
-          {'UikTopBar '}
+          {'TopBar '}
           <Link to="/docs/react/top-bar">(see more examples)</Link>
         </li>
         <li>
-          {'UikNavPanel '}
+          {'NavPanel '}
           <Link to="/docs/react/nav-panel">(see more examples)</Link>
         </li>
         <li>
-          <Link to="/docs/react/widget">UikWidget</Link>
+          <Link to="/docs/react/widget">Widget</Link>
         </li>
       </ul>
 
@@ -235,65 +268,14 @@ const MyLayout = () => (
         <Link to="/docs/react/container-horizontal">ContainerHorizontal</Link>
         . It works the same way as ContainerVertical, just horizontaly.
         </p>
-      <br />
       <h4>The code</h4>
+      <p>With very little code, you can build quite complex interface. Of course, you should split the code into multiple files!</p>
       <Code>
-        {`const MyLayout = () => (
-  <ContainerVertical>
-    <UikTopBar>
-      <UikTopBarSection>
-        <UikTopBarTitle>Dashboard</UikTopBarTitle>
-      </UikTopBarSection>
-    </UikTopBar>
-    <ContainerHorizontal>
-      <UikNavPanel>
-        <UikNavSection>
-          <UikNavSectionTitle>Menu</UikNavSectionTitle>
-          <UikNavLink highlighted>Hello item</UikNavLink>
-          <UikNavLink highlighted>Title for link</UikNavLink>
-        </UikNavSection>
-      </UikNavPanel>
-      <UikLayoutMain>
-        <UikWidget
-          margin
-          padding
-        >
-          <h2>Title</h2>
-        </UikWidget>
-      </UikLayoutMain>
-    </ContainerHorizontal>
-  </ContainerVertical>
-)` }
+        {jsxToString(fullExample)}
       </Code>
-      <br />
 
       <h4>Result</h4>
-      <div style={{ height: '400px', border: '1px solid #ddd' }}>
-        <ContainerVertical>
-          {/* <UikTopBar>
-              <UikTopBarSection>
-                <UikTopBarTitle>Dashboard</UikTopBarTitle>
-              </UikTopBarSection>
-            </UikTopBar>
-            <ContainerHorizontal>
-              <UikNavPanel>
-                <UikNavSection>
-                  <UikNavSectionTitle>Menu</UikNavSectionTitle>
-                  <UikNavLink highlighted>Hello item</UikNavLink>
-                  <UikNavLink highlighted>Title for link</UikNavLink>
-                </UikNavSection>
-              </UikNavPanel>
-              <UikLayoutMain>
-                <UikWidget
-                  margin
-                  padding
-                >
-                  <h2>Title</h2>
-                </UikWidget>
-              </UikLayoutMain> */}
-          {/* </ContainerHorizontal> */}
-        </ContainerVertical>
-      </div>
+      {fullExample}
 
     </DocsContentPage >
   )

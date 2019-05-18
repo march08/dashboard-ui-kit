@@ -1,0 +1,20 @@
+@import '@duik/core/_vars.scss';
+
+.top-bar-title,
+.top-bar.top-bar-title {
+  font-weight: 500;
+  font-size: 1rem;
+  color: $text-main;
+  line-height: 1.75;
+  display: flex;
+  align-items: center;
+
+  &.top-bar-title-lg {
+    font-size: 1.125rem;
+  }
+
+  i {
+    margin-right: 14px;
+    color: $text-secondary;
+  }
+}

@@ -14,10 +14,14 @@
     max-width: 760px;
   }
 
-  h1,
-  h2,
-  h3,
-  h4 {
+  &>*+p {
+    margin-top: .7rem;
+  }
+
+  &>h1,
+  &>h2,
+  &>h3,
+  &>h4 {
     color: rgba(0, 0, 0, 0.8);
     font-weight: 400;
 
@@ -26,20 +30,20 @@
     }
   }
 
-  h1 {
+  &>h1 {
     font-size: 3rem;
   }
 
-  h2 {
+  &>h2 {
     font-size: 1.6rem;
   }
 
-  *+h1,
-  *+h2,
-  *+h3,
-  *+h4,
-  *+h5,
-  *+h6 {
+  &>*+h1,
+  &>*+h2,
+  &>*+h3,
+  &>*+h4,
+  &>*+h5,
+  &>*+h6 {
     margin-top: 2em;
   }
 
@@ -58,7 +62,7 @@
   margin-right: -70px;
 
   &+p {
-    margin-top: 1rem !important;
+    margin-top: 2rem !important;
   }
 }
 

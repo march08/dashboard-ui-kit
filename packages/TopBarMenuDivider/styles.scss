@@ -1,0 +1,10 @@
+@import '@duik/core/_vars.scss';
+
+.top-bar-menu-divider {
+  background: $border-color-base;
+  height: 38px;
+  width: 1px;
+  margin: 0 30px;
+  flex-basis: 1px;
+  flex-shrink: 0;
+}

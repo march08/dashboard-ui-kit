@@ -22,11 +22,17 @@ const components = [
   'Icon',
   'Dropdown',
 ]
+const layout = [
+  'ContainerVertical',
+  'ContainerHorizontal',
+  'ScrollArea',
+]
+
 const guides = [
   'UseInCreateReactApp',
   'UseWithTypescript',
   'CustomizingTheme',
-  'BuildingLayoutWithDuik'
+  'BuildingLayout'
 ]
 const utilityComponents = [
   'OuterEventsHandler',
@@ -54,8 +60,12 @@ export const generateMenuLinks = () => ([
     links: generateLinks(components)
   },
   {
-    title: 'Form',
+    title: 'Form Components',
     links: generateLinks(form)
+  },
+  {
+    title: 'Layout Components',
+    links: generateLinks(layout)
   },
   {
     title: 'Utility Components',

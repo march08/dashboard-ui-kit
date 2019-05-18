@@ -27,6 +27,12 @@
     "@duik/text-area": "0.1.0",
     "@duik/content-title": "0.1.0",
     "@duik/scroll-area": "0.1.0",
-    "@duik/outer-events-handler": "0.1.0"
+    "@duik/outer-events-handler": "0.1.0",
+    "@duik/top-bar": "0.1.0",
+    "@duik/top-bar-link": "0.1.0",
+    "@duik/top-bar-link-container": "0.1.0",
+    "@duik/top-bar-menu-divider": "0.1.0",
+    "@duik/top-bar-section": "0.1.0",
+    "@duik/top-bar-title": "0.1.0"
   }
 }

@@ -11,7 +11,7 @@ export const ImportPath = (props: ImportPathProps) => {
   const { name, subComponents, isIncludedInKit = true } = props
 
   return (
-    <div style={{ marginBottom: 10 }}>
+    <div style={{ marginBottom: 30 }}>
       {isIncludedInKit ? (
         <>
           <code style={{ marginBottom: 5 }}>{`import { ${name}${subComponents ? `, ${combineText(subComponents, ', ')}` : ''} } from '@duik/it'`}</code>

@@ -3,9 +3,10 @@
 .widget-container {
   display: flex;
   flex-direction: column;
-  padding: 15px;
+  padding: 30px;
 
-  &>*:not(:last-child) {
+  &>.widget:not(:last-child) {
     margin-bottom: 30px;
   }
+
 }
