@@ -7,7 +7,7 @@
   align-items: center;
 
   &:not(:last-child) {
-    border-bottom: $border-default;
+    border-bottom: $border-default-base;
   }
 
   h3 {

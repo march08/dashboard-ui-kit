@@ -14,7 +14,7 @@
 
   &:not(.nav-panel-right) {
     &:not(.dark) {
-      border-right: $border-default;
+      border-right: $border-default-base;
     }
 
     &.dark {
@@ -24,7 +24,7 @@
 
   &.nav-panel-right {
     &:not(.dark) {
-      border-left: $border-default;
+      border-left: $border-default-base;
     }
 
     &.dark {

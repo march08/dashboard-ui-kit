@@ -30,12 +30,12 @@ const utilityComponents = [
   'OuterEventsHandler',
 ]
 
-function generateLinks(list: string[]): GeneratedLinkData[] {
+function generateLinks(list: string[], isCamelToText: boolean = false): GeneratedLinkData[] {
   return list
     .sort()
     .map((item: string) => {
       return {
-        text: camelToText(item),
+        text: isCamelToText ? camelToText(item) : item,
         to: `/${camelToSnake(item)}`,
         component: require(`./${item}`).default as RouteComponentProps, // eslint-disable-line
       }
@@ -45,7 +45,7 @@ function generateLinks(list: string[]): GeneratedLinkData[] {
 export const generateMenuLinks = () => ([
   {
     title: 'Guides',
-    links: generateLinks(guides)
+    links: generateLinks(guides, true)
   },
   {
     title: 'Basic Components',

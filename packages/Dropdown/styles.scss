@@ -125,9 +125,12 @@
   }
 }
 
+.btn.dropdown-item,
 .dropdown-item {
 
   background: $bg-primary;
+  box-shadow: none;
+  @include btn();
 
   &,
   &:hover,
@@ -137,7 +140,7 @@
     border-left: none;
     border-right: none;
     border-top: none;
-    border-bottom-color: $border-color-base;
+    border-bottom: $border-default-base;
     color: $text-main;
 
     &:last-child {
@@ -148,6 +151,7 @@
   &:hover,
   &:focus {
     background: $bg-base;
+    background-image: linear-gradient(0deg, #F6F7F9 0%, #FFFFFF 100%);
   }
 
   &:active {
