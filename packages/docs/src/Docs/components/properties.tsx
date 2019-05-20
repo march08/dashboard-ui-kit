@@ -56,7 +56,6 @@ export const properties = {
     ...data,
   }),
   rest: (data?: ReactDocsPropertyOptional) => {
-    console.log(data)
     return {
       prop: '...rest',
       propType: 'any',

@@ -43,21 +43,21 @@
 
 
   &.bottom-right {
-    top: calc(100% + 3px);
+    top: calc(100% + 4px);
     left: 0;
     right: auto;
     bottom: auto;
   }
 
   &.bottom-left {
-    top: calc(100% + 3px);
+    top: calc(100% + 4px);
     left: auto;
     right: 0;
     bottom: auto;
   }
 
   &.bottom-center {
-    top: calc(100% + 3px);
+    top: calc(100% + 4px);
     left: 50%;
     right: auto;
     bottom: auto;
@@ -65,21 +65,21 @@
   }
 
   &.top-right {
-    bottom: calc(100% + 3px);
+    bottom: calc(100% + 4px);
     left: 0;
     right: auto;
     top: auto;
   }
 
   &.top-left {
-    bottom: calc(100% + 3px);
+    bottom: calc(100% + 4px);
     left: auto;
     right: 0;
     top: auto;
   }
 
   &.top-center {
-    bottom: calc(100% + 3px);
+    bottom: calc(100% + 4px);
     left: 50%;
     transform: translateX(-50%);
     top: auto;
@@ -127,11 +127,14 @@
 
 .btn.dropdown-item,
 .dropdown-item {
-
+  text-align: left;
   background: $bg-primary;
   box-shadow: none;
   @include btn();
   display: block;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 
   &,
   &:hover,

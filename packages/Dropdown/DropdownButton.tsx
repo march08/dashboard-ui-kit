@@ -30,7 +30,14 @@ export const DropdownButton = (props: DropdownButtonProps) => {
     ...rest
   } = props
   return (
-    <Button className={classnames(cls['dropdown-toggle'], className)} onClick={handleToggle} {...rest}>
+    <Button
+      className={classnames(cls['dropdown-toggle'], className)}
+      onClick={handleToggle}
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded={isOpen ? 'true' : 'false'}
+      {...rest}
+    >
       {children}
     </Button>
   )
