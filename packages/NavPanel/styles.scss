@@ -13,30 +13,26 @@
 
 
   &:not(.nav-panel-right) {
-    &:not(.dark) {
-      border-right: $border-default-base;
-    }
+    border-right: $border-default-base;
 
-    &.dark {
+    &.nav-panel-dark {
       border-right: $border-default-adverse;
     }
   }
 
   &.nav-panel-right {
-    &:not(.dark) {
-      border-left: $border-default-base;
-    }
+    border-left: $border-default-base;
 
-    &.dark {
+    &.nav-panel-dark {
       border-left: $border-default-adverse;
     }
   }
 
 
-  &.dark {
+  &.nav-panel-dark {
     background-color: $bg-adverse-primary;
-    --nav-link-color: white;
-    --nav-text-main: white;
+    color: $text-base;
+    --text-base: #{$text-adverse-base};
+    --text-main: #{$text-adverse-main};
   }
-
 }

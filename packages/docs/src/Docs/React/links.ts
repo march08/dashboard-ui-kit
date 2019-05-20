@@ -27,6 +27,13 @@ const layout = [
   'ContainerHorizontal',
   'ScrollArea',
 ]
+const nav = [
+  'NavPanel',
+  'NavLink',
+  'NavTitle',
+  'NavSection',
+  'NavSectionTitle',
+]
 
 const guides = [
   'UseInCreateReactApp',
@@ -66,6 +73,10 @@ export const generateMenuLinks = () => ([
   {
     title: 'Layout Components',
     links: generateLinks(layout)
+  },
+  {
+    title: 'Side Navigation',
+    links: generateLinks(nav)
   },
   {
     title: 'Utility Components',

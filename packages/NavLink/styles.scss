@@ -2,13 +2,14 @@
 
 .nav-link {
   font-size: .875rem;
-  color: var(--nav-link-color);
+  color: $text-base;
   display: block;
   padding: 0 30px;
   min-height: 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 
   .left-el-wrapper {
     display: inline-block;
@@ -20,13 +21,13 @@
   .right-el-wrapper {
     font-size: 0.75rem;
     color: $text-secondary;
-    color: var(--nav-link-color-el);
+    color: $text-tertiary;
     line-height: 1rem;
     display: flex;
   }
 
   &.highlighted {
-    .text {
+    .nav-link-text {
       font-weight: 500;
     }
   }
@@ -35,6 +36,11 @@
   &.active {
     font-weight: 500;
     color: $text-main;
+
+    .nav-link-text {
+      color: $text-main;
+    }
+
     background: rgba(84, 147, 245, .05);
     box-shadow: inset 3px 0 0 0 $color-primary;
   }
@@ -61,18 +67,18 @@
   border-radius: 4px;
   padding: 0 15px;
   font-weight: 500;
-  color: var(--nav-link-color, #{$text-main});
+  color: $text-main;
 
   &>* {
-    color: var(--nav-link-color, #{$text-main});
+    color: $text-main;
   }
 
   &.active {
     background: $color-primary;
-    color: white;
+    color: $text-adverse-main;
 
     &>* {
-      color: white;
+      color: $text-adverse-main;
     }
   }
 
@@ -81,7 +87,7 @@
     &:hover,
     &:focus {
 
-      color: var(--nav-link-color, #{$text-main});
+      color: $text-main;
       background: rgba(128, 128, 128, 0.07);
       border: none;
       box-shadow: none;
@@ -91,4 +97,35 @@
 
 .nav-link.nav-link-secondary {
   padding-left: 2.875rem;
+
+  &:before {
+    content: '';
+    border-radius: 50%;
+    height: 4px;
+    width: 4px;
+    background: $text-tertiary;
+    position: absolute;
+    top: calc(50% - 2px);
+    left: 30px;
+    display: none;
+  }
+
+  &.active,
+  &:hover,
+  &:focus {
+    box-shadow: none;
+    background: $bg-primary;
+
+    &:before {
+      display: block;
+    }
+  }
+
+  &.active {
+    color: $text-main;
+
+    &:before {
+      background: $color-primary;
+    }
+  }
 }

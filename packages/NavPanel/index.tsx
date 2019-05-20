@@ -1,9 +1,9 @@
 import * as React from 'react'
 import classnames from 'classnames'
 
-import cls from './styles.scss'
+import './styles.scss';
 
-export type NavPanelProps = JSX.IntrinsicElements['div'] & {
+export type NavPanelProps = JSX.IntrinsicElements['nav'] & {
   positionRight?: boolean,
   onRight?: boolean,
   dark?: boolean
@@ -19,9 +19,9 @@ export function NavPanel({
 }: NavPanelProps) {
   return (
     <nav
-      className={classnames(cls['nav-panel'], className, {
-        [cls['nav-panel-right']]: positionRight || onRight,
-        [cls['dark']]: dark
+      className={classnames('nav-panel', className, {
+        ['nav-panel-right']: positionRight || onRight,
+        ['nav-panel-dark']: dark
       })}
       {...rest}
     >

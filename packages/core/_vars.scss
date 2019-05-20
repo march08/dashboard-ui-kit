@@ -102,7 +102,9 @@ sans-serif;
 @mixin themeVars {
   // text colors
   --text-main: #3E3F42;
+  --text-adverse-main: white;
   --text-base: #6B6C6F;
+  --text-adverse-base: #FBFBFD;
   --text-secondary: #9EA0A5;
   --text-tertiary: #CECFD2;
 
@@ -128,7 +130,9 @@ sans-serif;
 
 // USE THESE
 $text-main: var(--text-main);
+$text-adverse-main: var(--text-adverse-main);
 $text-base: var(--text-base);
+$text-adverse-base: var(--text-adverse-base);
 $text-secondary: var(--text-secondary);
 $text-tertiary: var(--text-tertiary);
 

@@ -24,7 +24,7 @@ export enum CodeLang {
   jsx = 'jsx',
 }
 
-export type CodeProps = JSX.IntrinsicElements['pre'] & {
+export type CodeProps = JSX.IntrinsicElements['div'] & {
   children?: string,
   language?: CodeLang,
   className?: String,
@@ -63,12 +63,14 @@ export class Code extends React.Component<CodeProps> {
     const handleCopy = () => copyToClipboard(children as string)
 
     return (
-      <div className={cls['code-wrapper']}>
+      <div
+        className={cls['code-wrapper']}
+        {...rest}
+      >
         <Button onClick={handleCopy} clear className={cls['button-copy']} square><Icon>multitasking</Icon></Button>
         <pre
           ref={this.codeRef}
           className={classnames('react-prism', `language-${language}`, className)}
-          {...rest}
         >
           <code>
             {children}
