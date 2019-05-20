@@ -18,7 +18,7 @@ export function NavPanel({
   ...rest
 }: NavPanelProps) {
   return (
-    <div
+    <nav
       className={classnames(cls['nav-panel'], className, {
         [cls['nav-panel-right']]: positionRight || onRight,
         [cls['dark']]: dark
@@ -26,7 +26,7 @@ export function NavPanel({
       {...rest}
     >
       {children}
-    </div>
+    </nav>
   )
 }
 

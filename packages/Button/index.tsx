@@ -101,6 +101,7 @@ export const Button = <T extends AnyTag = 'button'>(props: ButtonProps<T>) => {
       className={classes}
       {...rest}
       type={Component === 'button' ? type : undefined}
+      role="button"
     >
       {children}
       {loadingState && <LoaderDots className={cls['btn-loader']} /> || null}

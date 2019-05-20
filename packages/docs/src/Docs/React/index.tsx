@@ -23,7 +23,7 @@ export const DocsReact = (props: RouteComponentProps) => {
                   <NavLink
                     to={`${match.path}${item.to}`}
                     Component={RRNavLink}
-                    dark
+                    pill
                     key={item.to}
                     rightEl={<Icon>arrow_right</Icon>}
                   >

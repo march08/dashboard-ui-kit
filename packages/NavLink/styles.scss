@@ -2,7 +2,7 @@
 
 .nav-link {
   font-size: .875rem;
-  color: var(--nav-link-color, #{$text-main});
+  color: var(--nav-link-color);
   display: block;
   padding: 0 30px;
   min-height: 40px;
@@ -20,7 +20,7 @@
   .right-el-wrapper {
     font-size: 0.75rem;
     color: $text-secondary;
-    color: var(--nav-link-color-el, #{$text-secondary});
+    color: var(--nav-link-color-el);
     line-height: 1rem;
     display: flex;
   }
@@ -32,20 +32,29 @@
   }
 
   // active
-  &:global(.active) {
+  &.active {
     font-weight: 500;
-    color: $color-primary;
+    color: $text-main;
     background: rgba(84, 147, 245, .05);
     box-shadow: inset 3px 0 0 0 $color-primary;
   }
 
-  &:hover {
-    color: $color-primary;
-    background: rgba(84, 147, 245, .05);
+  &:focus {
+    outline: none;
   }
+
+  &:not(:active) {
+
+    &:hover,
+    &:focus {
+      color: $color-primary;
+      background: rgba(84, 147, 245, .05);
+    }
+  }
+
 }
 
-.nav-link.nav-link-dark {
+.nav-link.nav-link-pill {
 
   margin: 0 15px;
   border: none;
@@ -58,7 +67,7 @@
     color: var(--nav-link-color, #{$text-main});
   }
 
-  &:global(.active) {
+  &.active {
     background: $color-primary;
     color: white;
 
@@ -67,10 +76,19 @@
     }
   }
 
-  &:not(:global(.active)):hover {
-    color: var(--nav-link-color, #{$text-main});
-    background: rgba(255, 255, 255, 0.05);
-    border: none;
-    box-shadow: none;
+  &:not(.active) {
+
+    &:hover,
+    &:focus {
+
+      color: var(--nav-link-color, #{$text-main});
+      background: rgba(128, 128, 128, 0.07);
+      border: none;
+      box-shadow: none;
+    }
   }
+}
+
+.nav-link.nav-link-secondary {
+  padding-left: 2.875rem;
 }

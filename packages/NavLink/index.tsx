@@ -10,7 +10,9 @@ type NavLinkBaseProps = {
   rightEl?: React.ReactNode,
   highlighted?: boolean,
   icon?: React.ReactNode,
-  dark?: boolean
+  // styles
+  pill?: boolean,
+  secondary?: boolean
 }
 
 
@@ -23,15 +25,18 @@ export function NavLink<T extends AnyTag>({
   highlighted,
   icon,
   Component,
-  dark,
+  pill,
+  secondary,
   ...rest
 }: NavLinkProps<T>) {
   return (
     <Component
       className={classnames(cls['nav-link'], className, {
         [cls.highlighted]: highlighted,
-        [cls['nav-link-dark']]: dark
+        ['nav-link-pill']: pill,
+        ['nav-link-secondary']: secondary
       })}
+      tabIndex="0"
       {...rest}
     >
       <span className={cls.text}>
