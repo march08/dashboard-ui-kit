@@ -176,7 +176,28 @@ $color-secondary-hex: var(--color-secondary-hex);
 
 $gradient-secondary: var(--gradient-secondary);
 
+@mixin cssUtils {
+  .c-primary {
+    color: $color-primary
+  }
 
+  .c-secondary {
+    color: $color-secondary
+  }
+
+  .c-success {
+    color: $color-success
+  }
+
+  .c-warning {
+    color: $color-warning
+  }
+
+  .c-danger {
+    color: $color-danger
+  }
+
+}
 
 /** Button **/
 

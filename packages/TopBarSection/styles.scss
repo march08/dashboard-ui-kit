@@ -1,5 +1,17 @@
 .top-bar-section {
   display: flex;
   align-items: center;
-  padding: 0 30px;
+  padding: 0 15px;
+
+  &>* {
+    flex-shrink: 0;
+  }
+
+  &>.top-bar-section:first-child {
+    padding-left: 0;
+  }
+
+  &>.top-bar-section:last-child {
+    padding-right: 0;
+  }
 }

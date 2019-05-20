@@ -38,7 +38,8 @@ const nav = [
 
 const cookbook = [
   'BuildingLayout',
-  'BuildingNavPanel'
+  'BuildingNavPanel',
+  'BuildingTopBar'
 ]
 const guides = [
   'UseInCreateReactApp',

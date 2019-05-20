@@ -42,11 +42,11 @@ export function NavLink<T extends AnyTag>({
     >
       <span className={'nav-link-text'}>
         {
-          leftEl || icon && (
+          (leftEl || icon) && (
             <span className='left-el-wrapper'>
               {leftEl || icon}
             </span>
-          )
+          ) || null
         }
         {children}
       </span>
@@ -54,7 +54,7 @@ export function NavLink<T extends AnyTag>({
         <span className='right-el-wrapper'>
           {rightEl}
         </span>
-      )}
+      ) || null}
     </Component>
   )
 }

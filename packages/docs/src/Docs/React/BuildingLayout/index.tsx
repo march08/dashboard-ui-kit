@@ -68,7 +68,7 @@ export const ReactDocsOuterEventsHandler = () => {
         { id: 'full-example', label: 'Full Example With DUIK' },
       ]} />
       <h1>
-        Building layouts with
+        Building layouts with Dashboard UI Kit
         </h1>
       <p>
         First thing to know is that you don't have to use any of these components to make your layout work in your project.
@@ -76,7 +76,7 @@ export const ReactDocsOuterEventsHandler = () => {
         <i>You can freely build your layout with bootstrap or any other UI library as well.</i>
       </p>
       <p>
-        On this page, we are going to show you how to build a dashboard type layout with already made components that are part of the kit. The main building blocks are using
+        On this page, we are going to show you how to build a dashboard type layout with already made components that are part of the kit and works with the kit design language. The main building blocks are using
           {' '}
         <a
           href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"

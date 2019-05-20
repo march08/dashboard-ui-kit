@@ -1,0 +1,17 @@
+.code-switch {
+  padding: 0px 10px 10px;
+}
+
+.code-switch-item {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: .75rem;
+  display: inline-block;
+  margin: 5px 5px;
+  opacity: .5;
+
+  &:hover {
+    opacity: 1;
+  }
+}

@@ -10,6 +10,8 @@
   flex-grow: 0;
   z-index: 100;
   border-bottom: $border-default-base;
+  padding-left: 15px;
+  padding-right: 15px;
 
   &.top-bar-center {
     justify-content: center;
