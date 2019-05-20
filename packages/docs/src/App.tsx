@@ -17,7 +17,7 @@ import Docs from './Docs'
 const App = () => {
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/duik">
       <Switch>
         <Route path="/docs" component={Docs} />
         <Redirect to="/docs" />

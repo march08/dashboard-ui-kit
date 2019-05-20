@@ -3,17 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@duik/it": "0.1.0",
     "@duik/core": "0.1.0",
+    "@duik/create-simple-component": "0.1.0",
     "@duik/icon": "0.1.0",
+    "@duik/it": "0.1.0",
     "@duik/utils": "0.1.0",
-    "@duik/create-simple-component": "0.1.0"
+    "gh-pages": "^2.0.1"
   },
   "scripts": {
     "start": "../../node_modules/.bin/react-scripts start",
     "build": "../../node_modules/.bin/react-scripts build",
     "test": "../../node_modules/.bin/react-scripts test",
-    "eject": "../../node_modules/.bin/react-scripts eject"
+    "eject": "../../node_modules/.bin/react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "yarn run gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -23,5 +26,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "homepage": "https://march08.github.io/duik/"
 }
