@@ -59,6 +59,8 @@ export function NavLink<T extends AnyTag>({
   )
 }
 
+NavLink.displayName = "NavLink"
+
 NavLink.defaultProps = {
   className: null,
   rightEl: null,

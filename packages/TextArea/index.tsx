@@ -54,4 +54,6 @@ export const TextArea = (props: TextAreaProps) => {
   )
 }
 
+TextArea.displayName = "TextArea"
+
 export default TextArea

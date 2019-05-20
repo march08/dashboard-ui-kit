@@ -73,4 +73,6 @@ export const TextField = (props: TextFieldProps) => {
   )
 }
 
+TextField.displayName = "TextField"
+
 export default TextField
