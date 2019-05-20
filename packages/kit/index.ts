@@ -1,4 +1,5 @@
 import './kit.scss';
+export * from '@duik/progress';
 export * from '@duik/button';
 export * from '@duik/button-group';
 export * from '@duik/widget';

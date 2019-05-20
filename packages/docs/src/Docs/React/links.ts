@@ -21,6 +21,7 @@ const components = [
   'ButtonGroup',
   'Icon',
   'Dropdown',
+  'Progress',
 ]
 const layout = [
   'ContainerVertical',

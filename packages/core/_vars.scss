@@ -24,6 +24,12 @@
   padding-right: $paddingX;
 }
 
+@function hexToRgb($hex) {
+  @return red($hex),
+  green($hex),
+  blue($hex);
+}
+
 $space: 30px;
 $space-half: 30px;
 
@@ -121,10 +127,16 @@ sans-serif;
 
 
   --color-danger: #{$red};
+  --color-danger-hex: #{hexToRgb($red)};
   --color-primary: #{$blue};
+  --color-primary-hex: #{hexToRgb($blue)};
   --color-secondary: #{$green};
+  --color-secondary-hex: #{hexToRgb($green)};
   --color-success: #{$green};
+  --color-success-hex: #{hexToRgb($green)};
   --color-warning: #{$orange};
+  --color-warning-hex: #{hexToRgb($orange)};
+
   --gradient-secondary: linear-gradient(0deg, #34AA44 0%, #38B249 100%);
 }
 
@@ -154,6 +166,14 @@ $color-primary: var(--color-primary);
 $color-success: var(--color-success);
 $color-warning: var(--color-warning);
 $color-secondary: var(--color-secondary);
+
+$color-danger-hex: var(--color-danger-hex);
+$color-primary-hex: var(--color-primary-hex);
+$color-success-hex: var(--color-success-hex);
+$color-warning-hex: var(--color-warning-hex);
+$color-secondary-hex: var(--color-secondary-hex);
+
+
 $gradient-secondary: var(--gradient-secondary);
 
 

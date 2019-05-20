@@ -1,0 +1,26 @@
+@import '@duik/core/_vars.scss';
+
+.progress {
+  width: 100%;
+  display: flex;
+  border-radius: 4px;
+  height: 4px;
+  background: $border-color-base;
+}
+
+.progress-lg {
+  height: 8px;
+}
+
+.progress-bar {
+  background: $color-primary;
+  flex-grow: 0;
+  flex-shrink: 0;
+  border-radius: 4px;
+  display: block;
+  height: 100%;
+
+  &:nth-child(2n) {
+    background: $color-secondary;
+  }
+}
