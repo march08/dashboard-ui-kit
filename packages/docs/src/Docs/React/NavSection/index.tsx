@@ -19,7 +19,7 @@ export const ReactDocsNavSection = () => {
       <ImportPath name="NavSection" />
 
       <p>
-        NavSection adds some extra whitespacing to add some visual order to your coded application. It is a simple div with some css properties. Don't miss full example of how to build a navigation with nav elements <Link to="docs/react/navigation-panel">here</Link>.
+        NavSection adds some extra whitespacing to add some visual order to your coded application. It is a simple div with some css properties. Don't miss full example of how to build a navigation with nav elements <Link to="docs/react/building-nav-panel">here</Link>.
       </p>
 
       <h2 id="with">With NavSection</h2>

@@ -18,7 +18,7 @@ export const ReactDocsNavTitle = () => {
       <ImportPath name="NavTitle" />
 
       <p>
-        Styled typo for main navigation title in the NavPanel. Don't miss full example of how to build a navigation with nav elements <Link to="docs/react/navigation-panel">here</Link>.
+        Styled typo for main navigation title in the NavPanel. Don't miss full example of how to build a navigation with nav elements <Link to="docs/react/building-nav-panel">here</Link>.
       </p>
 
       <h2 id="example">Example</h2>

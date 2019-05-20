@@ -21,7 +21,7 @@ export const ReactDocsNavPanel = () => {
       <ImportPath name="NavPanel" />
 
       <p>
-        NavPanel is a <code>nav</code> container to keep you navigation items. The simplest way to implement it in your UI is to use flex containers, which you can check <Link to="/docs/react/building-layout">here (Building Layout)</Link>. Don't miss full example of how to build a navigation with nav elements <Link to="docs/react/navigation-panel">here</Link>.
+        NavPanel is a <code>nav</code> container to keep you navigation items. The simplest way to implement it in your UI is to use flex containers, which you can check <Link to="/docs/react/building-layout">here (Building Layout)</Link>. Don't miss full example of how to build a navigation with nav elements <Link to="docs/react/building-nav-panel">here</Link>.
       </p>
 
       <h2 id="default-style">Default Nav Panel Style</h2>
