@@ -12,7 +12,7 @@ import PropTable from './PropTable'
 
 
 const ExampleButton = ({ handleToggle, handleClose, handleOpen, setOpenState, isOpen }: DropdownButtonProps) => (
-  <Button success onClick={handleToggle} square>
+  <Button success onClick={handleToggle} square className="dropdown-toggleDefi">
     <Icon>edit</Icon>
   </Button>
 )
@@ -184,7 +184,7 @@ export const ReactDocsButton = () => {
           ),
           code: `import { DropdownButtonProps, Button } from '@duik/it'
 
-// Defining button (TS)
+// Defining button (TS), don't forget class "dropdown-toggle"
 const ExampleButton = ({
   // useOpenState hook handlers
   handleToggle, handleClose, handleOpen, setOpenState, isOpen

@@ -1,3 +1,16 @@
+// bootstrap colors
+$blue: #1665D8 !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #E6492D !default;
+$orange: #F6AB2F !default;
+$yellow: #FACF55 !default;
+$green: #38B249 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+
+
 /** Radius Mixins **/
 @mixin border-right-radius($radius) {
   border-top-right-radius: $radius;
@@ -24,6 +37,11 @@
   padding-right: $paddingX;
 }
 
+@mixin padding-y($paddingY) {
+  padding-left: $paddingY;
+  padding-right: $paddingY;
+}
+
 @function hexToRgb($hex) {
   @return red($hex),
   green($hex),
@@ -31,24 +49,9 @@
 }
 
 $space: 30px;
-$space-half: 30px;
-
-$blue: #1665D8 !default;
-$indigo: #6610f2 !default;
-$purple: #6f42c1 !default;
-$pink: #e83e8c !default;
-$red: #E6492D !default;
-$orange: #F6AB2F !default;
-$yellow: #FACF55 !default;
-$green: #38B249 !default;
-$teal: #20c997 !default;
-$cyan: #17a2b8 !default;
+$space-half: 15px;
 
 
-// media
-$mediaMobile: "screen and (max-width: 768px)";
-$mediaTablet: "screen and (max-width: 1024px)";
-$mediaDesktopSmall: "screen and (max-width: 1366px)";
 $fontFamily: 'Roboto',
 sans-serif;
 
@@ -59,6 +62,7 @@ $orange: #F6AB2F;
 $violet: #6977FF;
 $red: #E6492D;
 $yellow: #FACF55;
+
 $success: $green;
 $primary: $blue;
 $warning: $orange;
@@ -125,17 +129,21 @@ sans-serif;
   --bg-primary: #FFFFFF;
   --bg-adverse-primary: #252529;
 
+  // colors by domain
+  --color-success: #38B249;
+  --color-secondary: #38B249;
+  --color-primary: #1665D8;
+  --color-danger: #E6492D;
+  --color-warning: #F6AB2F;
+  --color-info: #6977FF;
 
-  --color-danger: #{$red};
-  --color-danger-hex: #{hexToRgb($red)};
-  --color-primary: #{$blue};
-  --color-primary-hex: #{hexToRgb($blue)};
-  --color-secondary: #{$green};
-  --color-secondary-hex: #{hexToRgb($green)};
-  --color-success: #{$green};
-  --color-success-hex: #{hexToRgb($green)};
-  --color-warning: #{$orange};
-  --color-warning-hex: #{hexToRgb($orange)};
+  // colors 
+  --color-green: #38B249;
+  --color-blue: #1665D8;
+  --color-orange: #F6AB2F;
+  --color-violet: #6977FF;
+  --color-red: #E6492D;
+  --color-yellow: #FACF55;
 
   --gradient-secondary: linear-gradient(0deg, #34AA44 0%, #38B249 100%);
 }
@@ -161,17 +169,20 @@ $bg-base: var(--bg-base);
 $bg-primary: var(--bg-primary);
 $bg-adverse-primary: var(--bg-adverse-primary);
 
-$color-danger: var(--color-danger);
 $color-primary: var(--color-primary);
 $color-success: var(--color-success);
 $color-warning: var(--color-warning);
+$color-danger: var(--color-danger);
 $color-secondary: var(--color-secondary);
+$color-info: var(--color-info);
 
-$color-danger-hex: var(--color-danger-hex);
-$color-primary-hex: var(--color-primary-hex);
-$color-success-hex: var(--color-success-hex);
-$color-warning-hex: var(--color-warning-hex);
-$color-secondary-hex: var(--color-secondary-hex);
+$color-green: var(--color-green);
+$color-blue: var(--color-blue);
+$color-orange: var(--color-orange);
+$color-violet: var(--color-violet);
+$color-red: var(--color-red);
+$color-yellow: var(--color-yellow);
+
 
 
 $gradient-secondary: var(--gradient-secondary);

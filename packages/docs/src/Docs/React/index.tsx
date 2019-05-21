@@ -11,7 +11,7 @@ export const DocsReact = (props: RouteComponentProps) => {
 
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
-      <NavPanel dark>
+      <NavPanel>
         <NavTitle>React Docs</NavTitle>
 
         {
@@ -23,9 +23,10 @@ export const DocsReact = (props: RouteComponentProps) => {
                   <NavLink
                     to={`${match.path}${item.to}`}
                     Component={RRNavLink}
-                    pill
+                    // pill
                     key={item.to}
                     rightEl={<Icon>arrow_right</Icon>}
+                    highlighted
                   >
                     {item.text}
                   </NavLink>
