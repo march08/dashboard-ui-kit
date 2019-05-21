@@ -77,7 +77,7 @@ export const Button = <T extends AnyTag = 'button'>(props: ButtonProps<T>) => {
       [cls['btn-lg']]: lg,
       [cls['btn-clear']]: clear,
       [cls['btn-loading']]: loadingState,
-      [cls.transparent]: transparent,
+      [cls['btn-transparent']]: transparent,
       [cls.noBorder]: noBorder,
       [cls['btn-block']]: isExpanded || block,
       [cls['btn-square']]: square

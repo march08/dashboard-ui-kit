@@ -161,7 +161,7 @@ a.base:hover {
 }
 
 /*Colors*/
-.btn.transparent {
+.btn.btn-transparent {
   background: transparent;
   border: 1px solid #E2E5ED;
   box-shadow: none;
@@ -368,10 +368,10 @@ a.base:hover {
 /* Necessary if icon is present in <a> element
 // otherwise it's not aligned to the text */
 
-a.commonButton * {
+a.btn * {
   vertical-align: middle;
 }
 
-a.commonButton {
+a.btn {
   text-decoration: none;
 }
