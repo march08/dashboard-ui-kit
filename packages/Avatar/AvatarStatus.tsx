@@ -1,5 +1,5 @@
 import * as React from 'react'
-import cls from './avatar.module.scss'
+import cls from './styles.scss'
 
 export type AvatarStatusProps = {
   status: React.ReactNode,

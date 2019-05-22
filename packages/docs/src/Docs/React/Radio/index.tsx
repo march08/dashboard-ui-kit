@@ -20,10 +20,10 @@ export const ReactDocsButton = () => {
       <h2 id="basic-usage">Basic Usage</h2>
 
       <ExampleTable fixed data={[
-        { content: <Radio defaultChecked /> },
-        { content: <Radio label="Check me" /> },
-        { content: <Radio label="Radio" description="With Description" /> },
-        { content: <Radio disabled label="Radio" description="With Description" /> },
+        { content: <Radio name="radioGroup" defaultChecked /> },
+        { content: <Radio name="radioGroup" label="Check me" /> },
+        { content: <Radio name="radioGroup" label="Radio" description="With Description" /> },
+        { content: <Radio name="radioGroup" disabled label="Radio" description="With Description" /> },
       ]} />
 
 

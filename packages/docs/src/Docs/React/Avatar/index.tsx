@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Avatar } from 'components/Avatar'
+import { Avatar } from '@duik/it'
 import * as assets from 'assets'
 
 

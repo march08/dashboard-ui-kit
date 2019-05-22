@@ -2,7 +2,7 @@ import classnames from 'classnames'
 // @flow
 import * as React from 'react'
 
-import cls from './avatar.module.scss'
+import cls from './styles.scss'
 
 export type AvatarImageProps = AvatarImageSingleProps | AvatarImageMultiProps
 

@@ -1,12 +1,13 @@
 import * as React from 'react'
 import classnames from 'classnames'
 
-import AvatarStatus from './AvatarStatus'
 import { AvatarImageSingle, AvatarImageMulti } from './AvatarImage'
 
-import cls from './avatar.module.scss'
+import cls from './styles.scss'
 
-type AvatarPlaceholderProps = {
+export * from './AvatarImage'
+
+export type AvatarPlaceholderProps = {
   content?: React.ReactNode,
   color?: 'green' | 'blue' | 'orange' | 'indigo' | 'red' | 'yellow',
 }

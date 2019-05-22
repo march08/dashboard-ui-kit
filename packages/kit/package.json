@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@duik/core": "0.1.0",
+    "@duik/avatar": "0.1.0",
     "@duik/button": "0.1.0",
     "@duik/button-group": "0.1.0",
     "@duik/widget": "0.1.0",
