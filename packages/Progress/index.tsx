@@ -54,4 +54,6 @@ Progress.defaultProps = {
   fill: 1,
 }
 
+Progress.displayName = 'Progress'
+
 export default Progress

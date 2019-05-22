@@ -4,6 +4,7 @@
   "scripts": {
     "clean": "rimraf build/** build packages/**/dist/",
     "clean-modules": "rimraf node_modules/** node_modules packages/**/node_modules/",
+    "deploy": "lerna run deploy",
     "build": "npm run clean && mkdirp build && node --max_old_space_size=8192 node_modules/.bin/webpack --config packages/webpack.config.js --progress --colors"
   },
   "devDependencies": {
@@ -50,6 +51,7 @@
     "react-element-to-jsx-string": "^14.0.2",
     "react-router-dom": "^5.0.0",
     "react-scripts": "^3.0.1",
+    "react-snap": "^1.23.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-react": "^4.0.0",
     "typescript": "^3.4.5"
