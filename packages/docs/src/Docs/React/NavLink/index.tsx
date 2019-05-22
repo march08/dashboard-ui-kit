@@ -22,7 +22,7 @@ export const ReactDocsNavLink = () => {
       <ImportPath name="NavLink" />
 
       <p>
-        Single component that will provide you several different styles of rendering. For a full example, see how to build <Link to="docs/react/building-nav-panel">Navigation Panel</Link>. Same as <Link to="react/docs/buttons">Buttons</Link>, you can compose the component with different base, e.g. <code>Link</code> from <code>react-router-dom</code>
+        Single component that will provide you several different styles of rendering. For a full example, see how to build <Link to="/docs/react/building-nav-panel">Navigation Panel</Link>. Same as <Link to="/docs/react/buttons">Buttons</Link>, you can compose the component with different base, e.g. <code>Link</code> from <code>react-router-dom</code>
       </p>
 
       <h2 id="default-style">Default nav link style</h2>
@@ -91,7 +91,7 @@ export const ReactDocsNavLink = () => {
         },]}
       />
       <h2 id="compose">With Link from react-router-dom</h2>
-      <p>Same as <Link to="react/docs/button">Buttons</Link>, you can pass Component property to <code>NavLink</code> if you want to render for example <code>Link</code> from react-router-dom.</p>
+      <p>Same as <Link to="/docs/react/button">Buttons</Link>, you can pass Component property to <code>NavLink</code> if you want to render for example <code>Link</code> from react-router-dom.</p>
       <ExampleTable data={[
         {
           content: (

@@ -38,9 +38,8 @@ const Avatar = ({
   ...rest
 }: AvatarProps) => (
     <span
-      className={classnames(cls.wrapper, className, {
+      className={classnames(cls['avatar'], className, {
         [cls.highlighted]: highlighted,
-        [cls[size]]: size,
       })}
       {...rest}
     >
@@ -53,12 +52,9 @@ const Avatar = ({
                 <AvatarImageSingle imgUrl={imgUrl} />
               )
           ) : (
-
-              <div className={classnames(cls.avatarPlaceholder, {
-                [avatarPlaceholder.color]: avatarPlaceholder.color,
-              })}
+              <div className={classnames(cls.avatarPlaceholder)}
               >
-                {avatarPlaceholder.content}
+                {avatarPlaceholder && avatarPlaceholder.content}
               </div>
             )
         }
@@ -72,19 +68,19 @@ const Avatar = ({
       </div>
       {
         (name || textTop || textBottom) && (
-          <div className={cls.info}>
+          <div className={cls['avatar-content']}>
             {textTop && (
-              <div className={cls.textTop}>
+              <div className={cls['avatar-text-top']}>
                 {textTop}
               </div>
             )}
             {name && (
-              <div className={cls.name}>
+              <div className={cls['avatar-name']}>
                 {name}
               </div>
             )}
             {textBottom && (
-              <div className={cls.textBottom}>
+              <div className={cls['avatar-text-bottom']}>
                 {textBottom}
               </div>
             )}

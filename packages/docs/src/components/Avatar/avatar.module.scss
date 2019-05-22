@@ -1,6 +1,17 @@
 @import '../../vars.scss';
 
-.info {
+
+.avatar {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+
+  &>* {
+    min-width: 1px;
+  }
+}
+
+.avatar-content {
   margin-left: 12px;
   flex-grow: 1;
 
@@ -9,37 +20,46 @@
   }
 }
 
-.wrapper {
+.avatar-name {
+  font-size: 0.875rem;
+  color: $textMain;
+  line-height: 1.375rem;
+  @include textOverflow();
   display: flex;
   align-items: center;
-  max-width: 100%;
+  justify-content: flex-start;
 
-  &>* {
-    min-width: 1px;
+  i {
+    font-style: normal;
+    color: $textSecondary;
   }
+}
 
-  .name {
-    /* Author: */
-    font-size: 0.875rem;
-    color: $textMain;
-    line-height: 1.375rem;
-    @include textOverflow();
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
 
-    i {
-      font-style: normal;
-      color: $textSecondary;
-    }
-  }
+.avatar-text-top {
+  font-size: 0.75rem;
+  color: $textSecondary;
+  line-height: 1.125rem;
+  @include textOverflow();
+}
 
-  &.highlighted {
-    .name {
-      font-weight: 500;
-    }
-  }
+.avatar-text-bottom {
+  font-size: 0.75rem;
+  color: $textSecondary;
+  line-height: 1.125rem;
+  margin-top: 2px;
+  @include textOverflow();
+}
 
+.avatar-text-top,
+.avatar-text-bottom,
+.avatar-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wrapper {
   .avatarWrapper {
     position: relative;
     height: 38px;
@@ -87,28 +107,6 @@
 
   }
 
-  .textTop {
-    font-size: 0.75rem;
-    color: $textSecondary;
-    line-height: 1.125rem;
-    @include textOverflow();
-  }
-
-  .textBottom {
-    font-size: 0.75rem;
-    color: $textSecondary;
-    line-height: 1.125rem;
-    margin-top: 2px;
-    @include textOverflow();
-  }
-
-  .textTop,
-  .textBottom,
-  .name {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
 
   &.small {
     .avatarWrapper {
@@ -128,14 +126,14 @@
       width: 60px;
     }
 
-    .textTop,
-    .textBottom {
+    .avatar-text-top,
+    .avatar-text-bottom {
       font-size: 0.875rem;
       line-height: 1.375rem;
       color: $textBase;
     }
 
-    .name {
+    .avatar-name {
       font-size: 1rem;
       line-height: 1.5rem;
     }
@@ -143,8 +141,8 @@
 
   &.larger {
 
-    .textTop,
-    .textBottom {
+    .avatar-text-top,
+    .avatar-text-bottom {
       color: $textBase;
     }
 
@@ -164,7 +162,7 @@
   }
 
   &.jumbo {
-    .name {
+    .avatar-name {
       font-size: 1.25rem;
       line-height: 1.5;
     }
@@ -175,7 +173,7 @@
       width: 120px;
     }
 
-    .info {
+    .avatar-content {
       margin-left: 24px;
     }
   }
