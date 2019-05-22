@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Comment</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="-2.48949813e-15%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#5493F5" offset="0%"></stop>
+            <stop stop-color="#1B53D4" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Other/Rounded-14px/Comment">
+            <g id="Comment">
+                <rect id="Base" fill="url(#linearGradient-1)" x="0" y="0" width="14" height="14" rx="7"></rect>
+                <path d="M8.97256209,4.70879161 C7.35378896,3.29833104 4.84369691,4.09637945 4.28648197,6.18825637 C4.0524967,7.06618464 4.27823249,7.47383437 4.27823249,8.13274935 C4.27823249,8.81004044 4,9.79109996 4,9.79109996 C4,9.91110725 4.10686828,10.0281143 4.23848499,9.99398727 C4.70908038,9.87135483 5.45753328,9.62871511 6.35260196,9.87097981 C9.36253755,10.6844042 11.294041,6.73128932 8.97256209,4.70879161" id="Icon" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>

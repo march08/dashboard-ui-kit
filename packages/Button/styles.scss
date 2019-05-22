@@ -300,44 +300,6 @@ a.base:hover {
 }
 
 
-.base {
-  display: inline-flex;
-  align-items: center;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  user-select: none;
-  height: 38px;
-  padding: 0 18px;
-  transition: all 0.1s ease-in-out 0s;
-  font-size: 0.875rem;
-  font-weight: 400;
-  position: relative;
-
-  &>* {
-    transition: .1s all;
-  }
-
-  &>.loader {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-
-  &:active {
-    border: 1px solid #eee;
-    box-shadow: none;
-    transform: translateY(0px);
-  }
-
-
-
-  //icon inisde the button
-  //Button without backround and without hover or effect
-}
-
 .btn:disabled {
   cursor: not-allowed;
   pointer-events: none;

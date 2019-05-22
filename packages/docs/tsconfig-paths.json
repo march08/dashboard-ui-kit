@@ -28,6 +28,9 @@
       ],
       "hooks": [
         "hooks"
+      ],
+      "assets": [
+        "assets"
       ]
     }
   }

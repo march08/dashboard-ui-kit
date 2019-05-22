@@ -1,6 +1,8 @@
+import React from 'react';
+
 export type ReactDocsProperty = {
-  prop: string,
-  propType?: string,
+  prop: React.ReactNode,
+  propType?: React.ReactNode,
   required?: boolean,
   defaultValue?: any,
   desc?: React.ReactNode

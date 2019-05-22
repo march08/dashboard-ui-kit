@@ -11,6 +11,13 @@ $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
 
 
+
+@mixin textOverflow {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
 /** Radius Mixins **/
 @mixin border-right-radius($radius) {
   border-top-right-radius: $radius;
@@ -59,7 +66,7 @@ sans-serif;
 $green: #38B249;
 $blue: #1665D8;
 $orange: #F6AB2F;
-$violet: #6977FF;
+$indigo: #6977FF;
 $red: #E6492D;
 $yellow: #FACF55;
 
@@ -67,28 +74,6 @@ $success: $green;
 $primary: $blue;
 $warning: $orange;
 $error: $red;
-// base color pairs
-$colorPairs: (green, #38B249),
-(blue, #1665D8),
-(orange, #F6AB2F),
-(violet, #6977FF),
-(yellow, #FACF55),
-(red, #E6492D);
-
-// mixins
-@mixin generateColorVariants($class, $property, $alpha) {
-
-  @each $name,
-  $color in (green, #38B249),
-  (blue, #1665D8),
-  (orange, #F6AB2F),
-  (violet, #6977FF),
-  (red, #E6492D) {
-    #{$class}.#{$name} {
-      #{$property}: rgba($color, $alpha);
-    }
-  }
-}
 
 @mixin textOverflow {
   overflow: hidden;
@@ -130,21 +115,20 @@ sans-serif;
   --bg-adverse-primary: #252529;
 
   // colors by domain
-  --color-success: #38B249;
-  --color-secondary: #38B249;
-  --color-primary: #1665D8;
-  --color-danger: #E6492D;
-  --color-warning: #F6AB2F;
-  --color-info: #6977FF;
+  --success: #38B249;
+  --secondary: #38B249;
+  --primary: #1665D8;
+  --danger: #E6492D;
+  --warning: #F6AB2F;
+  --info: #6977FF;
 
   // colors 
-  --color-green: #38B249;
-  --color-blue: #1665D8;
-  --color-orange: #F6AB2F;
-  --color-violet: #6977FF;
-  --color-red: #E6492D;
-  --color-yellow: #FACF55;
-
+  --green: #38B249;
+  --blue: #1665D8;
+  --orange: #F6AB2F;
+  --indigo: #6977FF;
+  --red: #E6492D;
+  --yellow: #FACF55;
   --gradient-secondary: linear-gradient(0deg, #34AA44 0%, #38B249 100%);
 }
 
@@ -169,46 +153,45 @@ $bg-base: var(--bg-base);
 $bg-primary: var(--bg-primary);
 $bg-adverse-primary: var(--bg-adverse-primary);
 
-$color-primary: var(--color-primary);
-$color-success: var(--color-success);
-$color-warning: var(--color-warning);
-$color-danger: var(--color-danger);
-$color-secondary: var(--color-secondary);
-$color-info: var(--color-info);
+$color-primary: var(--primary);
+$color-success: var(--success);
+$color-warning: var(--warning);
+$color-danger: var(--danger);
+$color-secondary: var(--secondary);
+$color-info: var(--info);
 
-$color-green: var(--color-green);
-$color-blue: var(--color-blue);
-$color-orange: var(--color-orange);
-$color-violet: var(--color-violet);
-$color-red: var(--color-red);
-$color-yellow: var(--color-yellow);
+$color-green: var(--green);
+$color-blue: var(--blue);
+$color-orange: var(--orange);
+$color-indigo: var(--indigo);
+$color-red: var(--red);
+$color-yellow: var(--yellow);
 
+
+$colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$colors: map-merge(("blue": $color-blue,
+"indigo": $color-indigo,
+"red": $color-red,
+"orange": $color-orange,
+"yellow": $color-yellow,
+"green": $color-green), $colors);
+
+@mixin generateColorProperty($classPrefix, $property) {
+
+  @each $color,
+  $value in $colors {
+
+    #{$classPrefix}-#{$color} {
+      #{$property}: #{$value};
+    }
+
+  }
+}
 
 
 $gradient-secondary: var(--gradient-secondary);
 
-@mixin cssUtils {
-  .c-primary {
-    color: $color-primary
-  }
-
-  .c-secondary {
-    color: $color-secondary
-  }
-
-  .c-success {
-    color: $color-success
-  }
-
-  .c-warning {
-    color: $color-warning
-  }
-
-  .c-danger {
-    color: $color-danger
-  }
-
-}
 
 /** Button **/
 

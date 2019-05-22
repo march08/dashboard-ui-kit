@@ -195,3 +195,6 @@ pre {
 label {
   @include content-title();
 }
+
+@include generateColorProperty('body .bg', 'background-color');
+@include generateColorProperty('body .text', 'color');

@@ -18,7 +18,7 @@ export type AvatarImageMultiProps = JSX.IntrinsicElements['div'] & {
 }
 
 export const AvatarImageMulti = (props: AvatarImageMultiProps) => {
-  const { imgUrl, imgProps, ...rest } = props
+  const { imgUrl, imgProps, name, ...rest } = props
   return (
     /* GROUPS, rendering multiple images */
     <div className={classnames(cls['avatar-image-multi-container'], {

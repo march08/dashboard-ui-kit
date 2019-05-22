@@ -8,42 +8,51 @@ import cls from './avatar.module.scss'
 
 type AvatarPlaceholderProps = {
   content?: React.ReactNode,
-  color?: 'green' | 'blue' | 'orange' | 'violet' | 'red',
+  color?: 'green' | 'blue' | 'orange' | 'indigo' | 'red' | 'yellow',
 }
 
-export type AvatarProps = {
-  className?: String,
+export type AvatarProps = JSX.IntrinsicElements['span'] & {
   name?: React.ReactNode,
-  status?: React.ReactNode,
   imgUrl?: string | string[],
-  textTop?: String,
   avatarPlaceholder?: AvatarPlaceholderProps,
-  highlighted?: Boolean,
+  textTop?: React.ReactNode,
   textBottom?: React.ReactNode,
-  actionIcon?: React.ReactNode,
-  size?: 'small' | 'large' | 'larger' | 'extraLarge' | 'jumbo',
+  rightEl?: React.ReactNode,
+  leftEl?: React.ReactNode,
+  sm?: boolean,
+  lg?: boolean,
+  xl?: boolean,
+  xxl?: boolean,
+  jumbo?: boolean,
 }
 
-const Avatar = ({
+export const Avatar = ({
   name,
   imgUrl,
   avatarPlaceholder,
   textTop,
   className,
-  highlighted,
-  actionIcon,
-  status,
-  size,
+  rightEl,
+  leftEl,
   textBottom,
+  sm,
+  lg,
+  xl,
+  xxl,
+  jumbo,
   ...rest
 }: AvatarProps) => (
     <span
       className={classnames(cls['avatar'], className, {
-        [cls.highlighted]: highlighted,
+        [cls['avatar-sm']]: sm,
+        [cls['avatar-lg']]: lg,
+        [cls['avatar-xl']]: xl,
+        [cls['avatar-xxl']]: xxl,
+        [cls['avatar-jumbo']]: jumbo,
       })}
       {...rest}
     >
-      <div className={classnames(cls.avatarWrapper)}>
+      <span className={classnames(cls['avatar-image-wrapper'])}>
         {
           imgUrl ? (
             Array.isArray(imgUrl) ? (
@@ -52,61 +61,49 @@ const Avatar = ({
                 <AvatarImageSingle imgUrl={imgUrl} />
               )
           ) : (
-              <div className={classnames(cls.avatarPlaceholder)}
+              <span className={classnames(cls['avatar-placeholder'], avatarPlaceholder && {
+                [`bg-${avatarPlaceholder.color}`]: avatarPlaceholder.color
+              })}
               >
                 {avatarPlaceholder && avatarPlaceholder.content}
-              </div>
+              </span>
             )
         }
-        {
-          actionIcon && (
-            <div className={cls.avatarAction}>
-              {actionIcon}
-            </div>
-          )
-        }
-      </div>
+        {rightEl && (
+          <span className={cls['avatar-right-el']}>
+            {rightEl}
+          </span>
+        )}
+        {leftEl && (
+          <span className={cls['avatar-left-el']}>
+            {leftEl}
+          </span>
+        )}
+      </span>
       {
         (name || textTop || textBottom) && (
-          <div className={cls['avatar-content']}>
+          <span className={cls['avatar-content']}>
             {textTop && (
-              <div className={cls['avatar-text-top']}>
+              <span className={cls['avatar-text-top']}>
                 {textTop}
-              </div>
+              </span>
             )}
             {name && (
-              <div className={cls['avatar-name']}>
+              <span className={cls['avatar-name']}>
                 {name}
-              </div>
+              </span>
             )}
             {textBottom && (
-              <div className={cls['avatar-text-bottom']}>
+              <span className={cls['avatar-text-bottom']}>
                 {textBottom}
-              </div>
+              </span>
             )}
-          </div>
-        )
-      }
-      {
-        status && (
-          <AvatarStatus status={status} />
+          </span>
         )
       }
     </span>
   )
 
-Avatar.defaultProps = {
-  className: null,
-  name: null,
-  textTop: null,
-  actionIcon: null,
-  highlighted: false,
-  avatarPlaceholder: {},
-  status: null,
-  imgUrl: null,
-  size: null,
-  textBottom: null,
-  Component: 'div',
-}
+Avatar.displayName = 'Avatar'
 
 export default Avatar

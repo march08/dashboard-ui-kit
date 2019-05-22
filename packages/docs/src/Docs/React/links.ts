@@ -22,6 +22,7 @@ const components = [
   'Icon',
   'Dropdown',
   'Progress',
+  'Avatar',
 ]
 const layout = [
   'ContainerVertical',
