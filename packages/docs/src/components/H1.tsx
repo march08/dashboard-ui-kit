@@ -7,7 +7,6 @@ export const H1 = (props: JSX.IntrinsicElements['h1'] & { metaTitle?: string }) 
     <>
       {(typeof children === 'string' || metaTitle) && (
         <Helmet>
-          {console.log('ok')}
           <title>{typeof children === 'string' ? children : metaTitle}</title>
         </Helmet>
       )}
