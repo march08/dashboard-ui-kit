@@ -24,6 +24,8 @@ export const TopBarTitle = ({
     </h2>
   )
 
+TopBarTitle.displayName = "TopBarTitle"
+
 TopBarTitle.defaultProps = {
   className: null,
   children: null,

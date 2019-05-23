@@ -32,4 +32,6 @@ TopBarLink.defaultProps = {
   Component: 'a',
 }
 
+TopBarLink.displayName = "TopBarLink"
+
 export default TopBarLink
