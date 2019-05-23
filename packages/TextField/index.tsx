@@ -1,6 +1,6 @@
 import * as React from 'react'
 import classnames from 'classnames'
-import './styles.scss'
+import cls from './styles.scss'
 
 export type TextFieldProps = JSX.IntrinsicElements['input'] & {
   wrapperProps?: JSX.IntrinsicElements['div'],
@@ -36,10 +36,10 @@ export const TextField = (props: TextFieldProps) => {
       )}
       <div
         {...wrapperProps}
-        className={classnames(wrapperProps && wrapperProps.className, 'input-group', {
-          ['is-invalid']: errorMessage,
-          ['is-valid']: successMessage,
-          ['input-group-clear']: clear,
+        className={classnames(wrapperProps && wrapperProps.className, cls['input-group'], {
+          [cls['is-invalid']]: errorMessage,
+          [cls['is-valid']]: successMessage,
+          [cls['input-group-clear']]: clear,
         })}
       >
         {leftEl && (
@@ -48,24 +48,24 @@ export const TextField = (props: TextFieldProps) => {
           </div>
         )}
         <input
-          className={classnames(className, 'form-control')}
+          className={classnames(className, cls['form-control'])}
           type="text"
           id={id}
           {...rest}
         />
         {rightEl && (
-          <div className={'input-group-append'}>
+          <div className={cls['input-group-append']}>
             {rightEl}
           </div>
         )}
       </div>
       {errorMessage ? (
-        <div className={'invalid-feedback'}>
+        <div className={cls['invalid-feedback']}>
           {errorMessage}
         </div>
       ) : null}
       {successMessage ? (
-        <div className={'valid-feedback'}>
+        <div className={cls['valid-feedback']}>
           {successMessage}
         </div>
       ) : null}

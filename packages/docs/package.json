@@ -28,8 +28,11 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "homepage": "https://march08.github.io/duik/",
+  "homepage": "https://march08.github.io/duik",
   "devDependencies": {
     "react-snap": "^1.23.0"
+  },
+  "reactSnap": {
+    "asyncScriptTags": true
   }
 }
