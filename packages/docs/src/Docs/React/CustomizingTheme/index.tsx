@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { H1 } from 'components'
 import { DocsContentPage, PageContent } from '../../components'
 
 
@@ -9,7 +10,7 @@ export const CustomizingTheme = () => {
         { id: 'example', label: 'Examples' },
         { id: 'sizes', label: 'Sizes' },
       ]} />
-      <h1>Customizing Theme</h1>
+      <H1>Customizing Theme</H1>
     </DocsContentPage>
   )
 }

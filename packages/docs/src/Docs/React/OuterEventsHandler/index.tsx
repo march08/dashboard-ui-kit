@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { H1 } from 'components'
 import { Dropdown, OuterEventsHandler } from '@duik/it'
 import { Link } from 'react-router-dom'
 import { DocsContentPage, ExampleTable, PageContent, ImportPath } from '../../components'
@@ -18,7 +19,7 @@ export const ReactDocsOuterEventsHandler = () => {
         { id: 'more-events', label: 'More trigger events' },
         { id: 'props', label: 'Prop Table' },
       ]} />
-      <h1>OuterEventsHandler</h1>
+      <H1>OuterEventsHandler</H1>
       <ImportPath name="OuterEventsHandler" />
       <p>This fairly simple component will let you know if selected events were triggered outside it's wrapping element. This is useful in situations like dropdowns, selects or modals. The component is used in some components in this kit as well, however we find it useful to expose it for your own creativity!</p>
 

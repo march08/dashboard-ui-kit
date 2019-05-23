@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { H1 } from 'components'
 import { Button, ButtonGroup, Dropdown, DropdownMenuPosition, DropdownItem } from '@duik/it'
 
 import { Icon } from '@duik/icon'
@@ -17,7 +18,7 @@ export const ReactDocsButtonGroup = () => {
         { id: 'sizes', label: 'Sizes' },
         { id: 'props', label: 'Prop Table' },
       ]} />
-      <h1>ButtonGroup</h1>
+      <H1>ButtonGroup</H1>
       <ImportPath name="ButtonGroup" />
       <br />
       <p>Group buttons horizontaly or verticaly.</p>

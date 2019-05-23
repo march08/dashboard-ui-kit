@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Avatar } from '@duik/it'
 import * as assets from 'assets'
+import { H1 } from 'components'
 
 
 
@@ -21,7 +22,7 @@ export const ReactDocsAvatar = () => {
         { id: 'other', label: 'Other elements' },
         { id: 'props', label: 'Prop Table' },
       ]} />
-      <h1>Avatar</h1>
+      <H1>Avatar</H1>
       <ImportPath name="Avatar" />
       <br />
       <p>Display user content with ease.</p>

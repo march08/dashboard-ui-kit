@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from '@duik/it'
-
+import { H1 } from 'components'
 import { Icon } from '@duik/icon'
 
 
@@ -25,7 +25,7 @@ export const ReactDocsButton = () => {
         { id: 'props', label: 'Prop Table' },
         { id: 'migration', label: 'Migration from Dashboard UI Kit 3' },
       ]} />
-      <h1>Button</h1>
+      <H1>Button</H1>
       <ImportPath name="Button" />
       <br />
       <p>Use buttons in forms, as links with many varieties.</p>

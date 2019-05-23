@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Progress } from '@duik/it'
+import { H1 } from 'components'
 import { DocsContentPage, ExampleTable, ImportPath, PageContent } from '../../components'
 
 import PropTable from './PropTable'
@@ -13,7 +14,7 @@ export const ReactDocsNavLink = () => {
         { id: 'basic-usage', label: 'Basic Usage' },
         { id: 'props', label: 'Prop Table' },
       ]} />
-      <h1>Progress</h1>
+      <H1>Progress</H1>
       <ImportPath name="Progress" />
 
       <p>

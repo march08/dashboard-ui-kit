@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { H1 } from 'components'
 import { Link } from 'react-router-dom'
 import { NavSection, NavPanel, NavSectionTitle, NavLink, NavTitle } from '@duik/it'
 import { DocsContentPage, ExampleTable, ImportPath, PageContent } from '../../components'
@@ -14,7 +15,7 @@ export const ReactDocsNavTitle = () => {
         { id: 'example', label: 'Example usage' },
         { id: 'props', label: 'Prop Table' },
       ]} />
-      <h1>NavTitle</h1>
+      <H1>NavTitle</H1>
       <ImportPath name="NavTitle" />
 
       <p>

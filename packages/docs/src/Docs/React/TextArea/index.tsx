@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { TextArea } from '@duik/it'
+import { H1 } from 'components'
 import { DocsContentPage, ExampleTable, PageContent, ImportPath } from '../../components'
 
 import PropTable from './PropTable'
@@ -14,7 +15,7 @@ export const ReactDocsOuterEventsHandler = () => {
         { id: 'props', label: 'Prop Table' },
         { id: 'migration', label: 'Migration from Dashboard UI Kit 3' },
       ]} />
-      <h1>TextArea</h1>
+      <H1>TextArea</H1>
       <ImportPath name="TextArea" />
       <h2 id="basic-usage">Basic Usage</h2>
 

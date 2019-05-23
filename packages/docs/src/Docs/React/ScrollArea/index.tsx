@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { ScrollArea } from '@duik/it'
+import { H1 } from 'components'
 import { DocsContentPage, ExampleTable, ImportPath } from '../../components'
 
 import PropTable from './PropTable'
@@ -10,7 +11,7 @@ export const ReactDocsScrollArea = () => {
 
   return (
     <DocsContentPage>
-      <h1>ScrollArea</h1>
+      <H1>ScrollArea</H1>
       <ImportPath name="ScrollArea" />
 
       <p>

@@ -1,9 +1,6 @@
 import * as React from 'react';
 import { RouteComponentProps, Switch, Route, Redirect } from 'react-router-dom';
-
-import { NavPanel } from '@duik/it'
-
-import { PageScroll } from 'components';
+import Helmet from 'react-helmet'
 
 import DocsReact from './React'
 
@@ -11,10 +8,17 @@ export const Docs = (props: RouteComponentProps) => {
   const { match } = props
 
   return (
-    <Switch>
-      <Route path={`${match.path}/react`} component={DocsReact} />
-      <Redirect to={`${match.path}/react`} />
-    </Switch>
+    <>
+
+      <Helmet
+        titleTemplate="%s - React Docs -  Dashboard UI Kit"
+        defaultTitle="React Docs -  Dashboard UI Kit"
+      />
+      <Switch>
+        <Route path={`${match.path}/react`} component={DocsReact} />
+        <Redirect to={`${match.path}/react`} />
+      </Switch>
+    </>
   )
 }
 

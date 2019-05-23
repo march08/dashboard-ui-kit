@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { DocsContentPage, PageContent } from '../../components'
 
+import { H1 } from 'components'
 
 export const UseInCreateReactApp = () => {
   return (
@@ -9,7 +10,7 @@ export const UseInCreateReactApp = () => {
         { id: 'example', label: 'Examples' },
         { id: 'sizes', label: 'Sizes' },
       ]} />
-      <h1>Using @duik with create-react-app</h1>
+      <H1>Using @duik with create-react-app</H1>
     </DocsContentPage>
   )
 }

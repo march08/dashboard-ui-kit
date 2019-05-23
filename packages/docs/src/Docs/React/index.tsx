@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { RouteComponentProps, Switch, Route, Redirect, NavLink as RRNavLink } from 'react-router-dom';
-import { NavPanel, NavSection, NavLink, NavSectionTitle, NavTitle } from '@duik/it';
+import { NavPanel, NavSection, NavLink, NavSectionTitle, NavTitle, ContainerHorizontal } from '@duik/it';
 import { PageScroll } from 'components';
 import { Icon } from '@duik/icon'
 
@@ -10,7 +10,7 @@ export const DocsReact = (props: RouteComponentProps) => {
   const { match, location } = props
 
   return (
-    <div style={{ display: 'flex', height: '100vh' }}>
+    <ContainerHorizontal>
       <NavPanel>
         <NavTitle>React Docs</NavTitle>
 
@@ -52,7 +52,7 @@ export const DocsReact = (props: RouteComponentProps) => {
           <Redirect to={`${match.path}/button`} />
         </Switch>
       </PageScroll>
-    </div >
+    </ContainerHorizontal>
   )
 }
 

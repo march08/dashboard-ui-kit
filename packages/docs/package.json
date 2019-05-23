@@ -8,7 +8,8 @@
     "@duik/icon": "0.1.0",
     "@duik/it": "0.1.0",
     "@duik/utils": "0.1.0",
-    "gh-pages": "^2.0.1"
+    "gh-pages": "^2.0.1",
+    "react-helmet": "^5.2.1"
   },
   "scripts": {
     "start": "../../node_modules/.bin/react-scripts start",

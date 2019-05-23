@@ -28,7 +28,9 @@ const layout = [
   'ContainerVertical',
   'ContainerHorizontal',
   'ScrollArea',
+  'TopBar',
 ]
+
 const nav = [
   'NavPanel',
   'NavLink',

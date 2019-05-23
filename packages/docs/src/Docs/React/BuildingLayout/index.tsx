@@ -16,7 +16,7 @@ import {
   TopBarLink
 } from '@duik/it'
 import { Link } from 'react-router-dom'
-import { Code } from 'components'
+import { Code, H1 } from 'components'
 import { jsxToString } from 'utils'
 import { DocsContentPage, PageContent } from '../../components'
 
@@ -67,9 +67,9 @@ export const ReactDocsOuterEventsHandler = () => {
         { id: 'horizontal-split', label: 'Horizontal Splitting' },
         { id: 'full-example', label: 'Full Example With DUIK' },
       ]} />
-      <h1>
+      <H1>
         Building layouts with Dashboard UI Kit
-        </h1>
+        </H1>
       <p>
         First thing to know is that you don't have to use any of these components to make your layout work in your project.
           {' '}

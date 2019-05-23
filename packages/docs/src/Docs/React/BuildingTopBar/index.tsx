@@ -10,7 +10,7 @@ import {
 } from '@duik/it'
 import { Icon } from '@duik/icon'
 import { Link } from 'react-router-dom'
-import { CodeRH } from 'components'
+import { CodeRH, H1 } from 'components'
 import { DocsContentPage, PageContent, PageMock } from '../../components'
 
 
@@ -95,9 +95,9 @@ export const ReactDocsBuildingTopBar = () => {
         { id: 'menu', label: 'With navigation' },
         { id: 'search', label: 'Extra elements' },
       ]} />
-      <h1>
+      <H1>
         Building Top Bar
-        </h1>
+        </H1>
       <p>
         In order to create consitent UI, we are including some handy components for building TopBar in a simplest way possible. Of course, you don't have to limit yourself to these examples, but it's the fastest way to build the top bars that matches the design language of the kit!
       </p>

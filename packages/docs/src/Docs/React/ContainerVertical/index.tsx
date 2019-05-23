@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { ContainerVertical } from '@duik/it'
+import { H1 } from 'components'
 import { DocsContentPage, ExampleTable, ImportPath } from '../../components'
 
 import PropTable from './PropTable'
@@ -10,7 +11,7 @@ export const ReactDocsContainerVertical = () => {
 
   return (
     <DocsContentPage>
-      <h1>ContainerVertical</h1>
+      <H1>ContainerVertical</H1>
       <ImportPath name="ContainerVertical" />
 
       <p>

@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { NavLink, NavPanel } from '@duik/it'
 import { Icon } from '@duik/icon'
+import { H1 } from 'components'
 import { DocsContentPage, ExampleTable, ImportPath, PageContent } from '../../components'
 
 import PropTable from './PropTable'
@@ -17,7 +18,7 @@ export const ReactDocsNavPanel = () => {
         { id: 'on-right', label: 'NavPanel Position' },
         { id: 'props', label: 'Prop Table' },
       ]} />
-      <h1>NavPanel</h1>
+      <H1>NavPanel</H1>
       <ImportPath name="NavPanel" />
 
       <p>

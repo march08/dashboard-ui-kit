@@ -2,6 +2,7 @@ import * as React from 'react'
 import { TextField } from '@duik/it'
 import { Icon } from '@duik/icon'
 import { Link } from 'react-router-dom'
+import { H1 } from 'components'
 import { DocsContentPage, ExampleTable, PageContent, ImportPath } from '../../components'
 
 import PropTable from './PropTable'
@@ -15,7 +16,7 @@ export const ReactDocsOuterEventsHandler = () => {
         { id: 'basic-usage', label: 'Basic Usage' },
         { id: 'props', label: 'Prop Table' },
       ]} />
-      <h1>TextField</h1>
+      <H1>TextField</H1>
       <ImportPath name="TextField" />
       <h2 id="basic-usage">Basic Usage</h2>
 

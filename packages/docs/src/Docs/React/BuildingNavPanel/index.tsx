@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
+import { H1 } from 'components'
 import { NavLink, NavPanel, NavTitle, NavSection, NavSectionTitle } from '@duik/it'
 import { Icon } from '@duik/icon'
 import { DocsContentPage, ExampleTable, PageContent } from '../../components'
@@ -12,7 +13,7 @@ export const ReactDocsNavLink = () => {
         { id: 'light', label: 'Full Light Example' },
         { id: 'dark', label: 'Full Dark Example' },
       ]} />
-      <h1>Building NavPanel</h1>
+      <H1>Building NavPanel</H1>
 
       <p>
         Building navigation (side) panels is a simple task, as the kit provides some handy components to make this work super easy. Nav panels come in light and dark mode, you can control this by simply adding "dark" prop to the NavPanel. See examples below or you can also discover the API for each component.

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
+import { H1 } from 'components'
 import { NavSection, NavPanel, NavSectionTitle, NavLink } from '@duik/it'
 import { DocsContentPage, ExampleTable, ImportPath, PageContent } from '../../components'
 
@@ -15,7 +16,7 @@ export const ReactDocsNavSection = () => {
         { id: 'without', label: 'Without Section' },
         { id: 'props', label: 'Prop Table' },
       ]} />
-      <h1>NavSection</h1>
+      <H1>NavSection</H1>
       <ImportPath name="NavSection" />
 
       <p>

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { DocsContentPage, PageContent } from '../../components'
+import { H1 } from 'components'
 
 
 export const UseWithTypescript = () => {
@@ -9,7 +10,7 @@ export const UseWithTypescript = () => {
         { id: 'example', label: 'Examples' },
         { id: 'sizes', label: 'Sizes' },
       ]} />
-      <h1>Dashboard UI Kit &amp; Typescript</h1>
+      <H1>Dashboard UI Kit &amp; Typescript</H1>
     </DocsContentPage>
   )
 }

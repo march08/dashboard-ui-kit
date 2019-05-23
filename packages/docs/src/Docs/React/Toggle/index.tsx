@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Toggle } from '@duik/it'
+import { H1 } from 'components'
 import { DocsContentPage, ExampleTable, PageContent, ImportPath } from '../../components'
 
 import PropTable from './PropTable'
@@ -13,7 +14,7 @@ export const ReactDocsButton = () => {
         { id: 'basic-usage', label: 'Basic Usage' },
         { id: 'props', label: 'Prop Table' },
       ]} />
-      <h1>Toggle</h1>
+      <H1>Toggle</H1>
       <ImportPath name="Toggle" />
       <p>Toggles work the same way as checkboxes, e.g. you can group them with "name" property in your forms.</p>
 

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
+import { H1 } from 'components'
 import { Button, Dropdown, DropdownItem, DropdownMenuPosition, DropdownButtonProps } from '@duik/it'
 
 import { Icon } from '@duik/icon'
@@ -31,7 +32,7 @@ export const ReactDocsButton = () => {
         { id: 'props-dropdown', label: 'Dropdown props' },
         { id: 'props-dropdown-item', label: 'DropdownItem props' },
       ]} />
-      <h1>Dropdown</h1>
+      <H1>Dropdown</H1>
       <ImportPath name="Dropdown" subComponents={['DropdownItem', 'DropdownMenu']} />
       <br />
       <p>Use buttons in forms, as links with many varieties.</p>

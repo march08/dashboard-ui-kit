@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Checkbox } from '@duik/it'
+import { H1 } from 'components'
 import { DocsContentPage, ExampleTable, PageContent, ImportPath } from '../../components'
 
 import PropTable from './PropTable'
@@ -13,7 +14,7 @@ export const ReactDocsButton = () => {
         { id: 'basic-usage', label: 'Basic Usage' },
         { id: 'props', label: 'Prop Table' },
       ]} />
-      <h1>Checkbox</h1>
+      <H1>Checkbox</H1>
       <ImportPath name="Checkbox" />
       <p>Who doesn't like customized checkboxes?</p>
 
