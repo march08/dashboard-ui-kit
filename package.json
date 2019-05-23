@@ -2,10 +2,10 @@
   "name": "root",
   "npmClient": "yarn",
   "scripts": {
-    "clean": "rimraf build/** build packages/**/dist/",
+    "clean": "rimraf build/** build packages/**/dist/ packages/dist",
     "clean-modules": "rimraf node_modules/** node_modules packages/**/node_modules/",
     "deploy": "lerna run deploy",
-    "build": "npm run clean && mkdirp build && node --max_old_space_size=8192 node_modules/.bin/webpack --config packages/webpack.config.js --progress --colors"
+    "build": "webpack --config packages/webpack.config.js --progress --colors"
   },
   "devDependencies": {
     "autoprefixer": "^9.5.1",
