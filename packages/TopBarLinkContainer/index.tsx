@@ -4,7 +4,7 @@ import cls from './styles.scss';
 export const TopBarLinkContainer = createSimpleComponent({
   displayName: 'TopBarLinkContainer',
   className: cls['top-bar-link-container'],
-  Component: 'div',
+  Component: 'nav',
 })
 
 

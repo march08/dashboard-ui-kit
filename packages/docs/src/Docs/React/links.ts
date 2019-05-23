@@ -28,9 +28,15 @@ const layout = [
   'ContainerVertical',
   'ContainerHorizontal',
   'ScrollArea',
-  'TopBar',
 ]
 
+const topBar = [
+  'TopBar',
+  'TopBarLink',
+  'TopBarLinkContainer',
+  'TopBarTitle',
+  'TopBarSection',
+]
 const nav = [
   'NavPanel',
   'NavLink',
@@ -85,6 +91,10 @@ export const generateMenuLinks = () => ([
   {
     title: 'Layout Components',
     links: generateLinks(layout)
+  },
+  {
+    title: 'Top Bar',
+    links: generateLinks(topBar)
   },
   {
     title: 'Side Navigation',
