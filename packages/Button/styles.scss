@@ -167,15 +167,13 @@ a.base:hover {
 /*Colors*/
 .btn.btn-transparent {
   background: transparent;
-  border: 1px solid #E2E5ED;
   box-shadow: none;
 
-  &:hover {
-    border: 1px solid #CACEDB;
-  }
-
-  &:focus {
-    border: 1px solid #BDC2D1;
+  &:active,
+  &:hover,
+  &:focus,
+  &.active {
+    background: transparent;
   }
 }
 
