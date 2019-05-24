@@ -16,6 +16,15 @@ type NavLinkBaseProps = {
   secondary?: boolean
 }
 
+const getClass = (pill?: boolean, secondary?: boolean) => {
+  if (pill) {
+    return 'nav-link-pill'
+  } else if (secondary) {
+    return 'nav-link-secondary'
+  }
+
+  return 'nav-link'
+}
 
 export type NavLinkProps<T extends AnyTag> = PropsWithTagProps<T, NavLinkBaseProps & { Component?: T }>
 
@@ -31,12 +40,13 @@ export function NavLink<T extends AnyTag>({
   secondary,
   ...rest
 }: NavLinkProps<T>) {
+
+
+
   return (
     <Component
-      className={classnames('nav-link', className, {
+      className={classnames(getClass(pill, secondary), className, {
         ['highlighted']: highlighted,
-        ['nav-link-pill']: pill,
-        ['nav-link-secondary']: secondary
       })}
       {...rest}
     >

@@ -13,7 +13,8 @@ const form = [
   'Toggle',
   'Radio',
   'TextField',
-  'TextArea'
+  'TextArea',
+  'Select'
 ]
 
 const components = [

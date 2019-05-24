@@ -19,9 +19,8 @@ export function NavPanel({
 }: NavPanelProps) {
   return (
     <nav
-      className={classnames(cls['nav-panel'], className, {
+      className={classnames(dark ? cls['nav-panel-dark'] : cls['nav-panel'], className, {
         [cls['nav-panel-right']]: positionRight || onRight,
-        [cls['nav-panel-dark']]: dark
       })}
       {...rest}
     >

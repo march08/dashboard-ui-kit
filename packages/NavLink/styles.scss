@@ -38,7 +38,7 @@
     color: $text-main;
 
     .nav-link-text {
-      color: $text-main;
+      color: $color-primary;
     }
 
     background: rgba(84, 147, 245, .05);
@@ -60,7 +60,8 @@
 
 }
 
-.nav-link.nav-link-pill {
+.nav-link-pill {
+  @extend .nav-link;
   margin: 0 15px;
   border: none;
   border-radius: 4px;
@@ -68,13 +69,13 @@
   font-weight: 500;
   color: $text-main;
 
-  &>* {
-    color: $text-main;
-  }
-
   &.active {
     background: $color-primary;
     color: $text-adverse-main;
+
+    .nav-link-text {
+      color: $text-adverse-main;
+    }
 
     &>* {
       color: $text-adverse-main;
@@ -94,7 +95,8 @@
   }
 }
 
-.nav-link.nav-link-secondary {
+.nav-link-secondary {
+  @extend .nav-link;
   padding-left: 2.875rem;
 
   &:before {

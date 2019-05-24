@@ -4,3 +4,4 @@ export * from './camelToSnake'
 export * from './camelToText'
 export * from './combineText'
 export * from './useLocalStorage';
+export * from './useInputControls';

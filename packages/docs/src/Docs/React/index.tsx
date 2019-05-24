@@ -16,7 +16,7 @@ export const DocsReact = (props: RouteComponentProps) => {
 
         {
           navSections.map(section => (
-            <NavSection>
+            <NavSection key={section.title}>
               <NavSectionTitle>{section.title}</NavSectionTitle>
               {section.links.map(item => {
                 return (

@@ -29,10 +29,17 @@
   }
 
 
-  &.nav-panel-dark {
-    background-color: $bg-adverse-primary;
-    color: $text-base;
-    --text-base: #{$text-adverse-base};
-    --text-main: #{$text-adverse-main};
+}
+
+
+.nav-panel-dark {
+  @extend .nav-panel;
+  background-color: $bg-adverse-primary;
+  color: $text-base;
+  --text-base: #{$text-adverse-base};
+  --text-main: #{$text-adverse-main};
+
+  .nav-link.active .nav-link-text {
+    color: $text-main;
   }
 }
