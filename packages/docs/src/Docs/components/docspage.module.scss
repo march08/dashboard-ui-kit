@@ -159,3 +159,20 @@
   padding: 30px;
   background: $border-color-base;
 }
+
+.code-example-render {
+  padding: 0 70px 30px;
+}
+
+.code-example-code {
+  padding: 20px 60px;
+  background: $bg-base;
+  border-top: $border-default-base;
+  border-bottom: $border-default-base;
+}
+
+.show-hide {
+  width: auto;
+  margin: 0 auto;
+  text-align: center;
+}

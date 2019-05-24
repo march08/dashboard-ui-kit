@@ -1,13 +1,13 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import { H1, Select, SelectMenuPosition } from 'components'
+import { H1, Code, Select, SelectMenuPosition } from 'components'
 import { Button, Dropdown, DropdownItem, DropdownMenuPosition, DropdownButtonProps } from '@duik/it'
 
 import { Icon } from '@duik/icon'
 
 
 
-import { DocsContentPage, ExampleTable, PageContent, ImportPath } from '../../components'
+import { DocsContentPage, ExampleTable, PageContent, ImportPath, CodeExample } from '../../components'
 
 import PropTable from './PropTable'
 
@@ -38,26 +38,26 @@ export const ReactDocsButton = () => {
       <p>The Select doesn't store any values, instead, you should provide the value and options. This will give you a maximum control of what is displayed or not. You can store the value in your component state (or useState) or any other form controls, such as <a href="https://github.com/jaredpalmer/formik" target="_blank">Formik</a>.</p>
       <p>With that being sad, you should provide <code>activeOption</code> prop to display the selected value and <code>options</code> prop to display the content. These props however are not mandatory.</p>
 
-      <ExampleTable data={[
-        { content: (<ExampleSelectBasic />), code: ExampleSelectBasicCode },
-      ]} />
+      <CodeExample code={ExampleSelectBasicCode}>
+        <ExampleSelectBasic />
+      </CodeExample>
       <h2 id="labels">Style your options</h2>
       <p>Select is very friendly for your UI. Option label doesn't have to be only text, but it can be a react child as well.</p>
 
-      <ExampleTable data={[
-        { content: (<ExampleSelectUsers />), code: ExampleSelectUsersCode },
-      ]} />
 
+      <CodeExample code={ExampleSelectUsersCode}>
+        <ExampleSelectUsers />
+      </CodeExample>
 
       <h2 id="searchable">Searchable Select</h2>
-      <p>Select is very friendly for your UI. Option label doesn't have to be only text, but it can be a react child as well.</p>
+      <p>Select offers UI for searchability, however, what happens whit the serached keyword or with the options, that's totally under your control and you should provide this behaviour, as the simple select without data context cannot really predict that. </p>
 
-      <ExampleTable data={[
-        { content: (<ExampleSelectUsersSearch />), code: ExampleSelectUsersSearchCode },
-      ]} />
+      <CodeExample code={ExampleSelectUsersSearchCode}>
+        <ExampleSelectUsersSearch />
+      </CodeExample>
 
 
-      <PropTable />
+      {/* <PropTable /> */}
     </DocsContentPage>
   )
 }
