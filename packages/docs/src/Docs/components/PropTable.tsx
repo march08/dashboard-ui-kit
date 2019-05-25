@@ -40,7 +40,7 @@ export const PropTable = ({
                   {item.prop}
                 </strong>
               </td>
-              <td>
+              <td style={{ wordBreak: 'unset' }}>
                 {item.propType}
               </td>
               <td>
