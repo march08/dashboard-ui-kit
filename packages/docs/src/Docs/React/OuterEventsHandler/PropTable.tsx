@@ -32,6 +32,11 @@ const itemProps = [
     defaultValue: 'true',
   }),
   properties.bool({
+    prop: 'triggerOnOuterFocus',
+    desc: 'If true, onOuterEvent will be triggered on document focus event.',
+    defaultValue: 'true',
+  }),
+  properties.bool({
     prop: 'triggerOnEsc',
     desc: 'If true, onOuterEvent will be triggered on document keydown event.',
     defaultValue: 'true',

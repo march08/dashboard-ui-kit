@@ -1,10 +1,19 @@
 @import '@duik/core/_vars.scss';
 
-.select-multi-selected-options {
+.select {
+  display: block;
+
+  .dropdown-item {
+    justify-content: space-between;
+  }
+}
+
+.select-multi-count {
 
   display: inline-block;
-  background: $border-color-main;
-  border: $border-default-base;
+  background: $border-color-base;
+  border: $border-default-main;
+  color: $text-main;
   height: 20px;
   border-radius: 100px;
   display: flex;
@@ -19,7 +28,6 @@
 .select-option-selected-mark {
   color: $color-primary;
   margin-left: 12px;
-  -ms-flex-negative: 0;
   flex-shrink: 0;
   position: relative;
   width: 5px;

@@ -32,7 +32,7 @@ export const DropdownButton = (props: DropdownButtonProps) => {
   return (
     <Button
       className={classnames(cls['dropdown-toggle'], className)}
-      onClick={handleToggle}
+      onFocus={handleOpen}
       data-toggle="dropdown"
       aria-haspopup="true"
       aria-expanded={isOpen ? 'true' : 'false'}

@@ -161,4 +161,8 @@
   &:active {
     transform: translateY(1px);
   }
+
+  &:disabled {
+    background: $border-color-base;
+  }
 }

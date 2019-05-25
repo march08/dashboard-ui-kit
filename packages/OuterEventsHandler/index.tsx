@@ -18,6 +18,7 @@ export type OuterEventsHandlerProps = Omit<JSX.IntrinsicElements['div'], 'ref'> 
   triggerOnOuterScroll?: boolean,
   triggerOnWindowResize?: boolean,
   triggerOnOuterClick?: boolean,
+  triggerOnOuterFucus?: boolean,
   triggerOnEsc?: boolean,
 };
 
@@ -30,6 +31,7 @@ export class OuterEventsHandler extends React.PureComponent<OuterEventsHandlerPr
     triggerOnOuterScroll: false,
     triggerOnWindowResize: false,
     triggerOnOuterClick: true,
+    triggerOnOuterFucus: true,
     triggerOnEsc: true,
     className: null,
   };
@@ -84,15 +86,31 @@ export class OuterEventsHandler extends React.PureComponent<OuterEventsHandlerPr
     }
   }
 
+  handleFocus = (e: FocusEvent): void => {
+    const { onOuterEvent } = this.props
+    const containerEl = this.containerRef.current;
+
+    const isDescendantOfRoot =
+      !!document.activeElement && containerEl && containerEl.contains(document.activeElement);
+
+    if (!!document.activeElement && !isDescendantOfRoot && typeof onOuterEvent === 'function') {
+      onOuterEvent(e);
+    }
+  }
+
   bindListeners = (): void => {
     const {
       triggerOnOuterClick,
+      triggerOnOuterFucus,
       triggerOnOuterScroll,
       triggerOnWindowResize,
       triggerOnEsc
     } = this.props;
 
     if (typeof document !== 'undefined') {
+      if (triggerOnOuterFucus) {
+        document.addEventListener('focus', this.handleFocus, true);
+      }
       if (triggerOnEsc) {
         document.addEventListener('keydown', this.handleEscKeydown, true);
       }
@@ -109,25 +127,12 @@ export class OuterEventsHandler extends React.PureComponent<OuterEventsHandlerPr
   };
 
   removeListeners = (): void => {
-    const {
-      triggerOnOuterClick,
-      triggerOnOuterScroll,
-      triggerOnWindowResize,
-      triggerOnEsc
-    } = this.props;
     if (typeof document !== 'undefined') {
-      if (triggerOnEsc) {
-        document.removeEventListener('keydown', this.handleEscKeydown, true);
-      }
-      if (triggerOnOuterClick) {
-        document.removeEventListener('click', this.handleOutsideClick, true);
-      }
-      if (triggerOnOuterScroll) {
-        window.removeEventListener('scroll', this.handleOuterActions, true);
-      }
-      if (triggerOnWindowResize) {
-        window.removeEventListener('resize', this.handleOuterActions, true);
-      }
+      document.removeEventListener('focus', this.handleFocus, true);
+      document.removeEventListener('keydown', this.handleEscKeydown, true);
+      document.removeEventListener('click', this.handleOutsideClick, true);
+      window.removeEventListener('scroll', this.handleOuterActions, true);
+      window.removeEventListener('resize', this.handleOuterActions, true);
     }
   };
 

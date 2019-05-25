@@ -1,35 +1,29 @@
 import React from 'react'
 import classnames from 'classnames'
-import { Dropdown, DropdownItem, DropdownMenuPosition, TextField } from '@duik/it'
+import { Dropdown, DropdownItem, DropdownMenuPosition, TextField, ContentTitle } from '@duik/it'
 
+import { SelectOption, SelectOnOptionFn, SelectOptionProps } from './types'
+import { getDisplayValue } from './utils'
+import { SelectButton } from './SelectButton'
 import './styles.scss'
+export * from './types'
 
 export type SelectMenuPosition = DropdownMenuPosition
 
-export type SelectOption<V extends number | string = any> = {
-  label?: React.ReactNode,
-  value: V,
-  props?: React.ComponentProps<typeof DropdownItem>
-}
-
-export type SelectOnOptionFn<V extends number | string> = (option: SelectOption<V>, name?: string) => void
-
-export type SelectProps<V extends number | string> = React.ComponentProps<typeof Dropdown> & {
-  options: SelectOption<V>[],
-  activeOption?: SelectOption<V> | null,
-  placeholder?: React.ReactNode,
-  onOptionClick?: SelectOnOptionFn<V>,
-  name?: string,
-  inputSearchProps?: React.ComponentProps<typeof TextField>,
-  searchable?: boolean,
-}
-
-const getDisplayValue = (option?: SelectOption<any> | null) => {
-  if (option) {
-    return option.label || option.value
+export type SelectProps<V extends number | string> =
+  & React.ComponentProps<typeof Dropdown>
+  & SelectOptionProps<V>
+  & {
+    placeholder?: React.ReactNode,
+    onOptionClick?: SelectOnOptionFn<V>,
+    name?: string,
+    inputSearchProps?: React.ComponentProps<typeof TextField>,
+    searchable?: boolean,
+    multiple?: boolean,
+    label?: React.ReactNode,
+    block?: boolean,
   }
-  return null
-}
+
 
 export function Select<V extends number | string>(props: SelectProps<V>) {
   const {
@@ -41,57 +35,81 @@ export function Select<V extends number | string>(props: SelectProps<V>) {
     inputSearchProps = {},
     searchable = false,
     buttonProps,
+    multiple,
+    className,
+    label,
+    block,
     ...rest
   } = props
 
   return (
-    <Dropdown
-      buttonText={getDisplayValue(activeOption) || placeholder}
-      buttonProps={{
-        ...buttonProps,
-        options,
-        activeOption
-      }}
-      {...rest}
-    >
-      {({ handleClose, isOpen }) => {
-        const handleOptionClick = (option: SelectOption<V>) => () => {
-          if (onOptionClick) {
-            onOptionClick(option, name)
-          }
-          handleClose()
-        }
+    <>
 
-        return (
-          <>
-            {searchable && isOpen && (
-              <div className="select-search-box">
-                <TextField
-                  {...inputSearchProps}
-                  autoFocus
-                  className={classnames("select-search-input", inputSearchProps.className)}
-                  rightEl={
-                    <div className="select-search-wrapper">
-                      <div className="select-search">
-                        <div className="select-search-circle" />
-                        <div className="select-search-rectangle" />
-                      </div>
-                    </div>}
-                />
-              </div>
-            )}
-            {options.map(option => (
-              <DropdownItem
-                onClick={handleOptionClick(option)}
-                key={option.value}
-                {...option.props}
-              >
-                {getDisplayValue(option)}
-              </DropdownItem>
-            ))}
-          </>
-        )
-      }}
-    </Dropdown>
+      {label && (
+        <ContentTitle>
+          {label}
+        </ContentTitle>
+      )}
+      <Dropdown
+        className={classnames("select", className)}
+        ButtonComponent={SelectButton}
+        buttonProps={{
+          ...buttonProps,
+          options,
+          activeOption,
+          placeholder,
+          block
+        }}
+        {...rest}
+      >
+        {({ handleClose, isOpen }) => {
+          const handleOptionClick = (option: SelectOption<V>) => () => {
+            if (onOptionClick) {
+              onOptionClick(option, name)
+            }
+            if (!multiple) {
+              handleClose()
+            }
+          }
+
+          return (
+            <>
+              {searchable && isOpen && (
+                <div className="select-search-box">
+                  <TextField
+                    {...inputSearchProps}
+                    autoFocus
+                    className={classnames("select-search-input", inputSearchProps.className)}
+                    rightEl={
+                      <div className="select-search-wrapper">
+                        <div className="select-search">
+                          <div className="select-search-circle" />
+                          <div className="select-search-rectangle" />
+                        </div>
+                      </div>}
+                  />
+                </div>
+              )}
+              {options.map(option => (
+                <DropdownItem
+                  onClick={handleOptionClick(option)}
+                  key={option.value}
+                  {...option.props}
+                >
+                  {getDisplayValue(option)}
+                  {
+                    multiple
+                    && Array.isArray(activeOption)
+                    && activeOption.find(item => item.value === option.value)
+                    && (
+                      <span className="select-option-selected-mark"></span>
+                    )}
+                </DropdownItem>
+              ))}
+            </>
+          )
+        }}
+      </Dropdown>
+    </>
   )
 }

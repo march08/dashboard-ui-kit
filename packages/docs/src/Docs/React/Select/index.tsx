@@ -14,9 +14,11 @@ import PropTable from './PropTable'
 import { ExampleSelectBasic, ExampleSelectBasicCode } from './ExampleSelectBasic'
 import { ExampleSelectUsers, ExampleSelectUsersCode } from './ExampleSelectUsers'
 import { ExampleSelectUsersSearch, ExampleSelectUsersSearchCode } from './ExampleSelectUsersSearch'
+import { ExampleSelectMulti, ExampleSelectMultiCode } from './ExampleSelectMulti'
+import { ExampleSelectItemProps, ExampleSelectItemPropsCode } from './ExampleSelectItemProps'
 
 
-export const ReactDocsButton = () => {
+export const ReactDocsSelect = () => {
 
   return (
     <DocsContentPage>
@@ -24,11 +26,10 @@ export const ReactDocsButton = () => {
         { id: 'basics', label: 'Basic Usage' },
         { id: 'labels', label: 'Styling' },
         { id: 'searchable', label: 'Enable Search Functionality' },
-        { id: 'menu-position', label: 'Positioning the dropdown menu' },
-        { id: 'dropdown-content', label: 'Custom content in the dropdown' },
-        { id: 'button', label: 'Custom button component' },
-        { id: 'props-dropdown', label: 'Dropdown props' },
-        { id: 'props-dropdown-item', label: 'DropdownItem props' },
+        { id: 'multi', label: 'Multi Select' },
+        { id: 'option-props', label: 'Option Properties' },
+        { id: 'activeOption', label: 'ActiveOption structure' },
+        { id: 'props', label: 'Props' },
       ]} />
       <H1>Select</H1>
       <ImportPath name="Select" />
@@ -57,9 +58,30 @@ export const ReactDocsButton = () => {
       </CodeExample>
 
 
-      {/* <PropTable /> */}
+
+      <h2 id="multi">Multi Select</h2>
+      <p>Multi select is possible as well. To ensure proper behaviour, we are passing <code>multiple</code> prop to the Select component as well as <code>activeOption</code> becomes an array prop instead of an object.</p>
+
+      <CodeExample code={ExampleSelectMultiCode}>
+        <ExampleSelectMulti />
+      </CodeExample>
+
+
+      <h2 id="option-props">Option props</h2>
+      <p>You can easily pass props to the items in the option list as well. In the example, we still want to display an option but we don't want it to be selectable.</p>
+
+      <CodeExample code={ExampleSelectItemPropsCode}>
+        <ExampleSelectItemProps />
+      </CodeExample>
+
+
+      <h2 id="activeOption">Why activeOption has structure of an option instead of clean value?</h2>
+      <p>You might have noticed that the activeOption, or if you would rather call it value, doesn't have a more traditional structure of just being plain string but there is a reason for this.</p>
+      <p>If you would pass only pure value, the component would have to internally search for the label to be displayed. This wouldn't be a problem at all as you are passing list of options as well, however there are cases where you would want to filter out an option from the options list and the Select component won't be able to find the label for the given value anymore. Passing separate activeOption grants you the ability to do so.</p>
+
+      <PropTable />
     </DocsContentPage>
   )
 }
 
-export default ReactDocsButton;
+export default ReactDocsSelect;

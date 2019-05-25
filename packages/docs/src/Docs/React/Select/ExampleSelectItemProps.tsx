@@ -1,7 +1,7 @@
 import React from 'react'
 import { Select, SelectOption } from 'components'
 
-export const ExampleSelectBasic = () => {
+export const ExampleSelectItemProps = () => {
   const [activeOption, setActiveOption] = React.useState<SelectOption | undefined>()
 
   const handleOptionClick = (option: SelectOption) => {
@@ -11,21 +11,20 @@ export const ExampleSelectBasic = () => {
     <Select
       activeOption={activeOption}
       onOptionClick={handleOptionClick}
-      label="Basic options"
       options={[
-        { label: 'Option 1', value: 1 },
-        { label: 'Option 2', value: 2 },
-        { label: <strong>Highlighted Option</strong>, value: 3 },
-        { label: <strong>Highlighted Long Long Option</strong>, value: 4 },
+        { label: 'Option 1', value: 1, props: { disabled: true } },
+        { label: 'This is option 2', value: 2 },
+        { label: 'Another option', value: 3 },
+        { label: 'So many options', value: 4 },
       ]}
     />
   )
 }
 
-export const ExampleSelectBasicCode = `import React from 'react'
+export const ExampleSelectItemPropsCode = `import React from 'react'
 import { Select } from '@duik/it'
 
-export const ExampleSelectBasic = () => {
+export const ExampleSelectItemProps = () => {
   const [activeOption, setActiveOption] = React.useState()
 
   /* 
