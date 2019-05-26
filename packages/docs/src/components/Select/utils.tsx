@@ -1,5 +1,6 @@
 import React from 'react'
 import { SelectOption } from './types'
+import cls from './styles.module.scss'
 
 
 export const getOptionLabel = (option?: SelectOption<any> | null) => {
@@ -14,7 +15,7 @@ export const getDisplayValue = (option?: SelectOption<any> | SelectOption<any>[]
     if (option.length > 1) {
       return (
         <>
-          {getOptionLabel(option[0])} <span className="select-multi-count">+{option.length - 1}</span>
+          {getOptionLabel(option[0])} <span className={cls['select-multi-count']}>+{option.length - 1}</span>
         </>
       )
     }

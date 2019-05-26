@@ -5,7 +5,7 @@ import { Dropdown, DropdownItem, DropdownMenuPosition, TextField, ContentTitle }
 import { SelectOption, SelectOnOptionFn, SelectOptionProps } from './types'
 import { getDisplayValue } from './utils'
 import { SelectButton } from './SelectButton'
-import './styles.scss'
+import cls from './styles.module.scss'
 export * from './types'
 
 export type SelectMenuPosition = DropdownMenuPosition
@@ -51,7 +51,7 @@ export function Select<V extends number | string>(props: SelectProps<V>) {
         </ContentTitle>
       )}
       <Dropdown
-        className={classnames("select", className)}
+        className={classnames(cls["select"], className)}
         ButtonComponent={SelectButton}
         buttonProps={{
           ...buttonProps,
@@ -75,16 +75,16 @@ export function Select<V extends number | string>(props: SelectProps<V>) {
           return (
             <>
               {searchable && isOpen && (
-                <div className="select-search-box">
+                <div className={cls['select-search-box']}>
                   <TextField
                     {...inputSearchProps}
                     autoFocus
-                    className={classnames("select-search-input", inputSearchProps.className)}
+                    className={classnames(cls['select-search-input'], inputSearchProps.className)}
                     rightEl={
-                      <div className="select-search-wrapper">
-                        <div className="select-search">
-                          <div className="select-search-circle" />
-                          <div className="select-search-rectangle" />
+                      <div className={cls["select-search-wrapper"]}>
+                        <div className={cls["select-search"]}>
+                          <div className={cls["select-search-circle"]} />
+                          <div className={cls["select-search-rectangle"]} />
                         </div>
                       </div>}
                   />
@@ -102,7 +102,7 @@ export function Select<V extends number | string>(props: SelectProps<V>) {
                     && Array.isArray(activeOption)
                     && activeOption.find(item => item.value === option.value)
                     && (
-                      <span className="select-option-selected-mark"></span>
+                      <span className={cls['select-option-selected-mark']}></span>
                     )}
                 </DropdownItem>
               ))}

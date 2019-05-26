@@ -1,13 +1,8 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import { H1, Code, Select, SelectMenuPosition } from 'components'
-import { Button, Dropdown, DropdownItem, DropdownMenuPosition, DropdownButtonProps } from '@duik/it'
+import { H1, CodeExample } from 'components'
 
-import { Icon } from '@duik/icon'
-
-
-
-import { DocsContentPage, ExampleTable, PageContent, ImportPath, CodeExample } from '../../components'
+import { DocsContentPage, PageContent, ImportPath } from '../../components'
 
 import PropTable from './PropTable'
 

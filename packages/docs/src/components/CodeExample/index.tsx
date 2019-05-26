@@ -1,21 +1,25 @@
 import React from 'react'
-import cls from './docspage.module.scss';
+import classnames from 'classnames';
+import cls from './styles.module.scss';
 import { Button } from '@duik/it'
 
 import { Code } from 'components'
 
 type CodeExampleProps = {
   children: React.ReactNode,
-  code: string,
+  code?: string,
+  bgLight?: boolean
 }
 
 export const CodeExample = (props: CodeExampleProps) => {
-
+  const { bgLight } = props
   const [visible, setVisible] = React.useState(false)
 
   return (
     <div className={cls['example-table-container']}>
-      <div className={cls['code-example-render']}>
+      <div className={classnames(cls['code-example-render'], {
+        [cls.bgLight]: bgLight
+      })}>
         {props.children}
       </div>
       <div className={cls['code-example-code']}>

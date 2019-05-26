@@ -62,18 +62,6 @@ $space-half: 15px;
 $fontFamily: 'Roboto',
 sans-serif;
 
-// colors
-$green: #38B249;
-$blue: #1665D8;
-$orange: #F6AB2F;
-$indigo: #6977FF;
-$red: #E6492D;
-$yellow: #FACF55;
-
-$success: $green;
-$primary: $blue;
-$warning: $orange;
-$error: $red;
 
 @mixin textOverflow {
   overflow: hidden;
@@ -94,7 +82,53 @@ $fontFamily: 'Roboto',
 sans-serif;
 
 
+// colors
+$green: #38B249;
+$blue: #1665D8;
+$orange: #F6AB2F;
+$indigo: #6977FF;
+$red: #E6492D;
+$yellow: #FACF55;
+
+// rbg for rgba func
+$green-rgb: hexToRgb($green);
+$blue-rgb: hexToRgb($blue);
+$orange-rgb: hexToRgb($orange);
+$indigo-rgb: hexToRgb($indigo);
+$red-rgb: hexToRgb($red);
+$yellow-rgb: hexToRgb($yellow);
+
 @mixin themeVars {
+  // colors by domain
+  --success: #{$green};
+  --secondary: #{$green};
+  --primary: #{$blue};
+  --warning: #{$orange};
+  --danger: #{$red};
+  --info: #{$indigo};
+  // colors by domain rgb
+  --success-rgb: #{$green-rgb};
+  --secondary-rgb: #{$green-rgb};
+  --primary-rgb: #{$blue-rgb};
+  --warning-rgb: #{$orange-rgb};
+  --danger-rgb: #{$red-rgb};
+  --info-rgb: #{$indigo-rgb};
+
+  // colors 
+  --green: #{$green};
+  --blue: #{$blue};
+  --orange: #{$orange};
+  --red: #{$red};
+  --indigo: #{$indigo};
+  --yellow: #{$yellow};
+  // colors rgb
+  --green-rgb: #{$green-rgb};
+  --blue-rgb: #{$blue-rgb};
+  --orange-rgb: #{$orange-rgb};
+  --red-rgb: #{$red-rgb};
+  --indigo-rgb: #{$indigo-rgb};
+  --yellow-rgb: #{$yellow-rgb};
+
   // text colors
   --text-main: #3E3F42;
   --text-adverse-main: white;
@@ -114,21 +148,6 @@ sans-serif;
   --bg-primary: #FFFFFF;
   --bg-adverse-primary: #252529;
 
-  // colors by domain
-  --success: #38B249;
-  --secondary: #38B249;
-  --primary: #1665D8;
-  --danger: #E6492D;
-  --warning: #F6AB2F;
-  --info: #6977FF;
-
-  // colors 
-  --green: #38B249;
-  --blue: #1665D8;
-  --orange: #F6AB2F;
-  --indigo: #6977FF;
-  --red: #E6492D;
-  --yellow: #FACF55;
   --gradient-secondary: linear-gradient(0deg, #34AA44 0%, #38B249 100%);
 }
 
@@ -166,6 +185,20 @@ $color-orange: var(--orange);
 $color-indigo: var(--indigo);
 $color-red: var(--red);
 $color-yellow: var(--yellow);
+
+$color-primary-rgb: var(--primary-rgb);
+$color-success-rgb: var(--success-rgb);
+$color-warning-rgb: var(--warning-rgb);
+$color-danger-rgb: var(--danger-rgb);
+$color-secondary-rgb: var(--secondary-rgb);
+$color-info-rgb: var(--info-rgb);
+
+$color-green-rgb: var(--green-rgb);
+$color-blue-rgb: var(--blue-rgb);
+$color-orange-rgb: var(--orange-rgb);
+$color-indigo-rgb: var(--indigo-rgb);
+$color-red-rgb: var(--red-rgb);
+$color-yellow-rgb: var(--yellow-rgb);
 
 
 $colors: () !default;

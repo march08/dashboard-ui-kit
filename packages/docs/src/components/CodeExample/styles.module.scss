@@ -1,0 +1,33 @@
+@import '~@duik/it/kit.scss';
+
+.example-table-container {
+  margin-left: -70px;
+  margin-right: -70px;
+
+  &+p {
+    margin-top: 2rem !important;
+  }
+}
+
+.code-example-render {
+  padding: 0 70px 30px;
+
+  &.bgLight {
+    padding-top: 30px;
+    background: $bg-base;
+    border-top: $border-default-base;
+  }
+}
+
+.code-example-code {
+  padding: 20px 60px;
+  background: $bg-base;
+  border-top: $border-default-base;
+  border-bottom: $border-default-base;
+}
+
+.show-hide {
+  width: auto;
+  margin: 0 auto;
+  text-align: center;
+}

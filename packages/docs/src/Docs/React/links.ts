@@ -45,6 +45,9 @@ const nav = [
   'NavSection',
   'NavSectionTitle',
 ]
+const tabNav = [
+  'Tabs',
+]
 
 const cookbook = [
   'BuildingLayout',
@@ -52,9 +55,9 @@ const cookbook = [
   'BuildingTopBar'
 ]
 const guides = [
-  'UseInCreateReactApp',
   'UseWithTypescript',
-  'CustomizingTheme',
+  'Overview',
+  'Theming',
 ]
 const utilityComponents = [
   'OuterEventsHandler',
@@ -100,6 +103,10 @@ export const generateMenuLinks = () => ([
   {
     title: 'Side Navigation',
     links: generateLinks(nav)
+  },
+  {
+    title: 'Tab Navigation',
+    links: generateLinks(tabNav)
   },
   {
     title: 'Utility Components',

@@ -1,0 +1,75 @@
+@import '@duik/core/_vars.scss';
+
+.tabs {
+  display: flex;
+  padding: 0 15px;
+  flex-shrink: 0;
+
+  &:not(:last-child) {
+    border-bottom: $border-default-base;
+  }
+}
+
+
+.tab-item {
+  height: 70px;
+
+
+  @media screen and (max-width: 768px) {
+    height: 56px;
+  }
+
+  border-bottom: 3px solid transparent;
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: $text-base;
+
+  .right-el {
+    color: $text-secondary;
+    font-weight: 400;
+    display: inline-block;
+    margin-left: 5px;
+    font-size: .875rem;
+  }
+
+  &:hover,
+  &:focus {
+    color: $text-main;
+    border-bottom-color: rgba($color-primary-rgb, .3);
+    box-shadow: none;
+    outline: none;
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+
+  &:global(.active) {
+    border-bottom-color: $color-primary;
+    font-weight: 500;
+    color: $text-main;
+  }
+}
+
+
+.tabs-sm,
+.tabs-xs {
+
+  .tab-item {
+    height: 62px;
+    font-size: .875rem;
+  }
+
+  .right-el {
+    font-size: .75rem;
+  }
+
+}
+
+.tabs-xs {
+  .tab-item {
+    height: 50px;
+  }
+}

@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link, RouteComponentProps } from 'react-router-dom'
 import { H1 } from 'components'
 import { TopBar, TopBarSection, TopBarTitle, TopBarLinkContainer, TopBarLink } from '@duik/it'
 import { DocsContentPage, ExampleTable, ImportPath, PageContent } from '../../components'
@@ -7,8 +7,8 @@ import { DocsContentPage, ExampleTable, ImportPath, PageContent } from '../../co
 import PropTable from './PropTable'
 
 
-export const ReactDocsTopBarLink = () => {
-
+export const ReactDocsTopBarLink = (props: RouteComponentProps) => {
+  const { match } = props
   return (
     <DocsContentPage>
       <PageContent data={[
@@ -33,7 +33,7 @@ export const ReactDocsTopBarLink = () => {
                 <TopBarLinkContainer>
                   <TopBarLink href="#">Link 1</TopBarLink>
                   <TopBarLink href="#">Link 2</TopBarLink>
-                  <TopBarLink className="active" Component={NavLink} to="/duik/docs/react/top-bar-link">react-router Link</TopBarLink>
+                  <TopBarLink Component={NavLink} to={match.url}>react-router Link</TopBarLink>
                 </TopBarLinkContainer>
               </TopBarSection>
             </TopBar>
