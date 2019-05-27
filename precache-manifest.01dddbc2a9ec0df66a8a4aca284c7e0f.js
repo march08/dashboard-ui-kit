@@ -1,35 +1,35 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e72ffc2fd536941eca083f59e241d735",
+    "revision": "001f28fea399f436d8440ecb9369e29f",
     "url": "/duik/index.html"
   },
   {
-    "revision": "3ae636ddfe33d6649e73",
-    "url": "/duik/static/css/main.13df6e70.chunk.css"
+    "revision": "fda32903be41c9ab47c7",
+    "url": "/duik/static/css/main.3ca17947.chunk.css"
   },
   {
-    "revision": "7289fea2c28f639d782b",
-    "url": "/duik/static/js/2.44106baf.chunk.js"
+    "revision": "8123ac1182e1095d3a6f",
+    "url": "/duik/static/js/2.aa3a7806.chunk.js"
   },
   {
-    "revision": "3ae636ddfe33d6649e73",
-    "url": "/duik/static/js/main.107a2dfa.chunk.js"
+    "revision": "fda32903be41c9ab47c7",
+    "url": "/duik/static/js/main.34438642.chunk.js"
   },
   {
     "revision": "a8bf8a87640341adaa15",
     "url": "/duik/static/js/runtime~main.3e650ccd.js"
   },
   {
-    "url": "/duik/static/media/073b232b11da9cf8777616dddfed40e7.073b232b.ttf"
+    "url": "/duik/static/media/182fadb541cdfa9b77620d8b4ea81926.182fadb5.ttf"
   },
   {
-    "url": "/duik/static/media/20a6441b2d752ea7ba98a6cea6275a3b.20a6441b.woff"
+    "url": "/duik/static/media/23a84f3596ea8ce60021f7540a422348.23a84f35.eot"
   },
   {
-    "url": "/duik/static/media/6d70aa99c17529538f8fed9fc214eca0.6d70aa99.eot"
+    "url": "/duik/static/media/3ec057358075821566e03cdf079e3c56.3ec05735.woff"
   },
   {
-    "url": "/duik/static/media/75bd5390ed5a7f0a71dfb433326763e9.75bd5390.svg"
+    "url": "/duik/static/media/934c3c35cec81863f3598db8e7c0c0bc.934c3c35.svg"
   },
   {
     "revision": "c0656cf705a105d9d328199dbff40a93",
