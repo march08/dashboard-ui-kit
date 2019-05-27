@@ -68,6 +68,7 @@ export const ReactDocsNavLink = () => {
       />
 
       <h2 id="dark">Dark version</h2>
+      <p>As you can see, the only difference is that we passed "dark" prop to the NavPanel component. Simple as that!</p>
       <ExampleTable data={[
         {
           content: (
@@ -108,7 +109,7 @@ export const ReactDocsNavLink = () => {
         },]}
       />
 
-    </DocsContentPage>
+    </DocsContentPage >
   )
 }
 

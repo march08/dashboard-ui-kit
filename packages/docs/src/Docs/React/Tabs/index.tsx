@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Switch, Route, RouteComponentProps, NavLink } from 'react-router-dom'
+import { Switch, Route, RouteComponentProps, NavLink, Link } from 'react-router-dom'
 import { Widget, WidgetContent } from '@duik/it'
 import { H1, CodeExample, Tabs, TabItem } from 'components'
 import { DocsContentPage, PageContent, ImportPath } from '../../components'
@@ -8,52 +8,64 @@ import PropTable from './PropTable'
 
 
 export const ReactDocsOuterEventsHandler = (props: RouteComponentProps) => {
-  const { match } = props
-  console.log(match)
   return (
     <DocsContentPage>
       <PageContent data={[
-        { id: 'rr', label: 'Example with react-router' },
+        { id: 'basic-usage', label: 'Basic Usage' },
+        { id: 'size', label: 'Sizing of tabs' },
         { id: 'props', label: 'Prop Table' },
-        { id: 'migration', label: 'Migration from Dashboard UI Kit 3' },
       ]} />
       <H1>Tabs</H1>
       <ImportPath name="Tabs" subComponents={['TabItem']} />
-      <h2 id="rr">Example with react-router</h2>
 
+      <p>A simple container to evenly distribute the TabItems with ability to control the size. You can check more examples (e.g. with react-router-dom) on <Link to="/docs/react/building-tab-navigation">Building Tab Navigation</Link> page.</p>
 
-      <CodeExample code={`
-<Widget>
-<Tabs>
-  <TabItem Component={NavLink} exact strict to={\`\${match.url}\`}>Overview</TabItem>
-  <TabItem Component={NavLink} exact strict to={\`\${match.url}/tests\`}>Tests</TabItem>
-    <TabItem Component={NavLink} exact strict to={\`\${match.url}/history\`}>History</TabItem>
-</Tabs >
-  <Switch>
-    <Route exact strict path={match.url} children={<WidgetContent>Overview</WidgetContent>} />
-    <Route exact strict path={\`\${match.url}/tests\`} children={<WidgetContent>Tests</WidgetContent>} />
-    <Route exact strict path={\`\${match.url}/history\`} children={<WidgetContent>History</WidgetContent>} />
-  </Switch>
-</Widget >
-  `} bgLight>
+      <h2 id="basic-usage">Basic Usage Within Widget</h2>
+      <CodeExample bgLight>
         <Widget>
           <Tabs>
-            <TabItem Component={NavLink} exact strict to={`${match.url}`}>Overview</TabItem>
-            <TabItem Component={NavLink} exact strict to={`${match.url}/tests`}>Tests</TabItem >
-            <TabItem Component={NavLink} exact strict to={`${match.url}/history`}>History</TabItem>
+            <TabItem className="active">Overview</TabItem>
+            <TabItem>Tests</TabItem >
+            <TabItem>History</TabItem>
           </Tabs >
-          <Switch>
-            <Route exact strict path={match.url} children={<WidgetContent>Overview</WidgetContent>} />
-            <Route exact strict path={`${match.url}/tests`} children={<WidgetContent>Tests</WidgetContent>} />
-            <Route exact strict path={`${match.url}/history`} children={<WidgetContent>History</WidgetContent>} />
-          </Switch>
-        </Widget >
+          <WidgetContent>
+            Widget Content
+          </WidgetContent>
+        </Widget>
       </CodeExample >
 
-      <PropTable />
-      <h2 id="migration">Migration from Dashboard UI Kit 3</h2>
-      <p>"icon" and "iconPosition" properties are now removed in favor to "leftEl" and "rightEl"</p>
+      <h2 id="size">Controling size</h2>
+      <h3>Small</h3>
+      <CodeExample bgLight>
+        <Widget>
+          <Tabs sm>
+            <TabItem className="active">Overview</TabItem>
+            <TabItem>Tests</TabItem >
+            <TabItem>History</TabItem>
+          </Tabs >
+          <WidgetContent>
+            Widget Content
+          </WidgetContent>
+        </Widget>
+      </CodeExample >
 
+      <h3>Extra Small</h3>
+      <CodeExample bgLight>
+        <Widget>
+          <Tabs xs>
+            <TabItem className="active">Overview</TabItem>
+            <TabItem>Tests</TabItem >
+            <TabItem>History</TabItem>
+          </Tabs >
+          <WidgetContent>
+            Widget Content
+          </WidgetContent>
+        </Widget>
+      </CodeExample >
+
+
+
+      <PropTable />
     </DocsContentPage >
   )
 }

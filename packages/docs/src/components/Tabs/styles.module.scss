@@ -34,6 +34,15 @@
     font-size: .875rem;
   }
 
+  .left-el {
+    color: $text-secondary;
+    font-weight: 400;
+    display: inline-block;
+    margin-right: 8px;
+    font-size: .875rem;
+    line-height: 1;
+  }
+
   &:hover,
   &:focus {
     color: $text-main;
@@ -50,6 +59,10 @@
     border-bottom-color: $color-primary;
     font-weight: 500;
     color: $text-main;
+
+    .left-el {
+      color: $color-primary;
+    }
   }
 }
 
@@ -62,7 +75,8 @@
     font-size: .875rem;
   }
 
-  .right-el {
+  .right-el,
+  .left-el {
     font-size: .75rem;
   }
 

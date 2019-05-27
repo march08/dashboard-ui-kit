@@ -2,6 +2,7 @@ import React from 'react'
 import classnames from 'classnames';
 import cls from './styles.module.scss';
 import { Button } from '@duik/it'
+import { jsxToString } from 'utils'
 
 import { Code } from 'components'
 
@@ -28,7 +29,7 @@ export const CodeExample = (props: CodeExampleProps) => {
         </div>
         {visible && (
           <Code>
-            {props.code}
+            {props.code || jsxToString(props.children)}
           </Code>
         )}
       </div>

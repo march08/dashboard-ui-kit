@@ -4,9 +4,10 @@ import classnames from 'classnames'
 import { AnyTag, PropsWithTagProps } from '@duik/core'
 
 import cls from './styles.module.scss'
-// @flow
-type TabItemPropsBase = {
+
+export type TabItemPropsBase = {
   rightEl?: React.ReactNode,
+  leftEl?: React.ReactNode,
   active?: Boolean,
 }
 
@@ -19,6 +20,7 @@ export const TabItem = <T extends AnyTag = 'a'>(props: TabItemProps<T>) => {
     Component = 'a',
     children,
     rightEl,
+    leftEl,
     active,
     ...rest
   } = props
@@ -30,9 +32,14 @@ export const TabItem = <T extends AnyTag = 'a'>(props: TabItemProps<T>) => {
       tabIndex={0}
       {...rest}
     >
+      {leftEl && (
+        <span className={cls['left-el']}>
+          {leftEl}
+        </span>
+      )}
       {children}
       {rightEl && (
-        <span className={cls.rightEl}>
+        <span className={cls['right-el']}>
           {rightEl}
         </span>
       )}

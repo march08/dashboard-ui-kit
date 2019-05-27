@@ -73,6 +73,11 @@
     background: $color-primary;
     color: $text-adverse-main;
 
+    &:hover {
+      background: $color-primary;
+      color: $text-adverse-main;
+    }
+
     .nav-link-text {
       color: $text-adverse-main;
     }

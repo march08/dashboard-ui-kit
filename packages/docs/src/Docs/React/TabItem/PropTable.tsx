@@ -13,17 +13,20 @@ const itemProps = [
   properties.children({
     desc: <>Children nodes, e.g. <Link to="/docs/react/tab-item">TabItem(s)</Link></>
   }),
-  properties.bool({
-    prop: 'sm',
-    desc: <>render <Link to="/docs/react/tab-item">TabItem(s)</Link> with 62px height instead of 70px</>
+  properties.Component({
+    defaultValue: '"a"',
   }),
-  properties.bool({
-    prop: 'xs',
-    desc: <>render <Link to="/docs/react/tab-item">TabItem(s)</Link> with 50px height instead of 70px</>
+  properties.children({
+    prop: 'leftEl',
+    desc: <>Renders node on the left side with some styling</>
+  }),
+  properties.children({
+    prop: 'rightEl',
+    desc: <>Renders node on the right side with some styling</>
   }),
   properties.rest({
     desc: (
-      <>Other properties are passed down to the wrapping nav element</>
+      <>Other properties are passed down to the wrapping element</>
     )
   }),
 ]

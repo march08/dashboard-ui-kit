@@ -44,7 +44,7 @@ export const properties = {
   }),
   Component: (data?: ReactDocsPropertyOptional) => ({
     prop: 'Component',
-    propType: 'React.ComponentType',
+    propType: 'React.Component | React.FunctionalComponent | string',
     required: false,
     desc: (
       <span>

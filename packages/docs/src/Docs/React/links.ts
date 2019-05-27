@@ -47,12 +47,14 @@ const nav = [
 ]
 const tabNav = [
   'Tabs',
+  'TabItem',
 ]
 
 const cookbook = [
   'BuildingLayout',
   'BuildingNavPanel',
-  'BuildingTopBar'
+  'BuildingTopBar',
+  'BuildingTabNavigation'
 ]
 const guides = [
   'UseWithTypescript',
