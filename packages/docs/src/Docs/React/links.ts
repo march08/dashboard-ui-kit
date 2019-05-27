@@ -25,6 +25,7 @@ const components = [
   'Progress',
   'Avatar',
   'Alert',
+  'Date'
 ]
 const layout = [
   'ContainerVertical',

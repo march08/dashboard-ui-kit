@@ -1,0 +1,70 @@
+@import '@duik/core/_vars.scss';
+
+.datepicker-month {
+  // flex-wrap: wrap;// display: flex;
+  width: 30px * 7;
+  flex-shrink: 0;
+
+  &:after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+}
+
+.datepicker-day {
+  height: 30px;
+  width: 30px;
+  float: left;
+  display: flex;
+  justify-content: center;
+  font-size: .875rem;
+  opacity: 0.5;
+
+  &,
+  &:focus,
+  &:active,
+  &:hover {
+    background: none;
+    outline: none;
+    box-shadow: none;
+    border: none;
+  }
+
+  color: $text-tertiary;
+
+  &:nth-child(7n + 1) {
+    content: '';
+    clear: both;
+  }
+}
+
+.datepicker-day-current-month {
+  color: $text-main;
+  opacity: 1;
+}
+
+.datepicker-day-content {
+  flex-grow: 1;
+  padding: 3px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.datepicker-day-selected {
+  .datepicker-day-content {
+    background: rgba($color-primary-rgb, .8);
+    color: $text-adverse-main;
+  }
+}
+
+.datepicker-day-selected-last,
+.datepicker-day-selected-first {
+  .datepicker-day-content {
+    background: rgba($color-primary-rgb, 1);
+    color: $text-adverse-main;
+    border-radius: 50%;
+    height: 30px;
+  }
+}
