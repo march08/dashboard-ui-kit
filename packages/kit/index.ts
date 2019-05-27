@@ -1,13 +1,9 @@
 
-export * from '@duik/progress';
+export * from '@duik/alert';
 export * from '@duik/avatar';
 export * from '@duik/button';
 export * from '@duik/button-group';
-export * from '@duik/widget';
-export * from '@duik/widget-table';
-export * from '@duik/widget-header';
-export * from '@duik/widget-content';
-export * from '@duik/widget-container';
+export * from '@duik/progress';
 export * from '@duik/dropdown';
 
 // utils
@@ -49,5 +45,12 @@ export * from '@duik/top-bar-title';
 
 // typo
 export * from '@duik/content-title';
+
+// widget
+export * from '@duik/widget';
+export * from '@duik/widget-table';
+export * from '@duik/widget-header';
+export * from '@duik/widget-content';
+export * from '@duik/widget-container';
 
 import './kit.scss';

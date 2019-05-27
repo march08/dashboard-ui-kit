@@ -53,7 +53,7 @@ export function NavLink<T extends AnyTag>({
       <span className={'nav-link-text'}>
         {
           (leftEl || icon) && (
-            <span className='left-el-wrapper'>
+            <span className='nav-link-left-el'>
               {leftEl || icon}
             </span>
           ) || null
@@ -61,7 +61,7 @@ export function NavLink<T extends AnyTag>({
         {children}
       </span>
       {rightEl && (
-        <span className='right-el-wrapper'>
+        <span className='nav-link-right-el'>
           {rightEl}
         </span>
       ) || null}

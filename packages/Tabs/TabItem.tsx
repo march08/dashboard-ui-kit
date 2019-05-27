@@ -33,13 +33,13 @@ export const TabItem = <T extends AnyTag = 'a'>(props: TabItemProps<T>) => {
       {...rest}
     >
       {leftEl && (
-        <span className={cls['left-el']}>
+        <span className={cls['tab-item-left-el']}>
           {leftEl}
         </span>
       )}
       {children}
       {rightEl && (
-        <span className={cls['right-el']}>
+        <span className={cls['tab-item-right-el']}>
           {rightEl}
         </span>
       )}

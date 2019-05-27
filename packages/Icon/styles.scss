@@ -1,63 +1,68 @@
 $font-path: "./" !default;
-$uikon-dropdown_arrow: "\e922";
-$uikon-arrow_left: "\e920";
-$uikon-arrow_right: "\e921";
-$uikon-plus_rounded: "\e900";
-$uikon-pin_rounded_circle: "\e901";
-$uikon-message_2: "\e902";
-$uikon-calendar_2: "\e903";
-$uikon-building_plan: "\e904";
-$uikon-tap_click_force_touch: "\e905";
-$uikon-ruler: "\e906";
-$uikon-video_camera: "\e907";
-$uikon-phone_two: "\e908";
-$uikon-smile: "\e909";
-$uikon-attachment: "\e90a";
-$uikon-picture: "\e90b";
-$uikon-view_simple: "\e90c";
-$uikon-lightbulb: "\e90d";
-$uikon-wallet: "\e90e";
-$uikon-view_grid: "\e90f";
-$uikon-view_list: "\e910";
-$uikon-profile_card: "\e911";
-$uikon-front_store: "\e912";
-$uikon-rocket: "\e913";
-$uikon-buildings: "\e914";
-$uikon-building: "\e915";
-$uikon-shopping_bag: "\e916";
-$uikon-arrow-dropdown: "\e917";
-$uikon-check: "\e918";
-$uikon-more: "\e919";
-$uikon-trending_down: "\e91a";
-$uikon-trending_up: "\e91b";
-$uikon-star: "\e91c";
-$uikon-star-filled: "\e91d";
-$uikon-add: "\e91e";
-$uikon-help: "\e91f";
-$uikon-message: "\e9df";
-$uikon-send_round: "\e9e8";
-$uikon-inbox_paper_round: "\e9f5";
-$uikon-search_left: "\ea27";
-$uikon-settings: "\ea36";
-$uikon-love: "\ea38";
-$uikon-love-fill: "\ea39";
-$uikon-edit: "\ea3e";
-$uikon-multitasking: "\ea69";
-$uikon-gallery_grid_view: "\ea8c";
-$uikon-home: "\ea9a";
-$uikon-profile_round: "\eacb";
-$uikon-profile_plus_round: "\eadd";
-$uikon-clock: "\eae6";
-$uikon-container: "\eae9";
-$uikon-globe_network: "\eafb";
-$uikon-calendar: "\eb5c";
-$uikon-stats: "\eb61";
-$uikon-money_round: "\eb69";
-$uikon-cloud_up: "\ebe3";
-$uikon-image_picture: "\ec3c";
-$uikon-camera: "\ec47";
-$uikon-desktop: "\ef22";
-$uikon-phone: "\ef28";
+
+
+$icon-close: "\e900";
+$icon-plus_rounded: "\e901";
+$icon-pin_rounded_circle: "\e902";
+$icon-message_2: "\e903";
+$icon-calendar_2: "\e904";
+$icon-building_plan: "\e905";
+$icon-tap_click_force_touch: "\e906";
+$icon-ruler: "\e907";
+$icon-video_camera: "\e908";
+$icon-phone_two: "\e909";
+$icon-smile: "\e90a";
+$icon-attachment: "\e90b";
+$icon-picture: "\e90c";
+$icon-view_simple: "\e90d";
+$icon-lightbulb: "\e90e";
+$icon-wallet: "\e90f";
+$icon-view_grid: "\e910";
+$icon-view_list: "\e911";
+$icon-profile_card: "\e912";
+$icon-front_store: "\e913";
+$icon-rocket: "\e914";
+$icon-buildings: "\e915";
+$icon-building: "\e916";
+$icon-shopping_bag: "\e917";
+$icon-arrow-dropdown: "\e918";
+$icon-check: "\e919";
+$icon-more: "\e91a";
+$icon-trending_down: "\e91b";
+$icon-trending_up: "\e91c";
+$icon-star: "\e91d";
+$icon-star-filled: "\e91e";
+$icon-add: "\e91f";
+$icon-help: "\e920";
+$icon-arrow_left: "\e921";
+$icon-arrow_right: "\e922";
+$icon-dropdown_arrow: "\e923";
+$icon-message: "\e9df";
+$icon-send_round: "\e9e8";
+$icon-inbox_paper_round: "\e9f5";
+$icon-search_left: "\ea27";
+$icon-settings: "\ea36";
+$icon-love: "\ea38";
+$icon-love-fill: "\ea39";
+$icon-edit: "\ea3e";
+$icon-multitasking: "\ea69";
+$icon-gallery_grid_view: "\ea8c";
+$icon-home: "\ea9a";
+$icon-profile_round: "\eacb";
+$icon-profile_plus_round: "\eadd";
+$icon-clock: "\eae6";
+$icon-container: "\eae9";
+$icon-globe_network: "\eafb";
+$icon-calendar: "\eb5c";
+$icon-stats: "\eb61";
+$icon-money_round: "\eb69";
+$icon-cloud_up: "\ebe3";
+$icon-image_picture: "\ec3c";
+$icon-camera: "\ec47";
+$icon-desktop: "\ef22";
+$icon-phone: "\ef28";
+
+
 
 @font-face {
   font-family: 'uikon';
@@ -105,358 +110,364 @@ $uikon-phone: "\ef28";
     -moz-osx-font-smoothing: grayscale;
   }
 
-  .uikon-dropdown_arrow {
+  .icon-close {
     &:before {
-      content: $uikon-dropdown_arrow;
+      content: $icon-close;
     }
   }
 
-  .uikon-arrow_left {
+  .icon-dropdown_arrow {
     &:before {
-      content: $uikon-arrow_left;
+      content: $icon-dropdown_arrow;
     }
   }
 
-  .uikon-arrow_right {
+  .icon-arrow_left {
     &:before {
-      content: $uikon-arrow_right;
+      content: $icon-arrow_left;
     }
   }
 
-  .uikon-plus_rounded {
+  .icon-arrow_right {
     &:before {
-      content: $uikon-plus_rounded;
+      content: $icon-arrow_right;
     }
   }
 
-  .uikon-pin_rounded_circle {
+  .icon-plus_rounded {
     &:before {
-      content: $uikon-pin_rounded_circle;
+      content: $icon-plus_rounded;
     }
   }
 
-  .uikon-message_2 {
+  .icon-pin_rounded_circle {
     &:before {
-      content: $uikon-message_2;
+      content: $icon-pin_rounded_circle;
     }
   }
 
-  .uikon-calendar_2 {
+  .icon-message_2 {
     &:before {
-      content: $uikon-calendar_2;
+      content: $icon-message_2;
     }
   }
 
-  .uikon-building_plan {
+  .icon-calendar_2 {
     &:before {
-      content: $uikon-building_plan;
+      content: $icon-calendar_2;
+    }
+  }
+
+  .icon-building_plan {
+    &:before {
+      content: $icon-building_plan;
       color: #9ea0a5;
     }
   }
 
-  .uikon-tap_click_force_touch {
+  .icon-tap_click_force_touch {
     &:before {
-      content: $uikon-tap_click_force_touch;
+      content: $icon-tap_click_force_touch;
     }
   }
 
-  .uikon-ruler {
+  .icon-ruler {
     &:before {
-      content: $uikon-ruler;
+      content: $icon-ruler;
     }
   }
 
-  .uikon-video_camera {
+  .icon-video_camera {
     &:before {
-      content: $uikon-video_camera;
+      content: $icon-video_camera;
     }
   }
 
-  .uikon-phone_two {
+  .icon-phone_two {
     &:before {
-      content: $uikon-phone_two;
+      content: $icon-phone_two;
     }
   }
 
-  .uikon-smile {
+  .icon-smile {
     &:before {
-      content: $uikon-smile;
+      content: $icon-smile;
     }
   }
 
-  .uikon-attachment {
+  .icon-attachment {
     &:before {
-      content: $uikon-attachment;
+      content: $icon-attachment;
     }
   }
 
-  .uikon-picture {
+  .icon-picture {
     &:before {
-      content: $uikon-picture;
+      content: $icon-picture;
     }
   }
 
-  .uikon-view_simple {
+  .icon-view_simple {
     &:before {
-      content: $uikon-view_simple;
+      content: $icon-view_simple;
     }
   }
 
-  .uikon-lightbulb {
+  .icon-lightbulb {
     &:before {
-      content: $uikon-lightbulb;
+      content: $icon-lightbulb;
     }
   }
 
-  .uikon-wallet {
+  .icon-wallet {
     &:before {
-      content: $uikon-wallet;
+      content: $icon-wallet;
     }
   }
 
-  .uikon-view_grid {
+  .icon-view_grid {
     &:before {
-      content: $uikon-view_grid;
+      content: $icon-view_grid;
     }
   }
 
-  .uikon-view_list {
+  .icon-view_list {
     &:before {
-      content: $uikon-view_list;
+      content: $icon-view_list;
     }
   }
 
-  .uikon-profile_card {
+  .icon-profile_card {
     &:before {
-      content: $uikon-profile_card;
+      content: $icon-profile_card;
     }
   }
 
-  .uikon-front_store {
+  .icon-front_store {
     &:before {
-      content: $uikon-front_store;
+      content: $icon-front_store;
     }
   }
 
-  .uikon-rocket {
+  .icon-rocket {
     &:before {
-      content: $uikon-rocket;
+      content: $icon-rocket;
     }
   }
 
-  .uikon-buildings {
+  .icon-buildings {
     &:before {
-      content: $uikon-buildings;
+      content: $icon-buildings;
     }
   }
 
-  .uikon-building {
+  .icon-building {
     &:before {
-      content: $uikon-building;
+      content: $icon-building;
     }
   }
 
-  .uikon-shopping_bag {
+  .icon-shopping_bag {
     &:before {
-      content: $uikon-shopping_bag;
+      content: $icon-shopping_bag;
     }
   }
 
-  .uikon-arrow-dropdown {
+  .icon-arrow-dropdown {
     &:before {
-      content: $uikon-arrow-dropdown;
+      content: $icon-arrow-dropdown;
     }
   }
 
-  .uikon-check {
+  .icon-check {
     &:before {
-      content: $uikon-check;
+      content: $icon-check;
     }
   }
 
-  .uikon-more {
+  .icon-more {
     &:before {
-      content: $uikon-more;
+      content: $icon-more;
     }
   }
 
-  .uikon-trending_down {
+  .icon-trending_down {
     &:before {
-      content: $uikon-trending_down;
+      content: $icon-trending_down;
     }
   }
 
-  .uikon-trending_up {
+  .icon-trending_up {
     &:before {
-      content: $uikon-trending_up;
+      content: $icon-trending_up;
     }
   }
 
-  .uikon-star {
+  .icon-star {
     &:before {
-      content: $uikon-star;
+      content: $icon-star;
     }
   }
 
-  .uikon-star-filled {
+  .icon-star-filled {
     &:before {
-      content: $uikon-star-filled;
+      content: $icon-star-filled;
     }
   }
 
-  .uikon-add {
+  .icon-add {
     &:before {
-      content: $uikon-add;
+      content: $icon-add;
     }
   }
 
-  .uikon-help {
+  .icon-help {
     &:before {
-      content: $uikon-help;
+      content: $icon-help;
     }
   }
 
-  .uikon-message {
+  .icon-message {
     &:before {
-      content: $uikon-message;
+      content: $icon-message;
     }
   }
 
-  .uikon-send_round {
+  .icon-send_round {
     &:before {
-      content: $uikon-send_round;
+      content: $icon-send_round;
     }
   }
 
-  .uikon-inbox_paper_round {
+  .icon-inbox_paper_round {
     &:before {
-      content: $uikon-inbox_paper_round;
+      content: $icon-inbox_paper_round;
     }
   }
 
-  .uikon-search_left {
+  .icon-search_left {
     &:before {
-      content: $uikon-search_left;
+      content: $icon-search_left;
     }
   }
 
-  .uikon-settings {
+  .icon-settings {
     &:before {
-      content: $uikon-settings;
+      content: $icon-settings;
     }
   }
 
-  .uikon-love {
+  .icon-love {
     &:before {
-      content: $uikon-love;
+      content: $icon-love;
     }
   }
 
-  .uikon-love-fill {
+  .icon-love-fill {
     &:before {
-      content: $uikon-love-fill;
+      content: $icon-love-fill;
     }
   }
 
-  .uikon-edit {
+  .icon-edit {
     &:before {
-      content: $uikon-edit;
+      content: $icon-edit;
     }
   }
 
-  .uikon-multitasking {
+  .icon-multitasking {
     &:before {
-      content: $uikon-multitasking;
+      content: $icon-multitasking;
     }
   }
 
-  .uikon-gallery_grid_view {
+  .icon-gallery_grid_view {
     &:before {
-      content: $uikon-gallery_grid_view;
+      content: $icon-gallery_grid_view;
     }
   }
 
-  .uikon-home {
+  .icon-home {
     &:before {
-      content: $uikon-home;
+      content: $icon-home;
     }
   }
 
-  .uikon-profile_round {
+  .icon-profile_round {
     &:before {
-      content: $uikon-profile_round;
+      content: $icon-profile_round;
     }
   }
 
-  .uikon-profile_plus_round {
+  .icon-profile_plus_round {
     &:before {
-      content: $uikon-profile_plus_round;
+      content: $icon-profile_plus_round;
     }
   }
 
-  .uikon-clock {
+  .icon-clock {
     &:before {
-      content: $uikon-clock;
+      content: $icon-clock;
     }
   }
 
-  .uikon-container {
+  .icon-container {
     &:before {
-      content: $uikon-container;
+      content: $icon-container;
     }
   }
 
-  .uikon-globe_network {
+  .icon-globe_network {
     &:before {
-      content: $uikon-globe_network;
+      content: $icon-globe_network;
     }
   }
 
-  .uikon-calendar {
+  .icon-calendar {
     &:before {
-      content: $uikon-calendar;
+      content: $icon-calendar;
     }
   }
 
-  .uikon-stats {
+  .icon-stats {
     &:before {
-      content: $uikon-stats;
+      content: $icon-stats;
     }
   }
 
-  .uikon-money_round {
+  .icon-money_round {
     &:before {
-      content: $uikon-money_round;
+      content: $icon-money_round;
     }
   }
 
-  .uikon-cloud_up {
+  .icon-cloud_up {
     &:before {
-      content: $uikon-cloud_up;
+      content: $icon-cloud_up;
     }
   }
 
-  .uikon-image_picture {
+  .icon-image_picture {
     &:before {
-      content: $uikon-image_picture;
+      content: $icon-image_picture;
     }
   }
 
-  .uikon-camera {
+  .icon-camera {
     &:before {
-      content: $uikon-camera;
+      content: $icon-camera;
     }
   }
 
-  .uikon-desktop {
+  .icon-desktop {
     &:before {
-      content: $uikon-desktop;
+      content: $icon-desktop;
     }
   }
 
-  .uikon-phone {
+  .icon-phone {
     &:before {
-      content: $uikon-phone;
+      content: $icon-phone;
     }
   }
 

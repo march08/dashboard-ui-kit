@@ -4,6 +4,7 @@ import cls from './styles.scss';
 
 
 export enum DUIKON {
+  close = 'close',
   arrow_left = 'arrow_left',
   arrow_right = 'arrow_right',
   plus_rounded = 'plus_rounded',

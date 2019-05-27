@@ -11,14 +11,14 @@
   justify-content: space-between;
   position: relative;
 
-  .left-el-wrapper {
+  .nav-link-left-el {
     display: inline-block;
     margin-right: 12px;
     width: 18px;
     text-align: center;
   }
 
-  .right-el-wrapper {
+  .nav-link-right-el {
     font-size: 0.75rem;
     color: $text-secondary;
     color: $text-tertiary;

@@ -1,0 +1,78 @@
+@import '@duik/core/_vars.scss';
+
+.alert {
+  border-radius: 4px;
+  background: $bg-base;
+  border: $border-default-base;
+  font-size: .875rem;
+  font-weight: 500;
+  padding: .875rem 1rem;
+  line-height: 1.4;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: calc(100% - 60px);
+  max-width: 760px;
+
+  &>* {
+    flex-grow: 1;
+  }
+}
+
+.alert-left-el {
+  flex-grow: 0;
+  margin-right: 1rem;
+}
+
+.alert-right-el {
+  flex-grow: 0;
+  margin-left: 1rem;
+
+  :global(.close) {
+    font-size: 1rem;
+    display: block;
+
+    &,
+    &:focus,
+    &:hover,
+    &:active {
+      padding: 1px;
+      outline: 0;
+      box-shadow: none;
+      background: transparent;
+      background-image: none;
+      border: none !important;
+    }
+
+  }
+}
+
+.alert[class*="alert-"] {
+  color: $text-adverse-main;
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $text-adverse-main;
+  }
+
+  p {
+    opacity: .8;
+  }
+
+  .alert-left-el,
+  .alert-right-el {
+    color: $text-adverse-main;
+  }
+
+  :global(.close) {
+    color: $text-adverse-main;
+  }
+
+}
+
+@include generateColorDomainProperty('.alert', 'background-color');

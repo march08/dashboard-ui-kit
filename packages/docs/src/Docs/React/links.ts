@@ -24,6 +24,7 @@ const components = [
   'Dropdown',
   'Progress',
   'Avatar',
+  'Alert',
 ]
 const layout = [
   'ContainerVertical',

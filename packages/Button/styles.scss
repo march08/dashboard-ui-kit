@@ -169,6 +169,8 @@ a.base:hover {
   background: transparent;
   box-shadow: none;
 
+  color: inherit;
+
   &:active,
   &:hover,
   &:focus,
@@ -326,6 +328,12 @@ a.base:hover {
 
   &:hover {
     color: $text-base;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: transparent;
   }
 }
 

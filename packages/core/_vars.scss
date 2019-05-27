@@ -223,6 +223,27 @@ $colors: map-merge(("blue": $color-blue,
 }
 
 
+$domainColors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$domainColors: map-merge(("primary": $color-primary,
+"success": $color-success,
+"danger": $color-danger,
+"warning": $color-warning), $colors);
+
+@mixin generateColorDomainProperty($classPrefix, $property) {
+
+  @each $color,
+  $value in $domainColors {
+
+    #{$classPrefix}-#{$color} {
+      #{$property}: #{$value};
+    }
+
+  }
+}
+
+
+
 $gradient-secondary: var(--gradient-secondary);
 
 
