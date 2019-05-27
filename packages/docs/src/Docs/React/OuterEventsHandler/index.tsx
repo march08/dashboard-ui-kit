@@ -24,7 +24,7 @@ export const ReactDocsOuterEventsHandler = () => {
       <p>This fairly simple component will let you know if selected events were triggered outside it's wrapping element. This is useful in situations like dropdowns, selects or modals. The component is used in some components in this kit as well, however we find it useful to expose it for your own creativity!</p>
 
       <h2 id="basic-usage">How it works?</h2>
-      <p>Simply wrap your content with OuterEventsHandler and pass a single argument, a function that will be triggered when one of the supported events fires. By default, only outer clicks or hitting "esc" on your keyboard will trigger a passed function. See more options in the <Link to="#props">prop table description</Link> or live examples <Link to="more-events">below</Link>.</p>
+      <p>Simply wrap your content with OuterEventsHandler and pass a single argument, a function that will be triggered when one of the supported events fires. By default, only outer clicks or hitting "esc" on your keyboard will trigger a passed function. See more options in the <Link to="#props">prop table description</Link> or live examples <Link to="#more-events">below</Link>.</p>
 
       <ExampleTable data={[
         {
