@@ -1,4 +1,4 @@
-import { DropdownItem } from '@duik/it'
+import { DropdownItem } from '@duik/dropdown'
 
 export type SelectOption<V extends number | string = any> = {
   label?: React.ReactNode,
@@ -8,7 +8,7 @@ export type SelectOption<V extends number | string = any> = {
 
 export type SelectOnOptionFn<V extends number | string> = (option: SelectOption<V>, name?: string) => void
 
-export type SelectOptionProps<V  extends number | string> = {
+export type SelectOptionProps<V extends number | string> = {
   options: SelectOption<V>[],
   activeOption?: SelectOption<V> | SelectOption<V>[] | null,
 }

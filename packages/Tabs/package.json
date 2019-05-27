@@ -1,0 +1,17 @@
+{
+  "name": "@duik/tabs",
+  "version": "0.1.0",
+  "description": "Dashboard UI Kit Tab Navigation",
+  "main": "dist/index.js",
+  "repository": "https://github.com/march08/duik",
+  "homepage": "https://github.com/march08/duik",
+  "author": "Roman Nguyen <march08@outlook.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
+  "dependencies": {
+    "@duik/core": "0.1.0"
+  }
+}

@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { Switch, Route, RouteComponentProps, NavLink, Link } from 'react-router-dom'
-import { Widget, WidgetContent } from '@duik/it'
+import { Widget, WidgetContent, Tabs, TabItem } from '@duik/it'
 import { Icon } from '@duik/icon'
-import { H1, CodeExample, Tabs, TabItem } from 'components'
-import { DocsContentPage, PageContent, ImportPath } from '../../components'
+import { H1, CodeExample, } from 'components'
+import { DocsContentPage } from '../../components'
 
 import PropTable from './PropTable'
 

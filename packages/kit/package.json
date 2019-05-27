@@ -35,6 +35,8 @@
     "@duik/top-bar-link-container": "0.1.0",
     "@duik/top-bar-menu-divider": "0.1.0",
     "@duik/top-bar-section": "0.1.0",
-    "@duik/top-bar-title": "0.1.0"
+    "@duik/top-bar-title": "0.1.0",
+    "@duik/tabs": "0.1.0",
+    "@duik/select": "0.1.0"
   }
 }

@@ -25,6 +25,7 @@ export * from '@duik/core';
 export * from '@duik/checkbox';
 export * from '@duik/toggle';
 export * from '@duik/radio';
+export * from '@duik/select';
 export * from '@duik/text-field';
 export * from '@duik/text-area';
 
@@ -33,8 +34,12 @@ export * from '@duik/outer-events-handler'
 
 // layout components
 export * from '@duik/scroll-area';
+
+export * from '@duik/tabs';
+
 export * from '@duik/container-vertical';
 export * from '@duik/container-horizontal';
+
 export * from '@duik/top-bar';
 export * from '@duik/top-bar-link';
 export * from '@duik/top-bar-link-container';

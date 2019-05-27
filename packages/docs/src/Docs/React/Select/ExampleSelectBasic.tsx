@@ -1,5 +1,5 @@
 import React from 'react'
-import { Select, SelectOption } from 'components'
+import { Select, SelectOption } from '@duik/it'
 
 export const ExampleSelectBasic = () => {
   const [activeOption, setActiveOption] = React.useState<SelectOption | undefined>()

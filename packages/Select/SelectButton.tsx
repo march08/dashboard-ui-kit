@@ -1,5 +1,5 @@
 import React from 'react'
-import { DropdownButton } from '@duik/it'
+import { DropdownButton } from '@duik/dropdown'
 import { SelectOptionProps } from './types'
 import { getDisplayValue } from './utils'
 

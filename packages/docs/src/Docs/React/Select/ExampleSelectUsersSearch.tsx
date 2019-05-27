@@ -1,5 +1,5 @@
 import React from 'react'
-import { Select, SelectOption } from 'components'
+import { Select, SelectOption } from '@duik/it'
 import { Avatar } from '@duik/it'
 import { useInputControls } from 'utils'
 import * as assets from 'assets'

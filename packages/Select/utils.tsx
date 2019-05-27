@@ -1,6 +1,6 @@
 import React from 'react'
 import { SelectOption } from './types'
-import cls from './styles.module.scss'
+import cls from './styles.scss'
 
 
 export const getOptionLabel = (option?: SelectOption<any> | null) => {

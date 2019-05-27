@@ -3,7 +3,7 @@ import * as React from 'react'
 import classnames from 'classnames'
 import { AnyTag, PropsWithTagProps } from '@duik/core'
 
-import cls from './styles.module.scss'
+import cls from './styles.scss'
 
 export type TabItemPropsBase = {
   rightEl?: React.ReactNode,

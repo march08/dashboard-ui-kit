@@ -1,10 +1,10 @@
 import React from 'react'
 import classnames from 'classnames'
-import cls from './styles.module.scss'
+import cls from './styles.scss'
 
 export * from './TabItem'
 
-type TabsProps = JSX.IntrinsicElements['nav'] & {
+export type TabsProps = JSX.IntrinsicElements['nav'] & {
   xs?: boolean,
   sm?: boolean
 }

@@ -1,11 +1,14 @@
 import React from 'react'
 import classnames from 'classnames'
-import { Dropdown, DropdownItem, DropdownMenuPosition, TextField, ContentTitle } from '@duik/it'
+import { Dropdown, DropdownItem, DropdownMenuPosition } from '@duik/dropdown'
+import { TextField } from '@duik/text-field'
+import { ContentTitle } from '@duik/content-title'
+
 
 import { SelectOption, SelectOnOptionFn, SelectOptionProps } from './types'
 import { getDisplayValue } from './utils'
 import { SelectButton } from './SelectButton'
-import cls from './styles.module.scss'
+import cls from './styles.scss'
 export * from './types'
 
 export type SelectMenuPosition = DropdownMenuPosition
