@@ -55,7 +55,8 @@ const cookbook = [
   'BuildingLayout',
   'BuildingNavPanel',
   'BuildingTopBar',
-  'BuildingTabNavigation'
+  'BuildingTabNavigation',
+  'ComponentProperty'
 ]
 const guides = [
   'UseWithTypescript',
