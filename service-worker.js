@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/duik/precache-manifest.8f78dbb67b2d5bee75e7759bdb1867a8.js"
+  "/duik/precache-manifest.e19f722b976ec12e93a39582241bf7b6.js"
 );
 
 self.addEventListener('message', (event) => {
