@@ -4,7 +4,7 @@ import { DateMonthView } from './DateMonthView'
 import { DateMonthListView } from './DateMonthListView'
 import { DateYearListView } from './DateYearListView'
 import { DatePickerView, useDatePickerView } from './useDatePickerView'
-import { defaultRenderTitle, defaultRenderMonthName } from './defaultRenders'
+import { defaultRenderTitle, defaultRenderMonthName, defaultRenderWeekdayShort } from './defaultRenders'
 import { useVisibleDate } from './useVisibleDate'
 
 import cls from './styles.module.scss'
@@ -16,9 +16,12 @@ export type DatePickerValue<M extends boolean> = M extends true ? DatePickerRang
 export type DatePickerProps<M extends boolean = false> = {
   renderTitle?: (visibleDate: Date, activeView: DatePickerView) => React.ReactNode,
   renderMonthName?: (monthNumber: number) => React.ReactNode,
+  renderWeekdayShort?: (weekdayNumber: number) => React.ReactNode,
   isRange?: M,
   value?: DatePickerValue<M>,
-  onChange?: (value: DatePickerValue<M>) => void
+  onChange?: (value: DatePickerValue<M>) => void,
+  minDate?: Date,
+  maxDate?: Date,
 }
 
 
@@ -27,9 +30,12 @@ export function DatePicker<M extends boolean = false>(props: DatePickerProps<M>)
   const {
     renderTitle = defaultRenderTitle,
     renderMonthName = defaultRenderMonthName,
+    renderWeekdayShort = defaultRenderWeekdayShort,
     onChange,
     value,
-    isRange
+    isRange,
+    minDate,
+    maxDate,
   } = props
 
   const view = useDatePickerView()
@@ -69,35 +75,46 @@ export function DatePicker<M extends boolean = false>(props: DatePickerProps<M>)
     handleDateSelect: handleDateSelect,
     selectedDateFrom: !isRange ? (dateValue as DatePickerSimpleValue) : (dateValue as DatePickerRangeValue).from,
     selectedDateTo: !isRange ? (dateValue as DatePickerSimpleValue) : (dateValue as DatePickerRangeValue).to,
+    minDate,
+    maxDate,
   }
 
 
   return (
-    <div>
-
-      <div className={cls['datepicker']}>
-        <div className={cls['datepicker-header']}>
-          <button onClick={handlePrev} className={cls['datepicker-nav-btn']}>←</button>
-          <button className={cls['datepicker-title-btn']} type="button" onClick={view.setPrevView}>
-            {renderTitle(visibleDate, view.activeView)}
-          </button>
-          <button onClick={handleNext} className={cls['datepicker-nav-btn']}>→</button>
-        </div>
-
-        <div className={cls['datepicker-view-container']}>
-          {view.activeView === DatePickerView.yearList && (
-            <DateYearListView handleYearSelect={handleYearSelect} visibleDate={visibleDate} />
-          )}
-          {view.activeView === DatePickerView.monthList && (
-            <DateMonthListView handleMonthSelect={handleMonthSelect} renderMonthName={renderMonthName} />
-          )}
-          {view.activeView === DatePickerView.month && (
-            <DateMonthView dayProps={dayProps} visibleDate={visibleDate} />
-          )}
-        </div>
-
+    <div className={cls['datepicker']}>
+      <div className={cls['datepicker-header']}>
+        <button onClick={handlePrev} className={cls['datepicker-nav-btn']}>←</button>
+        <button className={cls['datepicker-title-btn']} type="button" onClick={view.setPrevView}>
+          {renderTitle(visibleDate, view.activeView)}
+        </button>
+        <button onClick={handleNext} className={cls['datepicker-nav-btn']}>→</button>
       </div>
 
+      <div className={cls['datepicker-view-container']}>
+        {view.activeView === DatePickerView.yearList && (
+          <DateYearListView
+            handleYearSelect={handleYearSelect}
+            visibleDate={visibleDate}
+            minDate={minDate}
+            maxDate={maxDate}
+          />
+        )}
+        {view.activeView === DatePickerView.monthList && (
+          <DateMonthListView
+            handleMonthSelect={handleMonthSelect}
+            visibleDate={visibleDate}
+            renderMonthName={renderMonthName}
+            minDate={minDate}
+            maxDate={maxDate}
+          />
+        )}
+        {view.activeView === DatePickerView.month && (
+          <DateMonthView
+            dayProps={dayProps}
+            renderWeekdayShort={renderWeekdayShort}
+            visibleDate={visibleDate} />
+        )}
+      </div>
     </div>
   )
 }

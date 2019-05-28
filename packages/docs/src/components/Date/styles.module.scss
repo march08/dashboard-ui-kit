@@ -48,8 +48,12 @@ $itemWidth: 34px;
   padding: .3rem;
   border-radius: 4px;
 
-  &:hover {
-    background: rgba($color-primary-rgb, .05);
+  &:not(:disabled) {
+
+    &:hover,
+    &:focus {
+      background: rgba($color-primary-rgb, .05);
+    }
   }
 }
 
@@ -87,12 +91,20 @@ $itemWidth: 34px;
   height: $itemWidth;
   line-height: $itemWidth;
   font-weight: 500;
-  color: $text-base;
+  color: $text-main;
 
-  &:hover {
-    background: $color-primary;
-    color: $text-adverse-main;
-    border-radius: 4px;
+  &:disabled {
+    color: $text-tertiary;
+  }
+
+  &:not(:disabled) {
+
+    &:hover,
+    &:focus {
+      background: $color-primary;
+      color: $text-adverse-main;
+      border-radius: 4px;
+    }
   }
 }
 
@@ -114,7 +126,8 @@ $itemWidth: 34px;
   }
 }
 
-.datepicker-day {
+.datepicker-day,
+.datepicker-day-name {
   height: $itemWidth;
   width: $itemWidth;
   float: left;
@@ -124,6 +137,10 @@ $itemWidth: 34px;
   opacity: 0.5;
   position: relative;
   font-weight: 500;
+
+  &:disabled {
+    color: $text-tertiary;
+  }
 
   &,
   &:focus,
@@ -143,6 +160,13 @@ $itemWidth: 34px;
   }
 }
 
+.datepicker-day-name {
+  color: $text-main;
+  opacity: .6;
+  font-size: .6rem;
+  height: 18px;
+}
+
 .datepicker-day-content {
   flex-grow: 1;
   padding: 3px 0;
@@ -153,12 +177,18 @@ $itemWidth: 34px;
   z-index: 2;
 }
 
-.datepicker-day:hover:not(.datepicker-day-selected-last):not(.datepicker-day-selected-first) .datepicker-day-content {
-  background: rgba($color-primary-rgb, 0.8);
-  color: $text-adverse-main;
-  border-radius: 50%;
-  width: $itemWidth - 4px;
-  flex-grow: 0;
+.datepicker-day:not(:disabled):not(.datepicker-day-selected-last):not(.datepicker-day-selected-first) {
+
+  &:hover,
+  &:focus {
+    .datepicker-day-content {
+      background: rgba($color-primary-rgb, 0.8);
+      color: $text-adverse-main;
+      border-radius: 50%;
+      width: $itemWidth - 4px;
+      flex-grow: 0;
+    }
+  }
 }
 
 

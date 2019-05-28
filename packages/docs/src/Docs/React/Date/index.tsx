@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { H1, DatePicker, DatePickerRangeValue, DatePickerSimpleValue, DatePickerContainer } from 'components'
-
+import { Button } from '@duik/it'
 
 import { DocsContentPage, ExampleTable, ImportPath } from '../../components'
 
@@ -31,9 +31,14 @@ export const ReactDocsButton = () => {
       <ExampleTable fixed data={[
         {
           content: (
-            <DatePickerContainer>
-              <DatePicker value={value1} onChange={setValue1} />
-            </DatePickerContainer>
+            <>
+              <DatePickerContainer>
+                <DatePicker value={value1} onChange={setValue1} minDate={new Date(2019, 4, 5)} maxDate={new Date(2019, 4, 30)} />
+              </DatePickerContainer>
+              <br />
+              <br />
+              <Button xs>Selected Date: {value1 && value1.toLocaleDateString() || 'none'}</Button>
+            </>
           )
         },
       ]} />

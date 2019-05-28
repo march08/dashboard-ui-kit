@@ -10,7 +10,8 @@ import {
   generateArrayOfLen,
   isDateSelected,
   isDateSelectedLast,
-  isDateSelectedFirst
+  isDateSelectedFirst,
+  isDayDisabled
 } from './utils'
 
 type DatePickerDayProps = {
@@ -20,6 +21,8 @@ type DatePickerDayProps = {
   selectedDateFrom?: Date | null,
   selectedDateTo?: Date | null,
   selectedDate?: Date | null,
+  minDate?: Date,
+  maxDate?: Date,
 }
 
 const DatePickerDay = (props: DatePickerDayProps) => {
@@ -30,6 +33,8 @@ const DatePickerDay = (props: DatePickerDayProps) => {
     selectedDateFrom,
     selectedDateTo,
     selectedDate,
+    minDate,
+    maxDate,
   } = props
 
   const handleClick = () => {
@@ -42,6 +47,7 @@ const DatePickerDay = (props: DatePickerDayProps) => {
     <button
       onClick={handleClick}
       key={date.toDateString()}
+      disabled={isDayDisabled(date, minDate, maxDate)}
       className={classnames(cls['datepicker-day'], {
         [cls['datepicker-day-current-month']]: isCurrentMonth,
         [cls['datepicker-day-selected']]: isDateSelected(date, selectedDateFrom, selectedDateTo, selectedDate),
@@ -62,7 +68,8 @@ export type DateMonthViewProps = {
    * set to 1 if you want to start with sunday
    */
   weekdayOffset?: number,
-  dayProps?: Omit<DatePickerDayProps, 'date'>
+  dayProps?: Omit<DatePickerDayProps, 'date'>,
+  renderWeekdayShort: (weekdayNumber: number) => React.ReactNode,
 }
 
 
@@ -70,7 +77,8 @@ export const DateMonthView = (props: DateMonthViewProps) => {
   const {
     visibleDate,
     weekdayOffset = 0,
-    dayProps
+    dayProps,
+    renderWeekdayShort
   } = props
   const startDay = getMonthStartDay(visibleDate)
 
@@ -92,6 +100,9 @@ export const DateMonthView = (props: DateMonthViewProps) => {
 
   return (
     <div className={cls['datepicker-month']}>
+      {generateArrayOfLen(7, 0).map(weekday => (
+        <span className={cls['datepicker-day-name']}>{renderWeekdayShort(weekday)}</span>
+      ))}
       {/* Previous month */}
       {generateArrayOfLen(lengthOfPreviousMonth, previousMonthDays - startDay + 1 - weekdayOffset).map(item => (
         <DatePickerDay

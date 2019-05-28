@@ -1,6 +1,4 @@
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
-type DateNull = Date | null;
 
 export const getDaysInMonth = (date: Date) => {
   const d = new Date(date)
@@ -8,6 +6,9 @@ export const getDaysInMonth = (date: Date) => {
   d.setDate(0)
   return d.getDate();
 }
+
+type DateNull = Date | null;
+
 
 /**
  * 0 - 6
@@ -95,12 +96,67 @@ export const isDateSelectedLast = (
   return false
 }
 
-export const getMonthText = (date: Date) => {
-  const monthNumber = date.getMonth()
-  return months[monthNumber];
+export const isDayDisabled = (date: Date, minDate?: Date, maxDate?: Date) => {
+  if (!maxDate && !minDate) {
+    return false
+  }
+
+  if (maxDate && maxDate.getTime() < date.getTime()) {
+    return true
+  }
+
+  if (minDate && minDate.getTime() > date.getTime()) {
+    return true
+  }
+
+  return false
 }
 
+export const isMonthDisabled = (date: Date, minDate?: Date, maxDate?: Date) => {
+  if (!maxDate && !minDate) {
+    return false
+  }
 
-export const getMonthTextByMonthNumber = (monthNumber: number) => {
-  return months[monthNumber];
+  const year = date.getFullYear()
+  const month = date.getMonth()
+
+  if (maxDate) {
+    const maxDateYear = maxDate.getFullYear()
+    const maxDateMonth = maxDate.getMonth()
+    if (maxDateYear < year || (maxDateYear === year && maxDateMonth < month)) {
+      return true
+    }
+  }
+  if (minDate) {
+    const minDateYear = minDate.getFullYear()
+    const minDateMonth = minDate.getMonth()
+    if (minDateYear > year || (minDateYear === year && minDateMonth > month)) {
+      return true
+    }
+  }
+
+  return false
+}
+
+export const isYearDisabled = (date: Date, minDate?: Date, maxDate?: Date) => {
+  if (!maxDate && !minDate) {
+    return false
+  }
+
+  const year = date.getFullYear()
+
+  if (maxDate) {
+    const maxDateYear = maxDate.getFullYear()
+    if (maxDateYear < year) {
+      return true
+    }
+  }
+  if (minDate) {
+    const minDateYear = minDate.getFullYear()
+    if (minDateYear > year) {
+      return true
+    }
+  }
+
+  return false
 }
