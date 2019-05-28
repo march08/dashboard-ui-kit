@@ -1,3 +1,5 @@
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
 export const getDaysInMonth = (date: Date) => {
   const d = new Date(date)
   d.setMonth(date.getMonth() + 1)
@@ -84,4 +86,14 @@ export const isDateSelectedLast = (
   }
 
   return false
+}
+
+export const getMonthText = (date: Date) => {
+  const monthNumber = date.getMonth()
+  return months[monthNumber];
+}
+
+
+export const getMonthTextByMonthNumber = (monthNumber: number) => {
+  return months[monthNumber];
 }

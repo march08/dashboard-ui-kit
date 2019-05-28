@@ -1,8 +1,103 @@
 @import '@duik/core/_vars.scss';
 
+$itemWidth: 34px;
+
+.datepicker {
+  width: $itemWidth * 7;
+
+}
+
+.datepicker-view-container {
+  min-height: $itemWidth * 5;
+  display: flex;
+  align-items: center;
+}
+
+.datepicker-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: $border-default-base;
+  padding-bottom: .375rem;
+  margin-bottom: .375rem;
+}
+
+.datepicker-nav-btn,
+.datepicker-title-btn {
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:active {
+    transform: translate(1px, 1px);
+  }
+
+  padding: .3rem .5rem;
+  border-radius: 4px;
+
+  &:hover {
+    background: rgba($color-primary-rgb, .05);
+  }
+}
+
+.datepicker-title-btn {
+  font-weight: 500;
+  font-size: .875rem;
+
+}
+
+/* YEAR LIST VIEW */
+/* MONTH LIST VIEW*/
+.datepicker-month-list,
+.datepicker-year-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.datepicker-month-list-item,
+.datepicker-year-list-item {
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    background: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+
+  flex-basis: 33%;
+  flex-grow: 1;
+  font-size: .8rem;
+  padding: 0 .3rem;
+  height: $itemWidth;
+  line-height: $itemWidth;
+  font-weight: 500;
+  color: $text-base;
+
+  &:hover {
+    background: $color-primary;
+    color: $text-adverse-main;
+    border-radius: 4px;
+  }
+}
+
+.datepicker-year-list-item {
+  flex-basis: 33%;
+  height: 37.5px;
+}
+
+/* MONTH VIEW */
 .datepicker-month {
   // flex-wrap: wrap;// display: flex;
-  width: 30px * 7;
+  width: $itemWidth * 7;
   flex-shrink: 0;
 
   &:after {
@@ -13,13 +108,15 @@
 }
 
 .datepicker-day {
-  height: 30px;
-  width: 30px;
+  height: $itemWidth;
+  width: $itemWidth;
   float: left;
   display: flex;
   justify-content: center;
-  font-size: .875rem;
+  font-size: .8rem;
   opacity: 0.5;
+  position: relative;
+  font-weight: 500;
 
   &,
   &:focus,
@@ -39,23 +136,42 @@
   }
 }
 
-.datepicker-day-current-month {
-  color: $text-main;
-  opacity: 1;
-}
-
 .datepicker-day-content {
   flex-grow: 1;
   padding: 3px 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: $itemWidth - 4px;
+  z-index: 2;
+}
+
+.datepicker-day:hover .datepicker-day-content {
+  background: rgba($color-primary-rgb, 1);
+  color: $text-adverse-main;
+  border-radius: 50%;
+  width: $itemWidth - 4px;
+  flex-grow: 0;
+}
+
+.datepicker-day-current-month {
+  color: $text-main;
+  opacity: 1;
 }
 
 .datepicker-day-selected {
-  .datepicker-day-content {
-    background: rgba($color-primary-rgb, .8);
-    color: $text-adverse-main;
+  color: white;
+
+  &:after {
+    position: absolute;
+    z-index: 0;
+    content: '';
+    display: block;
+    left: 0;
+    top: 2px;
+    bottom: 2px;
+    width: 100%;
+    background: rgba($color-primary-rgb, .3);
   }
 }
 
@@ -65,6 +181,34 @@
     background: rgba($color-primary-rgb, 1);
     color: $text-adverse-main;
     border-radius: 50%;
-    height: 30px;
+    width: $itemWidth - 4px;
+    flex-grow: 0;
+  }
+}
+
+/* strip */
+.datepicker-day-selected-last,
+.datepicker-day-selected-first {
+  &:after {
+    position: absolute;
+    z-index: 0;
+    content: '';
+    display: block;
+    left: 0;
+    top: 2px;
+    bottom: 2px;
+    width: 50%;
+    background: rgba($color-primary-rgb, .3);
+  }
+}
+
+.datepicker-day-selected-first:after {
+  left: auto;
+  right: 0;
+}
+
+.datepicker-day-selected-last.datepicker-day-selected-first {
+  &:after {
+    display: none
   }
 }

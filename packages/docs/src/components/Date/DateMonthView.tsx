@@ -112,7 +112,8 @@ export const DateMonthView = (props: DateMonthViewProps) => {
         )
       })}
       {/* Next month */}
-      {generateArrayOfLen(7 - ((lengthOfPreviousMonth + currentMonthDays) % 7), 1).map(item => (
+      {console.log((7 - ((lengthOfPreviousMonth + currentMonthDays) % 7)) % 7)}
+      {generateArrayOfLen((7 - ((lengthOfPreviousMonth + currentMonthDays) % 7)) % 7, 1).map(item => (
         <DatePickerDay
           key={item}
           date={new Date(nextYear, nextMonth, item)}
