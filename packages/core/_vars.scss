@@ -59,9 +59,6 @@ $space: 30px;
 $space-half: 15px;
 
 
-$fontFamily: 'Roboto',
-sans-serif;
-
 
 @mixin textOverflow {
   overflow: hidden;
@@ -145,7 +142,7 @@ $yellow-rgb: hexToRgb($yellow);
 
   // backgrounds
   --bg-base: #FBFBFD;
-  --bg-primary: #FFFFFF;
+  --bg-main: #FFFFFF;
   --bg-adverse-primary: #252529;
 
   --gradient-secondary: linear-gradient(0deg, #34AA44 0%, #38B249 100%);
@@ -169,7 +166,7 @@ $border-default-main: 1px solid var(--border-color-main);
 $border-default-adverse: 1px solid var(--border-color-adverse);
 
 $bg-base: var(--bg-base);
-$bg-primary: var(--bg-primary);
+$bg-main: var(--bg-main);
 $bg-adverse-primary: var(--bg-adverse-primary);
 
 $color-primary: var(--primary);

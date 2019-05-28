@@ -65,8 +65,8 @@
       text-align: center;
       line-height: 14px;
       padding-left: 1px;
-      color: $bg-primary;
-      background-color: $bg-primary;
+      color: $bg-main;
+      background-color: $bg-main;
       width: 16px;
       height: 16px;
       content: "";
@@ -131,7 +131,7 @@
     &:after {
       height: 16px;
       width: 16px;
-      background: $bg-primary;
+      background: $bg-main;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
       position: absolute;
       top: 2px;

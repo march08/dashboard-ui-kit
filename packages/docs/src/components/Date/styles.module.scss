@@ -4,7 +4,14 @@ $itemWidth: 34px;
 
 .datepicker {
   width: $itemWidth * 7;
+}
 
+.datepicker-container {
+  display: inline-block;
+  border-radius: 4px;
+  border: $border-default-base;
+  padding: .5rem;
+  background: $bg-main;
 }
 
 .datepicker-view-container {
@@ -38,7 +45,7 @@ $itemWidth: 34px;
     transform: translate(1px, 1px);
   }
 
-  padding: .3rem .5rem;
+  padding: .3rem;
   border-radius: 4px;
 
   &:hover {
@@ -49,7 +56,7 @@ $itemWidth: 34px;
 .datepicker-title-btn {
   font-weight: 500;
   font-size: .875rem;
-
+  padding: .5rem .7rem;
 }
 
 /* YEAR LIST VIEW */
@@ -146,13 +153,14 @@ $itemWidth: 34px;
   z-index: 2;
 }
 
-.datepicker-day:hover .datepicker-day-content {
-  background: rgba($color-primary-rgb, 1);
+.datepicker-day:hover:not(.datepicker-day-selected-last):not(.datepicker-day-selected-first) .datepicker-day-content {
+  background: rgba($color-primary-rgb, 0.8);
   color: $text-adverse-main;
   border-radius: 50%;
   width: $itemWidth - 4px;
   flex-grow: 0;
 }
+
 
 .datepicker-day-current-month {
   color: $text-main;

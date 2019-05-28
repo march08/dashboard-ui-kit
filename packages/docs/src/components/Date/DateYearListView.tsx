@@ -24,6 +24,7 @@ export const DateYearListView = (props: DateYearListViewProps) => {
         const onClickMonth = () => { handleYearSelect(yearNumber) }
         return (
           <button
+            key={yearNumber}
             onClick={onClickMonth}
             className={cls['datepicker-year-list-item']}
           >

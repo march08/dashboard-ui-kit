@@ -5,108 +5,72 @@ import { DateMonthListView } from './DateMonthListView'
 import { DateYearListView } from './DateYearListView'
 import { DatePickerView, useDatePickerView } from './useDatePickerView'
 import { defaultRenderTitle, defaultRenderMonthName } from './defaultRenders'
+import { useVisibleDate } from './useVisibleDate'
+
 import cls from './styles.module.scss'
 
-export type DatePickerProps = {
+export type DatePickerRangeValue = { from?: Date | null, to?: Date | null }
+export type DatePickerSimpleValue = Date | null
+export type DatePickerValue<M extends boolean> = M extends true ? DatePickerRangeValue : DatePickerSimpleValue
+
+export type DatePickerProps<M extends boolean = false> = {
   renderTitle?: (visibleDate: Date, activeView: DatePickerView) => React.ReactNode,
-  renderMonthName?: (monthNumber: number) => React.ReactNode
+  renderMonthName?: (monthNumber: number) => React.ReactNode,
+  isRange?: M,
+  value?: DatePickerValue<M>,
+  onChange?: (value: DatePickerValue<M>) => void
 }
 
 
-export const DatePicker = (props: DatePickerProps) => {
+export function DatePicker<M extends boolean = false>(props: DatePickerProps<M>) {
 
   const {
     renderTitle = defaultRenderTitle,
-    renderMonthName = defaultRenderMonthName
+    renderMonthName = defaultRenderMonthName,
+    onChange,
+    value,
+    isRange
   } = props
 
-  const [selectedDateFrom, setSelectedFromDate] = React.useState()
-  const [selectedDateTo, setSelectedToDate] = React.useState()
-  const [visibleDate, setVisibleDate] = React.useState(new Date())
   const view = useDatePickerView()
 
+  const {
+    handleMonthSelect,
+    handleYearSelect,
+    handleNext,
+    handlePrev,
+    visibleDate
+  } = useVisibleDate(new Date(), view)
+
   const handleDateSelect = (date: Date) => {
-
-    if (!selectedDateFrom || (selectedDateTo && selectedDateFrom)) {
-      setSelectedFromDate(date)
-      setSelectedToDate(null)
-    } else if (selectedDateFrom) {
-      if (selectedDateFrom.getTime() <= date.getTime()) {
-        setSelectedToDate(date)
+    if (isRange === true && onChange) {
+      const { from, to } = value as DatePickerRangeValue
+      const onChangeValue = onChange as (value: DatePickerRangeValue) => void
+      if (!from || (to && from)) {
+        onChangeValue({ from: date, to: null })
+      } else if (from) {
+        if (from.getTime() <= date.getTime()) {
+          onChangeValue({ from, to: date })
+        } else {
+          onChangeValue({ from: date, to: null })
+        }
       } else {
-        setSelectedFromDate(date)
-        setSelectedToDate(null)
+        onChangeValue({ from: date, to: null })
       }
-    } else {
-      setSelectedFromDate(date)
-      setSelectedToDate(null)
+    } else if (onChange) {
+      const onChangeValue = onChange as (value: DatePickerSimpleValue) => void
+      onChangeValue(date)
     }
-
-    // setSelectedFromDate(date)
-    // setSelectedToDate(date)
   }
 
-  console.log('selectedDate', selectedDateFrom)
+  const dateValue = !value ? isRange && { from: null, to: null } || null : value
 
   const dayProps = {
     handleDateSelect: handleDateSelect,
-    selectedDateFrom,
-    selectedDateTo
+    selectedDateFrom: !isRange ? (dateValue as DatePickerSimpleValue) : (dateValue as DatePickerRangeValue).from,
+    selectedDateTo: !isRange ? (dateValue as DatePickerSimpleValue) : (dateValue as DatePickerRangeValue).to,
   }
 
-  const prevDate = new Date()
-  prevDate.setMonth(visibleDate.getMonth() - 1)
-  const nextDate = new Date()
-  nextDate.setMonth(visibleDate.getMonth() + 1)
-
-  const handleMonthSelect = (monthNumber: number) => {
-    const nextVisibleDate = new Date(visibleDate)
-    nextVisibleDate.setMonth(monthNumber)
-    setVisibleDate(nextVisibleDate)
-    view.setNextView()
-  }
-
-  const handleYearSelect = (yearNumber: number) => {
-    const nextVisibleDate = new Date(visibleDate)
-    nextVisibleDate.setFullYear(yearNumber)
-    setVisibleDate(nextVisibleDate)
-    view.setNextView()
-  }
-
-  const handlePrev = () => {
-    if (view.activeView === DatePickerView.month) {
-      const nextVisibleDate = new Date(visibleDate)
-      nextVisibleDate.setMonth(visibleDate.getMonth() - 1)
-      setVisibleDate(nextVisibleDate)
-    }
-    if (view.activeView === DatePickerView.monthList) {
-      const nextVisibleDate = new Date(visibleDate)
-      nextVisibleDate.setFullYear(visibleDate.getFullYear() - 1)
-      setVisibleDate(nextVisibleDate)
-    }
-    if (view.activeView === DatePickerView.yearList) {
-      const nextVisibleDate = new Date(visibleDate)
-      nextVisibleDate.setFullYear(visibleDate.getFullYear() - 12)
-      setVisibleDate(nextVisibleDate)
-    }
-  }
-  const handleNext = () => {
-    if (view.activeView === DatePickerView.month) {
-      const nextVisibleDate = new Date(visibleDate)
-      nextVisibleDate.setMonth(visibleDate.getMonth() + 1)
-      setVisibleDate(nextVisibleDate)
-    }
-    if (view.activeView === DatePickerView.monthList) {
-      const nextVisibleDate = new Date(visibleDate)
-      nextVisibleDate.setFullYear(visibleDate.getFullYear() + 1)
-      setVisibleDate(nextVisibleDate)
-    }
-    if (view.activeView === DatePickerView.yearList) {
-      const nextVisibleDate = new Date(visibleDate)
-      nextVisibleDate.setFullYear(visibleDate.getFullYear() + 12)
-      setVisibleDate(nextVisibleDate)
-    }
-  }
 
   return (
     <div>
@@ -121,23 +85,14 @@ export const DatePicker = (props: DatePickerProps) => {
         </div>
 
         <div className={cls['datepicker-view-container']}>
-
           {view.activeView === DatePickerView.yearList && (
-            <>
-              <DateYearListView handleYearSelect={handleYearSelect} visibleDate={visibleDate} />
-              <DateYearListView handleYearSelect={handleYearSelect} visibleDate={nextDate} />
-            </>
+            <DateYearListView handleYearSelect={handleYearSelect} visibleDate={visibleDate} />
           )}
-
           {view.activeView === DatePickerView.monthList && (
             <DateMonthListView handleMonthSelect={handleMonthSelect} renderMonthName={renderMonthName} />
           )}
-
           {view.activeView === DatePickerView.month && (
-            <>
-              <DateMonthView dayProps={dayProps} visibleDate={visibleDate} />
-              <DateMonthView dayProps={dayProps} visibleDate={nextDate} />
-            </>
+            <DateMonthView dayProps={dayProps} visibleDate={visibleDate} />
           )}
         </div>
 

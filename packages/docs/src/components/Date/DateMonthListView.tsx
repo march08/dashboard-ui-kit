@@ -22,6 +22,7 @@ export const DateMonthListView = (props: DateMonthListViewProps) => {
         const onClickMonth = () => { handleMonthSelect(monthNumber) }
         return (
           <button
+            key={monthNumber}
             onClick={onClickMonth}
             className={cls['datepicker-month-list-item']}
           >

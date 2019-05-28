@@ -17,9 +17,9 @@ type DatePickerDayProps = {
   date: Date,
   handleDateSelect?: (date: Date) => void,
   isCurrentMonth?: boolean,
-  selectedDateFrom?: Date,
-  selectedDateTo?: Date,
-  selectedDate?: Date,
+  selectedDateFrom?: Date | null,
+  selectedDateTo?: Date | null,
+  selectedDate?: Date | null,
 }
 
 const DatePickerDay = (props: DatePickerDayProps) => {
@@ -46,7 +46,7 @@ const DatePickerDay = (props: DatePickerDayProps) => {
         [cls['datepicker-day-current-month']]: isCurrentMonth,
         [cls['datepicker-day-selected']]: isDateSelected(date, selectedDateFrom, selectedDateTo, selectedDate),
         [cls['datepicker-day-selected-first']]: isDateSelectedFirst(date, selectedDateFrom, selectedDate),
-        [cls['datepicker-day-selected-last']]: isDateSelectedLast(date, selectedDateTo, selectedDate)
+        [cls['datepicker-day-selected-last']]: isDateSelectedLast(date, selectedDateFrom, selectedDateTo, selectedDate)
       })}
     >
       <span className={cls['datepicker-day-content']}>
@@ -112,7 +112,6 @@ export const DateMonthView = (props: DateMonthViewProps) => {
         )
       })}
       {/* Next month */}
-      {console.log((7 - ((lengthOfPreviousMonth + currentMonthDays) % 7)) % 7)}
       {generateArrayOfLen((7 - ((lengthOfPreviousMonth + currentMonthDays) % 7)) % 7, 1).map(item => (
         <DatePickerDay
           key={item}

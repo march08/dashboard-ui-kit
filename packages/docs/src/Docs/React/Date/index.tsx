@@ -1,12 +1,8 @@
 import * as React from 'react'
-import { Link } from 'react-router-dom'
-import { Button } from '@duik/it'
-import { H1, DatePicker } from 'components'
-import { Icon } from '@duik/icon'
+import { H1, DatePicker, DatePickerRangeValue, DatePickerSimpleValue, DatePickerContainer } from 'components'
 
 
-
-import { DocsContentPage, ExampleTable, PageContent, ImportPath } from '../../components'
+import { DocsContentPage, ExampleTable, ImportPath } from '../../components'
 
 import PropTable from './PropTable'
 import CustomRendering from './CustomRendering';
@@ -14,9 +10,12 @@ import CustomRendering from './CustomRendering';
 
 export const ReactDocsButton = () => {
 
+  const [value1, setValue1] = React.useState<DatePickerSimpleValue>(null)
+  const [value2, setValue2] = React.useState<DatePickerRangeValue>({ from: null, to: null })
+
   return (
     <DocsContentPage>
-      <PageContent data={[
+      {/* <PageContent data={[
         { id: 'appearence', label: 'Appearence' },
         { id: 'sizes', label: 'Sizes' },
         { id: 'states', label: 'States' },
@@ -24,17 +23,29 @@ export const ReactDocsButton = () => {
         { id: 'with-icons', label: 'With Icons' },
         { id: 'props', label: 'Prop Table' },
         { id: 'migration', label: 'Migration from Dashboard UI Kit 3' },
-      ]} />
-      <H1>Button</H1>
-      <ImportPath name="Button" />
+      ]} /> */}
+      <H1>DatePicker</H1>
+      <ImportPath name="DatePicker" />
       <br />
-      <p>Use buttons in forms, as links with many varieties.</p>
-
-      <h2 id="appearence">Appearence</h2>
-      <p>You can control apperence by simply passing boolean props to render some predefined stylings or you can pass your className or style props as well.</p>
-
+      <h2>Single Date Pick</h2>
       <ExampleTable fixed data={[
-        { content: <DatePicker></DatePicker> },
+        {
+          content: (
+            <DatePickerContainer>
+              <DatePicker value={value1} onChange={setValue1} />
+            </DatePickerContainer>
+          )
+        },
+      ]} />
+      <h2>Range Pick</h2>
+      <ExampleTable fixed data={[
+        {
+          content: (
+            <DatePickerContainer>
+              <DatePicker isRange value={value2} onChange={setValue2} />
+            </DatePickerContainer>
+          )
+        },
       ]} />
     </DocsContentPage>
   )

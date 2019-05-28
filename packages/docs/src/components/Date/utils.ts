@@ -1,5 +1,7 @@
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
+type DateNull = Date | null;
+
 export const getDaysInMonth = (date: Date) => {
   const d = new Date(date)
   d.setMonth(date.getMonth() + 1)
@@ -23,10 +25,10 @@ export const generateArrayOfLen = (len: number, startNumber: number = 1) => {
 }
 
 export const isDateSelected = (
-  date?: Date,
-  selectedDateFrom?: Date,
-  selectedDateTo?: Date,
-  selectedDate?: Date
+  date?: DateNull,
+  selectedDateFrom?: DateNull,
+  selectedDateTo?: DateNull,
+  selectedDate?: DateNull
 ) => {
 
   if (!date) {
@@ -48,9 +50,9 @@ export const isDateSelected = (
 }
 
 export const isDateSelectedFirst = (
-  date?: Date,
-  selectedDateFrom?: Date,
-  selectedDate?: Date
+  date?: DateNull,
+  selectedDateFrom?: DateNull,
+  selectedDate?: DateNull
 ) => {
 
   if (!date) {
@@ -68,9 +70,10 @@ export const isDateSelectedFirst = (
   return false
 }
 export const isDateSelectedLast = (
-  date?: Date,
-  selectedDateTo?: Date,
-  selectedDate?: Date
+  date?: DateNull,
+  selectedDateFrom?: DateNull,
+  selectedDateTo?: DateNull,
+  selectedDate?: DateNull
 ) => {
 
   if (!date) {
@@ -82,6 +85,10 @@ export const isDateSelectedLast = (
   }
 
   if (selectedDateTo && selectedDateTo.getTime() === date.getTime()) {
+    return true
+  }
+
+  if (selectedDateFrom && selectedDateFrom.getTime() === date.getTime() && !selectedDateTo) {
     return true
   }
 
