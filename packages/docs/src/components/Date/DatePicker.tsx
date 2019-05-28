@@ -101,3 +101,6 @@ export function DatePicker<M extends boolean = false>(props: DatePickerProps<M>)
     </div>
   )
 }
+
+
+DatePicker.displayName = "DatePicker"

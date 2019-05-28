@@ -122,3 +122,6 @@ export const DateMonthView = (props: DateMonthViewProps) => {
     </div>
   )
 }
+
+
+DateMonthView.displayName = "DateMonthView"
