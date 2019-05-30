@@ -8,7 +8,9 @@ import { DocsContentPage, ExampleTable, ImportPath } from '../../components'
 export const ReactDocsButton = () => {
 
   const [value1, setValue1] = React.useState<DatePickerSimpleValue>(null)
+  const [value3, setValue3] = React.useState<DatePickerSimpleValue>(null)
   const [value2, setValue2] = React.useState<DatePickerRangeValue>({ from: null, to: null })
+  const [value4, setValue4] = React.useState<DatePickerRangeValue>({ from: null, to: null })
 
   return (
     <DocsContentPage>
@@ -40,6 +42,7 @@ export const ReactDocsButton = () => {
         },
       ]} />
       <h2>Range Pick</h2>
+      <p>With max and min date</p>
       <ExampleTable fixed data={[
         {
           content: (
@@ -54,7 +57,7 @@ export const ReactDocsButton = () => {
         {
           content: (
             <>
-              <SelectDate value={value1} onDateChange={setValue1} minDate={new Date(2019, 4, 5)} maxDate={new Date(2019, 4, 30)} />
+              <SelectDate value={value3} onDateChange={setValue3} minDate={new Date(2019, 4, 5)} maxDate={new Date(2019, 4, 30)} />
             </>
           )
         },
@@ -64,7 +67,7 @@ export const ReactDocsButton = () => {
         {
           content: (
             <>
-              <SelectDate isRange value={value2} onDateChange={setValue2} />
+              <SelectDate isRange value={value4} onDateChange={setValue4} />
             </>
           )
         },
