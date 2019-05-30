@@ -11,10 +11,11 @@ import {
   isDateSelected,
   isDateSelectedLast,
   isDateSelectedFirst,
-  isDayDisabled
+  isDayDisabled,
+  isDateInRange
 } from './utils'
 
-type DatePickerDayProps = {
+type DatePickerDayProps = JSX.IntrinsicElements['button'] & {
   date: Date,
   handleDateSelect?: (date: Date) => void,
   isCurrentMonth?: boolean,
@@ -23,6 +24,8 @@ type DatePickerDayProps = {
   selectedDate?: Date | null,
   minDate?: Date,
   maxDate?: Date,
+  mouseOverDate?: Date,
+  handleMouseOver?: (date: Date) => void
 }
 
 const DatePickerDay = (props: DatePickerDayProps) => {
@@ -35,7 +38,11 @@ const DatePickerDay = (props: DatePickerDayProps) => {
     selectedDate,
     minDate,
     maxDate,
+    handleMouseOver,
+    mouseOverDate,
+    ...rest
   } = props
+
 
   const handleClick = () => {
     if (handleDateSelect) {
@@ -43,17 +50,25 @@ const DatePickerDay = (props: DatePickerDayProps) => {
     }
   }
 
+  const handleOnMouseOver = handleMouseOver ? () => {
+    handleMouseOver(date)
+  } : undefined
+
   return (
     <button
       onClick={handleClick}
       key={date.toDateString()}
       disabled={isDayDisabled(date, minDate, maxDate)}
+      onMouseOver={handleOnMouseOver}
       className={classnames(cls['datepicker-day'], {
         [cls['datepicker-day-current-month']]: isCurrentMonth,
-        [cls['datepicker-day-selected']]: isDateSelected(date, selectedDateFrom, selectedDateTo, selectedDate),
+        [cls['datepicker-day-not-current']]: !isCurrentMonth,
+        [cls['datepicker-day-hover-range']]: isDateInRange(date, selectedDateFrom, mouseOverDate),
+        [cls['datepicker-day-selected']]: isDateInRange(date, selectedDateFrom, selectedDateTo),
         [cls['datepicker-day-selected-first']]: isDateSelectedFirst(date, selectedDateFrom, selectedDate),
         [cls['datepicker-day-selected-last']]: isDateSelectedLast(date, selectedDateFrom, selectedDateTo, selectedDate)
       })}
+      {...rest}
     >
       <span className={cls['datepicker-day-content']}>
         {date.getDate()}
@@ -101,12 +116,13 @@ export const DateMonthView = (props: DateMonthViewProps) => {
   return (
     <div className={cls['datepicker-month']}>
       {generateArrayOfLen(7, 0).map(weekday => (
-        <span className={cls['datepicker-day-name']}>{renderWeekdayShort(weekday)}</span>
+        <span key={`head-${weekday}`} className={cls['datepicker-day-name']}>{renderWeekdayShort(weekday)}</span>
       ))}
       {/* Previous month */}
       {generateArrayOfLen(lengthOfPreviousMonth, previousMonthDays - startDay + 1 - weekdayOffset).map(item => (
         <DatePickerDay
           key={item}
+          disabled
           date={new Date(previousYear, previousMonth, item)}
           {...dayProps}
         />
@@ -115,7 +131,7 @@ export const DateMonthView = (props: DateMonthViewProps) => {
       {generateArrayOfLen(currentMonthDays).map(item => {
         return (
           <DatePickerDay
-            key={item}
+            key={`current-${item}`}
             isCurrentMonth
             date={new Date(currentYear, currentMonth, item)}
             {...dayProps}

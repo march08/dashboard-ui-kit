@@ -15,7 +15,9 @@ type DateNull = Date | null;
  * @param date 
  */
 export const getMonthStartDay = (date: Date) => {
-  return new Date(date).getDay()
+  const d = new Date(date)
+  d.setDate(1)
+  return d.getDay() - 1 // monday is 0
 }
 
 export const generateArrayOfLen = (len: number, startNumber: number = 1) => {
@@ -47,6 +49,22 @@ export const isDateSelected = (
     return true
   }
 
+  return false
+}
+
+export const isDateInRange = (
+  date?: DateNull,
+  from?: DateNull,
+  to?: DateNull,
+) => {
+
+  if (!date || !from || !to) {
+    return false
+  }
+
+  if (to.getTime() >= date.getTime() && date.getTime() >= from.getTime()) {
+    return true
+  }
   return false
 }
 

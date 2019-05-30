@@ -53,4 +53,6 @@ export * from '@duik/widget-header';
 export * from '@duik/widget-content';
 export * from '@duik/widget-container';
 
+export * from '@duik/use-open-state';
+
 import './kit.scss';

@@ -37,6 +37,7 @@ export type DropdownProps<BC extends AnyTag, MC extends AnyTag> = OuterEventsHan
   menuProps?: React.ComponentProps<MC>;
   menuPosition?: DropdownMenuPosition,
   buttonText?: React.ReactNode,
+  openControls?: OpenStateControls
 } & Children;
 
 type Children =
@@ -52,7 +53,6 @@ export function Dropdown<
   MC extends AnyTag = 'div'
 >(props: DropdownProps<BC, MC>) {
 
-  const openControls = useOpenState(false);
 
   const {
     ButtonComponent = DropdownButton,
@@ -63,8 +63,12 @@ export function Dropdown<
     menuPosition = DropdownMenuPosition["bottom-right"],
     buttonText,
     className,
+    openControls: externalOpenControls,
     ...rest
   } = props;
+
+
+  const openControls = externalOpenControls || useOpenState(false);
 
   return (
 

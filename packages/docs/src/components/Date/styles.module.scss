@@ -197,7 +197,12 @@ $itemWidth: 34px;
   opacity: 1;
 }
 
-.datepicker-day-selected {
+.datepicker-day-not-current {
+  opacity: 0;
+}
+
+.datepicker-day-selected,
+.datepicker-day-hover-range {
   color: white;
 
   &:after {
@@ -210,6 +215,31 @@ $itemWidth: 34px;
     bottom: 2px;
     width: 100%;
     background: rgba($color-primary-rgb, .3);
+  }
+}
+
+.datepicker-day-hover-range {
+  &:after {
+    background: rgba($color-primary-rgb, .3);
+  }
+
+  &:hover {
+    &:after {
+      right: 50%;
+      width: 50%;
+    }
+  }
+
+  &.datepicker-day-selected-first:hover {
+    &:after {
+      display: none;
+    }
+  }
+
+  &.datepicker-day-selected:hover {
+    &:after {
+      display: none;
+    }
   }
 }
 
@@ -245,8 +275,29 @@ $itemWidth: 34px;
   right: 0;
 }
 
-.datepicker-day-selected-last.datepicker-day-selected-first {
+.datepicker-day-selected-last.datepicker-day-selected-first:not(.datepicker-day-hover-range) {
   &:after {
     display: none
+  }
+}
+
+
+.datepicker-day-selected-first.datepicker.datepicker-day-hover-range {
+  &:after {
+
+    display: block;
+    left: auto;
+    right: 0;
+    left: 50%;
+  }
+}
+
+.datepicker-day.datepicker.datepicker-day-hover-range:hover {
+  &:after {
+
+    display: block;
+    left: 0;
+    right: auto;
+    width: 50%;
   }
 }

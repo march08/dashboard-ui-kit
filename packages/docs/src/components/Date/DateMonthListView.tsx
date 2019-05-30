@@ -23,8 +23,6 @@ export const DateMonthListView = (props: DateMonthListViewProps) => {
     visibleDate
   } = props
 
-  console.log('asdasd', minDate)
-
   const visibleYear = visibleDate.getFullYear()
 
   return (

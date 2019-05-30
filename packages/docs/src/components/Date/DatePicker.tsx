@@ -19,9 +19,10 @@ export type DatePickerProps<M extends boolean = false> = {
   renderWeekdayShort?: (weekdayNumber: number) => React.ReactNode,
   isRange?: M,
   value?: DatePickerValue<M>,
-  onChange?: (value: DatePickerValue<M>) => void,
+  onDateChange?: (value: DatePickerValue<M>) => void,
   minDate?: Date,
   maxDate?: Date,
+  initialVisibleDate?: Date,
 }
 
 
@@ -31,11 +32,12 @@ export function DatePicker<M extends boolean = false>(props: DatePickerProps<M>)
     renderTitle = defaultRenderTitle,
     renderMonthName = defaultRenderMonthName,
     renderWeekdayShort = defaultRenderWeekdayShort,
-    onChange,
+    onDateChange,
     value,
     isRange,
     minDate,
     maxDate,
+    initialVisibleDate = new Date()
   } = props
 
   const view = useDatePickerView()
@@ -46,37 +48,59 @@ export function DatePicker<M extends boolean = false>(props: DatePickerProps<M>)
     handleNext,
     handlePrev,
     visibleDate
-  } = useVisibleDate(new Date(), view)
+  } = useVisibleDate(initialVisibleDate, view)
 
-  const handleDateSelect = (date: Date) => {
-    if (isRange === true && onChange) {
-      const { from, to } = value as DatePickerRangeValue
-      const onChangeValue = onChange as (value: DatePickerRangeValue) => void
-      if (!from || (to && from)) {
-        onChangeValue({ from: date, to: null })
-      } else if (from) {
-        if (from.getTime() <= date.getTime()) {
-          onChangeValue({ from, to: date })
+  const [mouseOverDate, setMouseOverDate] = React.useState()
+
+  const handleDateSelect = React.useCallback(
+    (date: Date) => {
+      if (isRange === true && onDateChange) {
+        const { from, to } = value as DatePickerRangeValue
+        const onChangeValue = onDateChange as (value: DatePickerRangeValue) => void
+        if (!from || (to && from)) {
+          setMouseOverDate(null)
+          onChangeValue({ from: date, to: null })
+        } else if (from) {
+          if (from.getTime() <= date.getTime()) {
+            onChangeValue({ from, to: date })
+          } else {
+            setMouseOverDate(null)
+            onChangeValue({ from: date, to: null })
+          }
         } else {
+          setMouseOverDate(null)
           onChangeValue({ from: date, to: null })
         }
-      } else {
-        onChangeValue({ from: date, to: null })
+      } else if (onDateChange) {
+        const onChangeValue = onDateChange as (value: DatePickerSimpleValue) => void
+        onChangeValue(date)
       }
-    } else if (onChange) {
-      const onChangeValue = onChange as (value: DatePickerSimpleValue) => void
-      onChangeValue(date)
-    }
-  }
+    },
+    [value]
+  )
 
   const dateValue = !value ? isRange && { from: null, to: null } || null : value
 
+  const from = !isRange ? (dateValue as DatePickerSimpleValue) : (dateValue as DatePickerRangeValue).from
+  const to = !isRange ? (dateValue as DatePickerSimpleValue) : (dateValue as DatePickerRangeValue).to
+
+  const handleMouseOver = from && isRange && !to ? (date: Date) => {
+    setMouseOverDate(date)
+  } : undefined
+
+  const onMouseLeave = from && isRange && !to ? () => {
+    setMouseOverDate(undefined)
+  } : undefined
+
   const dayProps = {
     handleDateSelect: handleDateSelect,
-    selectedDateFrom: !isRange ? (dateValue as DatePickerSimpleValue) : (dateValue as DatePickerRangeValue).from,
-    selectedDateTo: !isRange ? (dateValue as DatePickerSimpleValue) : (dateValue as DatePickerRangeValue).to,
+    selectedDateFrom: from,
+    selectedDateTo: to,
     minDate,
     maxDate,
+    handleMouseOver,
+    onMouseLeave,
+    mouseOverDate,
   }
 
 

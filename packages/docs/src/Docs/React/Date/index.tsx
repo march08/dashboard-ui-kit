@@ -1,11 +1,8 @@
 import * as React from 'react'
-import { H1, DatePicker, DatePickerRangeValue, DatePickerSimpleValue, DatePickerContainer } from 'components'
+import { H1, DatePicker, DatePickerRangeValue, DatePickerSimpleValue, DatePickerContainer, SelectDate } from 'components'
 import { Button } from '@duik/it'
 
 import { DocsContentPage, ExampleTable, ImportPath } from '../../components'
-
-import PropTable from './PropTable'
-import CustomRendering from './CustomRendering';
 
 
 export const ReactDocsButton = () => {
@@ -33,7 +30,7 @@ export const ReactDocsButton = () => {
           content: (
             <>
               <DatePickerContainer>
-                <DatePicker value={value1} onChange={setValue1} minDate={new Date(2019, 4, 5)} maxDate={new Date(2019, 4, 30)} />
+                <DatePicker value={value1} onDateChange={setValue1} minDate={new Date(2019, 4, 5)} maxDate={new Date(2019, 4, 30)} />
               </DatePickerContainer>
               <br />
               <br />
@@ -47,8 +44,21 @@ export const ReactDocsButton = () => {
         {
           content: (
             <DatePickerContainer>
-              <DatePicker isRange value={value2} onChange={setValue2} />
+              <DatePicker isRange value={value2} onDateChange={setValue2} />
             </DatePickerContainer>
+          )
+        },
+      ]} />
+      <h2>Select Date</h2>
+      <ExampleTable fixed data={[
+        {
+          content: (
+            <>
+              <SelectDate value={value1} onDateChange={setValue1} minDate={new Date(2019, 4, 5)} maxDate={new Date(2019, 4, 30)} />
+              <br />
+              <br />
+              <Button xs>Selected Date: {value1 && value1.toLocaleDateString() || 'none'}</Button>
+            </>
           )
         },
       ]} />
