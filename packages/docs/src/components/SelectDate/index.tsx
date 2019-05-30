@@ -1,11 +1,12 @@
 import React from 'react'
 import classnames from 'classnames'
 import { DatePicker, DatePickerProps, DatePickerValue, DatePickerRangeValue, DatePickerSimpleValue } from '../Date'
-import { Dropdown, OpenStateControls, useOpenState } from '@duik/it'
+import { Dropdown, useOpenState, ContentTitle } from '@duik/it'
 import cls from './styles.module.scss'
 
 export type SelectDateProps<M extends boolean> = React.ComponentProps<typeof Dropdown> & DatePickerProps<M> & {
-  placeholder?: React.ReactNode
+  placeholder?: React.ReactNode,
+  label?: React.ReactNode,
 }
 
 const renderValue = <M extends boolean = false>(date?: DatePickerValue<M>, isRange?: boolean, placeholder?: React.ReactNode, ) => {
@@ -15,8 +16,11 @@ const renderValue = <M extends boolean = false>(date?: DatePickerValue<M>, isRan
 
   if (isRange) {
     const dateRange = date as DatePickerRangeValue
+    if (!dateRange.to && !dateRange.from) {
+      return placeholder
+    }
     return (
-      <>From: <strong>{dateRange.from && dateRange.from.toLocaleDateString() || '-'}</strong></>
+      <>{dateRange.from && <strong>{dateRange.from.toLocaleDateString()}</strong> || placeholder}&nbsp;&nbsp;═&nbsp;&nbsp;{dateRange.to && <strong>{dateRange.to.toLocaleDateString()}</strong> || placeholder} </>
     )
   }
 
@@ -40,6 +44,7 @@ export const SelectDate = <M extends boolean = false>(props: SelectDateProps<M>)
     initialVisibleDate,
     //other
     placeholder = 'Select Date',
+    label,
     // rest is dropdown props
     ...dropdownProps
   } = props
@@ -74,16 +79,21 @@ export const SelectDate = <M extends boolean = false>(props: SelectDateProps<M>)
   } = dropdownProps
 
   return (
-    <Dropdown
-      openControls={openControls}
-      buttonText={renderValue(value, isRange, placeholder)}
-      menuProps={{
-        ...menuProps,
-        className: classnames(cls['select-date-dropdown'], menuProps.className)
-      }}
-      {...dropdownProps}
-    >
-      <DatePicker {...datepickerProps} />
-    </Dropdown>
+    <>
+      {label && (
+        <ContentTitle>{label}</ContentTitle>
+      )}
+      <Dropdown
+        openControls={openControls}
+        buttonText={renderValue(value, isRange, placeholder)}
+        menuProps={{
+          ...menuProps,
+          className: classnames(cls['select-date-dropdown'], menuProps.className)
+        }}
+        {...dropdownProps}
+      >
+        <DatePicker {...datepickerProps} />
+      </Dropdown>
+    </>
   )
 }

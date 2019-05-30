@@ -55,9 +55,16 @@ export const ReactDocsButton = () => {
           content: (
             <>
               <SelectDate value={value1} onDateChange={setValue1} minDate={new Date(2019, 4, 5)} maxDate={new Date(2019, 4, 30)} />
-              <br />
-              <br />
-              <Button xs>Selected Date: {value1 && value1.toLocaleDateString() || 'none'}</Button>
+            </>
+          )
+        },
+      ]} />
+      <h2>Select Date</h2>
+      <ExampleTable fixed data={[
+        {
+          content: (
+            <>
+              <SelectDate isRange value={value2} onDateChange={setValue2} />
             </>
           )
         },
