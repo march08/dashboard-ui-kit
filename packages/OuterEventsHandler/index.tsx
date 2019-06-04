@@ -144,6 +144,7 @@ export class OuterEventsHandler extends React.PureComponent<OuterEventsHandlerPr
       triggerOnWindowResize,
       triggerOnOuterClick,
       triggerOnEsc,
+      triggerOnOuterFucus,
       children,
       className,
       ...rest

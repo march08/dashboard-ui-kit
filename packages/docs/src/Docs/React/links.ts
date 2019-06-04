@@ -17,6 +17,10 @@ const form = [
   'Select'
 ]
 
+const date = [
+  'DatePicker',
+  'SelectDate',
+]
 const components = [
   'Button',
   'ButtonGroup',
@@ -24,9 +28,9 @@ const components = [
   'Dropdown',
   'Progress',
   'Avatar',
-  'Alert',
-  'Date'
+  'Alert'
 ]
+
 const layout = [
   'ContainerVertical',
   'ContainerHorizontal',
@@ -96,6 +100,10 @@ export const generateMenuLinks = () => ([
   {
     title: 'Form Components',
     links: generateLinks(form)
+  },
+  {
+    title: 'Date',
+    links: generateLinks(date)
   },
   {
     title: 'Layout Components',

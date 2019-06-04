@@ -17,7 +17,7 @@ export type ExampleTableProps = {
 export const ExampleTable = (props: ExampleTableProps) => {
   const { data, fixed } = props
 
-  const [val, setVal] = useLocalStorage('react')
+  const [val, setVal] = useLocalStorage('active_code', 'react')
 
   return (
     <div className={cls['example-table-container']}>

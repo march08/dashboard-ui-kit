@@ -12,6 +12,7 @@ import cls from './styles.module.scss'
 export type DatePickerRangeValue = { from?: Date | null, to?: Date | null }
 export type DatePickerSimpleValue = Date | null
 export type DatePickerValue<M extends boolean> = M extends true ? DatePickerRangeValue : DatePickerSimpleValue
+export type DatePickerOnChangeRange<M extends boolean> = (value: DatePickerValue<M>) => void
 
 export type DatePickerProps<M extends boolean = false> = {
   renderTitle?: (visibleDate: Date, activeView: DatePickerView) => React.ReactNode,
@@ -19,7 +20,7 @@ export type DatePickerProps<M extends boolean = false> = {
   renderWeekdayShort?: (weekdayNumber: number) => React.ReactNode,
   isRange?: M,
   value?: DatePickerValue<M>,
-  onDateChange?: (value: DatePickerValue<M>) => void,
+  onChange?: DatePickerOnChangeRange<M>,
   minDate?: Date,
   maxDate?: Date,
   initialVisibleDate?: Date,
@@ -28,19 +29,23 @@ export type DatePickerProps<M extends boolean = false> = {
 
 export function DatePicker<M extends boolean = false>(props: DatePickerProps<M>) {
 
+  const view = useDatePickerView()
+  const [mouseOverDate, setMouseOverDate] = React.useState()
+  const [innerValue, setInnerValue] = React.useState<DatePickerValue<M>>()
+
   const {
     renderTitle = defaultRenderTitle,
     renderMonthName = defaultRenderMonthName,
     renderWeekdayShort = defaultRenderWeekdayShort,
-    onDateChange,
-    value,
+    onChange,
+    value: controlledValue,
     isRange,
     minDate,
     maxDate,
     initialVisibleDate = new Date()
   } = props
 
-  const view = useDatePickerView()
+  const value = typeof controlledValue === 'undefined' ? innerValue : controlledValue;
 
   const {
     handleMonthSelect,
@@ -50,33 +55,30 @@ export function DatePicker<M extends boolean = false>(props: DatePickerProps<M>)
     visibleDate
   } = useVisibleDate(initialVisibleDate, view)
 
-  const [mouseOverDate, setMouseOverDate] = React.useState()
+  const setValue = (value: DatePickerValue<M>) => {
+    setInnerValue(value)
+    if (onChange) {
+      onChange(value)
+    }
+  }
 
   const handleDateSelect = React.useCallback(
     (date: Date) => {
-      if (isRange === true && onDateChange) {
+      if (isRange === true) {
         const { from, to } = value as DatePickerRangeValue
-        const onChangeValue = onDateChange as (value: DatePickerRangeValue) => void
-        if (!from || (to && from)) {
-          setMouseOverDate(null)
-          onChangeValue({ from: date, to: null })
-        } else if (from) {
-          if (from.getTime() <= date.getTime()) {
-            onChangeValue({ from, to: date })
-          } else {
-            setMouseOverDate(null)
-            onChangeValue({ from: date, to: null })
-          }
+        const onChangeValue = setValue as DatePickerOnChangeRange<true>
+        if (from && !to && from.getTime() <= date.getTime()) {
+          onChangeValue({ from, to: date })
         } else {
           setMouseOverDate(null)
           onChangeValue({ from: date, to: null })
         }
-      } else if (onDateChange) {
-        const onChangeValue = onDateChange as (value: DatePickerSimpleValue) => void
+      } else {
+        const onChangeValue = setValue as DatePickerOnChangeRange<false>
         onChangeValue(date)
       }
     },
-    [value]
+    [value, onChange]
   )
 
   const dateValue = !value ? isRange && { from: null, to: null } || null : value

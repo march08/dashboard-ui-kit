@@ -14,7 +14,7 @@ export type CodeRHProps = {
 export const CodeRH = (props: CodeRHProps) => {
   const { content, code } = props
 
-  const [val, setVal] = useLocalStorage('react')
+  const [val, setVal] = useLocalStorage('active_code', 'react')
 
   const htmlCode = html(ReactDOM.renderToStaticMarkup(<BrowserRouter>{content}</BrowserRouter>), {
     indent_size: 2,

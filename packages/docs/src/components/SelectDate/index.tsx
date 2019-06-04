@@ -1,13 +1,16 @@
 import React from 'react'
 import classnames from 'classnames'
 import { DatePicker, DatePickerProps, DatePickerValue, DatePickerRangeValue, DatePickerSimpleValue } from '../Date'
-import { Dropdown, useOpenState, ContentTitle } from '@duik/it'
+import { Dropdown, useOpenState, ContentTitle, AnyTag, DropdownProps, DropdownButton, DropdownMenu } from '@duik/it'
 import cls from './styles.module.scss'
 
-export type SelectDateProps<M extends boolean> = React.ComponentProps<typeof Dropdown> & DatePickerProps<M> & {
-  placeholder?: React.ReactNode,
-  label?: React.ReactNode,
-}
+export type SelectDateProps<BC extends AnyTag, MC extends AnyTag, M extends boolean> =
+  & DropdownProps<BC, MC>
+  & DatePickerProps<M>
+  & {
+    placeholder?: React.ReactNode,
+    label?: React.ReactNode,
+  }
 
 const renderValue = <M extends boolean = false>(date?: DatePickerValue<M>, isRange?: boolean, placeholder?: React.ReactNode, ) => {
   if (!date) {
@@ -27,7 +30,11 @@ const renderValue = <M extends boolean = false>(date?: DatePickerValue<M>, isRan
   return <strong>{(date as Date).toLocaleDateString() || '-'}</strong>
 }
 
-export const SelectDate = <M extends boolean = false>(props: SelectDateProps<M>) => {
+export const SelectDate = <
+  BC extends AnyTag = DropdownButton,
+  MC extends AnyTag = DropdownMenu,
+  M extends boolean = false
+>(props: SelectDateProps<BC, MC, M>) => {
 
   const openControls = useOpenState()
 
@@ -38,7 +45,7 @@ export const SelectDate = <M extends boolean = false>(props: SelectDateProps<M>)
     renderWeekdayShort,
     isRange,
     value,
-    onDateChange,
+    onChange,
     minDate,
     maxDate,
     initialVisibleDate,
@@ -49,9 +56,9 @@ export const SelectDate = <M extends boolean = false>(props: SelectDateProps<M>)
     ...dropdownProps
   } = props
 
-  const onDateChangeSelect = (value: DatePickerValue<M>) => {
-    if (onDateChange) {
-      onDateChange(value)
+  const onChangeSelect = (value: DatePickerValue<M>) => {
+    if (onChange) {
+      onChange(value)
     }
     if (!isRange) {
       openControls.handleClose()
@@ -68,7 +75,7 @@ export const SelectDate = <M extends boolean = false>(props: SelectDateProps<M>)
     renderWeekdayShort,
     isRange,
     value,
-    onDateChange: onDateChangeSelect,
+    onChange: onChangeSelect,
     minDate,
     maxDate,
     initialVisibleDate,
@@ -78,6 +85,11 @@ export const SelectDate = <M extends boolean = false>(props: SelectDateProps<M>)
     menuProps = {}
   } = dropdownProps
 
+  const menuMergedProps = {
+    ...menuProps,
+    className: classnames(cls['select-date-dropdown'], (menuProps as any).className)
+  } as any; // __TODO fix typing
+
   return (
     <>
       {label && (
@@ -86,10 +98,7 @@ export const SelectDate = <M extends boolean = false>(props: SelectDateProps<M>)
       <Dropdown
         openControls={openControls}
         buttonText={renderValue(value, isRange, placeholder)}
-        menuProps={{
-          ...menuProps,
-          className: classnames(cls['select-date-dropdown'], menuProps.className)
-        }}
+        menuProps={menuMergedProps}
         {...dropdownProps}
       >
         <DatePicker {...datepickerProps} />
