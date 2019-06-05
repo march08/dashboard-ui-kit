@@ -15,5 +15,6 @@
     "@duik/core": "^0.1.0-alpha.0",
     "@types/react": "^16.8.16",
     "@types/react-dom": "^16.8.4"
-  }
+  },
+  "gitHead": "efe4e90b5b41da75ba32d08b41f180519daca614"
 }

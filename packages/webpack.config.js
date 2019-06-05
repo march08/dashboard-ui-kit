@@ -15,7 +15,8 @@ const packages = fs.readdirSync(__dirname).filter(item => ![
 'packages',
 'tsconfig.json',
 'webpack.config.js',
-'.DS_Store'
+'.DS_Store',
+'README.md'
 ].includes(item))
 
 const sassLoader = {
