@@ -9,10 +9,14 @@ import { useVisibleDate } from './useVisibleDate'
 
 import cls from './styles.module.scss'
 
-export type DatePickerRangeValue = { from?: Date | null, to?: Date | null }
-export type DatePickerSimpleValue = Date | null
-export type DatePickerValue<M extends boolean> = M extends true ? DatePickerRangeValue : DatePickerSimpleValue
-export type DatePickerOnChangeRange<M extends boolean> = (value: DatePickerValue<M>) => void
+import {
+  DatePickerRangeValue,
+  DatePickerSimpleValue,
+  DatePickerValue,
+  DatePickerOnChange,
+} from './types'
+
+import { useDatePickerValue } from './useDatePickerValue'
 
 export type DatePickerProps<M extends boolean = false> = {
   renderTitle?: (visibleDate: Date, activeView: DatePickerView) => React.ReactNode,
@@ -20,32 +24,60 @@ export type DatePickerProps<M extends boolean = false> = {
   renderWeekdayShort?: (weekdayNumber: number) => React.ReactNode,
   isRange?: M,
   value?: DatePickerValue<M>,
-  onDateChange?: DatePickerOnChangeRange<M>,
+  onDateChange?: DatePickerOnChange<M>,
   minDate?: Date,
   maxDate?: Date,
   initialVisibleDate?: Date,
+  weekdayOffset?: number,
 }
 
+const getInitVisibleDate = <M extends boolean>(initDate?: Date, isRange?: M, value?: DatePickerValue<M> | null) => {
+  if (initDate) {
+    return initDate
+  }
+
+  if (isRange && !!value && !!(value as DatePickerRangeValue).from) {
+    return (value as DatePickerRangeValue).from
+  }
+
+  if (!isRange && !!value) {
+    return value as Date
+  }
+
+  return new Date()
+}
 
 export function DatePicker<M extends boolean = false>(props: DatePickerProps<M>) {
 
   const view = useDatePickerView()
   const [mouseOverDate, setMouseOverDate] = React.useState()
-  const [innerValue, setInnerValue] = React.useState<DatePickerValue<M>>()
+
 
   const {
     renderTitle = defaultRenderTitle,
     renderMonthName = defaultRenderMonthName,
     renderWeekdayShort = defaultRenderWeekdayShort,
-    onDateChange,
+    onDateChange: onChangeProp,
     value: controlledValue,
     isRange,
     minDate,
     maxDate,
-    initialVisibleDate = new Date()
+    weekdayOffset,
+    initialVisibleDate
   } = props
 
-  const value = typeof controlledValue === 'undefined' ? innerValue : controlledValue;
+
+  const {
+    value,
+    setValue,
+  } = useDatePickerValue<M>(
+    controlledValue,
+    isRange,
+    onChangeProp,
+  )
+
+
+  const initVisibleDate = getInitVisibleDate(initialVisibleDate, isRange, value)
 
   const {
     handleMonthSelect,
@@ -53,20 +85,13 @@ export function DatePicker<M extends boolean = false>(props: DatePickerProps<M>)
     handleNext,
     handlePrev,
     visibleDate
-  } = useVisibleDate(initialVisibleDate, view)
-
-  const setValue = (value: DatePickerValue<M>) => {
-    setInnerValue(value)
-    if (onDateChange) {
-      onDateChange(value)
-    }
-  }
+  } = useVisibleDate(initVisibleDate as Date, view)
 
   const handleDateSelect = React.useCallback(
     (date: Date) => {
       if (isRange === true) {
         const { from, to } = value as DatePickerRangeValue
-        const onChangeValue = setValue as DatePickerOnChangeRange<true>
+        const onChangeValue = setValue as DatePickerOnChange<true>
         if (from && !to && from.getTime() <= date.getTime()) {
           onChangeValue({ from, to: date })
         } else {
@@ -74,11 +99,11 @@ export function DatePicker<M extends boolean = false>(props: DatePickerProps<M>)
           onChangeValue({ from: date, to: null })
         }
       } else {
-        const onChangeValue = setValue as DatePickerOnChangeRange<false>
+        const onChangeValue = setValue as DatePickerOnChange<false>
         onChangeValue(date)
       }
     },
-    [value, onDateChange]
+    [value]
   )
 
   const dateValue = !value ? isRange && { from: null, to: null } || null : value
@@ -138,7 +163,9 @@ export function DatePicker<M extends boolean = false>(props: DatePickerProps<M>)
           <DateMonthView
             dayProps={dayProps}
             renderWeekdayShort={renderWeekdayShort}
-            visibleDate={visibleDate} />
+            visibleDate={visibleDate}
+            weekdayOffset={weekdayOffset}
+          />
         )}
       </div>
     </div>

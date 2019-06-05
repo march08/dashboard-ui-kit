@@ -1,77 +1,62 @@
 import * as React from 'react'
-import { H1, DatePicker, DatePickerRangeValue, DatePickerSimpleValue, DatePickerContainer, SelectDate } from 'components'
-import { Button } from '@duik/it'
+import { Link } from 'react-router-dom'
+import { H1, DatePickerRangeValue, DatePickerSimpleValue, SelectDate } from 'components'
 
-import { DocsContentPage, ExampleTable, ImportPath } from '../../components'
+import { DocsContentPage, ExampleTable, ImportPath, PageContent, DocsTable } from '../../components'
+import PropTable from './PropTable'
 
 
 export const ReactDocsButton = () => {
 
-  const [value1, setValue1] = React.useState<DatePickerSimpleValue>(null)
-  const [value3, setValue3] = React.useState<DatePickerSimpleValue>(null)
-  const [value2, setValue2] = React.useState<DatePickerRangeValue>({ from: null, to: null })
-  const [value4, setValue4] = React.useState<DatePickerRangeValue>({ from: null, to: null })
+  const currentYear = new Date().getFullYear()
+  const currentMonth = new Date().getMonth()
+  const [value2, setValue2] = React.useState<DatePickerRangeValue>({ from: new Date(currentYear, currentMonth, 8), to: new Date(currentYear, currentMonth, 19) })
+
 
   return (
     <DocsContentPage>
-      {/* <PageContent data={[
-        { id: 'appearence', label: 'Appearence' },
-        { id: 'sizes', label: 'Sizes' },
-        { id: 'states', label: 'States' },
-        { id: 'custom-rendering', label: 'Custom DOM Rendering' },
-        { id: 'with-icons', label: 'With Icons' },
+      <PageContent data={[
+        { id: 'basic', label: 'Basic SelectDate' },
+        { id: 'controlled', label: 'Controlled Value' },
+        { id: 'localization', label: 'Localization and Formatting' },
         { id: 'props', label: 'Prop Table' },
-        { id: 'migration', label: 'Migration from Dashboard UI Kit 3' },
-      ]} /> */}
-      <H1>DatePicker</H1>
-      <ImportPath name="DatePicker" />
-      <br />
-      <h2>Single Date Pick</h2>
+      ]} />
+      <H1>SelectDate</H1>
+      <ImportPath name="SelectDate" />
+      <p>SelectDate is a select which wraps <Link to="/docs/react/date-picker">DatePicker</Link> component, in which documentation you can also find more information. SelectDate accepts same properties and some extra such as "label" in the list <Link to="props">below</Link></p>
+
+      <h2>Basic SelectDate</h2>
+      <p>Same way as <code>DatePicker</code> is designed, you can use SelectDate as an component with uncontrolled value.</p>
       <ExampleTable fixed data={[
         {
           content: (
-            <>
-              <DatePickerContainer>
-                <DatePicker value={value1} onDateChange={setValue1} minDate={new Date(2019, new Date().getMonth(), 5)} maxDate={new Date(2019, new Date().getMonth(), 30)} />
-              </DatePickerContainer>
-              <br />
-              <br />
-              <Button xs>Selected Date: {value1 && value1.toLocaleDateString() || 'none'}</Button>
-            </>
+            <SelectDate
+              label="Date of Birth"
+            />
           )
         },
       ]} />
-      <h2>Range Pick</h2>
-      <p>With max and min date</p>
+      <h2 id="controlled">Controlled Value</h2>
+      <p>Here is an example selecting date range with a controlled value.</p>
       <ExampleTable fixed data={[
         {
           content: (
-            <DatePickerContainer>
-              <DatePicker isRange value={value2} onDateChange={setValue2} />
-            </DatePickerContainer>
+            <SelectDate isRange value={value2} onDateChange={setValue2} />
           )
         },
       ]} />
-      <h2>Select Date</h2>
-      <ExampleTable fixed data={[
-        {
-          content: (
-            <>
-              <SelectDate value={value3} onDateChange={setValue3} minDate={new Date(2019, 4, 5)} maxDate={new Date(2019, 4, 30)} />
-            </>
-          )
-        },
-      ]} />
-      <h2>Select Date</h2>
-      <ExampleTable fixed data={[
-        {
-          content: (
-            <>
-              <SelectDate isRange value={value4} onDateChange={setValue4} />
-            </>
-          )
-        },
-      ]} />
+
+      <h2 id="localization">Localization and Formatting</h2>
+      <p>You can format how to display the displayed value. For other formatters, check <Link to="/docs/react/date-picker#localization">DatePicker localization</Link>.</p>
+      <DocsTable>
+        <tbody>
+          <tr>
+            <td>renderValue</td>
+            <td>(value?: <Link to="/docs/react/date-picker#DatePickerValue">DatePickerValue</Link>, isRange?: boolean, placeholder?: React.ReactNode) => React.ReactNode</td>
+          </tr>
+        </tbody>
+      </DocsTable>
+      <PropTable />
     </DocsContentPage>
   )
 }

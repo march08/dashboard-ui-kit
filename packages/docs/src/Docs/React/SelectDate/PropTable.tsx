@@ -1,86 +1,43 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom'
 import { Widget } from '@duik/it/index'
 
 
-import { PropTable, properties } from '../../components'
+import { PropTable, properties, DocsTable } from '../../components'
 
+// renderTitle?: (visibleDate: Date, activeView: DatePickerView) => React.ReactNode,
+// renderMonthName?: (monthNumber: number) => React.ReactNode,
+// renderWeekdayShort?: (weekdayNumber: number) => React.ReactNode,
+// isRange?: M,
+// value?: DatePickerValue<M>,
+// onDateChange?: DatePickerOnChangeRange<M>,
+// minDate?: Date,
+// maxDate?: Date,
+// initialVisibleDate?: Date,
+// weekdayOffset?: number,
+
+const DatePickerValue = <Link to="#DatePickerValue">DatePickerValue</Link>
 
 const itemProps = [
-  properties.children(),
-  properties.className(),
-  properties.Component({
-    defaultValue: '"button"',
-  }),
   {
-    prop: 'type',
-    propType: 'string',
+    prop: 'placeholder',
+    propType: 'React.ReactNode',
     required: false,
-    defaultValue: '"button"',
-    desc: 'Applicable for button or input, otherwise button will be omitted.',
-  },
-  properties.bool({
-    prop: 'isExpanded | block',
-    desc: 'Applies width: 100% and extra styling cases when used with icons etc.',
-  }),
-  properties.bool({
-    prop: 'xs | sm',
-    desc: 'Renders smaller button with height 30px',
-  }),
-  properties.bool({
-    prop: 'lg',
-    desc: 'Renders larger button with height 50px',
-  }),
-  properties.bool({
-    prop: 'primary',
-    desc: 'Has blue color',
-  }),
-  properties.bool({
-    prop: 'error | danger',
-    desc: 'Has red color',
-  }),
-  properties.bool({
-    prop: 'success',
-    desc: 'Has green color',
-  }),
-  properties.bool({
-    prop: 'dark',
-    desc: 'Has dark color',
-  }),
-  properties.bool({
-    prop: 'clear',
-    desc: 'White with light shadow.',
-  }),
-  properties.bool({
-    prop: 'transparent',
-    desc: 'Button background is transparent with borders.',
-  }),
-  properties.bool({
-    prop: 'isLoading | loading',
-    desc: 'Will render loading state',
-  }),
-  // icon properties
-  {
-    prop: 'icon',
-    propType: 'DEPRECATED',
-    required: false,
-    defaultValue: 'null',
-    desc: 'Pass your icon as children instead',
   },
   {
-    prop: 'iconRight',
-    propType: 'DEPRECATED',
+    prop: 'label',
+    propType: 'React.ReactNode',
     required: false,
-    defaultValue: 'false',
-    desc: 'Pass your icon as children instead',
+    desc: 'Label to be displayed above the select.'
   },
   {
-    prop: 'iconOnly',
-    propType: 'DEPRECATED',
+    prop: <Link to="/docs/react/date-picker#props">DatePicker</Link>,
     required: false,
-    defaultValue: 'false',
-    desc: 'Use "square" property to render squared shape instead',
+    desc: 'You can pass any prop that DatePicker accepts as well, e.g. minDate'
   },
-  properties.rest(),
+  properties.rest({
+    desc: <>Rest of the properties are passed down to <Link to="/docs/react/dropdown">Dropdown</Link>.</>
+  })
 ]
 
 
@@ -88,7 +45,8 @@ export const ReactDocsButton = () => {
 
   return (
     <>
-      <h2 id="props">Prop table</h2>
+
+      <h2 id="props">Props</h2>
       <Widget>
         <PropTable itemProps={itemProps} />
       </Widget >

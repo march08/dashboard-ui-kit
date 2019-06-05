@@ -111,13 +111,15 @@ export const DateMonthView = (props: DateMonthViewProps) => {
   const nextMonth = nextDate.getMonth()
   const nextYear = nextDate.getFullYear()
 
-  const lengthOfPreviousMonth = startDay + weekdayOffset
+  const lengthOfPreviousMonth = (startDay + weekdayOffset) % 7
 
   return (
     <div className={cls['datepicker-month']}>
-      {generateArrayOfLen(7, 0).map(weekday => (
-        <span key={`head-${weekday}`} className={cls['datepicker-day-name']}>{renderWeekdayShort(weekday)}</span>
-      ))}
+      {generateArrayOfLen(7, 7 - weekdayOffset)
+        .map(v => v % 7)
+        .map(weekday => (
+          <span key={`head-${weekday}`} className={cls['datepicker-day-name']}>{renderWeekdayShort(weekday)}</span>
+        ))}
       {/* Previous month */}
       {generateArrayOfLen(lengthOfPreviousMonth, previousMonthDays - startDay + 1 - weekdayOffset).map(item => (
         <DatePickerDay

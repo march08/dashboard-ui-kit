@@ -132,8 +132,14 @@
 }
 
 .propTable {
-  td {
+  td:nth-child(2) {
+    white-space: nowrap;
+  }
+
+  tr td,
+  tr td p {
     font-family: 'Roboto Mono', monospace;
+    font-size: .75rem;
   }
 }
 
