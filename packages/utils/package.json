@@ -1,6 +1,6 @@
 {
   "name": "@duik/utils",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha.0",
   "description": "Dashboard UI Kit Utilities",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
@@ -12,6 +12,6 @@
   },
   "private": false,
   "dependencies": {
-    "@duik/use-open-state": "0.1.0"
+    "@duik/use-open-state": "^0.1.0-alpha.0"
   }
 }

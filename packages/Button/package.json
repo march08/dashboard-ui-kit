@@ -1,6 +1,6 @@
 {
   "name": "@duik/button",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha.0",
   "description": "Dashboard UI Kit Button",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
@@ -12,7 +12,7 @@
   },
   "private": false,
   "dependencies": {
-    "@duik/core": "0.1.0",
-    "@duik/loader-dots": "0.1.0"
+    "@duik/core": "^0.1.0-alpha.0",
+    "@duik/loader-dots": "^0.1.0-alpha.0"
   }
 }
