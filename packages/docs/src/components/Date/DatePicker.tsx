@@ -20,7 +20,7 @@ export type DatePickerProps<M extends boolean = false> = {
   renderWeekdayShort?: (weekdayNumber: number) => React.ReactNode,
   isRange?: M,
   value?: DatePickerValue<M>,
-  onChange?: DatePickerOnChangeRange<M>,
+  onDateChange?: DatePickerOnChangeRange<M>,
   minDate?: Date,
   maxDate?: Date,
   initialVisibleDate?: Date,
@@ -37,7 +37,7 @@ export function DatePicker<M extends boolean = false>(props: DatePickerProps<M>)
     renderTitle = defaultRenderTitle,
     renderMonthName = defaultRenderMonthName,
     renderWeekdayShort = defaultRenderWeekdayShort,
-    onChange,
+    onDateChange,
     value: controlledValue,
     isRange,
     minDate,
@@ -57,8 +57,8 @@ export function DatePicker<M extends boolean = false>(props: DatePickerProps<M>)
 
   const setValue = (value: DatePickerValue<M>) => {
     setInnerValue(value)
-    if (onChange) {
-      onChange(value)
+    if (onDateChange) {
+      onDateChange(value)
     }
   }
 
@@ -78,7 +78,7 @@ export function DatePicker<M extends boolean = false>(props: DatePickerProps<M>)
         onChangeValue(date)
       }
     },
-    [value, onChange]
+    [value, onDateChange]
   )
 
   const dateValue = !value ? isRange && { from: null, to: null } || null : value

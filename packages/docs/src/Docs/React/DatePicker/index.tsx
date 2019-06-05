@@ -33,7 +33,7 @@ export const ReactDocsButton = () => {
           content: (
             <>
               <DatePickerContainer>
-                <DatePicker value={value1} onChange={setValue1} minDate={new Date(2019, new Date().getMonth(), 5)} maxDate={new Date(2019, new Date().getMonth(), 25)} />
+                <DatePicker value={value1} onDateChange={setValue1} minDate={new Date(2019, new Date().getMonth(), 5)} maxDate={new Date(2019, new Date().getMonth(), 25)} />
               </DatePickerContainer>
               <br />
               <br />
@@ -48,7 +48,7 @@ export const ReactDocsButton = () => {
         {
           content: (
             <DatePickerContainer>
-              <DatePicker isRange value={value2} onChange={setValue2} />
+              <DatePicker isRange value={value2} onDateChange={setValue2} />
             </DatePickerContainer>
           )
         },
@@ -58,7 +58,7 @@ export const ReactDocsButton = () => {
         {
           content: (
             <>
-              <SelectDate value={value3} onChange={setValue3} minDate={new Date(2019, new Date().getMonth(), 5)} maxDate={new Date(2019, new Date().getMonth(), 25)} />
+              <SelectDate value={value3} onDateChange={setValue3} minDate={new Date(2019, new Date().getMonth(), 5)} maxDate={new Date(2019, new Date().getMonth(), 25)} />
             </>
           )
         },
@@ -68,7 +68,7 @@ export const ReactDocsButton = () => {
         {
           content: (
             <>
-              <SelectDate isRange value={value4} onChange={setValue4} />
+              <SelectDate isRange value={value4} onDateChange={setValue4} />
             </>
           )
         },
