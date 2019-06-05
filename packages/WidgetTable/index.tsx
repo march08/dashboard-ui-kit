@@ -7,5 +7,4 @@ export const WidgetTable = createSimpleComponent<'table'>({
   Component: 'table',
 })
 
-
 export default WidgetTable
