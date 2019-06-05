@@ -5,29 +5,29 @@ import { Widget } from '@duik/it/index'
 
 import { PropTable, properties, DocsTable } from '../../components'
 
-// renderTitle?: (visibleDate: Date, activeView: DatePickerView) => React.ReactNode,
+// renderTitle?: (visibleDate: Date, activeView: DatepickerView) => React.ReactNode,
 // renderMonthName?: (monthNumber: number) => React.ReactNode,
 // renderWeekdayShort?: (weekdayNumber: number) => React.ReactNode,
 // isRange?: M,
-// value?: DatePickerValue<M>,
-// onDateChange?: DatePickerOnChangeRange<M>,
+// value?: DatepickerValue<M>,
+// onDateChange?: DatepickerOnChangeRange<M>,
 // minDate?: Date,
 // maxDate?: Date,
 // initialVisibleDate?: Date,
 // weekdayOffset?: number,
 
-const DatePickerValue = <Link to="#DatePickerValue">DatePickerValue</Link>
+const DatepickerValue = <Link to="#DatepickerValue">DatepickerValue</Link>
 
 const itemProps = [
   {
     prop: 'value',
-    propType: DatePickerValue,
+    propType: DatepickerValue,
     required: false,
     desc: 'Pass "Date" or object with from and to if you are using isRange',
   },
   {
     prop: 'onDateChange',
-    propType: <>(value: {DatePickerValue}) => void</>,
+    propType: <>(value: {DatepickerValue}) => void</>,
     desc: 'This gives you the ability to handle the date selection.',
   },
   properties.bool({
@@ -67,17 +67,17 @@ export const ReactDocsButton = () => {
       <Widget>
         <PropTable itemProps={itemProps} />
       </Widget >
-      <h2 id="DatePickerValue">DatePickerValue</h2>
+      <h2 id="DatepickerValue">DatepickerValue</h2>
       <p>Value varies based on the <code>isRange</code> prop. </p>
       <DocsTable>
         <tbody>
           <tr>
-            <td>DatePickerSimpleValue</td>
+            <td>DatepickerSimpleValue</td>
             <td>Date</td>
             <td>if isRange is false</td>
           </tr>
           <tr>
-            <td>DatePickerRangeValue</td>
+            <td>DatepickerRangeValue</td>
             <td>{`{from ?: Date, to?: Date }`}</td>
             <td>if isRange is true</td>
           </tr>

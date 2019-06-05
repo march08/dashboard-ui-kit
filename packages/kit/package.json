@@ -1,7 +1,16 @@
 {
   "name": "@duik/it",
   "version": "0.1.0",
-  "private": true,
+  "description": "Dashboard UI Kit",
+  "main": "dist/index.js",
+  "repository": "https://github.com/march08/duik",
+  "homepage": "https://github.com/march08/duik",
+  "author": "Roman Nguyen <march08@outlook.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
   "dependencies": {
     "@duik/core": "0.1.0",
     "@duik/alert": "0.1.0",
@@ -39,6 +48,8 @@
     "@duik/top-bar-title": "0.1.0",
     "@duik/tabs": "0.1.0",
     "@duik/select": "0.1.0",
-    "@duik/use-open-state": "0.1.0"
+    "@duik/use-open-state": "0.1.0",
+    "@duik/datepicker": "0.1.0",
+    "@duik/select-date": "0.1.0"
   }
 }

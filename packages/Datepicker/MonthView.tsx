@@ -1,21 +1,19 @@
 import React from 'react'
 import classnames from 'classnames'
-import { Omit } from '@duik/core'
 
-import cls from './styles.module.scss'
+import cls from './styles.scss'
 
 import {
   getDaysInMonth,
   getMonthStartDay,
   generateArrayOfLen,
-  isDateSelected,
   isDateSelectedLast,
   isDateSelectedFirst,
   isDayDisabled,
   isDateInRange
 } from './utils'
 
-type DatePickerDayProps = JSX.IntrinsicElements['button'] & {
+type DatepickerDayProps = JSX.IntrinsicElements['button'] & {
   date: Date,
   handleDateSelect?: (date: Date) => void,
   isCurrentMonth?: boolean,
@@ -28,7 +26,7 @@ type DatePickerDayProps = JSX.IntrinsicElements['button'] & {
   handleMouseOver?: (date: Date) => void
 }
 
-const DatePickerDay = (props: DatePickerDayProps) => {
+const DatepickerDay = (props: DatepickerDayProps) => {
   const {
     date,
     isCurrentMonth,
@@ -77,18 +75,18 @@ const DatePickerDay = (props: DatePickerDayProps) => {
   )
 }
 
-export type DateMonthViewProps = {
+export type MonthViewProps = {
   visibleDate: Date,
   /**
    * set to 1 if you want to start with sunday
    */
   weekdayOffset?: number,
-  dayProps?: Omit<DatePickerDayProps, 'date'>,
+  dayProps?: Omit<DatepickerDayProps, 'date'>,
   renderWeekdayShort: (weekdayNumber: number) => React.ReactNode,
 }
 
 
-export const DateMonthView = (props: DateMonthViewProps) => {
+export const MonthView = (props: MonthViewProps) => {
   const {
     visibleDate,
     weekdayOffset = 0,
@@ -122,7 +120,7 @@ export const DateMonthView = (props: DateMonthViewProps) => {
         ))}
       {/* Previous month */}
       {generateArrayOfLen(lengthOfPreviousMonth, previousMonthDays - startDay + 1 - weekdayOffset).map(item => (
-        <DatePickerDay
+        <DatepickerDay
           key={item}
           disabled
           date={new Date(previousYear, previousMonth, item)}
@@ -132,7 +130,7 @@ export const DateMonthView = (props: DateMonthViewProps) => {
       {/* This month */}
       {generateArrayOfLen(currentMonthDays).map(item => {
         return (
-          <DatePickerDay
+          <DatepickerDay
             key={`current-${item}`}
             isCurrentMonth
             date={new Date(currentYear, currentMonth, item)}
@@ -142,7 +140,7 @@ export const DateMonthView = (props: DateMonthViewProps) => {
       })}
       {/* Next month */}
       {generateArrayOfLen((7 - ((lengthOfPreviousMonth + currentMonthDays) % 7)) % 7, 1).map(item => (
-        <DatePickerDay
+        <DatepickerDay
           key={item}
           date={new Date(nextYear, nextMonth, item)}
           {...dayProps}
@@ -153,4 +151,4 @@ export const DateMonthView = (props: DateMonthViewProps) => {
 }
 
 
-DateMonthView.displayName = "DateMonthView"
+MonthView.displayName = "MonthView"

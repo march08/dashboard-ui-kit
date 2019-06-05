@@ -1,0 +1,192 @@
+@import './normalize';
+@import './vars';
+
+/** Text Colors **/
+:root {
+  @include themeVars();
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+html {
+  height: 100%;
+  background: $bg-base;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: $fontFamily;
+  background: $bg-base;
+  color: $text-base;
+  font-size: 16px;
+  font-weight: 400; // font smoothing
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+input,
+button,
+textarea {
+  color: $text-main;
+  font-size: 16px;
+  font-family: $fontFamily;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  transition: all 0.2s;
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 400;
+  color: $text-main;
+}
+
+*+h1,
+*+h2,
+*+h3,
+*+h4,
+*+h5 {
+  margin-top: 1.125rem;
+}
+
+h1+*,
+h2+*,
+h3+*,
+h4+* {
+  margin-top: 1em;
+}
+
+p {
+  transition: all 0.2s;
+  margin: 0;
+  line-height: 1.375rem;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: $text-base;
+}
+
+input,
+textarea {
+  font-size: .875rem;
+}
+
+*+p {
+  margin-top: 0.3em;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 1.375rem;
+  line-height: 2rem;
+}
+
+h3 {
+  font-size: 1.125rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+}
+
+p,
+ul,
+ol {
+  &+* {
+    margin-top: 1.125em;
+  }
+}
+
+p+p {
+  margin-top: 0.4em;
+}
+
+a {
+  transition: .2s;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+p,
+ul {
+  a {
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s;
+    color: $color-primary;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+strong {
+  font-weight: 500;
+}
+
+ul,
+ol {
+  line-height: 1.5;
+  color: $text-main;
+  font-size: 0.875rem;
+
+  *:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+
+ol {
+  padding-left: 20px;
+}
+
+code:not([class]) {
+  display: inline-block;
+  border: 1px solid #DADEE7;
+  border-radius: 4px;
+  font-size: inherit;
+  line-height: 1.375rem;
+  padding: 0px 5px;
+  font-family: monospace;
+  word-break: inherit;
+  color: $color-primary;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+:global #root {
+  height: 100%;
+}
+
+pre {
+  margin-bottom: 0;
+}
+
+label {
+  @include content-title();
+}
+
+@include generateColorProperty('.bg', 'background-color');
+@include generateColorProperty('.text', 'color');

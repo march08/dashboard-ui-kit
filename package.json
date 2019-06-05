@@ -57,5 +57,11 @@
     "tslint-config-airbnb": "^5.11.1",
     "tslint-react": "^4.0.0",
     "typescript": "^3.5.1"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

@@ -1,7 +1,7 @@
-import { DatePickerValue } from '../Date'
+import { DatepickerValue } from '../Datepicker'
 
 export type SelectDateRenderValue<M extends boolean> = (
-  value?: DatePickerValue<M>,
+  value?: DatepickerValue<M>,
   isRange?: M,
   placeholder?: React.ReactNode
 ) => React.ReactNode

@@ -5,18 +5,18 @@ import { Widget } from '@duik/it/index'
 
 import { PropTable, properties, DocsTable } from '../../components'
 
-// renderTitle?: (visibleDate: Date, activeView: DatePickerView) => React.ReactNode,
+// renderTitle?: (visibleDate: Date, activeView: DatepickerView) => React.ReactNode,
 // renderMonthName?: (monthNumber: number) => React.ReactNode,
 // renderWeekdayShort?: (weekdayNumber: number) => React.ReactNode,
 // isRange?: M,
-// value?: DatePickerValue<M>,
-// onDateChange?: DatePickerOnChangeRange<M>,
+// value?: DatepickerValue<M>,
+// onDateChange?: DatepickerOnChangeRange<M>,
 // minDate?: Date,
 // maxDate?: Date,
 // initialVisibleDate?: Date,
 // weekdayOffset?: number,
 
-const DatePickerValue = <Link to="#DatePickerValue">DatePickerValue</Link>
+const DatepickerValue = <Link to="#DatepickerValue">DatepickerValue</Link>
 
 const itemProps = [
   {
@@ -31,9 +31,9 @@ const itemProps = [
     desc: 'Label to be displayed above the select.'
   },
   {
-    prop: <Link to="/docs/react/date-picker#props">DatePicker</Link>,
+    prop: <Link to="/docs/react/datepicker#props">Datepicker</Link>,
     required: false,
-    desc: 'You can pass any prop that DatePicker accepts as well, e.g. minDate'
+    desc: 'You can pass any prop that Datepicker accepts as well, e.g. minDate'
   },
   properties.rest({
     desc: <>Rest of the properties are passed down to <Link to="/docs/react/dropdown">Dropdown</Link>.</>

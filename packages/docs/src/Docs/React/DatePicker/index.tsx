@@ -1,19 +1,20 @@
 import * as React from 'react'
-import { H1, DatePicker, DatePickerRangeValue, DatePickerSimpleValue, DatePickerContainer, SelectDate } from 'components'
-import { Button, WidgetTable, Widget } from '@duik/it'
+import { H1, } from 'components'
+import { Datepicker, DatepickerRangeValue, DatepickerSimpleValue, DatepickerContainer } from '@duik/it'
+import { Button } from '@duik/it'
 
 import { DocsContentPage, ExampleTable, ImportPath, PageContent, DocsTable } from '../../components'
 
 import PropTable from './PropTable'
 
 
-export const ReactDocsButton = () => {
+export const ReactDocsDatepicker = () => {
 
   const currentYear = new Date().getFullYear()
   const currentMonth = new Date().getMonth()
-  const [value1, setValue1] = React.useState<DatePickerSimpleValue>(new Date(currentYear, currentMonth, 15))
-  const [value3, setValue3] = React.useState<DatePickerSimpleValue>(new Date(currentYear, currentMonth, 19))
-  const [value2, setValue2] = React.useState<DatePickerRangeValue>({ from: new Date(currentYear, currentMonth, 8), to: new Date(currentYear, currentMonth, 19) })
+  const [value1, setValue1] = React.useState<DatepickerSimpleValue>(new Date(currentYear, currentMonth, 15))
+  const [value3, setValue3] = React.useState<DatepickerSimpleValue>(new Date(currentYear, currentMonth, 19))
+  const [value2, setValue2] = React.useState<DatepickerRangeValue>({ from: new Date(currentYear, currentMonth, 8), to: new Date(currentYear, currentMonth, 19) })
 
 
   return (
@@ -28,40 +29,40 @@ export const ReactDocsButton = () => {
         { id: 'localization', label: 'Localization and Formatting' },
         { id: 'props', label: 'Prop Table' },
       ]} />
-      <H1>DatePicker</H1>
-      <ImportPath name="DatePicker" subComponents={['DatePickerContainer']} />
+      <H1>Datepicker</H1>
+      <ImportPath name="Datepicker" subComponents={['DatepickerContainer']} />
       <p>A datepicker shows a monthly calendar to choose a <code>single</code> date or a <code>range</code> with 0 external dependencies.</p>
       <br />
       <h2 id="basic">Basic Datepicker</h2>
-      <p>Basic <code>DatePicker</code> comes plain without external wrapping styling and has an uncontrolled value. </p>
+      <p>Basic <code>Datepicker</code> comes plain without external wrapping styling and has an uncontrolled value. </p>
       <ExampleTable fixed data={[
         {
           content: (
-            <DatePicker />
+            <Datepicker />
           )
         },
       ]} />
       <h2 id="controlled">Single Date With Controlled Value</h2>
-      <p>As you can see, we wrapped our <code>DatePicker</code> with a purely UI component <code>DatePickerContainer</code>. This is a recommended way to display your Datepicker.</p>
+      <p>As you can see, we wrapped our <code>Datepicker</code> with a purely UI component <code>DatepickerContainer</code>. This is a recommended way to display your Datepicker.</p>
       <p>In the example below, we are taking control over the displayed value by passing <code>value</code> and <code>onDateChange</code> prop. You onChange shuld accept date as a single param.</p>
       <ExampleTable fixed data={[
         {
           content: (
             <>
-              <DatePickerContainer>
-                <DatePicker value={value1} onDateChange={setValue1} />
-              </DatePickerContainer>
+              <DatepickerContainer>
+                <Datepicker value={value1} onDateChange={setValue1} />
+              </DatepickerContainer>
               <br />
               <br />
               <Button xs>Selected Date: {value1 && value1.toLocaleDateString() || 'none'}</Button>
             </>
           ),
-          code: `<DatePickerContainer>
-  <DatePicker
+          code: `<DatepickerContainer>
+  <Datepicker
     value={value1}
     onDateChange={setValue1}
   />
-</DatePickerContainer>`
+</DatepickerContainer>`
         },
       ]} />
       <h2 id="minmax">Min and Max Date</h2>
@@ -70,37 +71,37 @@ export const ReactDocsButton = () => {
         {
           content: (
             <>
-              <DatePickerContainer>
-                <DatePicker value={value3} onDateChange={setValue3} minDate={new Date(currentYear, currentMonth, 5)} maxDate={new Date(currentYear, currentMonth, 25)} />
-              </DatePickerContainer>
+              <DatepickerContainer>
+                <Datepicker value={value3} onDateChange={setValue3} minDate={new Date(currentYear, currentMonth, 5)} maxDate={new Date(currentYear, currentMonth, 25)} />
+              </DatepickerContainer>
               <br />
               <br />
               <Button xs>Selected Date: {value3 && value3.toLocaleDateString() || 'none'}</Button>
             </>
           ),
-          code: `<DatePickerContainer>
-  <DatePicker
+          code: `<DatepickerContainer>
+  <Datepicker
     value={value3}
     onDateChange={setValue3}
     minDate={new Date(currentYear, currentMonth, 5)}
     maxDate={new Date(currentYear, currentMonth, 25)}
   />
-</DatePickerContainer>`
+</DatepickerContainer>`
         },
       ]} />
 
       <h2 id="range">Range Date</h2>
-      <p>You can allow range selection with <code>isRange</code> prop. As a value (and onChange param), you should pass an <code>DatePickerRangeValue = {`{ from?: Date, to?: Date }`}</code></p>
+      <p>You can allow range selection with <code>isRange</code> prop. As a value (and onChange param), you should pass an <code>DatepickerRangeValue = {`{ from?: Date, to?: Date }`}</code></p>
       <ExampleTable fixed data={[
         {
           content: (
-            <DatePickerContainer>
-              <DatePicker isRange value={value2} onDateChange={setValue2} />
-            </DatePickerContainer>
+            <DatepickerContainer>
+              <Datepicker isRange value={value2} onDateChange={setValue2} />
+            </DatepickerContainer>
           ),
-          code: `<DatePickerContainer>
-  <DatePicker isRange value={value2} onDateChange={setValue2} />
-</DatePickerContainer>`
+          code: `<DatepickerContainer>
+  <Datepicker isRange value={value2} onDateChange={setValue2} />
+</DatepickerContainer>`
         },
       ]} />
 
@@ -109,13 +110,13 @@ export const ReactDocsButton = () => {
       <ExampleTable fixed data={[
         {
           content: (
-            <DatePickerContainer>
-              <DatePicker initialVisibleDate={new Date(2222, 1, 1)} />
-            </DatePickerContainer>
+            <DatepickerContainer>
+              <Datepicker initialVisibleDate={new Date(2222, 1, 1)} />
+            </DatepickerContainer>
           ),
-          code: `<DatePickerContainer>
-  <DatePicker initialVisibleDate={new Date(2222, 1, 1)} />
-</DatePickerContainer>`
+          code: `<DatepickerContainer>
+  <Datepicker initialVisibleDate={new Date(2222, 1, 1)} />
+</DatepickerContainer>`
         },
       ]} />
       <h2 id="start-week-day">First WeekDay</h2>
@@ -123,13 +124,13 @@ export const ReactDocsButton = () => {
       <ExampleTable fixed data={[
         {
           content: (
-            <DatePickerContainer>
-              <DatePicker weekdayOffset={1} />
-            </DatePickerContainer>
+            <DatepickerContainer>
+              <Datepicker weekdayOffset={1} />
+            </DatepickerContainer>
           ),
-          code: `<DatePickerContainer>
-<DatePicker weekdayOffset={1} />
-</DatePickerContainer>`
+          code: `<DatepickerContainer>
+<Datepicker weekdayOffset={1} />
+</DatepickerContainer>`
         },
       ]} />
 
@@ -140,7 +141,7 @@ export const ReactDocsButton = () => {
         <tbody>
           <tr>
             <td>renderTitle</td>
-            <td>(visibleDate: Date, activeView: DatePickerView) => React.ReactNode</td>
+            <td>(visibleDate: Date, activeView: DatepickerView) => React.ReactNode</td>
           </tr>
           <tr>
             <td>renderMonthName</td>
@@ -158,4 +159,4 @@ export const ReactDocsButton = () => {
   )
 }
 
-export default ReactDocsButton;
+export default ReactDocsDatepicker;

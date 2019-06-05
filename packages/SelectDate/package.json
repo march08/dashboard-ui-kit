@@ -1,7 +1,7 @@
 {
-  "name": "@duik/dropdown",
+  "name": "@duik/select-date",
   "version": "0.1.0",
-  "description": "Dashboard UI Kit Dropdown",
+  "description": "Dashboard UI Kit Select Date",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
   "homepage": "https://github.com/march08/duik",
@@ -13,8 +13,10 @@
   "private": false,
   "dependencies": {
     "@duik/core": "0.1.0",
+    "@duik/text-field": "0.1.0",
+    "@duik/content-title": "0.1.0",
+    "@duik/dropdown": "0.1.0",
     "@duik/use-open-state": "0.1.0",
-    "@duik/button": "0.1.0",
-    "@duik/outer-events-handler": "0.1.0"
+    "@duik/datepicker": "0.1.0"
   }
 }

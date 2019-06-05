@@ -1,8 +1,12 @@
 import React from 'react'
 import classnames from 'classnames'
-import { DatePicker, DatePickerProps, DatePickerValue, DatePickerRangeValue, useDatePickerValue } from '../Date'
-import { Dropdown, useOpenState, ContentTitle } from '@duik/it'
-import cls from './styles.module.scss'
+import { Datepicker, DatepickerProps, DatepickerValue, DatepickerRangeValue, useDatepickerValue } from '@duik/datepicker'
+import { Dropdown } from '@duik/dropdown'
+import { ContentTitle } from '@duik/content-title'
+import { useOpenState } from '@duik/use-open-state'
+
+
+import cls from './styles.scss'
 
 import { defaultRenderValue } from './defaultRenders'
 import { SelectDateRenderValue } from './types'
@@ -11,7 +15,7 @@ export * from './types'
 
 export type SelectDateProps<M extends boolean> =
   & React.ComponentProps<typeof Dropdown>
-  & DatePickerProps<M>
+  & DatepickerProps<M>
   & {
     placeholder?: React.ReactNode,
     label?: React.ReactNode,
@@ -48,14 +52,14 @@ export const SelectDate = <
   const {
     setValue,
     value,
-  } = useDatePickerValue(valueProp, isRange, onDateChangeProp)
+  } = useDatepickerValue(valueProp, isRange, onDateChangeProp)
 
-  const onDateChange = (value: DatePickerValue<M>) => {
+  const onDateChange = (value: DatepickerValue<M>) => {
     setValue(value)
     if (!isRange) {
       openControls.handleClose()
     } else {
-      if (value && (value as DatePickerRangeValue).to) {
+      if (value && (value as DatepickerRangeValue).to) {
         openControls.handleClose()
       }
     }
@@ -96,7 +100,7 @@ export const SelectDate = <
         menuProps={menuMergedProps}
         {...dropdownProps}
       >
-        <DatePicker {...datepickerProps} />
+        <Datepicker {...datepickerProps} />
       </Dropdown>
     </>
   )

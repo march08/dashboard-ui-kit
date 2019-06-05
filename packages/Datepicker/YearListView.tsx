@@ -1,11 +1,11 @@
 import React from 'react'
 
-import cls from './styles.module.scss'
+import cls from './styles.scss'
 
 import { generateArrayOfLen, isYearDisabled } from './utils'
 
 
-export type DateYearListViewProps = {
+export type YearListViewProps = {
   handleYearSelect: (yearNumber: number) => void,
   minDate?: Date,
   maxDate?: Date,
@@ -13,7 +13,7 @@ export type DateYearListViewProps = {
 }
 
 
-export const DateYearListView = (props: DateYearListViewProps) => {
+export const YearListView = (props: YearListViewProps) => {
   const { visibleDate, handleYearSelect, minDate, maxDate } = props
   const currentYear = visibleDate.getFullYear()
   const startYear = currentYear - currentYear % 12
@@ -37,4 +37,4 @@ export const DateYearListView = (props: DateYearListViewProps) => {
   )
 }
 
-DateYearListView.displayName = "DateYearListView"
+YearListView.displayName = "YearListView"

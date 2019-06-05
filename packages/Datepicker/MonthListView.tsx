@@ -1,11 +1,11 @@
 import React from 'react'
 
-import cls from './styles.module.scss'
+import cls from './styles.scss'
 
 import { generateArrayOfLen, isMonthDisabled } from './utils'
 
 
-export type DateMonthListViewProps = {
+export type MonthListViewProps = {
   handleMonthSelect: (monthNumber: number) => void,
   renderMonthName: (monthNumber: number) => React.ReactNode,
   minDate?: Date,
@@ -14,7 +14,7 @@ export type DateMonthListViewProps = {
 }
 
 
-export const DateMonthListView = (props: DateMonthListViewProps) => {
+export const MonthListView = (props: MonthListViewProps) => {
   const {
     handleMonthSelect,
     renderMonthName,
@@ -45,4 +45,4 @@ export const DateMonthListView = (props: DateMonthListViewProps) => {
   )
 }
 
-DateMonthListView.displayName = "DateMonthListView"
+MonthListView.displayName = "MonthListView"

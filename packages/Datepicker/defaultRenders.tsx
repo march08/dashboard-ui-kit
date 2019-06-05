@@ -1,4 +1,4 @@
-import { DatePickerView } from './useDatePickerView'
+import { DatepickerView } from './useDatepickerView'
 
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
 
@@ -13,10 +13,10 @@ export const getMonthTextByMonthNumber = (monthNumber: number) => {
 
 const weekdaysShort = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
-export const defaultRenderTitle = (visibleDate: Date, activeView: DatePickerView) => {
+export const defaultRenderTitle = (visibleDate: Date, activeView: DatepickerView) => {
   switch (activeView) {
-    case DatePickerView.month: return `${getMonthText(visibleDate)} ${visibleDate.getFullYear()}`
-    case DatePickerView.monthList: return visibleDate.getFullYear()
+    case DatepickerView.month: return `${getMonthText(visibleDate)} ${visibleDate.getFullYear()}`
+    case DatepickerView.monthList: return visibleDate.getFullYear()
     default: return 'Select Year'
   }
 }

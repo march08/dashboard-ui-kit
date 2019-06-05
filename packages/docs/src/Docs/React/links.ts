@@ -18,7 +18,7 @@ const form = [
 ]
 
 const date = [
-  'DatePicker',
+  'Datepicker',
   'SelectDate',
 ]
 const components = [

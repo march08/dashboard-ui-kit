@@ -1,8 +1,8 @@
 import React from 'react'
-import { DatePickerValue, DatePickerRangeValue } from '../Date'
+import { DatepickerValue, DatepickerRangeValue } from '../Datepicker'
 
 export const defaultRenderValue = <M extends boolean>(
-  value?: DatePickerValue<M>,
+  value?: DatepickerValue<M>,
   isRange?: M,
   placeholder?: React.ReactNode
 ) => {
@@ -11,7 +11,7 @@ export const defaultRenderValue = <M extends boolean>(
   }
 
   if (isRange) {
-    const dateRange = value as DatePickerRangeValue
+    const dateRange = value as DatepickerRangeValue
     if (!dateRange.to && !dateRange.from) {
       return placeholder
     }

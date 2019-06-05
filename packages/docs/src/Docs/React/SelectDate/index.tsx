@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import { H1, DatePickerRangeValue, DatePickerSimpleValue, SelectDate } from 'components'
+import { H1 } from 'components'
+import { DatepickerRangeValue, SelectDate } from '@duik/it'
 
 import { DocsContentPage, ExampleTable, ImportPath, PageContent, DocsTable } from '../../components'
 import PropTable from './PropTable'
@@ -10,7 +11,7 @@ export const ReactDocsButton = () => {
 
   const currentYear = new Date().getFullYear()
   const currentMonth = new Date().getMonth()
-  const [value2, setValue2] = React.useState<DatePickerRangeValue>({ from: new Date(currentYear, currentMonth, 8), to: new Date(currentYear, currentMonth, 19) })
+  const [value2, setValue2] = React.useState<DatepickerRangeValue>({ from: new Date(currentYear, currentMonth, 8), to: new Date(currentYear, currentMonth, 19) })
 
 
   return (
@@ -23,10 +24,10 @@ export const ReactDocsButton = () => {
       ]} />
       <H1>SelectDate</H1>
       <ImportPath name="SelectDate" />
-      <p>SelectDate is a select which wraps <Link to="/docs/react/date-picker">DatePicker</Link> component, in which documentation you can also find more information. SelectDate accepts same properties and some extra such as "label" in the list <Link to="props">below</Link></p>
+      <p>SelectDate is a select which wraps <Link to="/docs/react/datepicker">Datepicker</Link> component, in which documentation you can also find more information. SelectDate accepts same properties and some extra such as "label" in the list <Link to="props">below</Link></p>
 
       <h2>Basic SelectDate</h2>
-      <p>Same way as <code>DatePicker</code> is designed, you can use SelectDate as an component with uncontrolled value.</p>
+      <p>Same way as <code>Datepicker</code> is designed, you can use SelectDate as an component with uncontrolled value.</p>
       <ExampleTable fixed data={[
         {
           content: (
@@ -47,12 +48,12 @@ export const ReactDocsButton = () => {
       ]} />
 
       <h2 id="localization">Localization and Formatting</h2>
-      <p>You can format how to display the displayed value. For other formatters, check <Link to="/docs/react/date-picker#localization">DatePicker localization</Link>.</p>
+      <p>You can format how to display the displayed value. For other formatters, check <Link to="/docs/react/datepicker#localization">Datepicker localization</Link>.</p>
       <DocsTable>
         <tbody>
           <tr>
             <td>renderValue</td>
-            <td>(value?: <Link to="/docs/react/date-picker#DatePickerValue">DatePickerValue</Link>, isRange?: boolean, placeholder?: React.ReactNode) => React.ReactNode</td>
+            <td>(value?: <Link to="/docs/react/datepicker#DatepickerValue">DatepickerValue</Link>, isRange?: boolean, placeholder?: React.ReactNode) => React.ReactNode</td>
           </tr>
         </tbody>
       </DocsTable>

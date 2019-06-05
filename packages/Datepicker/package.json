@@ -1,7 +1,7 @@
 {
-  "name": "@duik/dropdown",
+  "name": "@duik/datepicker",
   "version": "0.1.0",
-  "description": "Dashboard UI Kit Dropdown",
+  "description": "Dashboard UI Kit Datepicker",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
   "homepage": "https://github.com/march08/duik",
@@ -13,8 +13,6 @@
   "private": false,
   "dependencies": {
     "@duik/core": "0.1.0",
-    "@duik/use-open-state": "0.1.0",
-    "@duik/button": "0.1.0",
-    "@duik/outer-events-handler": "0.1.0"
+    "@duik/create-simple-component": "0.1.0"
   }
 }
