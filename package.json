@@ -6,7 +6,7 @@
     "clean-modules": "rimraf node_modules/** node_modules packages/**/node_modules/",
     "deploy": "lerna run deploy",
     "build": "yarn clean && webpack --config packages/webpack.config.js --progress --colors",
-    "prepare": "yarn build"
+    "prepublish": "yarn build"
   },
   "devDependencies": {
     "autoprefixer": "^9.5.1",
