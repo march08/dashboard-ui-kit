@@ -101,3 +101,5 @@ export const SelectDate = <
     </>
   )
 }
+
+SelectDate.displayName = 'SelectDate'
