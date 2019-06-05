@@ -49,7 +49,7 @@ export const DocsReact = (props: RouteComponentProps) => {
               <Route key={item.to} path={`${match.path}${item.to}`} component={item.component as any} />
             )
           })}
-          <Redirect to={`${match.path}/button`} />
+          <Redirect to={`${match.path}/installation`} />
         </Switch>
       </PageScroll>
     </ContainerHorizontal>

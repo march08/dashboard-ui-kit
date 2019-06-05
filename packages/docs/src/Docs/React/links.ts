@@ -8,6 +8,7 @@ export type GeneratedLinkData = {
   to: string,
   component: RouteComponentProps, // eslint-disable-line
 }
+
 const form = [
   'Checkbox',
   'Toggle',
@@ -21,6 +22,7 @@ const date = [
   'Datepicker',
   'SelectDate',
 ]
+
 const components = [
   'Button',
   'ButtonGroup',
@@ -67,6 +69,7 @@ const guides = [
   'UseWithTypescript',
   'Overview',
   'Theming',
+  'Installation'
 ]
 const utilityComponents = [
   'OuterEventsHandler',
