@@ -11,10 +11,15 @@
     "access": "public"
   },
   "private": false,
+  "peerDependencies": {
+    "classnames": "^2.2.6",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
   "dependencies": {
     "@duik/core": "^0.1.2",
     "@types/react": "^16.8.16",
     "@types/react-dom": "^16.8.4"
   },
-  "gitHead": "efe4e90b5b41da75ba32d08b41f180519daca614"
+  "gitHead": "7eed8237276864892b18bf2999daaf73ffc04739"
 }

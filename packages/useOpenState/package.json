@@ -11,5 +11,10 @@
     "access": "public"
   },
   "private": false,
-  "gitHead": "efe4e90b5b41da75ba32d08b41f180519daca614"
+  "peerDependencies": {
+    "classnames": "^2.2.6",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "gitHead": "7eed8237276864892b18bf2999daaf73ffc04739"
 }
