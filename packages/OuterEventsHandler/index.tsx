@@ -109,13 +109,13 @@ export class OuterEventsHandler extends React.PureComponent<OuterEventsHandlerPr
 
     if (typeof document !== 'undefined') {
       if (triggerOnOuterFucus) {
-        document.addEventListener('focus', this.handleFocus, true);
+        document.body.addEventListener('focus', this.handleFocus, true);
+      }
+      if (triggerOnOuterClick) {
+        document.body.addEventListener('click', this.handleOutsideClick, true);
       }
       if (triggerOnEsc) {
         document.addEventListener('keydown', this.handleEscKeydown, true);
-      }
-      if (triggerOnOuterClick) {
-        document.addEventListener('click', this.handleOutsideClick, true);
       }
       if (triggerOnOuterScroll) {
         window.addEventListener('scroll', this.handleOuterActions, true);
@@ -128,9 +128,9 @@ export class OuterEventsHandler extends React.PureComponent<OuterEventsHandlerPr
 
   removeListeners = (): void => {
     if (typeof document !== 'undefined') {
-      document.removeEventListener('focus', this.handleFocus, true);
+      document.body.removeEventListener('focus', this.handleFocus, true);
+      document.body.removeEventListener('click', this.handleOutsideClick, true);
       document.removeEventListener('keydown', this.handleEscKeydown, true);
-      document.removeEventListener('click', this.handleOutsideClick, true);
       window.removeEventListener('scroll', this.handleOuterActions, true);
       window.removeEventListener('resize', this.handleOuterActions, true);
     }
