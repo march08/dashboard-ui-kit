@@ -64,14 +64,18 @@ module.exports = {
     filename: '[name]/dist/index.js',
     path: path.resolve(__dirname)
   },
-  mode: process.env.NODE_ENV,
+  mode: "production",
   node: {
     fs: 'empty',
   },
-  externals: [nodeExternals()],
+  externals: [nodeExternals({
+    modulesFromFile: true
+  }), /^(@duik|\$)$/i],
   optimization: {
     // We no not want to minimize npm code.
     minimize: false,
+    usedExports: true,
+    sideEffects: true,
   },
   module: {
     rules: [
@@ -105,15 +109,8 @@ module.exports = {
 
                 // To get relative path you can use
                 // const relativePath = path.relative(context, resourcePath);
-
-                console.log('url', url)
-                console.log('resourcePath', resourcePath)
-                console.log('context', context)
                 const relativePath = path.relative(path.resolve(context, 'packages'), resourcePath);
                 const [packageName] = relativePath.split('/')
-                console.log('relativePath', relativePath)
-
-                
 
                 return `./${packageName}/dist/${url}`;
               }
