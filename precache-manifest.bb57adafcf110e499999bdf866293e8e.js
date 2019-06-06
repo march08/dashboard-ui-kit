@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "03ae241c8f44c14b06395c6126b9fc25",
+    "revision": "c8e329fb828969fbddf44fd11c06c06d",
     "url": "/duik/index.html"
   },
   {
-    "revision": "b64f7139826fa6422998",
+    "revision": "1af2acfbe2c9ed6e338a",
     "url": "/duik/static/css/main.7eca39bd.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/duik/static/js/2.b6d2a2a4.chunk.js"
   },
   {
-    "revision": "b64f7139826fa6422998",
-    "url": "/duik/static/js/main.d1001353.chunk.js"
+    "revision": "1af2acfbe2c9ed6e338a",
+    "url": "/duik/static/js/main.e63bbef7.chunk.js"
   },
   {
     "revision": "a8bf8a87640341adaa15",

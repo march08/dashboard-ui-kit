@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/duik/static/css/main.7eca39bd.chunk.css",
-    "main.js": "/duik/static/js/main.d1001353.chunk.js",
-    "main.js.map": "/duik/static/js/main.d1001353.chunk.js.map",
+    "main.js": "/duik/static/js/main.e63bbef7.chunk.js",
+    "main.js.map": "/duik/static/js/main.e63bbef7.chunk.js.map",
     "runtime~main.js": "/duik/static/js/runtime~main.3e650ccd.js",
     "runtime~main.js.map": "/duik/static/js/runtime~main.3e650ccd.js.map",
     "static/js/2.b6d2a2a4.chunk.js": "/duik/static/js/2.b6d2a2a4.chunk.js",
     "static/js/2.b6d2a2a4.chunk.js.map": "/duik/static/js/2.b6d2a2a4.chunk.js.map",
     "index.html": "/duik/index.html",
-    "precache-manifest.e0a5cc512554782f45255c23d1dc28be.js": "/duik/precache-manifest.e0a5cc512554782f45255c23d1dc28be.js",
+    "precache-manifest.bb57adafcf110e499999bdf866293e8e.js": "/duik/precache-manifest.bb57adafcf110e499999bdf866293e8e.js",
     "service-worker.js": "/duik/service-worker.js",
     "static/css/main.7eca39bd.chunk.css.map": "/duik/static/css/main.7eca39bd.chunk.css.map",
     "static/media/styles.css": "/duik/static/media/934c3c35cec81863f3598db8e7c0c0bc.934c3c35.svg",
