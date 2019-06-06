@@ -9,6 +9,7 @@ const fs = require('fs')
 
 const packages = fs.readdirSync(__dirname).filter(item => ![
 '_vars.scss',
+'_types',
 'dist',
 'docs',
 'module.d.ts',
@@ -88,7 +89,7 @@ module.exports = {
             declaration: true,
             isolatedModules: false,
             allowJs: false,
-            outDir: './dist',
+            outDir: './_types',
             noEmit: false,
             jsx: 'react'
           },

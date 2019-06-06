@@ -1,5 +1,4 @@
 import classnames from 'classnames'
-// @flow
 import * as React from 'react'
 
 import cls from './styles.scss'
