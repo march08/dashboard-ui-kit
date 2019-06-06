@@ -1,6 +1,6 @@
 {
   "name": "@duik/nav-link",
-  "version": "0.1.2",
+  "version": "0.1.3-alpha.0",
   "description": "Dashboard UI Kit Nav Link",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
@@ -17,7 +17,7 @@
     "react-dom": "^16.8.0"
   },
   "dependencies": {
-    "@duik/core": "^0.1.2"
+    "@duik/core": "^0.1.3-alpha.0"
   },
   "gitHead": "efe4e90b5b41da75ba32d08b41f180519daca614"
 }
