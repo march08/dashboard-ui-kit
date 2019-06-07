@@ -64,10 +64,6 @@ export const Button = <T extends AnyTag = 'button'>(props: ButtonProps<T>) => {
     ...rest
   } = props;
 
-  const dotsRef = React.createRef<HTMLSpanElement>()
-
-  console.log(dotsRef, dotsRef && dotsRef.current)
-
   const loadingState = isLoading || loading
 
   const classes = classnames(
@@ -108,7 +104,7 @@ export const Button = <T extends AnyTag = 'button'>(props: ButtonProps<T>) => {
       role="button"
     >
       {children}
-      {loadingState && <LoaderDots ref={dotsRef} className={cls['btn-loader']} /> || null}
+      {loadingState && <LoaderDots className={cls['btn-loader']} /> || null}
     </Component>
   )
 }
