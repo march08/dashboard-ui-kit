@@ -28,7 +28,7 @@ export type SelectProps<V extends number | string> =
   }
 
 
-export function Select<V extends number | string>(props: SelectProps<V>) {
+export const Select = <V extends number | string>(props: SelectProps<V>) => {
   const {
     options,
     activeOption,

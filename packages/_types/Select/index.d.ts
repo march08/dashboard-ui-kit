@@ -14,4 +14,4 @@ export declare type SelectProps<V extends number | string> = React.ComponentProp
     label?: React.ReactNode;
     block?: boolean;
 };
-export declare function Select<V extends number | string>(props: SelectProps<V>): JSX.Element;
+export declare const Select: <V extends React.ReactText>(props: SelectProps<V>) => JSX.Element;

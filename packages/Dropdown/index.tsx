@@ -48,10 +48,10 @@ type Children =
  * hooks instead? We need new react
  */
 
-export function Dropdown<
+export const Dropdown = <
   BC extends AnyTag = DropdownButton,
   MC extends AnyTag = 'div'
->(props: DropdownProps<BC, MC>) {
+>(props: DropdownProps<BC, MC>) => {
 
 
   const {

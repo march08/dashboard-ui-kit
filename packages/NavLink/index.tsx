@@ -28,20 +28,20 @@ const getClass = (pill?: boolean, secondary?: boolean) => {
 
 export type NavLinkProps<T extends AnyTag> = PropsWithTagProps<T, NavLinkBaseProps & { Component?: T }>
 
-export function NavLink<T extends AnyTag>({
-  rightEl,
-  children,
-  className,
-  highlighted,
-  leftEl,
-  icon,
-  Component,
-  pill,
-  secondary,
-  ...rest
-}: NavLinkProps<T>) {
+export const NavLink = <T extends AnyTag>(props: NavLinkProps<T>) => {
 
-
+  const {
+    rightEl,
+    children,
+    className,
+    highlighted,
+    leftEl,
+    icon,
+    Component,
+    pill,
+    secondary,
+    ...rest
+  } = props
 
   return (
     <Component

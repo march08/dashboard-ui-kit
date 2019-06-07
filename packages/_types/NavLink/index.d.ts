@@ -14,10 +14,12 @@ declare type NavLinkBaseProps = {
 export declare type NavLinkProps<T extends AnyTag> = PropsWithTagProps<T, NavLinkBaseProps & {
     Component?: T;
 }>;
-declare function NavLink<T extends AnyTag>({ rightEl, children, className, highlighted, leftEl, icon, Component, pill, secondary, ...rest }: NavLinkProps<T>): JSX.Element;
-declare namespace NavLink {
-    var displayName: string;
-    var defaultProps: {
+export declare const NavLink: {
+    <T extends AnyTag>(props: PropsWithTagProps<T, NavLinkBaseProps & {
+        Component?: T | undefined;
+    }>): JSX.Element;
+    displayName: string;
+    defaultProps: {
         className: null;
         rightEl: null;
         highlighted: boolean;
@@ -25,6 +27,5 @@ declare namespace NavLink {
         children: null;
         Component: string;
     };
-}
-export default NavLink;
+};
 export default NavLink;

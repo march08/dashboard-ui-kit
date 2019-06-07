@@ -47,7 +47,7 @@ const getInitVisibleDate = <M extends boolean>(initDate?: Date, isRange?: M, val
   return new Date()
 }
 
-export function Datepicker<M extends boolean = false>(props: DatepickerProps<M>) {
+export const Datepicker = <M extends boolean = false>(props: DatepickerProps<M>) => {
 
   const view = useDatepickerView()
   const [mouseOverDate, setMouseOverDate] = React.useState()

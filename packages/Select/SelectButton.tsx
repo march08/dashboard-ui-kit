@@ -10,7 +10,7 @@ export type SelectButtonProps<V extends number | string> =
     placeholder?: React.ReactNode,
   }
 
-export function SelectButton<V extends number | string>(props: SelectButtonProps<V>) {
+export const SelectButton = <V extends number | string>(props: SelectButtonProps<V>) => {
   const { children, placeholder, activeOption, options, ...rest } = props
   return (
     <DropdownButton {...rest}>

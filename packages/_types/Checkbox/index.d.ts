@@ -1,8 +1,7 @@
-import * as React from 'react';
 export declare const Checkbox: {
-    ({ label, className, description, toggle, name, type, ...rest }: React.ClassAttributes<HTMLInputElement> & React.InputHTMLAttributes<HTMLInputElement> & {
-        label?: React.ReactNode;
-        description?: React.ReactNode;
+    ({ label, className, description, toggle, name, type, ...rest }: import("react").ClassAttributes<HTMLInputElement> & import("react").InputHTMLAttributes<HTMLInputElement> & {
+        label?: import("react").ReactNode;
+        description?: import("react").ReactNode;
     } & {
         toggle?: boolean | undefined;
     }): JSX.Element;

@@ -6,7 +6,6 @@ import * as React from 'react';
 import { OuterEventsHandlerProps } from '@duik/outer-events-handler';
 import { OpenStateControls } from '@duik/use-open-state';
 import { AnyTag } from '@duik/core';
-import DropdownButton from './DropdownButton';
 export * from './DropdownButton';
 export * from './DropdownItem';
 export * from './DropdownMenu';
@@ -35,9 +34,8 @@ declare type Children = {
 /**
  * hooks instead? We need new react
  */
-declare function Dropdown<BC extends AnyTag = DropdownButton, MC extends AnyTag = 'div'>(props: DropdownProps<BC, MC>): JSX.Element;
-declare namespace Dropdown {
-    var displayName: string;
-}
-export default Dropdown;
+export declare const Dropdown: {
+    <BC extends AnyTag = any, MC extends AnyTag = "div">(props: DropdownProps<BC, MC>): JSX.Element;
+    displayName: string;
+};
 export default Dropdown;

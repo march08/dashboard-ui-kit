@@ -24,9 +24,9 @@ export type ComponentProps = React.PropsWithChildren<{
 
 
 
-export function createSimpleComponent<T extends AnyTag>(
+export const createSimpleComponent = <T extends AnyTag>(
   options: { Component?: T } & PropsWithTagProps<T, CreateSimpleComponentProps>
-) {
+) => {
 
   const {
     displayName,

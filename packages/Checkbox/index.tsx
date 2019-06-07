@@ -1,7 +1,4 @@
-import * as React from 'react'
 import { BaseInput } from '@duik/base-input'
-
-
 
 export const Checkbox = BaseInput
 

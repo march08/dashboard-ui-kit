@@ -13,8 +13,7 @@ export declare type DatepickerProps<M extends boolean = false> = {
     initialVisibleDate?: Date;
     weekdayOffset?: number;
 };
-declare function Datepicker<M extends boolean = false>(props: DatepickerProps<M>): JSX.Element;
-declare namespace Datepicker {
-    var displayName: string;
-}
-export default Datepicker;
+export declare const Datepicker: {
+    <M extends boolean = false>(props: DatepickerProps<M>): JSX.Element;
+    displayName: string;
+};
