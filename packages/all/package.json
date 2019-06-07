@@ -1,0 +1,40 @@
+{
+  "name": "@duik/all",
+  "version": "0.1.6",
+  "description": "Dashboard UI Kit",
+  "main": "dist/index.js",
+  "repository": "https://github.com/march08/duik",
+  "homepage": "https://github.com/march08/duik",
+  "author": "Roman Nguyen <march08@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config ./webpack.config.js --progress --colors"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
+  "peerDependencies": {
+    "classnames": "^2.2.6",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "dependencies": {
+    "@duik/core": "0.1.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.6.0",
+    "copy-webpack-plugin": "^5.0.3",
+    "css-loader": "^2.1.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "gitHead": "7eed8237276864892b18bf2999daaf73ffc04739"
+}
