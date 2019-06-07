@@ -13,7 +13,7 @@ export const ReactDocsInstall = () => {
         { id: 'selected-install', label: 'Install only selected components' },
       ]} /> */}
       <H1>Dashboard UI kit installation</H1>
-      <p>Install kit as npm package. Minimum React version is <code>16.8.x</code> since the package is using react <Link to="https://reactjs.org/docs/hooks-reference.html" target="_blank">hooks.</Link></p>
+      <p>Install kit as npm package. Minimum React version is <code>16.8.x</code> since the package is using react <a href="https://reactjs.org/docs/hooks-reference.html" rel="noopener noreferrer" target="_blank">hooks.</a></p>
 
       <h3>Install packages</h3>
       <Code language={CodeLang.markup}>
@@ -32,7 +32,7 @@ import '@duik/{your-other-component}/dist/styles.css'
 `}
       </Code>
       <h3>Fonts</h3>
-      <p>Include fonts. The base font family of the Dashboard UI kit is <Link to="https://fonts.google.com/?selection.family=Roboto|Roboto+Mono:300,400,500&query=roboto+mon" target="_blank">Roboto and Roboto Mono</Link>. Feel free to modify the import (e.g. including support for extended characters).</p>
+      <p>Include fonts. The base font family of the Dashboard UI kit is <a href="https://fonts.google.com/?selection.family=Roboto|Roboto+Mono:300,400,500&query=roboto+mon" rel="noopener noreferrer" target="_blank">Roboto and Roboto Mono</a>. Feel free to modify the import (e.g. including support for extended characters).</p>
       <Code>
         {`<link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,500&display=swap" rel="stylesheet">`}
       </Code>
