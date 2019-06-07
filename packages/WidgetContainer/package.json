@@ -1,6 +1,6 @@
 {
   "name": "@duik/widget-container",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Dashboard UI Kit Widget container",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@duik/core": "^0.1.4",
-    "@duik/create-simple-component": "^0.1.4"
+    "@duik/create-simple-component": "^0.1.5"
   },
   "gitHead": "7eed8237276864892b18bf2999daaf73ffc04739"
 }

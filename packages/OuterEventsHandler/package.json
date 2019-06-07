@@ -1,6 +1,6 @@
 {
   "name": "@duik/outer-events-handler",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Dashboard UI Kit Outer Events Handler",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
