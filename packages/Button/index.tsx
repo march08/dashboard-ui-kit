@@ -34,11 +34,10 @@ export type ButtonPropsBase = {
   block?: boolean,
   square?: boolean,
 }
-
 export type ButtonProps<T extends AnyTag> = PropsWithTagProps<T, ButtonPropsBase & { Component?: T }>
+export type ButtonRefObject = React.RefObject<HTMLButtonElement>
 
-
-export const Button = <T extends AnyTag = 'button'>(props: ButtonProps<T>) => {
+export const ButtonWithoutForwardRef = <T extends AnyTag = 'button'>(props: ButtonProps<T>, ref: ButtonRefObject) => {
   const {
     primary,
     error,
@@ -102,12 +101,15 @@ export const Button = <T extends AnyTag = 'button'>(props: ButtonProps<T>) => {
       {...rest}
       type={Component === 'button' ? type : undefined}
       role="button"
+      ref={ref}
     >
       {children}
       {loadingState && <LoaderDots className={cls['btn-loader']} /> || null}
     </Component>
   )
 }
+
+export const Button = React.forwardRef(ButtonWithoutForwardRef)
 
 Button.displayName = "Button"
 

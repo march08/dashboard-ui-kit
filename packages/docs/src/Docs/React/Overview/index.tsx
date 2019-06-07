@@ -1,13 +1,29 @@
 import * as React from 'react'
 import { H1 } from 'components'
+import { LoaderDots, Button } from '@duik/it'
 import { DocsContentPage, PageContent } from '../../components'
 
 
+const Dots = React.forwardRef<HTMLSpanElement>((props, ref) => {
+  console.log(ref)
+  return (
+    <span ref={ref}>hello</span>
+  )
+})
+
 export const ReactDocsOuterEventsHandler = () => {
+
+  const buttonRef = React.createRef<HTMLButtonElement>()
+
+  console.log(buttonRef.current)
+
+
 
   return (
     <DocsContentPage >
-
+      <Button ref={buttonRef} onClick={() => {
+        console.log(buttonRef.current)
+      }}>Click</Button>
       <PageContent data={[
         { id: 'example', label: 'Basic Example' },
         { id: 'vertical-split', label: 'Vertical Splitting' },

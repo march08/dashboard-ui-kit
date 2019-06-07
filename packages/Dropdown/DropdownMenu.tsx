@@ -38,6 +38,17 @@ export class DropdownMenu extends React.PureComponent<DropdownMenuProps, {
     }
   }
 
+  componentDidMount() {
+    if (window) {
+      window.addEventListener('scroll', this.resetRepositionState, true)
+    }
+  }
+  componentWillUnmount() {
+    if (window) {
+      window.removeEventListener('scroll', this.resetRepositionState, true)
+    }
+  }
+
   componentDidUpdate() {
     if (!this.props.isOpen || this.state.repositioned) {
       return
@@ -81,6 +92,14 @@ export class DropdownMenu extends React.PureComponent<DropdownMenuProps, {
         repositioned: true
       })
     }
+  }
+
+  resetRepositionState = () => {
+    const { menuPosition } = this.props
+    this.setState({
+      menuPosition: menuPosition || DropdownMenuPosition["bottom-left"],
+      repositioned: false
+    })
   }
 
   render() {

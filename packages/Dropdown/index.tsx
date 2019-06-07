@@ -1,8 +1,3 @@
-/**
- * This is just a raw example code with outside click handler
- * This should have better styling, menu positioning etc.
- */
-
 import * as React from 'react';
 import classnames from 'classnames';
 
@@ -11,7 +6,7 @@ import { useOpenState, OpenStateControls } from '@duik/use-open-state'
 import { AnyTag } from '@duik/core'
 
 import DropdownMenu from './DropdownMenu';
-import DropdownButton, { DropdownButtonProps } from './DropdownButton';
+import DropdownButton from './DropdownButton';
 
 export * from './DropdownButton'
 export * from './DropdownItem'
@@ -32,9 +27,9 @@ export enum DropdownMenuPosition {
 
 export type DropdownProps<BC extends AnyTag, MC extends AnyTag> = OuterEventsHandlerProps & {
   ButtonComponent?: BC;
-  buttonProps?: React.ComponentProps<BC>;
+  buttonProps?: Omit<React.ComponentProps<BC>, keyof OpenStateControls>
   MenuComponent?: MC;
-  menuProps?: React.ComponentProps<MC>;
+  menuProps?: Omit<React.ComponentProps<MC>, keyof OpenStateControls>
   menuPosition?: DropdownMenuPosition,
   buttonText?: React.ReactNode,
   openControls?: OpenStateControls
@@ -44,13 +39,9 @@ type Children =
   | { children?: (props: OpenStateControls) => React.ReactNode }
   | { children?: React.ReactNode };
 
-/**
- * hooks instead? We need new react
- */
-
 export const Dropdown = <
-  BC extends AnyTag = DropdownButton,
-  MC extends AnyTag = 'div'
+  BC extends AnyTag = typeof DropdownButton,
+  MC extends AnyTag = typeof DropdownMenu
 >(props: DropdownProps<BC, MC>) => {
 
 
@@ -71,7 +62,6 @@ export const Dropdown = <
   const openControls = externalOpenControls || useOpenState(false);
 
   return (
-
     <OuterEventsHandler
       className={classnames(cls['dropdown'], 'btn-group', className)}
       onOuterEvent={openControls.isOpen ? openControls.handleToggle : null}

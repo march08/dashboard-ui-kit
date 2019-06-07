@@ -47,6 +47,8 @@ export * from '@duik/top-bar-menu-divider'
 export * from '@duik/top-bar-section'
 export * from '@duik/top-bar-title'
 
+export * from '@duik/loader-dots'
+
 // typo
 export * from '@duik/content-title'
 

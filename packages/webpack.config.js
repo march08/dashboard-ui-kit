@@ -121,6 +121,14 @@ module.exports = {
           },
         ],
       },
+      // {
+      //   test: /^((?!module).)*(scss|css)$/,
+      //   use: [cssLoader(false), postCssLoader, sassLoader],
+      // },
+      // {
+      //   test: /module.(scss|css)$/,
+      //   use: [cssLoader(true), postCssLoader, sassLoader],
+      // },
       {
         test: /^((?!module).)*(scss|css)$/,
         use: ExtractTextPlugin.extract({

@@ -5,7 +5,7 @@
 
 import * as React from 'react'
 import classnames from 'classnames'
-import { Button, ButtonPropsBase } from '@duik/Button'
+import { Button, ButtonPropsBase, ButtonRefObject } from '@duik/Button'
 
 import { OpenStateControls } from '@duik/use-open-state'
 import cls from './styles.scss'
@@ -16,7 +16,7 @@ export type DropdownButtonProps<P extends {} = {}> =
   & JSX.IntrinsicElements['button']
   & P
 
-export const DropdownButton = (props: DropdownButtonProps) => {
+export const DropdownButton = React.forwardRef((props: DropdownButtonProps, ref: ButtonRefObject) => {
   const {
     // remove this from ...rest
     handleClose,
@@ -37,11 +37,12 @@ export const DropdownButton = (props: DropdownButtonProps) => {
       aria-haspopup="true"
       aria-expanded={isOpen ? 'true' : 'false'}
       {...rest}
+      ref={ref}
     >
       {children}
     </Button>
   )
-}
+})
 
 
 DropdownButton.defaultProps = {
