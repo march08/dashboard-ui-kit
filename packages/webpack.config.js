@@ -9,7 +9,7 @@ const fs = require('fs')
 
 const packages = fs.readdirSync(__dirname).filter(item => ![
 '_vars.scss',
-'_types',
+'__generated_types',
 'dist',
 'docs',
 'module.d.ts',
@@ -17,7 +17,9 @@ const packages = fs.readdirSync(__dirname).filter(item => ![
 'tsconfig.json',
 'webpack.config.js',
 '.DS_Store',
-'README.md'
+'README.md',
+'copyTypes.script.js',
+'all'
 ].includes(item))
 
 const sassLoader = {
@@ -89,7 +91,7 @@ module.exports = {
             declaration: true,
             isolatedModules: false,
             allowJs: false,
-            outDir: './_types',
+            outDir: './__generated_types',
             noEmit: false,
             jsx: 'react'
           },
@@ -133,44 +135,9 @@ module.exports = {
           use: [cssLoader(true), postCssLoader, sassLoader],
         }),
       },
-      // {
-      //   test: /^((?!module).)*(scss|css)$/,
-      //   use: [
-      //     {
-      //       loader: MiniCssExtractPlugin.loader,
-      //       options: {
-      //         hmr: process.env.NODE_ENV === 'development',
-      //       },
-      //     },
-      //     cssLoader(false),
-      //     postCssLoader,
-      //     sassLoader
-      //   ],
-      // },
-      // {
-      //   test: /module.(scss|css)$/,
-      //   use: [
-      //     {
-      //       loader: MiniCssExtractPlugin.loader,
-      //       options: {
-      //         hmr: process.env.NODE_ENV === 'development',
-      //       },
-      //     },
-      //     cssLoader(true),
-      //     postCssLoader,
-      //     sassLoader
-      //   ],
-      // },
     ]
   },
   plugins: [
-    // new MiniCssExtractPlugin({
-    //   // Options similar to the same options in webpackOptions.output
-    //   // both options are optional
-    //   filename: './[name]/dist/styles.css',
-    //   chunkFilename: '[id].css',
-    // }),
-
     new ExtractTextPlugin('./[name]/dist/styles.css'),
     // new OptimizeCssAssetsPlugin({
     //   assetNameRegExp: /\.css$/g,
@@ -178,20 +145,5 @@ module.exports = {
     //   cssProcessorOptions: { discardComments: { removeAll: true } },
     //   canPrint: true,
     // }),
-    new CopyPlugin([
-      {
-        from: './**/*.d.ts',
-        to: './dist/index.d.ts',
-        ignore: ['**/node_modules/**', '**/docs/**'],
-        transformPath(targetPath, absolutePath) {
-          // copy d.ts from package-name/ to package-name/dist/
-          console.log('------', targetPath, absolutePath)
-          const z = absolutePath.split('/')
-          const lastTwo = z.splice(z.length - 2, 2)
-          lastTwo.splice(1, 0, 'dist')
-          return lastTwo.join('/');
-        }
-      },
-    ]),
   ],
 };
