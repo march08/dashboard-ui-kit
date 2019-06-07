@@ -13,3 +13,4 @@ yarn-error.log*
 lerna-debug.log*
 
 dist
+__generated_types
