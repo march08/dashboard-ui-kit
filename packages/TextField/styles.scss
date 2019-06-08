@@ -31,6 +31,7 @@
 
 .input-group-prepend,
 .input-group-append {
+  display: flex;
   font-size: 1rem;
   align-items: center;
   color: $text-tertiary;

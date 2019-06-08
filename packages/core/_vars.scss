@@ -1,22 +1,19 @@
 // bootstrap colors
-$blue: #1665D8 !default;
+$blue: #1665d8 !default;
 $indigo: #6610f2 !default;
 $purple: #6f42c1 !default;
 $pink: #e83e8c !default;
-$red: #E6492D !default;
-$orange: #F6AB2F !default;
-$yellow: #FACF55 !default;
-$green: #38B249 !default;
+$red: #e6492d !default;
+$orange: #f6ab2f !default;
+$yellow: #facf55 !default;
+$green: #38b249 !default;
 $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
-
-
 
 @mixin textOverflow {
   overflow: hidden;
   white-space: nowrap;
 }
-
 
 /** Radius Mixins **/
 @mixin border-right-radius($radius) {
@@ -50,15 +47,11 @@ $cyan: #17a2b8 !default;
 }
 
 @function hexToRgb($hex) {
-  @return red($hex),
-  green($hex),
-  blue($hex);
+  @return red($hex), green($hex), blue($hex);
 }
 
 $space: 30px;
 $space-half: 15px;
-
-
 
 @mixin textOverflow {
   overflow: hidden;
@@ -75,17 +68,15 @@ $space-half: 15px;
 $boxShadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
 
 // UIKIT
-$fontFamily: 'Roboto',
-sans-serif;
-
+$fontFamily: "Roboto", sans-serif;
 
 // colors
-$green: #38B249;
-$blue: #1665D8;
-$orange: #F6AB2F;
-$indigo: #6977FF;
-$red: #E6492D;
-$yellow: #FACF55;
+$green: #38b249;
+$blue: #1665d8;
+$orange: #f6ab2f;
+$indigo: #6977ff;
+$red: #e6492d;
+$yellow: #facf55;
 
 // rbg for rgba func
 $green-rgb: hexToRgb($green);
@@ -111,7 +102,7 @@ $yellow-rgb: hexToRgb($yellow);
   --danger-rgb: #{$red-rgb};
   --info-rgb: #{$indigo-rgb};
 
-  // colors 
+  // colors
   --green: #{$green};
   --blue: #{$blue};
   --orange: #{$orange};
@@ -127,26 +118,26 @@ $yellow-rgb: hexToRgb($yellow);
   --yellow-rgb: #{$yellow-rgb};
 
   // text colors
-  --text-main: #3E3F42;
+  --text-main: #3e3f42;
   --text-on-color: white;
   --text-adverse-main: white;
-  --text-base: #6B6C6F;
-  --text-adverse-base: #FBFBFD;
-  --text-secondary: #9EA0A5;
-  --text-tertiary: #CECFD2;
+  --text-base: #6b6c6f;
+  --text-adverse-base: #fbfbfd;
+  --text-secondary: #9ea0a5;
+  --text-tertiary: #cecfd2;
 
   // borders
-  --border-color-base: #EAEDF3;
-  --border-color-main: #D8DCE6;
-  --border-color-adverse: #2E2E33;
-  --border-color-secondary: #2D9C3C;
+  --border-color-base: #eaedf3;
+  --border-color-main: #d8dce6;
+  --border-color-adverse: #2e2e33;
+  --border-color-secondary: #2d9c3c;
 
   // backgrounds
-  --bg-base: #FBFBFD;
-  --bg-main: #FFFFFF;
+  --bg-base: #fbfbfd;
+  --bg-main: #ffffff;
   --bg-adverse-primary: #252529;
 
-  --gradient-secondary: linear-gradient(0deg, #34AA44 0%, #38B249 100%);
+  --gradient-secondary: linear-gradient(0deg, #34aa44 0%, #38b249 100%);
 }
 
 // USE THESE
@@ -199,52 +190,49 @@ $color-indigo-rgb: var(--indigo-rgb);
 $color-red-rgb: var(--red-rgb);
 $color-yellow-rgb: var(--yellow-rgb);
 
-
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
-$colors: map-merge(("blue": $color-blue,
-"indigo": $color-indigo,
-"red": $color-red,
-"orange": $color-orange,
-"yellow": $color-yellow,
-"green": $color-green), $colors);
+$colors: map-merge(
+  (
+    "blue": $color-blue,
+    "indigo": $color-indigo,
+    "red": $color-red,
+    "orange": $color-orange,
+    "yellow": $color-yellow,
+    "green": $color-green
+  ),
+  $colors
+);
 
 @mixin generateColorProperty($classPrefix, $property) {
-
-  @each $color,
-  $value in $colors {
-
+  @each $color, $value in $colors {
     #{$classPrefix}-#{$color} {
       #{$property}: #{$value};
     }
-
   }
 }
-
 
 $domainColors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
-$domainColors: map-merge(("primary": $color-primary,
-"success": $color-success,
-"danger": $color-danger,
-"warning": $color-warning), $colors);
+$domainColors: map-merge(
+  (
+    "primary": $color-primary,
+    "success": $color-success,
+    "danger": $color-danger,
+    "warning": $color-warning
+  ),
+  $colors
+);
 
 @mixin generateColorDomainProperty($classPrefix, $property) {
-
-  @each $color,
-  $value in $domainColors {
-
+  @each $color, $value in $domainColors {
     #{$classPrefix}-#{$color} {
       #{$property}: #{$value};
     }
-
   }
 }
 
-
-
 $gradient-secondary: var(--gradient-secondary);
-
 
 /** Button **/
 
@@ -271,6 +259,9 @@ $btn-font-size-lg: 16px;
     width: $btn-height-base;
     @include padding-x(0);
     justify-content: center;
+    i {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -304,13 +295,13 @@ $btn-font-size-lg: 16px;
 
 @mixin content-title {
   font-weight: 500;
-  font-size: .75rem;
+  font-size: 0.75rem;
   color: $text-secondary;
   line-height: 1.125rem;
   text-transform: uppercase;
   margin: 0;
 
-  &+* {
-    margin-top: .5rem;
+  & + * {
+    margin-top: 0.5rem;
   }
 }
