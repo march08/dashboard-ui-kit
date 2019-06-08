@@ -1,6 +1,6 @@
 {
   "name": "@duik/nav-panel",
-  "version": "0.1.7-alpha.1",
+  "version": "0.1.7-alpha.2",
   "description": "Dashboard UI Kit Nav Panel",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",

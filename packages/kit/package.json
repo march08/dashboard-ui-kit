@@ -1,6 +1,6 @@
 {
   "name": "@duik/it",
-  "version": "0.1.7-alpha.1",
+  "version": "0.1.7-alpha.2",
   "description": "Dashboard UI Kit",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
@@ -33,8 +33,8 @@
     "@duik/form-group": "^0.1.7-alpha.0",
     "@duik/form-group-container": "^0.1.7-alpha.0",
     "@duik/loader-dots": "^0.1.5",
-    "@duik/nav-link": "^0.1.7-alpha.1",
-    "@duik/nav-panel": "^0.1.7-alpha.1",
+    "@duik/nav-link": "^0.1.7-alpha.2",
+    "@duik/nav-panel": "^0.1.7-alpha.2",
     "@duik/nav-section": "^0.1.5",
     "@duik/nav-section-title": "^0.1.5",
     "@duik/nav-title": "^0.1.5",
