@@ -89,9 +89,7 @@
 
   &:not(.active) {
 
-    &:hover,
-    &:focus {
-
+    &:hover {
       color: $text-main;
       background: rgba(128, 128, 128, 0.07);
       border: none;
