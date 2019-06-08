@@ -128,6 +128,7 @@ $yellow-rgb: hexToRgb($yellow);
 
   // text colors
   --text-main: #3E3F42;
+  --text-on-color: white;
   --text-adverse-main: white;
   --text-base: #6B6C6F;
   --text-adverse-base: #FBFBFD;
@@ -155,6 +156,7 @@ $text-base: var(--text-base);
 $text-adverse-base: var(--text-adverse-base);
 $text-secondary: var(--text-secondary);
 $text-tertiary: var(--text-tertiary);
+$text-on-color: var(--text-base);
 
 $border-color-base: var(--border-color-base);
 $border-color-main: var(--border-color-main);

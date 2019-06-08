@@ -71,19 +71,19 @@
 
   &.active {
     background: $color-primary;
-    color: $text-adverse-main;
+    color: $text-on-color;
 
     &:hover {
       background: $color-primary;
-      color: $text-adverse-main;
+      color: $text-on-color;
     }
 
     .nav-link-text {
-      color: $text-adverse-main;
+      color: $text-on-color;
     }
 
     &>* {
-      color: $text-adverse-main;
+      color: $text-on-color;
     }
   }
 
