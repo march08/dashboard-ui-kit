@@ -1,6 +1,6 @@
 {
   "name": "@duik/divider",
-  "version": "0.1.7-alpha.1",
+  "version": "0.1.7-alpha.3",
   "description": "Dashboard UI Kit Divider",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
@@ -12,7 +12,7 @@
   },
   "private": false,
   "dependencies": {
-    "@duik/core": "0.1.4"
+    "@duik/core": "^0.1.7-alpha.3"
   },
   "peerDependencies": {
     "classnames": "^2.2.6",

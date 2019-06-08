@@ -1,6 +1,6 @@
 {
   "name": "@duik/checkbox",
-  "version": "0.1.5",
+  "version": "0.1.7-alpha.3",
   "description": "Dashboard UI Kit Checkbox",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
@@ -17,7 +17,7 @@
     "react-dom": "^16.8.0"
   },
   "dependencies": {
-    "@duik/base-input": "^0.1.4"
+    "@duik/base-input": "^0.1.7-alpha.3"
   },
   "gitHead": "efe4e90b5b41da75ba32d08b41f180519daca614"
 }

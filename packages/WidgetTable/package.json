@@ -1,6 +1,6 @@
 {
   "name": "@duik/widget-table",
-  "version": "0.1.5",
+  "version": "0.1.7-alpha.3",
   "description": "Dashboard UI Kit Widget Table",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
@@ -17,8 +17,8 @@
     "react-dom": "^16.8.0"
   },
   "dependencies": {
-    "@duik/core": "^0.1.4",
-    "@duik/create-simple-component": "^0.1.5"
+    "@duik/core": "^0.1.7-alpha.3",
+    "@duik/create-simple-component": "^0.1.7-alpha.3"
   },
   "gitHead": "7eed8237276864892b18bf2999daaf73ffc04739"
 }
