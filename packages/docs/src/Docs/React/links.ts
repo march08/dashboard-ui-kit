@@ -63,6 +63,7 @@ const cookbook = [
   'BuildingNavPanel',
   'BuildingTopBar',
   'BuildingTabNavigation',
+  'BuildingForms',
   'ComponentProperty'
 ]
 const guides = [

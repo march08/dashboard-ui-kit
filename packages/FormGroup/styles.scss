@@ -1,0 +1,11 @@
+@import '@duik/core/_vars.scss';
+
+*:not(.form-group-container-horizontal) {
+  &>.form-group {
+    margin-bottom: 0;
+
+    &+* {
+      margin-top: 1rem;
+    }
+  }
+}

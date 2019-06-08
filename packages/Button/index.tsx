@@ -54,7 +54,7 @@ export const ButtonWithoutForwardRef = <T extends AnyTag = 'button'>(props: Butt
     clear,
     isLoading,
     loading,
-    type,
+    type = 'button',
     noBorder,
     isExpanded,
     block,

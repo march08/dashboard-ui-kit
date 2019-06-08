@@ -28,6 +28,8 @@ export * from '@duik/radio'
 export * from '@duik/select'
 export * from '@duik/text-field'
 export * from '@duik/text-area'
+export * from '@duik/form-group-container'
+export * from '@duik/form-group'
 
 // util components
 export * from '@duik/outer-events-handler'

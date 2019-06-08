@@ -1,0 +1,20 @@
+{
+  "name": "@duik/form-group-container",
+  "version": "0.1.3",
+  "description": "Dashboard UI Kit Form Group Container",
+  "main": "dist/index.js",
+  "repository": "https://github.com/march08/duik",
+  "homepage": "https://github.com/march08/duik",
+  "author": "Roman Nguyen <march08@outlook.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
+  "peerDependencies": {
+    "classnames": "^2.2.6",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "gitHead": "7eed8237276864892b18bf2999daaf73ffc04739"
+}

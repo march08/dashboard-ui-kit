@@ -24,7 +24,6 @@ export type SelectProps<V extends number | string> =
     searchable?: boolean,
     multiple?: boolean,
     label?: React.ReactNode,
-    block?: boolean,
   }
 
 
@@ -41,7 +40,6 @@ export const Select = <V extends number | string>(props: SelectProps<V>) => {
     multiple,
     className,
     label,
-    block,
     ...rest
   } = props
 
@@ -61,7 +59,6 @@ export const Select = <V extends number | string>(props: SelectProps<V>) => {
           options,
           activeOption,
           placeholder,
-          block
         }}
         {...rest}
       >
