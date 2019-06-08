@@ -1,6 +1,6 @@
 {
   "name": "@duik/it",
-  "version": "0.1.6",
+  "version": "0.1.7-alpha.0",
   "description": "Dashboard UI Kit",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
@@ -19,7 +19,7 @@
   "dependencies": {
     "@duik/alert": "^0.1.4",
     "@duik/avatar": "^0.1.5",
-    "@duik/button": "^0.1.6",
+    "@duik/button": "^0.1.7-alpha.0",
     "@duik/button-group": "^0.1.4",
     "@duik/checkbox": "^0.1.5",
     "@duik/container-horizontal": "^0.1.5",
@@ -28,7 +28,10 @@
     "@duik/core": "^0.1.4",
     "@duik/create-simple-component": "^0.1.5",
     "@duik/datepicker": "^0.1.5",
-    "@duik/dropdown": "^0.1.6",
+    "@duik/dropdown": "^0.1.7-alpha.0",
+    "@duik/form-group": "^0.1.7-alpha.0",
+    "@duik/form-group-container": "^0.1.7-alpha.0",
+    "@duik/loader-dots": "^0.1.5",
     "@duik/nav-link": "^0.1.5",
     "@duik/nav-panel": "^0.1.5",
     "@duik/nav-section": "^0.1.5",
@@ -38,8 +41,8 @@
     "@duik/progress": "^0.1.4",
     "@duik/radio": "^0.1.4",
     "@duik/scroll-area": "^0.1.5",
-    "@duik/select": "^0.1.6",
-    "@duik/select-date": "^0.1.6",
+    "@duik/select": "^0.1.7-alpha.0",
+    "@duik/select-date": "^0.1.7-alpha.0",
     "@duik/tabs": "^0.1.4",
     "@duik/text-area": "^0.1.4",
     "@duik/text-field": "^0.1.4",
@@ -55,10 +58,7 @@
     "@duik/widget-container": "^0.1.5",
     "@duik/widget-content": "^0.1.5",
     "@duik/widget-header": "^0.1.5",
-    "@duik/widget-table": "^0.1.5",
-    "@duik/form-group-container": "^0.1.3",
-    "@duik/form-group": "^0.1.3",
-    "@duik/loader-dots": "^0.1.5"
+    "@duik/widget-table": "^0.1.5"
   },
   "gitHead": "7eed8237276864892b18bf2999daaf73ffc04739"
 }
