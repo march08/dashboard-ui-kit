@@ -36,11 +36,13 @@
   @extend .nav-panel;
   background-color: $bg-adverse-primary;
   color: $text-base;
-  --text-base: #{$text-adverse-base};
-  --text-main: #{$text-adverse-main};
-  --text-adverse-base: #{$text-base};
-  --text-adverse-main: #{$text-main};
-  --border-color-base: #2E2E33;
+
+  --text-main: #fff;
+  --text-base: #FBFBFD;
+  --text-adverse-main: #3E3F42;
+  --text-adverse-base: #6B6C6F;
+  --text-adverse-secondary: #9EA0A5;
+  --text-adverse-tertiary: #CECFD2;
 
   .nav-link.active .nav-link-text {
     color: $text-main;
