@@ -5,6 +5,7 @@ export * from '@duik/avatar'
 export * from '@duik/button'
 export * from '@duik/button-group'
 export * from '@duik/progress'
+export * from '@duik/divider'
 export * from '@duik/dropdown'
 
 // date

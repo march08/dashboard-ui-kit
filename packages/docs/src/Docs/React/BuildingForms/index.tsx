@@ -10,7 +10,8 @@ import {
   FormGroupContainer,
   FormGroup,
   Select,
-  TextArea
+  TextArea,
+  Divider
 } from '@duik/it'
 import { Icon } from '@duik/icon'
 import { Link } from 'react-router-dom'
@@ -29,6 +30,7 @@ const simpleExample = (
           <TextField label="Surname" />
         </FormGroup>
       </FormGroupContainer>
+      <Divider margin />
       <FormGroupContainer horizontal>
         <FormGroup>
           <Select block placeholder="Select Country" label="Country" options={[{ value: 1, label: 'Option' }]} />

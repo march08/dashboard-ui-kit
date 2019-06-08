@@ -1,0 +1,23 @@
+@import '@duik/core/_vars.scss';
+
+.divider-horizontal {
+  height: 1px;
+  width: 100%;
+  background: $border-color-base;
+
+  &.divider-margin {
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+}
+
+.divider-vertical {
+  width: 1px;
+  height: 100%;
+  background: $border-color-base;
+
+  &.divider-margin {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}

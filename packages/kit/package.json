@@ -22,6 +22,7 @@
     "@duik/button": "^0.1.7-alpha.0",
     "@duik/button-group": "^0.1.4",
     "@duik/checkbox": "^0.1.5",
+    "@duik/divider": "^0.1.5",
     "@duik/container-horizontal": "^0.1.5",
     "@duik/container-vertical": "^0.1.5",
     "@duik/content-title": "^0.1.5",
