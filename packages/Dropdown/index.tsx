@@ -60,10 +60,7 @@ export const Dropdown = <
     ...rest
   } = props;
 
-
   const openControls = externalOpenControls || useOpenState(false);
-
-  console.log('BLOCK', block)
 
   return (
     <OuterEventsHandler
