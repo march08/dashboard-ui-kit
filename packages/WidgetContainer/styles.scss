@@ -1,11 +1,11 @@
 @import '@duik/core/_vars.scss';
 
-.widget-container {
+.card-container {
   display: flex;
   flex-direction: column;
   padding: 30px;
 
-  &>.widget:not(:last-child) {
+  &>.card:not(:last-child) {
     margin-bottom: 30px;
   }
 

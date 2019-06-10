@@ -3,7 +3,7 @@ import cls from './styles.scss';
 
 export const WidgetContainer = createSimpleComponent({
   displayName: 'WidgetContainer',
-  className: cls['widget-container'],
+  className: cls['card-container'],
   Component: 'div',
 })
 
