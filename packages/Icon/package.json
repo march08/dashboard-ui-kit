@@ -1,6 +1,6 @@
 {
   "name": "@duik/icon",
-  "version": "0.1.7-alpha.5",
+  "version": "0.1.7-alpha.6",
   "description": "Dashboard UI Kit Icon",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
@@ -17,7 +17,7 @@
     "react-dom": "^16.8.0"
   },
   "dependencies": {
-    "@duik/create-simple-component": "^0.1.7-alpha.5"
+    "@duik/create-simple-component": "^0.1.7-alpha.6"
   },
   "gitHead": "efe4e90b5b41da75ba32d08b41f180519daca614"
 }
