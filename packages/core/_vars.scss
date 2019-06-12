@@ -47,7 +47,9 @@ $cyan: #17a2b8 !default;
 }
 
 @function hexToRgb($hex) {
-  @return red($hex), green($hex), blue($hex);
+  @return red($hex),
+  green($hex),
+  blue($hex);
 }
 
 $space: 30px;
@@ -68,7 +70,8 @@ $space-half: 15px;
 $boxShadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
 
 // UIKIT
-$fontFamily: "Roboto", sans-serif;
+$fontFamily: "Roboto",
+sans-serif;
 
 // colors
 $green: #38b249;
@@ -147,7 +150,7 @@ $text-base: var(--text-base);
 $text-adverse-base: var(--text-adverse-base);
 $text-secondary: var(--text-secondary);
 $text-tertiary: var(--text-tertiary);
-$text-on-color: var(--text-base);
+$text-on-color: var(--text-on-color);
 
 $border-color-base: var(--border-color-base);
 $border-color-main: var(--border-color-main);
@@ -192,20 +195,18 @@ $color-yellow-rgb: var(--yellow-rgb);
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
-$colors: map-merge(
-  (
-    "blue": $color-blue,
-    "indigo": $color-indigo,
-    "red": $color-red,
-    "orange": $color-orange,
-    "yellow": $color-yellow,
-    "green": $color-green
-  ),
-  $colors
-);
+$colors: map-merge(("blue": $color-blue,
+"indigo": $color-indigo,
+"red": $color-red,
+"orange": $color-orange,
+"yellow": $color-yellow,
+"green": $color-green),
+$colors);
 
 @mixin generateColorProperty($classPrefix, $property) {
-  @each $color, $value in $colors {
+
+  @each $color,
+  $value in $colors {
     #{$classPrefix}-#{$color} {
       #{$property}: #{$value};
     }
@@ -214,18 +215,16 @@ $colors: map-merge(
 
 $domainColors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
-$domainColors: map-merge(
-  (
-    "primary": $color-primary,
-    "success": $color-success,
-    "danger": $color-danger,
-    "warning": $color-warning
-  ),
-  $colors
-);
+$domainColors: map-merge(("primary": $color-primary,
+"success": $color-success,
+"danger": $color-danger,
+"warning": $color-warning),
+$colors);
 
 @mixin generateColorDomainProperty($classPrefix, $property) {
-  @each $color, $value in $domainColors {
+
+  @each $color,
+  $value in $domainColors {
     #{$classPrefix}-#{$color} {
       #{$property}: #{$value};
     }
@@ -259,6 +258,7 @@ $btn-font-size-lg: 16px;
     width: $btn-height-base;
     @include padding-x(0);
     justify-content: center;
+
     i {
       font-size: 1rem;
     }
@@ -301,7 +301,7 @@ $btn-font-size-lg: 16px;
   text-transform: uppercase;
   margin: 0;
 
-  & + * {
+  &+* {
     margin-top: 0.5rem;
   }
 }
