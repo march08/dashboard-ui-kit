@@ -213,7 +213,7 @@ $colors-rgb: map-merge(
     'yellow': $color-yellow-rgb,
     'green': $color-green-rgb
   ),
-  $colors
+  $colors-rgb
 );
 
 @mixin generateColorProperty($classPrefix, $property) {
