@@ -47,9 +47,7 @@ $cyan: #17a2b8 !default;
 }
 
 @function hexToRgb($hex) {
-  @return red($hex),
-  green($hex),
-  blue($hex);
+  @return red($hex), green($hex), blue($hex);
 }
 
 $space: 30px;
@@ -70,8 +68,7 @@ $space-half: 15px;
 $boxShadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
 
 // UIKIT
-$fontFamily: "Roboto",
-sans-serif;
+$font-family: 'Roboto', sans-serif;
 
 // colors
 $green: #38b249;
@@ -194,19 +191,33 @@ $color-red-rgb: var(--red-rgb);
 $color-yellow-rgb: var(--yellow-rgb);
 
 $colors: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
-$colors: map-merge(("blue": $color-blue,
-"indigo": $color-indigo,
-"red": $color-red,
-"orange": $color-orange,
-"yellow": $color-yellow,
-"green": $color-green),
-$colors);
+$colors: map-merge(
+  (
+    'blue': $color-blue,
+    'indigo': $color-indigo,
+    'red': $color-red,
+    'orange': $color-orange,
+    'yellow': $color-yellow,
+    'green': $color-green
+  ),
+  $colors
+);
+
+$colors-rgb: () !default;
+$colors-rgb: map-merge(
+  (
+    'blue': $color-blue-rgb,
+    'indigo': $color-indigo-rgb,
+    'red': $color-red-rgb,
+    'orange': $color-orange-rgb,
+    'yellow': $color-yellow-rgb,
+    'green': $color-green-rgb
+  ),
+  $colors
+);
 
 @mixin generateColorProperty($classPrefix, $property) {
-
-  @each $color,
-  $value in $colors {
+  @each $color, $value in $colors {
     #{$classPrefix}-#{$color} {
       #{$property}: #{$value};
     }
@@ -215,16 +226,18 @@ $colors);
 
 $domainColors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
-$domainColors: map-merge(("primary": $color-primary,
-"success": $color-success,
-"danger": $color-danger,
-"warning": $color-warning),
-$colors);
+$domainColors: map-merge(
+  (
+    'primary': $color-primary,
+    'success': $color-success,
+    'danger': $color-danger,
+    'warning': $color-warning
+  ),
+  $colors
+);
 
 @mixin generateColorDomainProperty($classPrefix, $property) {
-
-  @each $color,
-  $value in $domainColors {
+  @each $color, $value in $domainColors {
     #{$classPrefix}-#{$color} {
       #{$property}: #{$value};
     }
@@ -301,7 +314,7 @@ $btn-font-size-lg: 16px;
   text-transform: uppercase;
   margin: 0;
 
-  &+* {
+  & + * {
     margin-top: 0.5rem;
   }
 }

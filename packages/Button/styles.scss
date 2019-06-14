@@ -1,5 +1,11 @@
 @import "@duik/core/_vars.scss";
 
+p .btn,
+p a.btn,
+.btn {
+  text-decoration: none;
+}
+
 a.base:hover {
   text-decoration: none !important;
 }

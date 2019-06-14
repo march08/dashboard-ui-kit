@@ -14,7 +14,6 @@
   margin: 0;
 }
 
-
 html {
   height: 100%;
   background: $bg-base;
@@ -25,7 +24,7 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
-  font-family: $fontFamily;
+  font-family: $font-family;
   background: $bg-base;
   color: $text-base;
   font-size: 16px;
@@ -34,15 +33,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 input,
 button,
 textarea {
   color: $text-main;
-  font-size: 16px;
-  font-family: $fontFamily;
+  font-size: 0.875rem;
+  font-family: $font-family;
 }
 
+p {
+  margin: 0;
+  line-height: 1.375rem;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: $text-secondary;
+}
+
+* + p {
+  margin-top: 0.4em;
+}
 h1,
 h2,
 h3,
@@ -54,39 +63,6 @@ h6 {
   line-height: 1.5;
   font-weight: 400;
   color: $text-main;
-}
-
-*+h1,
-*+h2,
-*+h3,
-*+h4,
-*+h5 {
-  margin-top: 1.125rem;
-}
-
-h1+*,
-h2+*,
-h3+*,
-h4+* {
-  margin-top: 1em;
-}
-
-p {
-  transition: all 0.2s;
-  margin: 0;
-  line-height: 1.375rem;
-  font-weight: 400;
-  font-size: 0.875rem;
-  color: $text-base;
-}
-
-input,
-textarea {
-  font-size: .875rem;
-}
-
-*+p {
-  margin-top: 0.3em;
 }
 
 h1 {
@@ -107,22 +83,19 @@ h4 {
   font-size: 1.1rem;
 }
 
-p,
-ul,
-ol {
-  &+* {
-    margin-top: 1.125em;
-  }
-}
-
-p+p {
-  margin-top: 0.4em;
+* + h1,
+* + h2,
+* + h3,
+* + h4,
+* + h5 {
+  margin-top: 1.125rem;
 }
 
 a {
-  transition: .2s;
+  transition: 0.2s;
   text-decoration: none;
   cursor: pointer;
+  color: $color-primary;
 
   &:hover {
     text-decoration: none;
@@ -143,28 +116,22 @@ ul {
   }
 }
 
-strong {
-  font-weight: 500;
+::placeholder {
+  color: $text-secondary;
+  opacity: 1;
 }
 
-ul,
-ol {
-  line-height: 1.5;
-  color: $text-main;
-  font-size: 0.875rem;
-
-  *:not(:last-child) {
-    margin-bottom: 8px;
-  }
+:-ms-input-placeholder {
+  color: $text-secondary;
 }
 
-ol {
-  padding-left: 20px;
+::-ms-input-placeholder {
+  color: $text-secondary;
 }
 
 code:not([class]) {
   display: inline-block;
-  border: 1px solid #DADEE7;
+  border: 1px solid #dadee7;
   border-radius: 4px;
   font-size: inherit;
   line-height: 1.375rem;
