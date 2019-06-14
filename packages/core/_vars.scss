@@ -135,7 +135,7 @@ $yellow-rgb: hexToRgb($yellow);
   // backgrounds
   --bg-base: #fbfbfd;
   --bg-main: #ffffff;
-  --bg-adverse-primary: #252529;
+  --bg-adverse-main: #252529;
 
   --gradient-secondary: linear-gradient(0deg, #34aa44 0%, #38b249 100%);
 }
@@ -160,7 +160,7 @@ $border-default-adverse: 1px solid var(--border-color-adverse);
 
 $bg-base: var(--bg-base);
 $bg-main: var(--bg-main);
-$bg-adverse-primary: var(--bg-adverse-primary);
+$bg-adverse-main: var(--bg-adverse-main);
 
 $color-primary: var(--primary);
 $color-success: var(--success);

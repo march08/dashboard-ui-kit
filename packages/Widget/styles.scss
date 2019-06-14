@@ -27,4 +27,10 @@
     font-size: 1.125rem;
     line-height: 1.75rem;
   }
+  & > *:first-child {
+    @include border-top-radius(4px);
+  }
+  & > *:last-child {
+    @include border-bottom-radius(4px);
+  }
 }

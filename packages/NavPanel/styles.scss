@@ -11,7 +11,6 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
-
   &:not(.nav-panel-right) {
     border-right: $border-default-base;
 
@@ -27,23 +26,20 @@
       border-left: $border-default-adverse;
     }
   }
-
-
 }
-
 
 .nav-panel-dark {
   @extend .nav-panel;
-  background-color: $bg-adverse-primary;
+  background-color: $bg-adverse-main;
   color: $text-base;
 
   --text-main: #fff;
-  --text-base: #FBFBFD;
-  --text-adverse-main: #3E3F42;
-  --text-adverse-base: #6B6C6F;
-  --text-adverse-secondary: #9EA0A5;
-  --text-adverse-tertiary: #CECFD2;
-  --border-color-base: #2E2E33;
+  --text-base: #fbfbfd;
+  --text-adverse-main: #3e3f42;
+  --text-adverse-base: #6b6c6f;
+  --text-adverse-secondary: #9ea0a5;
+  --text-adverse-tertiary: #cecfd2;
+  --border-color-base: #2e2e33;
 
   .nav-link.active .nav-link-text {
     color: $text-main;

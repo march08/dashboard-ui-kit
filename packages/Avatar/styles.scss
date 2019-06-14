@@ -99,7 +99,7 @@
   border: $border-default-base; // generating
 
   &[class*='bg'] {
-    color: white;
+    color: $text-on-color;
   }
 }
 
