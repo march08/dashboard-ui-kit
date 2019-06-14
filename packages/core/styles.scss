@@ -116,6 +116,10 @@ ul {
   }
 }
 
+strong {
+  font-weight: 500;
+}
+
 ::placeholder {
   color: $text-secondary;
   opacity: 1;
