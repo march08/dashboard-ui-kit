@@ -1,6 +1,6 @@
 {
   "name": "@duik/top-bar-link",
-  "version": "0.1.7-alpha.6",
+  "version": "0.1.7-beta.0",
   "description": "Dashboard UI Kit TopBarLink",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
@@ -17,8 +17,8 @@
     "react-dom": "^16.8.0"
   },
   "dependencies": {
-    "@duik/core": "^0.1.7-alpha.6",
-    "@duik/create-simple-component": "^0.1.7-alpha.6"
+    "@duik/core": "^0.1.7-beta.0",
+    "@duik/create-simple-component": "^0.1.7-beta.0"
   },
   "gitHead": "efe4e90b5b41da75ba32d08b41f180519daca614"
 }
