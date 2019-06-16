@@ -1,3 +1,4 @@
+@import '_mixins.scss';
 // bootstrap colors
 $blue: #1665d8 !default;
 $indigo: #6610f2 !default;
@@ -9,60 +10,6 @@ $yellow: #facf55 !default;
 $green: #38b249 !default;
 $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
-
-@mixin textOverflow {
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-/** Radius Mixins **/
-@mixin border-right-radius($radius) {
-  border-top-right-radius: $radius;
-  border-bottom-right-radius: $radius;
-}
-
-@mixin border-left-radius($radius) {
-  border-top-left-radius: $radius;
-  border-bottom-left-radius: $radius;
-}
-
-@mixin border-top-radius($radius) {
-  border-top-right-radius: $radius;
-  border-top-left-radius: $radius;
-}
-
-@mixin border-bottom-radius($radius) {
-  border-bottom-right-radius: $radius;
-  border-bottom-left-radius: $radius;
-}
-
-@mixin padding-x($paddingX) {
-  padding-left: $paddingX;
-  padding-right: $paddingX;
-}
-
-@mixin padding-y($paddingY) {
-  padding-left: $paddingY;
-  padding-right: $paddingY;
-}
-
-@function hexToRgb($hex) {
-  @return red($hex), green($hex), blue($hex);
-}
-
-$space: 30px;
-$space-half: 15px;
-
-@mixin textOverflow {
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-@mixin backgroundCover {
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
 
 // others
 $boxShadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
@@ -259,62 +206,3 @@ $btn-font-size-sm: 12px;
 $btn-height-lg: 48px;
 $btn-padding-lg-x: 40px;
 $btn-font-size-lg: 16px;
-
-@mixin btn {
-  height: $btn-height-base;
-  padding-left: $btn-padding-base-x;
-  padding-right: $btn-padding-base-x;
-  font-size: $btn-font-size-base;
-
-  &.btn-square,
-  &.dropdown-toggle-split {
-    width: $btn-height-base;
-    @include padding-x(0);
-    justify-content: center;
-
-    i {
-      font-size: 1rem;
-    }
-  }
-}
-
-@mixin btn-sm {
-  height: $btn-height-sm;
-  padding-left: $btn-padding-sm-x;
-  padding-right: $btn-padding-sm-x;
-  font-size: $btn-font-size-sm;
-
-  &.btn-square,
-  &.dropdown-toggle-split {
-    width: $btn-height-sm;
-    @include padding-x(0);
-    justify-content: center;
-  }
-}
-
-@mixin btn-lg {
-  height: $btn-height-lg;
-  padding-left: $btn-padding-lg-x;
-  padding-right: $btn-padding-lg-x;
-  font-size: $btn-font-size-lg;
-
-  &.btn-square,
-  &.dropdown-toggle-split {
-    width: $btn-height-lg;
-    @include padding-x(0);
-    justify-content: center;
-  }
-}
-
-@mixin content-title {
-  font-weight: 500;
-  font-size: 0.75rem;
-  color: $text-secondary;
-  line-height: 1.125rem;
-  text-transform: uppercase;
-  margin: 0;
-
-  & + * {
-    margin-top: 0.5rem;
-  }
-}

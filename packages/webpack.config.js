@@ -5,25 +5,30 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const fs = require('fs')
+const fs = require('fs');
 
-const packages = fs.readdirSync(__dirname).filter(item => ![
-'_vars.scss',
-'__generated_types',
-'dist',
-'docs',
-'module.d.ts',
-'packages',
-'tsconfig.json',
-'webpack.config.js',
-'.DS_Store',
-'README.md',
-'copyTypes.script.js',
-'all'
-].includes(item))
+const packages = fs
+  .readdirSync(__dirname)
+  .filter(
+    item =>
+      ![
+        '_vars.scss',
+        '__generated_types',
+        'dist',
+        'docs',
+        'module.d.ts',
+        'packages',
+        'tsconfig.json',
+        'webpack.config.js',
+        '.DS_Store',
+        'README.md',
+        'copyTypes.script.js',
+        'all'
+      ].includes(item)
+  );
 
 const sassLoader = {
-  loader: 'sass-loader',
+  loader: 'sass-loader'
 };
 
 const cssLoader = (isHashed = true) => ({
@@ -33,33 +38,28 @@ const cssLoader = (isHashed = true) => ({
     modules: true,
     camelCase: false,
     importLoaders: 3,
-    localIdentName: isHashed ? 'duik-[folder]__[local]__[hash:4]' : '[local]',
-  },
+    localIdentName: isHashed ? 'duik-[folder]__[local]__[hash:4]' : '[local]'
+  }
 });
 
 const postCssLoader = {
   loader: 'postcss-loader',
   options: {
     ident: 'postcss',
-    plugins: () => [
-      autoprefixer(),
-    ],
-  },
+    plugins: () => [autoprefixer()]
+  }
 };
-
 
 const entry = packages.reduce((res, m) => {
   return {
     ...res,
     [m]: path.resolve(__dirname, m)
-  }
-}, {})
-
-
+  };
+}, {});
 
 module.exports = {
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ],
+    extensions: ['.tsx', '.ts', '.js']
   },
   entry: entry,
   output: {
@@ -67,18 +67,16 @@ module.exports = {
     filename: '[name]/dist/index.js',
     path: path.resolve(__dirname)
   },
-  mode: "production",
+  mode: 'production',
   node: {
-    fs: 'empty',
+    fs: 'empty'
   },
-  externals: [nodeExternals({
-    modulesFromFile: true
-  }), /^(@duik|\$)$/i],
+  externals: [nodeExternals(), /^(@duik).*/i],
   optimization: {
     // We no not want to minimize npm code.
     minimize: false,
     usedExports: true,
-    sideEffects: true,
+    sideEffects: true
   },
   module: {
     rules: [
@@ -94,8 +92,8 @@ module.exports = {
             outDir: './__generated_types',
             noEmit: false,
             jsx: 'react'
-          },
-        },
+          }
+        }
       },
       {
         test: /\.(png|jpg|gif|eot|svg|ttf|woff|otf)$/i,
@@ -112,14 +110,17 @@ module.exports = {
 
                 // To get relative path you can use
                 // const relativePath = path.relative(context, resourcePath);
-                const relativePath = path.relative(path.resolve(context, 'packages'), resourcePath);
-                const [packageName] = relativePath.split('/')
+                const relativePath = path.relative(
+                  path.resolve(context, 'packages'),
+                  resourcePath
+                );
+                const [packageName] = relativePath.split('/');
 
                 return `./${packageName}/dist/${url}`;
               }
-            },
-          },
-        ],
+            }
+          }
+        ]
       },
       // {
       //   test: /^((?!module).)*(scss|css)$/,
@@ -133,25 +134,25 @@ module.exports = {
         test: /^((?!module).)*(scss|css)$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: [cssLoader(false), postCssLoader, sassLoader],
-        }),
+          use: [cssLoader(false), postCssLoader, sassLoader]
+        })
       },
       {
         test: /module.(scss|css)$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: [cssLoader(true), postCssLoader, sassLoader],
-        }),
-      },
+          use: [cssLoader(true), postCssLoader, sassLoader]
+        })
+      }
     ]
   },
   plugins: [
-    new ExtractTextPlugin('./[name]/dist/styles.css'),
+    new ExtractTextPlugin('./[name]/dist/styles.css')
     // new OptimizeCssAssetsPlugin({
     //   assetNameRegExp: /\.css$/g,
     //   cssProcessor: require('cssnano'), // eslint-disable-line
     //   cssProcessorOptions: { discardComments: { removeAll: true } },
     //   canPrint: true,
     // }),
-  ],
+  ]
 };

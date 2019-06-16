@@ -156,7 +156,7 @@ export const ReactDocsButton = () => {
 
       <h2 id="button">Custom Button Component</h2>
       <p>You have 2 ways how to customize the button.</p>
-      <p>Simpler way, the clickable button component is <Link to="/docs/react/button">@duik/Button</Link> in it's core. You can customize it by passing props to it with "buttonProps". See example below.</p>
+      <p>Simpler way, the clickable button component is <Link to="/docs/react/button">@duik/button</Link> in it's core. You can customize it by passing props to it with "buttonProps". See example below.</p>
 
       <ExampleTable data={[
         {
