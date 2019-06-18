@@ -3,7 +3,6 @@ import Helmet from 'react-helmet';
 // import './bootstrap.css';
 import '@duik/it/dist/styles.css';
 import '@duik/icon/dist/styles.css';
-import './App.css';
 
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
@@ -11,7 +10,7 @@ import Docs from './Docs';
 
 const App = () => {
   return (
-    <BrowserRouter basename="/duik">
+    <BrowserRouter>
       <Helmet
         titleTemplate="%s - Dashboard UI Kit"
         defaultTitle="Dashboard UI Kit"

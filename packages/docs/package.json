@@ -17,7 +17,8 @@
     "test": "../../node_modules/.bin/react-scripts test",
     "eject": "../../node_modules/.bin/react-scripts eject",
     "predeploy": "yarn build",
-    "deploy": "yarn run gh-pages -d build"
+    "postbuild": "react-snap",
+    "deploy": "yarn build && now --target production"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -28,7 +29,7 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "homepage": "https://march08.github.io/duik",
+  "homepage": "https://developer.dashboard-ui.com",
   "devDependencies": {
     "react-snap": "^1.23.0"
   },
