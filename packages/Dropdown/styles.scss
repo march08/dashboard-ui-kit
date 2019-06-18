@@ -24,8 +24,7 @@
   top: 100%;
   right: 0;
 
-
-  &>* {
+  & > * {
     &:first-child {
       border-top-left-radius: 4px !important;
       border-top-right-radius: 4px !important;
@@ -40,7 +39,6 @@
   &.show {
     display: block;
   }
-
 
   &.bottom-right {
     top: calc(100% + 4px);
@@ -91,26 +89,24 @@
   background: $bg-main;
   border-color: $border-color-main;
   position: relative;
-  padding-right: 1.8rem;
+  padding-right: 2rem;
   justify-content: flex-start;
 
   &:not(.btn-square) {
-
     &:after,
     &:before {
       color: inherit;
-      opacity: .5;
+      opacity: 0.5;
       display: flex;
-      font-size: .6rem;
-      content: "▸";
+      font-size: 0.6rem;
+      content: '▸';
       border: none;
       position: absolute;
-      right: 10px;
+      right: 14px;
     }
   }
 
   &.btn-square {
-
     &:after,
     &:before {
       display: none;
@@ -118,7 +114,7 @@
   }
 
   &:after {
-    transform: translateY(-3px)rotate(270deg);
+    transform: translateY(-3px) rotate(270deg);
   }
 
   &:before {
@@ -157,7 +153,7 @@
   &:hover,
   &:focus {
     background: $bg-base;
-    background-image: linear-gradient(0deg, #F6F7F9 0%, #FFFFFF 100%);
+    background-image: linear-gradient(0deg, #f6f7f9 0%, #ffffff 100%);
   }
 
   &:active {

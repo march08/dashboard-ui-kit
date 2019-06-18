@@ -6,8 +6,9 @@
     "clean-modules": "rimraf node_modules/** node_modules packages/**/node_modules/",
     "clean-generated": "rimraf **/__generated_types",
     "deploy": "lerna run deploy",
-    "build": "yarn clean && yarn build-components && yarn build-copy-types && yarn clean-generated",
-    "build-components": "webpack --config packages/webpack.config.js --display=minimal --colors",
+    "build": "yarn clean && yarn build-components && yarn build-copy-types && yarn build-css-bundle && yarn clean-generated",
+    "build-components": "webpack --config packages/webpack.config.js",
+    "build-css-bundle": "webpack --config packages/webpack.cssbundle.config.js",
     "build-copy-types": "node ./packages/copyTypes.script.js",
     "prepublish": "yarn build"
   },

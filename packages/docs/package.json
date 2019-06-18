@@ -17,7 +17,6 @@
     "test": "../../node_modules/.bin/react-scripts test",
     "eject": "../../node_modules/.bin/react-scripts eject",
     "predeploy": "yarn build",
-    "postbuild": "react-snap",
     "deploy": "yarn run gh-pages -d build"
   },
   "eslintConfig": {

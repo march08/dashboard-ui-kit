@@ -88,18 +88,20 @@
   height: 100%;
   width: 100%;
   border-radius: 50%;
-  color: $text-secondary;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 500;
   line-height: 1.5rem;
   text-transform: uppercase;
-  background-color: transparent;
-  border: $border-default-base; // generating
-
+  &:not([class*='bg']) {
+    background-color: transparent;
+    color: $text-secondary;
+    border: $border-default-base; // generating
+  }
   &[class*='bg'] {
     color: $text-on-color;
+    border: none;
   }
 }
 

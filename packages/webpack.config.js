@@ -9,6 +9,7 @@ const fs = require('fs');
 
 const packages = fs
   .readdirSync(__dirname)
+  .filter(item => !item.endsWith('.js'))
   .filter(
     item =>
       ![
@@ -105,11 +106,6 @@ module.exports = {
               name: '[hash].[ext]',
               publicPath: './',
               outputPath: (url, resourcePath, context) => {
-                // `resourcePath` is original absolute path to asset
-                // `context` is directory where stored asset (`rootContext`) or `context` option
-
-                // To get relative path you can use
-                // const relativePath = path.relative(context, resourcePath);
                 const relativePath = path.relative(
                   path.resolve(context, 'packages'),
                   resourcePath
@@ -122,14 +118,6 @@ module.exports = {
           }
         ]
       },
-      // {
-      //   test: /^((?!module).)*(scss|css)$/,
-      //   use: [cssLoader(false), postCssLoader, sassLoader],
-      // },
-      // {
-      //   test: /module.(scss|css)$/,
-      //   use: [cssLoader(true), postCssLoader, sassLoader],
-      // },
       {
         test: /^((?!module).)*(scss|css)$/,
         use: ExtractTextPlugin.extract({
@@ -146,13 +134,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new ExtractTextPlugin('./[name]/dist/styles.css')
-    // new OptimizeCssAssetsPlugin({
-    //   assetNameRegExp: /\.css$/g,
-    //   cssProcessor: require('cssnano'), // eslint-disable-line
-    //   cssProcessorOptions: { discardComments: { removeAll: true } },
-    //   canPrint: true,
-    // }),
-  ]
+  plugins: [new ExtractTextPlugin('./[name]/dist/styles.css')]
 };

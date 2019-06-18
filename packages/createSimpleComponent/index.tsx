@@ -4,50 +4,36 @@ import * as React from 'react';
 import classnames from 'classnames';
 
 import { AnyTag, PropsWithTagProps } from '@duik/core';
-import { JSXElement } from '@babel/types';
 
-type Props = {
-  displayName: string,
-  className?: string,
+export type CreateSimpleComponentDefaultProps = {
+  displayName: string;
+  className?: string;
 };
 
 export type CreateSimpleComponentProps = {
-  defaultProps?: Props,
-} & Props;
+  defaultProps?: CreateSimpleComponentDefaultProps;
+} & CreateSimpleComponentDefaultProps;
 
 export type ComponentProps = React.PropsWithChildren<{
-  className?: string,
+  className?: string;
 }>;
-
-
-
-
-
 
 export const createSimpleComponent = <T extends AnyTag>(
   options: { Component?: T } & PropsWithTagProps<T, CreateSimpleComponentProps>
 ) => {
-
   const {
     displayName,
     className: defaultClassName,
     Component,
-    defaultProps,
-  } = options
+    defaultProps
+  } = options;
 
-
-  function SimpleComponent<Tag extends AnyTag>(props: PropsWithTagProps<Tag>): JSX.Element {
+  function SimpleComponent<Tag extends AnyTag>(
+    props: PropsWithTagProps<Tag>
+  ): JSX.Element {
     const { className, children, ...rest } = props;
     return (
-      <Component
-        className={
-          classnames(
-            defaultClassName,
-            className,
-          )
-        }
-        {...rest}
-      >
+      <Component className={classnames(defaultClassName, className)} {...rest}>
         {children}
       </Component>
     );
@@ -56,13 +42,12 @@ export const createSimpleComponent = <T extends AnyTag>(
   SimpleComponent.defaultProps = {
     className: null,
     children: null,
-    ...defaultProps,
+    ...defaultProps
   };
 
   SimpleComponent.displayName = displayName;
 
   return SimpleComponent;
-
-}
+};
 
 export default createSimpleComponent;
