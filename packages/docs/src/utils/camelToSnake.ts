@@ -1,21 +1,21 @@
 export const camelToSnake = (input: string) => {
-  const upperChars = input.match(/([A-Z])/g)
+  const upperChars = input.match(/([A-Z])/g);
   if (!upperChars) {
-    return input
+    return input;
   }
 
-  let output = ''
+  let output = "";
 
   for (let i = 0; i < input.length; i += 1) {
-    const letter = input[i]
-    const lowered = input[i].toLowerCase()
+    const letter = input[i];
+    const lowered = input[i].toLowerCase();
 
     if (letter !== lowered && i !== 0) {
-      output += `-${lowered}`
+      output += `-${lowered}`;
     } else {
-      output += lowered
+      output += lowered;
     }
   }
 
-  return output
-}
+  return output;
+};

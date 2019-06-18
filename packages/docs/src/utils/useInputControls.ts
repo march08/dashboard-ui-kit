@@ -1,22 +1,21 @@
-import { useState } from 'react';
+import { useState } from "react";
 
-export const useInputControls = (defaultValue: string = '') => {
+export const useInputControls = (defaultValue: string = "") => {
   const [value, setVaue] = useState<string>(defaultValue);
 
-
   const onChange = (e: React.FocusEvent<HTMLInputElement>) => {
-    setVaue(e.target.value)
-  }
+    setVaue(e.target.value);
+  };
 
   const resetValue = () => {
-    setVaue('')
-  }
+    setVaue("");
+  };
   return {
     onChange,
     resetValue,
     value,
-    setVaue,
-  }
-}
+    setVaue
+  };
+};
 
 export default useInputControls;

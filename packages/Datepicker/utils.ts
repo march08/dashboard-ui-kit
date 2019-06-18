@@ -1,31 +1,28 @@
-
-
 export const getDaysInMonth = (date: Date) => {
-  const d = new Date(date)
-  d.setMonth(date.getMonth() + 1)
-  d.setDate(0)
+  const d = new Date(date);
+  d.setMonth(date.getMonth() + 1);
+  d.setDate(0);
   return d.getDate();
-}
+};
 
 type DateNull = Date | null;
 
-
 /**
  * 0 - 6
- * @param date 
+ * @param date
  */
 export const getMonthStartDay = (date: Date) => {
-  const d = new Date(date)
-  d.setDate(1)
-  return d.getDay() - 1 // monday is 0
-}
+  const d = new Date(date);
+  d.setDate(1);
+  return d.getDay() - 1; // monday is 0
+};
 
 export const generateArrayOfLen = (len: number, startNumber: number = 1) => {
-  const arr = new Array(len)
+  const arr = new Array(len);
   return arr.fill(1).map((value, index) => {
-    return index + startNumber
-  })
-}
+    return index + startNumber;
+  });
+};
 
 export const isDateSelected = (
   date?: DateNull,
@@ -33,148 +30,150 @@ export const isDateSelected = (
   selectedDateTo?: DateNull,
   selectedDate?: DateNull
 ) => {
-
   if (!date) {
-    return false
+    return false;
   }
 
   if (selectedDate && selectedDate.getTime() === date.getTime()) {
-    return true
+    return true;
   }
 
-  if (selectedDateFrom
-    && selectedDateTo
-    && selectedDateFrom.getTime() <= date.getTime()
-    && selectedDateTo.getTime() >= date.getTime()) {
-    return true
+  if (
+    selectedDateFrom &&
+    selectedDateTo &&
+    selectedDateFrom.getTime() <= date.getTime() &&
+    selectedDateTo.getTime() >= date.getTime()
+  ) {
+    return true;
   }
 
-  return false
-}
+  return false;
+};
 
 export const isDateInRange = (
   date?: DateNull,
   from?: DateNull,
-  to?: DateNull,
+  to?: DateNull
 ) => {
-
   if (!date || !from || !to) {
-    return false
+    return false;
   }
 
   if (to.getTime() >= date.getTime() && date.getTime() >= from.getTime()) {
-    return true
+    return true;
   }
-  return false
-}
+  return false;
+};
 
 export const isDateSelectedFirst = (
   date?: DateNull,
   selectedDateFrom?: DateNull,
   selectedDate?: DateNull
 ) => {
-
   if (!date) {
-    return false
+    return false;
   }
 
   if (selectedDate && selectedDate.getTime() === date.getTime()) {
-    return true
+    return true;
   }
 
   if (selectedDateFrom && selectedDateFrom.getTime() === date.getTime()) {
-    return true
+    return true;
   }
 
-  return false
-}
+  return false;
+};
 export const isDateSelectedLast = (
   date?: DateNull,
   selectedDateFrom?: DateNull,
   selectedDateTo?: DateNull,
   selectedDate?: DateNull
 ) => {
-
   if (!date) {
-    return false
+    return false;
   }
 
   if (selectedDate && selectedDate.getTime() === date.getTime()) {
-    return true
+    return true;
   }
 
   if (selectedDateTo && selectedDateTo.getTime() === date.getTime()) {
-    return true
+    return true;
   }
 
-  if (selectedDateFrom && selectedDateFrom.getTime() === date.getTime() && !selectedDateTo) {
-    return true
+  if (
+    selectedDateFrom &&
+    selectedDateFrom.getTime() === date.getTime() &&
+    !selectedDateTo
+  ) {
+    return true;
   }
 
-  return false
-}
+  return false;
+};
 
 export const isDayDisabled = (date: Date, minDate?: Date, maxDate?: Date) => {
   if (!maxDate && !minDate) {
-    return false
+    return false;
   }
 
   if (maxDate && maxDate.getTime() < date.getTime()) {
-    return true
+    return true;
   }
 
   if (minDate && minDate.getTime() > date.getTime()) {
-    return true
+    return true;
   }
 
-  return false
-}
+  return false;
+};
 
 export const isMonthDisabled = (date: Date, minDate?: Date, maxDate?: Date) => {
   if (!maxDate && !minDate) {
-    return false
+    return false;
   }
 
-  const year = date.getFullYear()
-  const month = date.getMonth()
+  const year = date.getFullYear();
+  const month = date.getMonth();
 
   if (maxDate) {
-    const maxDateYear = maxDate.getFullYear()
-    const maxDateMonth = maxDate.getMonth()
+    const maxDateYear = maxDate.getFullYear();
+    const maxDateMonth = maxDate.getMonth();
     if (maxDateYear < year || (maxDateYear === year && maxDateMonth < month)) {
-      return true
+      return true;
     }
   }
   if (minDate) {
-    const minDateYear = minDate.getFullYear()
-    const minDateMonth = minDate.getMonth()
+    const minDateYear = minDate.getFullYear();
+    const minDateMonth = minDate.getMonth();
     if (minDateYear > year || (minDateYear === year && minDateMonth > month)) {
-      return true
+      return true;
     }
   }
 
-  return false
-}
+  return false;
+};
 
 export const isYearDisabled = (date: Date, minDate?: Date, maxDate?: Date) => {
   if (!maxDate && !minDate) {
-    return false
+    return false;
   }
 
-  const year = date.getFullYear()
+  const year = date.getFullYear();
 
   if (maxDate) {
-    const maxDateYear = maxDate.getFullYear()
+    const maxDateYear = maxDate.getFullYear();
     if (maxDateYear < year) {
-      return true
+      return true;
     }
   }
   if (minDate) {
-    const minDateYear = minDate.getFullYear()
+    const minDateYear = minDate.getFullYear();
     if (minDateYear > year) {
-      return true
+      return true;
     }
   }
 
-  return false
-}
+  return false;
+};

@@ -1,1 +1,1 @@
-export * from '@duik/use-open-state'
+export * from "@duik/use-open-state";
