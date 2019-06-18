@@ -1,6 +1,6 @@
 {
   "name": "@duik/core",
-  "version": "0.1.7-next.0",
+  "version": "0.1.7-next.1",
   "description": "Dashboard UI Kit Core",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
