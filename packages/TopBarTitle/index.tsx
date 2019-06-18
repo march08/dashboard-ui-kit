@@ -1,12 +1,11 @@
+import * as React from "react";
+import classnames from "classnames";
 
-import * as React from 'react'
-import classnames from 'classnames'
+import "./styles.scss";
 
-import './styles.scss'
-
-export type TopBarTitleProps = JSX.IntrinsicElements['h2'] & {
-  large?: Boolean
-}
+export type TopBarTitleProps = JSX.IntrinsicElements["h2"] & {
+  large?: Boolean;
+};
 
 export const TopBarTitle = ({
   children,
@@ -14,22 +13,22 @@ export const TopBarTitle = ({
   large,
   ...rest
 }: TopBarTitleProps) => (
-    <h2
-      className={classnames('top-bar-title', className, {
-        ['top-bar-title-lg']: large,
-      })}
-      {...rest}
-    >
-      {children}
-    </h2>
-  )
+  <h2
+    className={classnames("top-bar-title", className, {
+      ["top-bar-title-lg"]: large
+    })}
+    {...rest}
+  >
+    {children}
+  </h2>
+);
 
-TopBarTitle.displayName = "TopBarTitle"
+TopBarTitle.displayName = "TopBarTitle";
 
 TopBarTitle.defaultProps = {
   className: null,
   children: null,
-  large: false,
-}
+  large: false
+};
 
-export default TopBarTitle
+export default TopBarTitle;

@@ -1,5 +1,5 @@
-import React from 'react'
-import { DatepickerValue, DatepickerRangeValue } from '../Datepicker'
+import React from "react";
+import { DatepickerValue, DatepickerRangeValue } from "../Datepicker";
 
 export const defaultRenderValue = <M extends boolean>(
   value?: DatepickerValue<M>,
@@ -7,18 +7,28 @@ export const defaultRenderValue = <M extends boolean>(
   placeholder?: React.ReactNode
 ) => {
   if (!value) {
-    return placeholder
+    return placeholder;
   }
 
   if (isRange) {
-    const dateRange = value as DatepickerRangeValue
+    const dateRange = value as DatepickerRangeValue;
     if (!dateRange.to && !dateRange.from) {
-      return placeholder
+      return placeholder;
     }
     return (
-      <>{dateRange.from && <strong>{dateRange.from.toLocaleDateString()}</strong> || placeholder}&nbsp;&nbsp;═&nbsp;&nbsp;{dateRange.to && <strong>{dateRange.to.toLocaleDateString()}</strong> || placeholder} </>
-    )
+      <>
+        {(dateRange.from && (
+          <strong>{dateRange.from.toLocaleDateString()}</strong>
+        )) ||
+          placeholder}
+        &nbsp;&nbsp;═&nbsp;&nbsp;
+        {(dateRange.to && (
+          <strong>{dateRange.to.toLocaleDateString()}</strong>
+        )) ||
+          placeholder}{" "}
+      </>
+    );
   }
 
-  return <strong>{(value as Date).toLocaleDateString() || '-'}</strong>
-}
+  return <strong>{(value as Date).toLocaleDateString() || "-"}</strong>;
+};

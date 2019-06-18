@@ -1,9 +1,9 @@
 // for components that just needs styling
 
-import * as React from 'react';
-import classnames from 'classnames';
+import * as React from "react";
+import classnames from "classnames";
 
-import { AnyTag, PropsWithTagProps } from '@duik/core';
+import { AnyTag, PropsWithTagProps } from "@duik/core";
 
 export type CreateSimpleComponentDefaultProps = {
   displayName: string;

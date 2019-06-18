@@ -7,24 +7,28 @@
  *
  */
 
-import * as React from 'react';
-import classnames from 'classnames';
-import { Omit } from '@duik/core'
+import * as React from "react";
+import classnames from "classnames";
+import { Omit } from "@duik/core";
 
-import cls from './styles.scss';
+import cls from "./styles.scss";
 
-export type OuterEventsHandlerProps = Omit<JSX.IntrinsicElements['div'], 'ref'> & {
-  onOuterEvent?: EventListenerOrEventListenerObject | null,
-  triggerOnOuterScroll?: boolean,
-  triggerOnWindowResize?: boolean,
-  triggerOnOuterClick?: boolean,
-  triggerOnOuterFucus?: boolean,
-  triggerOnEsc?: boolean,
+export type OuterEventsHandlerProps = Omit<
+  JSX.IntrinsicElements["div"],
+  "ref"
+> & {
+  onOuterEvent?: EventListenerOrEventListenerObject | null;
+  triggerOnOuterScroll?: boolean;
+  triggerOnWindowResize?: boolean;
+  triggerOnOuterClick?: boolean;
+  triggerOnOuterFucus?: boolean;
+  triggerOnEsc?: boolean;
 };
 
-export class OuterEventsHandler extends React.PureComponent<OuterEventsHandlerProps> {
-
-  containerRef = React.createRef<HTMLDivElement>()
+export class OuterEventsHandler extends React.PureComponent<
+  OuterEventsHandlerProps
+> {
+  containerRef = React.createRef<HTMLDivElement>();
 
   static defaultProps = {
     children: null,
@@ -33,7 +37,7 @@ export class OuterEventsHandler extends React.PureComponent<OuterEventsHandlerPr
     triggerOnOuterClick: true,
     triggerOnOuterFucus: true,
     triggerOnEsc: true,
-    className: null,
+    className: null
   };
 
   componentDidMount() {
@@ -45,9 +49,9 @@ export class OuterEventsHandler extends React.PureComponent<OuterEventsHandlerPr
 
   componentDidUpdate(prevProps: OuterEventsHandlerProps) {
     const { onOuterEvent } = this.props;
-    if (typeof onOuterEvent === 'function') {
+    if (typeof onOuterEvent === "function") {
       this.bindListeners();
-    } else if (typeof onOuterEvent !== 'function') {
+    } else if (typeof onOuterEvent !== "function") {
       this.removeListeners();
     }
   }
@@ -58,14 +62,14 @@ export class OuterEventsHandler extends React.PureComponent<OuterEventsHandlerPr
 
   handleOuterActions = (e: Event): void => {
     const { onOuterEvent } = this.props;
-    if (typeof onOuterEvent === 'function') {
+    if (typeof onOuterEvent === "function") {
       onOuterEvent(e);
     }
   };
 
   handleOutsideClick = (e: Event): void => {
     const { onOuterEvent } = this.props;
-    if (typeof onOuterEvent !== 'function') {
+    if (typeof onOuterEvent !== "function") {
       return;
     }
 
@@ -81,22 +85,28 @@ export class OuterEventsHandler extends React.PureComponent<OuterEventsHandlerPr
 
   handleEscKeydown = (e: KeyboardEvent): void => {
     const { onOuterEvent } = this.props;
-    if (e.key === 'Escape' && typeof onOuterEvent === 'function') {
+    if (e.key === "Escape" && typeof onOuterEvent === "function") {
       onOuterEvent(e);
     }
-  }
+  };
 
   handleFocus = (e: FocusEvent): void => {
-    const { onOuterEvent } = this.props
+    const { onOuterEvent } = this.props;
     const containerEl = this.containerRef.current;
 
     const isDescendantOfRoot =
-      !!document.activeElement && containerEl && containerEl.contains(document.activeElement);
+      !!document.activeElement &&
+      containerEl &&
+      containerEl.contains(document.activeElement);
 
-    if (!!document.activeElement && !isDescendantOfRoot && typeof onOuterEvent === 'function') {
+    if (
+      !!document.activeElement &&
+      !isDescendantOfRoot &&
+      typeof onOuterEvent === "function"
+    ) {
       onOuterEvent(e);
     }
-  }
+  };
 
   bindListeners = (): void => {
     const {
@@ -107,32 +117,32 @@ export class OuterEventsHandler extends React.PureComponent<OuterEventsHandlerPr
       triggerOnEsc
     } = this.props;
 
-    if (typeof document !== 'undefined') {
+    if (typeof document !== "undefined") {
       if (triggerOnOuterFucus) {
-        document.body.addEventListener('focus', this.handleFocus, true);
+        document.body.addEventListener("focus", this.handleFocus, true);
       }
       if (triggerOnOuterClick) {
-        document.body.addEventListener('click', this.handleOutsideClick, true);
+        document.body.addEventListener("click", this.handleOutsideClick, true);
       }
       if (triggerOnEsc) {
-        document.addEventListener('keydown', this.handleEscKeydown, true);
+        document.addEventListener("keydown", this.handleEscKeydown, true);
       }
       if (triggerOnOuterScroll) {
-        window.addEventListener('scroll', this.handleOuterActions, true);
+        window.addEventListener("scroll", this.handleOuterActions, true);
       }
       if (triggerOnWindowResize) {
-        window.addEventListener('resize', this.handleOuterActions, true);
+        window.addEventListener("resize", this.handleOuterActions, true);
       }
     }
   };
 
   removeListeners = (): void => {
-    if (typeof document !== 'undefined') {
-      document.body.removeEventListener('focus', this.handleFocus, true);
-      document.body.removeEventListener('click', this.handleOutsideClick, true);
-      document.removeEventListener('keydown', this.handleEscKeydown, true);
-      window.removeEventListener('scroll', this.handleOuterActions, true);
-      window.removeEventListener('resize', this.handleOuterActions, true);
+    if (typeof document !== "undefined") {
+      document.body.removeEventListener("focus", this.handleFocus, true);
+      document.body.removeEventListener("click", this.handleOutsideClick, true);
+      document.removeEventListener("keydown", this.handleEscKeydown, true);
+      window.removeEventListener("scroll", this.handleOuterActions, true);
+      window.removeEventListener("resize", this.handleOuterActions, true);
     }
   };
 
@@ -152,7 +162,7 @@ export class OuterEventsHandler extends React.PureComponent<OuterEventsHandlerPr
 
     return (
       <div
-        className={classnames(cls['outer-events-handler'], className)}
+        className={classnames(cls["outer-events-handler"], className)}
         ref={this.containerRef}
         {...rest}
       >
@@ -161,7 +171,5 @@ export class OuterEventsHandler extends React.PureComponent<OuterEventsHandlerPr
     );
   }
 }
-
-
 
 export default OuterEventsHandler;

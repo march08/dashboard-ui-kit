@@ -1,9 +1,8 @@
-import * as React from 'react';
-import { Link } from 'react-router-dom'
-import { Widget } from '@duik/it/index'
+import * as React from "react";
+import { Link } from "react-router-dom";
+import { Widget } from "@duik/it/index";
 
-
-import { PropTable, properties } from '../../components'
+import { PropTable, properties } from "../../components";
 
 // leftEl,
 // rightEl,
@@ -11,37 +10,37 @@ import { PropTable, properties } from '../../components'
 const itemProps = [
   properties.className(),
   properties.children({
-    desc: <>Children nodes, e.g. <Link to="/docs/react/tab-item">TabItem(s)</Link></>
+    desc: (
+      <>
+        Children nodes, e.g. <Link to="/docs/react/tab-item">TabItem(s)</Link>
+      </>
+    )
   }),
   properties.Component({
-    defaultValue: '"a"',
+    defaultValue: '"a"'
   }),
   properties.children({
-    prop: 'leftEl',
+    prop: "leftEl",
     desc: <>Renders node on the left side with some styling</>
   }),
   properties.children({
-    prop: 'rightEl',
+    prop: "rightEl",
     desc: <>Renders node on the right side with some styling</>
   }),
   properties.rest({
-    desc: (
-      <>Other properties are passed down to the wrapping element</>
-    )
-  }),
-]
-
+    desc: <>Other properties are passed down to the wrapping element</>
+  })
+];
 
 export const ReactDocsTabs = () => {
-
   return (
     <>
       <h2 id="props">Prop table</h2>
       <Widget>
         <PropTable itemProps={itemProps} />
-      </Widget >
+      </Widget>
     </>
-  )
-}
+  );
+};
 
 export default ReactDocsTabs;

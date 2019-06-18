@@ -1,18 +1,19 @@
-import * as React from 'react'
-import ReactDOM from 'react-dom/server'
-import { Link, BrowserRouter } from 'react-router-dom'
-import { Button } from '@duik/it'
-import { H1, Code } from 'components'
+import * as React from "react";
+import ReactDOM from "react-dom/server";
+import { Link, BrowserRouter } from "react-router-dom";
+import { Button } from "@duik/it";
+import { H1, Code } from "components";
 
+import {
+  DocsContentPage,
+  ExampleTable,
+  PageContent,
+  ImportPath
+} from "../../components";
 
-
-import { DocsContentPage, ExampleTable, PageContent, ImportPath } from '../../components'
-
-import PropTable from './PropTable'
-
+import PropTable from "./PropTable";
 
 export const ReactDocsAlert = () => {
-
   return (
     <DocsContentPage>
       {/* <PageContent data={[
@@ -27,26 +28,33 @@ export const ReactDocsAlert = () => {
       the Dashboard UI Kit components are nicely composable which makes them super flexible in terms of reusability.`}
       </p>
 
-
       <h2>Usage</h2>
       <p>
-        {'Many components, such as Button, accept "Component" property. You will always find that information on the documentation page for each component or in the code. So let\'s have a look on some examples with Button component.'}
+        {
+          'Many components, such as Button, accept "Component" property. You will always find that information on the documentation page for each component or in the code. So let\'s have a look on some examples with Button component.'
+        }
       </p>
 
-      <Code>
-        {`<Button>This is a simple button</Button>`}
-      </Code>
+      <Code>{`<Button>This is a simple button</Button>`}</Code>
 
       <p>Outputs: </p>
-      <p><Button>This is a simple button</Button></p>
+      <p>
+        <Button>This is a simple button</Button>
+      </p>
       <Code>
-        {ReactDOM.renderToStaticMarkup(<Button>This is a simple button</Button>)}
+        {ReactDOM.renderToStaticMarkup(
+          <Button>This is a simple button</Button>
+        )}
       </Code>
-      <p>But what if we want to render "a" or anything else with the same styling?</p>
+      <p>
+        But what if we want to render "a" or anything else with the same
+        styling?
+      </p>
 
       <h2>JSX element as a prop value</h2>
       <p>
-        You can pass e.g. <code>a</code> or <code>span</code> as a prop value (or any valid html tag that makes sense). Here is a simple example:
+        You can pass e.g. <code>a</code> or <code>span</code> as a prop value
+        (or any valid html tag that makes sense). Here is a simple example:
       </p>
 
       <Code>
@@ -54,16 +62,26 @@ export const ReactDocsAlert = () => {
       </Code>
 
       <p>Outputs: </p>
-      <p><Button primary Component="a" href="#">This is a link button</Button></p>
+      <p>
+        <Button primary Component="a" href="#">
+          This is a link button
+        </Button>
+      </p>
       <Code>
-        {ReactDOM.renderToStaticMarkup(<Button primary Component="a" href="#">This is a link button</Button>)}
+        {ReactDOM.renderToStaticMarkup(
+          <Button primary Component="a" href="#">
+            This is a link button
+          </Button>
+        )}
       </Code>
-
 
       <h2>React Component as a prop value</h2>
 
       <p>
-        Of course, you can pass any React component as a prop value as well. The simples example would be <code>Link</code> from <code>react-router-dom</code> to render, because we want the button styled link to navigate to a different page.
+        Of course, you can pass any React component as a prop value as well. The
+        simples example would be <code>Link</code> from{" "}
+        <code>react-router-dom</code> to render, because we want the button
+        styled link to navigate to a different page.
       </p>
 
       <Code>
@@ -73,13 +91,22 @@ export const ReactDocsAlert = () => {
       </Code>
 
       <p>Outputs: </p>
-      <p><Button primary Component={Link} to="#">Next Page</Button></p>
+      <p>
+        <Button primary Component={Link} to="#">
+          Next Page
+        </Button>
+      </p>
       <Code>
-        {ReactDOM.renderToStaticMarkup(<BrowserRouter><Button primary Component={Link} to="#">Next Page</Button></BrowserRouter>)}
+        {ReactDOM.renderToStaticMarkup(
+          <BrowserRouter>
+            <Button primary Component={Link} to="#">
+              Next Page
+            </Button>
+          </BrowserRouter>
+        )}
       </Code>
-
     </DocsContentPage>
-  )
-}
+  );
+};
 
 export default ReactDocsAlert;

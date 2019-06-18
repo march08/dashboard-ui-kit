@@ -1,15 +1,15 @@
-import * as React from 'react'
-import classnames from 'classnames'
+import * as React from "react";
+import classnames from "classnames";
 
-import './styles.scss'
+import "./styles.scss";
 
-export type ProgressProps = JSX.IntrinsicElements['div'] & {
-  fill?: number,
-  fills?: number[],
-  lg?: boolean,
-}
+export type ProgressProps = JSX.IntrinsicElements["div"] & {
+  fill?: number;
+  fills?: number[];
+  lg?: boolean;
+};
 
-const getDecValue = (val: number) => Math.min(Math.ceil(val * 100), 100)
+const getDecValue = (val: number) => Math.min(Math.ceil(val * 100), 100);
 
 export const Progress = ({
   className,
@@ -18,42 +18,44 @@ export const Progress = ({
   lg,
   ...rest
 }: ProgressProps) => (
-    <div
-      className={classnames('progress', className, { 'progress-lg': lg })}
-      {...rest}
-    >
-      {fills && fills.length > 0 ? fills.map((item, index) => (
+  <div
+    className={classnames("progress", className, { "progress-lg": lg })}
+    {...rest}
+  >
+    {fills && fills.length > 0 ? (
+      fills.map((item, index) => (
         <div
           key={index}
-          className={'progress-bar'}
+          className={"progress-bar"}
           role="progressbar"
           aria-valuemin={0}
           aria-valuemax={100}
           aria-valuenow={getDecValue(item)}
           style={{
-            width: `${getDecValue(item)}%`,
+            width: `${getDecValue(item)}%`
           }}
         />
-      )) : (
-          <div
-            className={'progress-bar'}
-            role="progressbar"
-            aria-valuemin={0}
-            aria-valuemax={100}
-            aria-valuenow={getDecValue(fill)}
-            style={{
-              width: `${getDecValue(fill)}%`,
-            }}
-          />
-        )}
-    </div>
-  )
+      ))
+    ) : (
+      <div
+        className={"progress-bar"}
+        role="progressbar"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={getDecValue(fill)}
+        style={{
+          width: `${getDecValue(fill)}%`
+        }}
+      />
+    )}
+  </div>
+);
 
 Progress.defaultProps = {
   className: null,
-  fill: 1,
-}
+  fill: 1
+};
 
-Progress.displayName = 'Progress'
+Progress.displayName = "Progress";
 
-export default Progress
+export default Progress;

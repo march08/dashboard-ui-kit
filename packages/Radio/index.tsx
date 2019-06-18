@@ -1,12 +1,10 @@
-import * as React from 'react'
-import { BaseInput, InputBaseProps } from '@duik/base-input'
+import * as React from "react";
+import { BaseInput, InputBaseProps } from "@duik/base-input";
 
 export const Radio = (props: InputBaseProps) => {
-  return (
-    <BaseInput {...props} type="radio" />
-  )
-}
+  return <BaseInput {...props} type="radio" />;
+};
 
-Radio.displayName = "Radio"
+Radio.displayName = "Radio";
 
-export default Radio
+export default Radio;

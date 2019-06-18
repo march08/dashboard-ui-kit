@@ -1,39 +1,43 @@
-import * as React from 'react';
-import classnames from 'classnames';
+import * as React from "react";
+import classnames from "classnames";
 
-import { OuterEventsHandler, OuterEventsHandlerProps } from '@duik/outer-events-handler'
-import { useOpenState, OpenStateControls } from '@duik/use-open-state'
-import { AnyTag } from '@duik/core'
+import {
+  OuterEventsHandler,
+  OuterEventsHandlerProps
+} from "@duik/outer-events-handler";
+import { useOpenState, OpenStateControls } from "@duik/use-open-state";
+import { AnyTag } from "@duik/core";
 
-import DropdownMenu from './DropdownMenu';
-import DropdownButton from './DropdownButton';
+import DropdownMenu from "./DropdownMenu";
+import DropdownButton from "./DropdownButton";
 
-export * from './DropdownButton'
-export * from './DropdownItem'
-export * from './DropdownMenu'
+export * from "./DropdownButton";
+export * from "./DropdownItem";
+export * from "./DropdownMenu";
 
-
-import cls from './styles.scss';
-
+import cls from "./styles.scss";
 
 export enum DropdownMenuPosition {
-  'top-left' = 'top-left',
-  'top-right' = 'top-right',
-  'top-center' = 'top-center',
-  'bottom-left' = 'bottom-left',
-  'bottom-right' = 'bottom-right',
-  'bottom-center' = 'bottom-center',
+  "top-left" = "top-left",
+  "top-right" = "top-right",
+  "top-center" = "top-center",
+  "bottom-left" = "bottom-left",
+  "bottom-right" = "bottom-right",
+  "bottom-center" = "bottom-center"
 }
 
-export type DropdownProps<BC extends AnyTag, MC extends AnyTag> = OuterEventsHandlerProps & {
+export type DropdownProps<
+  BC extends AnyTag,
+  MC extends AnyTag
+> = OuterEventsHandlerProps & {
   ButtonComponent?: BC;
-  buttonProps?: Omit<React.ComponentProps<BC>, keyof OpenStateControls>
+  buttonProps?: Omit<React.ComponentProps<BC>, keyof OpenStateControls>;
   MenuComponent?: MC;
-  menuProps?: Omit<React.ComponentProps<MC>, keyof OpenStateControls>
-  menuPosition?: DropdownMenuPosition,
-  buttonText?: React.ReactNode,
-  openControls?: OpenStateControls,
-  block?: boolean,
+  menuProps?: Omit<React.ComponentProps<MC>, keyof OpenStateControls>;
+  menuPosition?: DropdownMenuPosition;
+  buttonText?: React.ReactNode;
+  openControls?: OpenStateControls;
+  block?: boolean;
 } & Children;
 
 type Children =
@@ -43,9 +47,9 @@ type Children =
 export const Dropdown = <
   BC extends AnyTag = typeof DropdownButton,
   MC extends AnyTag = typeof DropdownMenu
->(props: DropdownProps<BC, MC>) => {
-
-
+>(
+  props: DropdownProps<BC, MC>
+) => {
   const {
     ButtonComponent = DropdownButton,
     buttonProps = {},
@@ -64,15 +68,11 @@ export const Dropdown = <
 
   return (
     <OuterEventsHandler
-      className={classnames(cls['dropdown'], 'btn-group', className)}
+      className={classnames(cls["dropdown"], "btn-group", className)}
       onOuterEvent={openControls.isOpen ? openControls.handleToggle : null}
       {...rest}
     >
-      <ButtonComponent
-        {...openControls}
-        {...buttonProps}
-        block={block}
-      >
+      <ButtonComponent {...openControls} {...buttonProps} block={block}>
         {buttonText}
       </ButtonComponent>
       <MenuComponent
@@ -80,12 +80,12 @@ export const Dropdown = <
         {...openControls}
         menuPosition={menuPosition}
       >
-        {typeof children === 'function' ? children(openControls) : children}
+        {typeof children === "function" ? children(openControls) : children}
       </MenuComponent>
     </OuterEventsHandler>
-  )
-}
+  );
+};
 
-Dropdown.displayName = 'Dropdown'
+Dropdown.displayName = "Dropdown";
 
 export default Dropdown;

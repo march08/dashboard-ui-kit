@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from "react";
 import {
   TopBar,
   TopBarSection,
@@ -12,12 +12,11 @@ import {
   Select,
   TextArea,
   Divider
-} from '@duik/it'
-import { Icon } from '@duik/icon'
-import { Link } from 'react-router-dom'
-import { CodeRH, H1 } from 'components'
-import { DocsContentPage, PageContent, PageMock } from '../../components'
-
+} from "@duik/it";
+import { Icon } from "@duik/icon";
+import { Link } from "react-router-dom";
+import { CodeRH, H1 } from "components";
+import { DocsContentPage, PageContent, PageMock } from "../../components";
 
 const simpleExample = (
   <form>
@@ -33,10 +32,20 @@ const simpleExample = (
       <Divider margin />
       <FormGroupContainer horizontal>
         <FormGroup>
-          <Select block placeholder="Select Country" label="Country" options={[{ value: 1, label: 'Option' }]} />
+          <Select
+            block
+            placeholder="Select Country"
+            label="Country"
+            options={[{ value: 1, label: "Option" }]}
+          />
         </FormGroup>
         <FormGroup>
-          <Select block placeholder="Select State" label="State" options={[{ value: 1, label: 'Option' }]} />
+          <Select
+            block
+            placeholder="Select State"
+            label="State"
+            options={[{ value: 1, label: "Option" }]}
+          />
         </FormGroup>
       </FormGroupContainer>
       <FormGroup>
@@ -50,20 +59,28 @@ const searchExample = (
     <TopBar>
       <TopBarSection>
         <TopBarSection>
-          <TopBarTitle><Icon className="c-primary">front_store</Icon>Dashboard</TopBarTitle>
-          <TopBarSection>
-          </TopBarSection>
+          <TopBarTitle>
+            <Icon className="c-primary">front_store</Icon>Dashboard
+          </TopBarTitle>
+          <TopBarSection></TopBarSection>
           <TopBarLinkContainer>
             <TopBarLink href="#">Link 1</TopBarLink>
-            <TopBarLink className="active" href="#">Link 2</TopBarLink>
+            <TopBarLink className="active" href="#">
+              Link 2
+            </TopBarLink>
           </TopBarLinkContainer>
         </TopBarSection>
       </TopBarSection>
       <TopBarSection>
-        <TextField placeholder="Search for lemonades" rightEl={<Icon>search_left</Icon>} />
+        <TextField
+          placeholder="Search for lemonades"
+          rightEl={<Icon>search_left</Icon>}
+        />
       </TopBarSection>
     </TopBar>
-    <section style={{ textAlign: 'center', padding: 50, background: 'var(--bg-base)' }}>
+    <section
+      style={{ textAlign: "center", padding: 50, background: "var(--bg-base)" }}
+    >
       Some content
     </section>
   </>
@@ -75,11 +92,12 @@ const menuExample = (
       <TopBarSection>
         <TopBarSection>
           <TopBarTitle>Dashboard</TopBarTitle>
-          <TopBarSection>
-          </TopBarSection>
+          <TopBarSection></TopBarSection>
           <TopBarLinkContainer>
             <TopBarLink href="#">Link 1</TopBarLink>
-            <TopBarLink className="active" href="#">Link 2</TopBarLink>
+            <TopBarLink className="active" href="#">
+              Link 2
+            </TopBarLink>
           </TopBarLinkContainer>
         </TopBarSection>
       </TopBarSection>
@@ -95,14 +113,15 @@ const menuExample = (
         </TopBarSection>
       </TopBarSection>
     </TopBar>
-    <section style={{ textAlign: 'center', padding: 50, background: 'var(--bg-base)' }}>
+    <section
+      style={{ textAlign: "center", padding: 50, background: "var(--bg-base)" }}
+    >
       Some content
     </section>
   </>
 );
 
 export const ReactDocsBuildingTopBar = () => {
-
   return (
     <DocsContentPage>
       {/* 
@@ -111,19 +130,12 @@ export const ReactDocsBuildingTopBar = () => {
         { id: 'menu', label: 'With navigation' },
         { id: 'search', label: 'Extra elements' },
       ]} /> */}
-      <H1>
-        Building Forms
-      </H1>
+      <H1>Building Forms</H1>
       <h2 id="simple">Example Form</h2>
-      <PageMock white>
-        {simpleExample}
-      </PageMock>
-      <CodeRH
-        content={simpleExample}
-      />
-
+      <PageMock white>{simpleExample}</PageMock>
+      <CodeRH content={simpleExample} />
     </DocsContentPage>
-  )
-}
+  );
+};
 
 export default ReactDocsBuildingTopBar;

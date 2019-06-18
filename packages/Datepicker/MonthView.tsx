@@ -1,7 +1,7 @@
-import React from 'react'
-import classnames from 'classnames'
+import React from "react";
+import classnames from "classnames";
 
-import cls from './styles.scss'
+import cls from "./styles.scss";
 
 import {
   getDaysInMonth,
@@ -11,20 +11,20 @@ import {
   isDateSelectedFirst,
   isDayDisabled,
   isDateInRange
-} from './utils'
+} from "./utils";
 
-type DatepickerDayProps = JSX.IntrinsicElements['button'] & {
-  date: Date,
-  handleDateSelect?: (date: Date) => void,
-  isCurrentMonth?: boolean,
-  selectedDateFrom?: Date | null,
-  selectedDateTo?: Date | null,
-  selectedDate?: Date | null,
-  minDate?: Date,
-  maxDate?: Date,
-  mouseOverDate?: Date,
-  handleMouseOver?: (date: Date) => void
-}
+type DatepickerDayProps = JSX.IntrinsicElements["button"] & {
+  date: Date;
+  handleDateSelect?: (date: Date) => void;
+  isCurrentMonth?: boolean;
+  selectedDateFrom?: Date | null;
+  selectedDateTo?: Date | null;
+  selectedDate?: Date | null;
+  minDate?: Date;
+  maxDate?: Date;
+  mouseOverDate?: Date;
+  handleMouseOver?: (date: Date) => void;
+};
 
 const DatepickerDay = (props: DatepickerDayProps) => {
   const {
@@ -39,18 +39,19 @@ const DatepickerDay = (props: DatepickerDayProps) => {
     handleMouseOver,
     mouseOverDate,
     ...rest
-  } = props
-
+  } = props;
 
   const handleClick = () => {
     if (handleDateSelect) {
-      handleDateSelect(date)
+      handleDateSelect(date);
     }
-  }
+  };
 
-  const handleOnMouseOver = handleMouseOver ? () => {
-    handleMouseOver(date)
-  } : undefined
+  const handleOnMouseOver = handleMouseOver
+    ? () => {
+        handleMouseOver(date);
+      }
+    : undefined;
 
   return (
     <button
@@ -58,33 +59,47 @@ const DatepickerDay = (props: DatepickerDayProps) => {
       key={date.toDateString()}
       disabled={isDayDisabled(date, minDate, maxDate)}
       onMouseOver={handleOnMouseOver}
-      className={classnames(cls['datepicker-day'], {
-        [cls['datepicker-day-current-month']]: isCurrentMonth,
-        [cls['datepicker-day-not-current']]: !isCurrentMonth,
-        [cls['datepicker-day-hover-range']]: isDateInRange(date, selectedDateFrom, mouseOverDate),
-        [cls['datepicker-day-selected']]: isDateInRange(date, selectedDateFrom, selectedDateTo),
-        [cls['datepicker-day-selected-first']]: isDateSelectedFirst(date, selectedDateFrom, selectedDate),
-        [cls['datepicker-day-selected-last']]: isDateSelectedLast(date, selectedDateFrom, selectedDateTo, selectedDate)
+      className={classnames(cls["datepicker-day"], {
+        [cls["datepicker-day-current-month"]]: isCurrentMonth,
+        [cls["datepicker-day-not-current"]]: !isCurrentMonth,
+        [cls["datepicker-day-hover-range"]]: isDateInRange(
+          date,
+          selectedDateFrom,
+          mouseOverDate
+        ),
+        [cls["datepicker-day-selected"]]: isDateInRange(
+          date,
+          selectedDateFrom,
+          selectedDateTo
+        ),
+        [cls["datepicker-day-selected-first"]]: isDateSelectedFirst(
+          date,
+          selectedDateFrom,
+          selectedDate
+        ),
+        [cls["datepicker-day-selected-last"]]: isDateSelectedLast(
+          date,
+          selectedDateFrom,
+          selectedDateTo,
+          selectedDate
+        )
       })}
       {...rest}
     >
-      <span className={cls['datepicker-day-content']}>
-        {date.getDate()}
-      </span>
+      <span className={cls["datepicker-day-content"]}>{date.getDate()}</span>
     </button>
-  )
-}
+  );
+};
 
 export type MonthViewProps = {
-  visibleDate: Date,
+  visibleDate: Date;
   /**
    * set to 1 if you want to start with sunday
    */
-  weekdayOffset?: number,
-  dayProps?: Omit<DatepickerDayProps, 'date'>,
-  renderWeekdayShort: (weekdayNumber: number) => React.ReactNode,
-}
-
+  weekdayOffset?: number;
+  dayProps?: Omit<DatepickerDayProps, "date">;
+  renderWeekdayShort: (weekdayNumber: number) => React.ReactNode;
+};
 
 export const MonthView = (props: MonthViewProps) => {
   const {
@@ -92,34 +107,39 @@ export const MonthView = (props: MonthViewProps) => {
     weekdayOffset = 0,
     dayProps,
     renderWeekdayShort
-  } = props
-  const startDay = getMonthStartDay(visibleDate)
+  } = props;
+  const startDay = getMonthStartDay(visibleDate);
 
-  const currentYear = visibleDate.getFullYear()
-  const currentMonth = visibleDate.getMonth()
-  const currentDate = new Date(currentYear, currentMonth, 1)
-  const currentMonthDays = getDaysInMonth(currentDate)
+  const currentYear = visibleDate.getFullYear();
+  const currentMonth = visibleDate.getMonth();
+  const currentDate = new Date(currentYear, currentMonth, 1);
+  const currentMonthDays = getDaysInMonth(currentDate);
 
-  const previousDate = new Date(currentYear, currentMonth - 1, 1)
-  const previousMonth = previousDate.getMonth()
-  const previousYear = previousDate.getFullYear()
-  const previousMonthDays = getDaysInMonth(previousDate)
+  const previousDate = new Date(currentYear, currentMonth - 1, 1);
+  const previousMonth = previousDate.getMonth();
+  const previousYear = previousDate.getFullYear();
+  const previousMonthDays = getDaysInMonth(previousDate);
 
-  const nextDate = new Date(currentYear, currentMonth + 1, 1)
-  const nextMonth = nextDate.getMonth()
-  const nextYear = nextDate.getFullYear()
+  const nextDate = new Date(currentYear, currentMonth + 1, 1);
+  const nextMonth = nextDate.getMonth();
+  const nextYear = nextDate.getFullYear();
 
-  const lengthOfPreviousMonth = (startDay + weekdayOffset) % 7
+  const lengthOfPreviousMonth = (startDay + weekdayOffset) % 7;
 
   return (
-    <div className={cls['datepicker-month']}>
+    <div className={cls["datepicker-month"]}>
       {generateArrayOfLen(7, 7 - weekdayOffset)
         .map(v => v % 7)
         .map(weekday => (
-          <span key={`head-${weekday}`} className={cls['datepicker-day-name']}>{renderWeekdayShort(weekday)}</span>
+          <span key={`head-${weekday}`} className={cls["datepicker-day-name"]}>
+            {renderWeekdayShort(weekday)}
+          </span>
         ))}
       {/* Previous month */}
-      {generateArrayOfLen(lengthOfPreviousMonth, previousMonthDays - startDay + 1 - weekdayOffset).map(item => (
+      {generateArrayOfLen(
+        lengthOfPreviousMonth,
+        previousMonthDays - startDay + 1 - weekdayOffset
+      ).map(item => (
         <DatepickerDay
           key={item}
           disabled
@@ -136,10 +156,13 @@ export const MonthView = (props: MonthViewProps) => {
             date={new Date(currentYear, currentMonth, item)}
             {...dayProps}
           />
-        )
+        );
       })}
       {/* Next month */}
-      {generateArrayOfLen((7 - ((lengthOfPreviousMonth + currentMonthDays) % 7)) % 7, 1).map(item => (
+      {generateArrayOfLen(
+        (7 - ((lengthOfPreviousMonth + currentMonthDays) % 7)) % 7,
+        1
+      ).map(item => (
         <DatepickerDay
           key={item}
           date={new Date(nextYear, nextMonth, item)}
@@ -147,8 +170,7 @@ export const MonthView = (props: MonthViewProps) => {
         />
       ))}
     </div>
-  )
-}
+  );
+};
 
-
-MonthView.displayName = "MonthView"
+MonthView.displayName = "MonthView";

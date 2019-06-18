@@ -1,7 +1,7 @@
-import { BaseInput } from '@duik/base-input'
+import { BaseInput } from "@duik/base-input";
 
-export const Checkbox = BaseInput
+export const Checkbox = BaseInput;
 
-Checkbox.displayName = "Checkbox"
+Checkbox.displayName = "Checkbox";
 
-export default Checkbox
+export default Checkbox;

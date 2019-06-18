@@ -1,24 +1,24 @@
-import * as React from 'react';
-import { Link } from 'react-router-dom';
-import { H1 } from 'components';
+import * as React from "react";
+import { Link } from "react-router-dom";
+import { H1 } from "components";
 import {
   Button,
   Dropdown,
   DropdownItem,
   DropdownMenuPosition,
   DropdownButtonProps
-} from '@duik/it';
+} from "@duik/it";
 
-import { Icon } from '@duik/icon';
+import { Icon } from "@duik/icon";
 
 import {
   DocsContentPage,
   ExampleTable,
   PageContent,
   ImportPath
-} from '../../components';
+} from "../../components";
 
-import PropTable from './PropTable';
+import PropTable from "./PropTable";
 
 const ExampleButton = ({
   handleToggle,
@@ -37,19 +37,19 @@ export const ReactDocsButton = () => {
     <DocsContentPage>
       <PageContent
         data={[
-          { id: 'basics', label: 'Basic Usage' },
-          { id: 'control', label: 'Dropdown UI state control' },
-          { id: 'menu-position', label: 'Positioning the dropdown menu' },
-          { id: 'dropdown-content', label: 'Custom content in the dropdown' },
-          { id: 'button', label: 'Custom button component' },
-          { id: 'props-dropdown', label: 'Dropdown props' },
-          { id: 'props-dropdown-item', label: 'DropdownItem props' }
+          { id: "basics", label: "Basic Usage" },
+          { id: "control", label: "Dropdown UI state control" },
+          { id: "menu-position", label: "Positioning the dropdown menu" },
+          { id: "dropdown-content", label: "Custom content in the dropdown" },
+          { id: "button", label: "Custom button component" },
+          { id: "props-dropdown", label: "Dropdown props" },
+          { id: "props-dropdown-item", label: "DropdownItem props" }
         ]}
       />
       <H1>Dropdown</H1>
       <ImportPath
         name="Dropdown"
-        subComponents={['DropdownItem', 'DropdownMenu']}
+        subComponents={["DropdownItem", "DropdownMenu"]}
       />
       <br />
       <p>Use buttons in forms, as links with many varieties.</p>
@@ -125,13 +125,13 @@ export const ReactDocsButton = () => {
 
       <p>
         As it is clear from example, children can be a classic ReactNode or in
-        this case a functional component format{' '}
+        this case a functional component format{" "}
         <code>{`(props) => <>Something</>`}</code> which can accept several
         handlers. In most cases, you want to use handleClose or handleToggle,
-        but for conveniency, other handlers are exposed as well.{' '}
+        but for conveniency, other handlers are exposed as well.{" "}
       </p>
       <p>
-        The handlers are documented in{' '}
+        The handlers are documented in{" "}
         <Link to="/docs/react/use-open-state">useOpenState</Link> hook
         documentation, which is used for handling the state of the dropdown.
       </p>
@@ -139,7 +139,7 @@ export const ReactDocsButton = () => {
       <h2 id="menu-position">Menu position</h2>
       <p>
         By default, the menu position is set to bottom-right (bottom from the
-        click element, overflowing to the right). You can change this by passing{' '}
+        click element, overflowing to the right). You can change this by passing{" "}
         <code>menuPosition</code> prop. These values are supported
       </p>
       <ul style={{ paddingLeft: 30 }}>
@@ -166,7 +166,7 @@ export const ReactDocsButton = () => {
             content: (
               <Dropdown
                 buttonText="Bottom Left"
-                menuPosition={DropdownMenuPosition['bottom-left']}
+                menuPosition={DropdownMenuPosition["bottom-left"]}
               >
                 <DropdownItem>Long Item to click</DropdownItem>
               </Dropdown>
@@ -176,7 +176,7 @@ export const ReactDocsButton = () => {
             content: (
               <Dropdown
                 buttonText="Top Center"
-                menuPosition={DropdownMenuPosition['top-center']}
+                menuPosition={DropdownMenuPosition["top-center"]}
               >
                 <DropdownItem>Long Item to click</DropdownItem>
               </Dropdown>
@@ -197,7 +197,7 @@ export const ReactDocsButton = () => {
             content: (
               <Dropdown
                 buttonText="Upgrade Account"
-                menuPosition={DropdownMenuPosition['top-right']}
+                menuPosition={DropdownMenuPosition["top-right"]}
               >
                 {({
                   handleClose,
@@ -240,7 +240,7 @@ export const ReactDocsButton = () => {
       <h2 id="button">Custom Button Component</h2>
       <p>You have 2 ways how to customize the button.</p>
       <p>
-        Simpler way, the clickable button component is{' '}
+        Simpler way, the clickable button component is{" "}
         <Link to="/docs/react/button">@duik/button</Link> in it's core. You can
         customize it by passing props to it with "buttonProps". See example
         below.
@@ -254,7 +254,7 @@ export const ReactDocsButton = () => {
                 buttonProps={{
                   primary: true
                 }}
-                menuPosition={DropdownMenuPosition['bottom-left']}
+                menuPosition={DropdownMenuPosition["bottom-left"]}
               >
                 <DropdownItem>Item to click</DropdownItem>
               </Dropdown>
@@ -264,8 +264,8 @@ export const ReactDocsButton = () => {
       />
 
       <p>
-        You can also define totally new Button component and pass it to the{' '}
-        <code>Dropdown</code>! Your component should accept{' '}
+        You can also define totally new Button component and pass it to the{" "}
+        <code>Dropdown</code>! Your component should accept{" "}
         <Link to="/docs/react/use-open-state">useOpenState</Link> handlers. See
         example below.
       </p>
@@ -276,7 +276,7 @@ export const ReactDocsButton = () => {
             content: (
               <Dropdown
                 ButtonComponent={ExampleButton}
-                menuPosition={DropdownMenuPosition['top-right']}
+                menuPosition={DropdownMenuPosition["top-right"]}
               >
                 <DropdownItem>Item to click</DropdownItem>
               </Dropdown>

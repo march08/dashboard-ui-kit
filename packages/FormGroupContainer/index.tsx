@@ -1,11 +1,11 @@
-import * as React from 'react'
-import classnames from 'classnames'
+import * as React from "react";
+import classnames from "classnames";
 
-import cls from './styles.scss'
+import cls from "./styles.scss";
 
-export type FormGroupContainerProps = JSX.IntrinsicElements['div'] & {
-  horizontal?: boolean,
-}
+export type FormGroupContainerProps = JSX.IntrinsicElements["div"] & {
+  horizontal?: boolean;
+};
 
 export const FormGroupContainer = ({
   children,
@@ -13,22 +13,25 @@ export const FormGroupContainer = ({
   horizontal,
   ...rest
 }: FormGroupContainerProps) => (
-    <div
-      className={classnames(horizontal ? cls['form-group-container-horizontal'] : cls['form-group-container'], className)}
-      {...rest}
-    >
-      {children}
-    </div>
-  )
+  <div
+    className={classnames(
+      horizontal
+        ? cls["form-group-container-horizontal"]
+        : cls["form-group-container"],
+      className
+    )}
+    {...rest}
+  >
+    {children}
+  </div>
+);
 
 FormGroupContainer.defaultProps = {
   className: null,
   children: null,
-  horizontal: false,
-}
+  horizontal: false
+};
 
+FormGroupContainer.displayName = "FormGroupContainer";
 
-
-FormGroupContainer.displayName = "FormGroupContainer"
-
-export default FormGroupContainer
+export default FormGroupContainer;

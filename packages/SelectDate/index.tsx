@@ -1,32 +1,36 @@
-import React from 'react'
-import classnames from 'classnames'
-import { Datepicker, DatepickerProps, DatepickerValue, DatepickerRangeValue, useDatepickerValue } from '@duik/datepicker'
-import { Dropdown } from '@duik/dropdown'
-import { ContentTitle } from '@duik/content-title'
-import { useOpenState } from '@duik/use-open-state'
+import React from "react";
+import classnames from "classnames";
+import {
+  Datepicker,
+  DatepickerProps,
+  DatepickerValue,
+  DatepickerRangeValue,
+  useDatepickerValue
+} from "@duik/datepicker";
+import { Dropdown } from "@duik/dropdown";
+import { ContentTitle } from "@duik/content-title";
+import { useOpenState } from "@duik/use-open-state";
 
+import cls from "./styles.scss";
 
-import cls from './styles.scss'
+import { defaultRenderValue } from "./defaultRenders";
+import { SelectDateRenderValue } from "./types";
 
-import { defaultRenderValue } from './defaultRenders'
-import { SelectDateRenderValue } from './types'
+export * from "./types";
 
-export * from './types'
+export type SelectDateProps<M extends boolean> = React.ComponentProps<
+  typeof Dropdown
+> &
+  DatepickerProps<M> & {
+    placeholder?: React.ReactNode;
+    label?: React.ReactNode;
+    renderValue?: SelectDateRenderValue<M>;
+  };
 
-export type SelectDateProps<M extends boolean> =
-  & React.ComponentProps<typeof Dropdown>
-  & DatepickerProps<M>
-  & {
-    placeholder?: React.ReactNode,
-    label?: React.ReactNode,
-    renderValue?: SelectDateRenderValue<M>
-  }
-
-export const SelectDate = <
-  M extends boolean = false
->(props: SelectDateProps<M>) => {
-
-  const openControls = useOpenState()
+export const SelectDate = <M extends boolean = false>(
+  props: SelectDateProps<M>
+) => {
+  const openControls = useOpenState();
 
   const {
     // Datepicker Props
@@ -41,30 +45,29 @@ export const SelectDate = <
     initialVisibleDate,
     weekdayOffset,
     //other
-    placeholder = 'Select Date',
+    placeholder = "Select Date",
     label,
     renderValue = defaultRenderValue,
     // rest is dropdown props
     ...dropdownProps
-  } = props
+  } = props;
 
-
-  const {
-    setValue,
-    value,
-  } = useDatepickerValue(valueProp, isRange, onDateChangeProp)
+  const { setValue, value } = useDatepickerValue(
+    valueProp,
+    isRange,
+    onDateChangeProp
+  );
 
   const onDateChange = (value: DatepickerValue<M>) => {
-    setValue(value)
+    setValue(value);
     if (!isRange) {
-      openControls.handleClose()
+      openControls.handleClose();
     } else {
       if (value && (value as DatepickerRangeValue).to) {
-        openControls.handleClose()
+        openControls.handleClose();
       }
     }
-  }
-
+  };
 
   const datepickerProps = {
     renderTitle,
@@ -76,25 +79,24 @@ export const SelectDate = <
     minDate,
     maxDate,
     initialVisibleDate,
-    weekdayOffset,
-  }
+    weekdayOffset
+  };
 
-  const {
-    menuProps = {}
-  } = dropdownProps
+  const { menuProps = {} } = dropdownProps;
 
   const menuMergedProps = {
     ...menuProps,
-    className: classnames(cls['select-date-dropdown'], (menuProps as any).className)
+    className: classnames(
+      cls["select-date-dropdown"],
+      (menuProps as any).className
+    )
   } as any; // __TODO fix typing
 
   return (
     <>
-      {label && (
-        <ContentTitle>{label}</ContentTitle>
-      )}
+      {label && <ContentTitle>{label}</ContentTitle>}
       <Dropdown
-        className={cls['select-date']}
+        className={cls["select-date"]}
         openControls={openControls}
         buttonText={renderValue(value, isRange, placeholder)}
         menuProps={menuMergedProps}
@@ -103,7 +105,7 @@ export const SelectDate = <
         <Datepicker {...datepickerProps} />
       </Dropdown>
     </>
-  )
-}
+  );
+};
 
-SelectDate.displayName = 'SelectDate'
+SelectDate.displayName = "SelectDate";
