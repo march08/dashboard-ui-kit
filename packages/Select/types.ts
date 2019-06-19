@@ -1,4 +1,9 @@
-import { DropdownItem } from "@duik/dropdown";
+import { DropdownItem } from '@duik/dropdown';
+
+export type SelectActiveOption<
+  V extends number | string,
+  M extends boolean = false
+> = M extends true ? SelectOption<V>[] : SelectOption<V> | null;
 
 export type SelectOption<V extends number | string = any> = {
   label?: React.ReactNode;
@@ -11,7 +16,11 @@ export type SelectOnOptionFn<V extends number | string> = (
   name?: string
 ) => void;
 
-export type SelectOptionProps<V extends number | string> = {
-  options: SelectOption<V>[];
-  activeOption?: SelectOption<V> | SelectOption<V>[] | null;
+export type SelectOptionProps<
+  Value extends number | string,
+  Multiple extends boolean = false
+> = {
+  options: SelectOption<Value>[];
+  activeOption?: SelectActiveOption<Value, Multiple>;
+  multiple?: Multiple;
 };

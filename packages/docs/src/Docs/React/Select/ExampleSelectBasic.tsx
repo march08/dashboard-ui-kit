@@ -1,22 +1,13 @@
-import React from "react";
-import { Select, SelectOption } from "@duik/it";
+import React from 'react';
+import { Select, SelectOption } from '@duik/it';
 
 export const ExampleSelectBasic = () => {
-  const [activeOption, setActiveOption] = React.useState<
-    SelectOption | undefined
-  >();
-
-  const handleOptionClick = (option: SelectOption) => {
-    setActiveOption(option);
-  };
   return (
     <Select
-      activeOption={activeOption}
-      onOptionClick={handleOptionClick}
       label="Basic options"
       options={[
-        { label: "Option 1", value: 1 },
-        { label: "Option 2", value: 2 },
+        { label: 'Option 1', value: 1 },
+        { label: 'Option 2', value: 2 },
         { label: <strong>Highlighted Option</strong>, value: 3 },
         { label: <strong>Highlighted Long Long Option</strong>, value: 4 }
       ]}
