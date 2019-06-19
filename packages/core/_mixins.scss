@@ -3,16 +3,15 @@
   padding-left: $btn-padding-base-x;
   padding-right: $btn-padding-base-x;
   font-size: $btn-font-size-base;
+  i {
+    font-size: 1.25em;
+  }
 
   &.btn-square,
   &.dropdown-toggle-split {
     width: $btn-height-base;
     @include padding-x(0);
     justify-content: center;
-
-    i {
-      font-size: 1rem;
-    }
   }
 }
 

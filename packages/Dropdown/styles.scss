@@ -92,20 +92,6 @@
   padding-right: 2rem;
   justify-content: flex-start;
 
-  &:not(.btn-square) {
-    &:after,
-    &:before {
-      color: inherit;
-      opacity: 0.5;
-      display: flex;
-      font-size: 0.6rem;
-      content: '▸';
-      border: none;
-      position: absolute;
-      right: 14px;
-    }
-  }
-
   &.btn-square {
     &:after,
     &:before {
@@ -119,6 +105,31 @@
 
   &:before {
     transform: translateY(3px) rotateY(180deg) rotate(90deg);
+  }
+}
+
+.dropdown-toggle {
+  &:after,
+  &:before {
+    color: inherit;
+    opacity: 0.5;
+    display: flex;
+    font-size: 0.6rem;
+    content: '▸';
+    border: none;
+    position: absolute;
+    right: 14px;
+  }
+}
+
+.dropdown-toggle {
+  &.btn-square,
+  &.dropdown-toggle-no-arrows {
+    padding-right: $btn-padding-base-x;
+    &:before,
+    &:after {
+      display: none;
+    }
   }
 }
 

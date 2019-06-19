@@ -8,6 +8,7 @@ export type TabItemPropsBase = {
   rightEl?: React.ReactNode;
   leftEl?: React.ReactNode;
   active?: Boolean;
+  text?: React.ReactNode
 };
 
 export type TabItemProps<T extends AnyTag> = PropsWithTagProps<
@@ -23,6 +24,7 @@ export const TabItem = <T extends AnyTag = "a">(props: TabItemProps<T>) => {
     rightEl,
     leftEl,
     active,
+    text,
     ...rest
   } = props;
   return (
@@ -34,7 +36,7 @@ export const TabItem = <T extends AnyTag = "a">(props: TabItemProps<T>) => {
       {...rest}
     >
       {leftEl && <span className={cls["tab-item-left-el"]}>{leftEl}</span>}
-      {children}
+      {children || text}
       {rightEl && <span className={cls["tab-item-right-el"]}>{rightEl}</span>}
     </Component>
   );

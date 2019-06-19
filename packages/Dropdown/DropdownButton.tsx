@@ -1,19 +1,16 @@
-/**
- * This is just a raw example code with outside click handler
- * This should have better styling, menu positioning etc.
- */
+import * as React from 'react';
+import classnames from 'classnames';
+import { Button, ButtonPropsBase, ButtonRefObject } from '@duik/button';
 
-import * as React from "react";
-import classnames from "classnames";
-import { Button, ButtonPropsBase, ButtonRefObject } from "@duik/button";
-
-import { OpenStateControls } from "@duik/use-open-state";
-import cls from "./styles.scss";
+import { OpenStateControls } from '@duik/use-open-state';
+import cls from './styles.scss';
 
 export type DropdownButtonProps<P extends {} = {}> = OpenStateControls &
   ButtonPropsBase &
-  JSX.IntrinsicElements["button"] &
-  P;
+  JSX.IntrinsicElements['button'] &
+  P & {
+    hideArrows?: boolean;
+  };
 
 export const DropdownButton = React.forwardRef(
   (props: DropdownButtonProps, ref: ButtonRefObject) => {
@@ -27,15 +24,18 @@ export const DropdownButton = React.forwardRef(
       isOpen,
       children,
       className,
+      hideArrows = false,
       ...rest
     } = props;
     return (
       <Button
-        className={classnames(cls["dropdown-toggle"], className)}
+        className={classnames(cls['dropdown-toggle'], className, {
+          [cls['dropdown-toggle-no-arrows']]: hideArrows
+        })}
         onFocus={handleOpen}
         data-toggle="dropdown"
         aria-haspopup="true"
-        aria-expanded={isOpen ? "true" : "false"}
+        aria-expanded={isOpen ? 'true' : 'false'}
         {...rest}
         ref={ref}
       >
@@ -46,9 +46,9 @@ export const DropdownButton = React.forwardRef(
 );
 
 DropdownButton.defaultProps = {
-  children: "Action"
+  children: 'Action'
 };
 
-DropdownButton.displayName = "DropdownButton";
+DropdownButton.displayName = 'DropdownButton';
 
 export default DropdownButton;
