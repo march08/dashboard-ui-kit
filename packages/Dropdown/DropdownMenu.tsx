@@ -1,17 +1,13 @@
-/**
- * This is just a raw example code with outside click handler
- * This should have better styling, menu positioning etc.
- */
+import * as React from 'react';
+import classnames from 'classnames';
+import { CSSTransition } from 'react-transition-group';
+import { OpenStateControls } from '@duik/use-open-state';
+import { DropdownMenuPosition } from './index';
 
-import * as React from "react";
-import classnames from "classnames";
-import { OpenStateControls } from "@duik/use-open-state";
-import { DropdownMenuPosition } from "./index";
-
-import cls from "./styles.scss";
+import cls from './styles.scss';
 
 export type DropdownMenuProps<P extends {} = {}> = OpenStateControls &
-  JSX.IntrinsicElements["div"] &
+  JSX.IntrinsicElements['div'] &
   P & {
     menuPosition?: DropdownMenuPosition;
   };
@@ -23,7 +19,7 @@ export class DropdownMenu extends React.PureComponent<
     repositioned: boolean;
   }
 > {
-  displayName = "DropdownMenu";
+  displayName = 'DropdownMenu';
 
   ref = React.createRef<HTMLDivElement>();
 
@@ -32,19 +28,19 @@ export class DropdownMenu extends React.PureComponent<
 
     // set default
     this.state = {
-      menuPosition: props.menuPosition || DropdownMenuPosition["bottom-left"],
+      menuPosition: props.menuPosition || DropdownMenuPosition['bottom-left'],
       repositioned: false
     };
   }
 
   componentDidMount() {
     if (window) {
-      window.addEventListener("scroll", this.resetRepositionState, true);
+      window.addEventListener('scroll', this.resetRepositionState, true);
     }
   }
   componentWillUnmount() {
     if (window) {
-      window.removeEventListener("scroll", this.resetRepositionState, true);
+      window.removeEventListener('scroll', this.resetRepositionState, true);
     }
   }
 
@@ -73,16 +69,16 @@ export class DropdownMenu extends React.PureComponent<
       let nextMenuPosition = this.state.menuPosition as string;
 
       if (!bottom) {
-        nextMenuPosition = nextMenuPosition.replace("bottom", "top");
+        nextMenuPosition = nextMenuPosition.replace('bottom', 'top');
       } else if (!top) {
-        nextMenuPosition = nextMenuPosition.replace("top", "bottom");
+        nextMenuPosition = nextMenuPosition.replace('top', 'bottom');
       }
       if (!left) {
-        nextMenuPosition = nextMenuPosition.replace("left", "right");
-        nextMenuPosition = nextMenuPosition.replace("center", "right");
+        nextMenuPosition = nextMenuPosition.replace('left', 'right');
+        nextMenuPosition = nextMenuPosition.replace('center', 'right');
       } else if (!right) {
-        nextMenuPosition = nextMenuPosition.replace("right", "left");
-        nextMenuPosition = nextMenuPosition.replace("center", "left");
+        nextMenuPosition = nextMenuPosition.replace('right', 'left');
+        nextMenuPosition = nextMenuPosition.replace('center', 'left');
       }
 
       this.setState({
@@ -96,7 +92,7 @@ export class DropdownMenu extends React.PureComponent<
   resetRepositionState = () => {
     const { menuPosition } = this.props;
     this.setState({
-      menuPosition: menuPosition || DropdownMenuPosition["bottom-left"],
+      menuPosition: menuPosition || DropdownMenuPosition['bottom-left'],
       repositioned: false
     });
   };
@@ -118,8 +114,8 @@ export class DropdownMenu extends React.PureComponent<
     return (
       <div
         ref={this.ref}
-        className={classnames(cls["dropdown-menu"], className, {
-          [cls["show"]]: isOpen,
+        className={classnames(cls['dropdown-menu'], className, {
+          [cls['show']]: isOpen,
           [cls[this.state.menuPosition]]: this.state.menuPosition
         })}
       >

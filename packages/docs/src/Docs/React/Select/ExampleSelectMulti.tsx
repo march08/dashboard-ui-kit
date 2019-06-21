@@ -1,5 +1,5 @@
-import React from "react";
-import { Select, SelectOption } from "@duik/it";
+import React from 'react';
+import { Select, SelectOption } from '@duik/it';
 
 export const ExampleSelectMulti = () => {
   const [values, setValue] = React.useState<SelectOption[]>([]);
@@ -13,16 +13,17 @@ export const ExampleSelectMulti = () => {
       setValue([...values, option]);
     }
   };
+
   return (
     <Select
       activeOption={values}
       multiple
       onOptionClick={handleOptionClick}
       options={[
-        { label: "Option 1", value: 1 },
-        { label: "This is option 2", value: 2 },
-        { label: "Another option", value: 3 },
-        { label: "So many options", value: 4 }
+        { label: 'Option 1', value: 1 },
+        { label: 'This is option 2', value: 2 },
+        { label: 'Another option', value: 3 },
+        { label: 'So many options', value: 4 }
       ]}
     />
   );

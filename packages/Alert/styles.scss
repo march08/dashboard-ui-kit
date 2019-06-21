@@ -4,9 +4,9 @@
   border-radius: 4px;
   background: $bg-base;
   border: $border-default-base;
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-weight: 500;
-  padding: .875rem 1rem;
+  padding: 0.875rem 1rem;
   line-height: 1.4;
   display: flex;
   justify-content: space-between;
@@ -14,7 +14,7 @@
   width: calc(100% - 60px);
   max-width: 760px;
 
-  &>* {
+  & > * {
     flex-grow: 1;
   }
 }
@@ -22,6 +22,7 @@
 .alert-left-el {
   flex-grow: 0;
   margin-right: 1rem;
+  margin-top: 2px;
 }
 
 .alert-right-el {
@@ -43,11 +44,10 @@
       background-image: none;
       border: none !important;
     }
-
   }
 }
 
-.alert[class*="alert-"] {
+.alert[class*='alert-'] {
   color: $text-adverse-main;
 
   p,
@@ -61,7 +61,7 @@
   }
 
   p {
-    opacity: .8;
+    opacity: 0.8;
   }
 
   .alert-left-el,
@@ -72,7 +72,6 @@
   :global(.close) {
     color: $text-adverse-main;
   }
-
 }
 
 @include generateColorDomainProperty('.alert', 'background-color');

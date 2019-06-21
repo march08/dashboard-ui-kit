@@ -1,50 +1,54 @@
-import * as React from "react";
-import { Link } from "react-router-dom";
-import { H1, CodeExample } from "components";
+import * as React from 'react';
+import { Link } from 'react-router-dom';
+import { H1, CodeExample } from 'components';
 
-import { DocsContentPage, PageContent, ImportPath } from "../../components";
+import { DocsContentPage, PageContent, ImportPath } from '../../components';
 
-import PropTable from "./PropTable";
+import PropTable from './PropTable';
 
 import {
   ExampleSelectBasic,
   ExampleSelectBasicCode
-} from "./ExampleSelectBasic";
+} from './ExampleSelectBasic';
+import {
+  ExampleSelectControlledValue,
+  ExampleSelectControlledValueCode
+} from './ExampleSelectControlledValue';
 import {
   ExampleSelectUsers,
   ExampleSelectUsersCode
-} from "./ExampleSelectUsers";
+} from './ExampleSelectUsers';
 import {
   ExampleSelectUsersSearch,
   ExampleSelectUsersSearchCode
-} from "./ExampleSelectUsersSearch";
+} from './ExampleSelectUsersSearch';
 import {
   ExampleSelectMulti,
   ExampleSelectMultiCode
-} from "./ExampleSelectMulti";
+} from './ExampleSelectMulti';
 import {
   ExampleSelectItemProps,
   ExampleSelectItemPropsCode
-} from "./ExampleSelectItemProps";
+} from './ExampleSelectItemProps';
 
 export const ReactDocsSelect = () => {
   return (
     <DocsContentPage>
       <PageContent
         data={[
-          { id: "basics", label: "Basic Usage" },
-          { id: "labels", label: "Styling" },
-          { id: "searchable", label: "Enable Search Functionality" },
-          { id: "multi", label: "Multi Select" },
-          { id: "option-props", label: "Option Properties" },
-          { id: "activeOption", label: "ActiveOption structure" },
-          { id: "props", label: "Props" }
+          { id: 'basics', label: 'Basic Usage' },
+          { id: 'labels', label: 'Styling' },
+          { id: 'searchable', label: 'Enable Search Functionality' },
+          { id: 'multi', label: 'Multi Select' },
+          { id: 'option-props', label: 'Option Properties' },
+          { id: 'activeOption', label: 'ActiveOption structure' },
+          { id: 'props', label: 'Props' }
         ]}
       />
       <H1>Select</H1>
       <ImportPath name="Select" />
       <p>
-        Renders selects effortlesly. The core of the select is{" "}
+        Renders selects effortlesly. The core of the select is{' '}
         <Link to="/docs/react/dropdown">Dropdown</Link> component which gives
         you superb control over the UI. Check the examples below of the
         possibilities.
@@ -52,23 +56,18 @@ export const ReactDocsSelect = () => {
 
       <h2 id="basics">Basic Usage</h2>
       <p>
-        The Select doesn't store any values, instead, you should provide the
-        value and options. This will give you a maximum control of what is
-        displayed or not. You can store the value in your component state (or
-        useState) or any other form controls, such as{" "}
-        <a href="https://github.com/jaredpalmer/formik" target="_blank">
-          Formik
-        </a>
-        .
-      </p>
-      <p>
-        With that being sad, you should provide <code>activeOption</code> prop
-        to display the selected value and <code>options</code> prop to display
-        the content. These props however are not mandatory.
+        By default, if you don't provide an "activeOption" prop which represents
+        the value to be displayed, the <code>Select</code> component becomes
+        uncontrolled and stores the active value internaly. You can still pass
+        props such as <code>onOptionClick</code>.
       </p>
 
       <CodeExample code={ExampleSelectBasicCode}>
         <ExampleSelectBasic />
+      </CodeExample>
+      <h2>Example with controlled value</h2>
+      <CodeExample code={ExampleSelectControlledValueCode}>
+        <ExampleSelectControlledValue />
       </CodeExample>
       <h2 id="labels">Style your options</h2>
       <p>
@@ -85,7 +84,7 @@ export const ReactDocsSelect = () => {
         Select offers UI for searchability, however, what happens whit the
         serached keyword or with the options, that's totally under your control
         and you should provide this behaviour, as the simple select without data
-        context cannot really predict that.{" "}
+        context cannot really predict that.{' '}
       </p>
 
       <CodeExample code={ExampleSelectUsersSearchCode}>
@@ -95,8 +94,11 @@ export const ReactDocsSelect = () => {
       <h2 id="multi">Multi Select</h2>
       <p>
         Multi select is possible as well. To ensure proper behaviour, we are
-        passing <code>multiple</code> prop to the Select component as well as{" "}
+        passing <code>multiple</code> prop to the Select component as well as{' '}
         <code>activeOption</code> becomes an array prop instead of an object.
+      </p>
+      <p>
+        Below you can check an example with <strong>controlled value</strong>.
       </p>
 
       <CodeExample code={ExampleSelectMultiCode}>

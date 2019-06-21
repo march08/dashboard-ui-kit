@@ -23,4 +23,5 @@ export type SelectOptionProps<
   options: SelectOption<Value>[];
   activeOption?: SelectActiveOption<Value, Multiple>;
   multiple?: Multiple;
+  defaultOption?: SelectActiveOption<Value, Multiple>;
 };

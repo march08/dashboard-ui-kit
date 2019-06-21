@@ -35,6 +35,7 @@ export const Select = <V extends number | string, M extends boolean = false>(
   const {
     options,
     activeOption: activeOptionProp,
+    defaultOption,
     placeholder = 'Select Option',
     onOptionClick,
     name,
@@ -48,7 +49,7 @@ export const Select = <V extends number | string, M extends boolean = false>(
   } = props;
 
   const [innerActiveOption, setInnerActiveOption] = React.useState(
-    activeOptionProp
+    defaultOption
   );
 
   const getActiveOption = () => {
@@ -82,6 +83,8 @@ export const Select = <V extends number | string, M extends boolean = false>(
             option
           ] as SelectActiveOption<V, M>);
         }
+      } else {
+        setInnerActiveOption([option] as SelectActiveOption<V, M>);
       }
     } else {
       setInnerActiveOption(option as SelectActiveOption<V, M>);
@@ -112,7 +115,7 @@ export const Select = <V extends number | string, M extends boolean = false>(
 
           return (
             <>
-              {searchable && isOpen && (
+              {searchable && (
                 <div className={cls['select-search-box']}>
                   <TextField
                     {...inputSearchProps}

@@ -1,8 +1,8 @@
-import React from "react";
-import { Select, SelectOption } from "@duik/it";
-import { Avatar } from "@duik/it";
-import * as assets from "assets";
-import cls from "./select.module.scss";
+import React from 'react';
+import { Select, SelectOption } from '@duik/it';
+import { Avatar } from '@duik/it';
+import * as assets from 'assets';
+import cls from './select.module.scss';
 
 const optionsUsers = [
   { label: <Avatar sm imgUrl={assets.a01} name="Johny Gaudreau" />, value: 1 },
@@ -12,28 +12,20 @@ const optionsUsers = [
 ];
 
 export const ExampleSelectUsers = () => {
-  const [activeOption, setActiveOption] = React.useState<
-    SelectOption | undefined
-  >(optionsUsers[0]);
-
-  const handleOptionClick = (option: SelectOption) => {
-    setActiveOption(option);
-  };
   return (
     <Select
-      className={cls["select-avatar"]}
-      activeOption={activeOption}
-      onOptionClick={handleOptionClick}
+      className={cls['select-avatar']}
+      placeholder="Select User"
       options={optionsUsers}
+      defaultOption={optionsUsers[0]}
     />
   );
 };
 
 export const ExampleSelectUsersCode = `// in CSS
-.select-avatar {
-  .btn {
-    padding-left: 8px;
-  }
+.select-avatar .btn .avatar {
+  margin-left: -8px;
+  margin-right: 8px;
 }
 
 // React
@@ -48,20 +40,12 @@ const optionsUsers = [
 ]
 
 export const ExampleSelectUsers = () => {
-  
-  // Setting default value
-  const [activeOption, setActiveOption] = React.useState(optionsUsers[0])
-
-  const handleOptionClick = (option, name) => {
-    setActiveOption(option)
-  }
-
   return (
     <Select
       className="select-avatar"
-      activeOption={activeOption}
-      onOptionClick={handleOptionClick}
+      placeholder="Select User"
       options={optionsUsers}
+      defaultOption={optionsUsers[0]}
     />
   )
 }

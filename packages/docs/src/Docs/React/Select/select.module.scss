@@ -1,8 +1,8 @@
 .select-avatar {
   :global {
-
-    .btn {
-      padding-left: 8px;
+    .btn .avatar {
+      margin-left: -8px;
+      margin-right: 8px;
     }
   }
 }

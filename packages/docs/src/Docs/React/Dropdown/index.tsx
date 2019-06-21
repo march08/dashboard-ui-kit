@@ -74,13 +74,14 @@ export const ReactDocsButton = () => {
               </Dropdown>
             ),
             code: `<Dropdown buttonText={<strong>Click me</strong>}>
-  <DropdownItem>Item 1</DropdownItem>
-  <DropdownItem>Item 2</DropdownItem>
-  <DropdownItem Component={Link} to="#somewhere">Item as Link</DropdownItem>
+<DropdownItem>Item 1</DropdownItem>
+<DropdownItem>Item 2</DropdownItem>
+<DropdownItem Component={Link} to="#somewhere">Item as Link</DropdownItem>
 </Dropdown>`
           }
         ]}
       />
+
       <h2 id="control">Better control over the dropdown</h2>
       <p>
         It wouldn't be really useful if you cannot control the state of the

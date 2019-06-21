@@ -36,8 +36,17 @@
     }
   }
 
+  display: block;
+  opacity: 0;
+  transform: scale(0.9);
+  visibility: hidden;
+
+  transition: 0.1s all, 0.1s visibility 0.1s;
   &.show {
-    display: block;
+    transition: 0.1s;
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
   }
 
   &.bottom-right {
