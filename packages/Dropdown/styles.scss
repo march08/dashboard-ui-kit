@@ -92,6 +92,51 @@
     top: auto;
     right: auto;
   }
+
+  &.right-center {
+    bottom: auto;
+    left: calc(100% + 4px);
+    transform: translateY(-50%);
+    top: 50%;
+    right: auto;
+  }
+
+  &.right-top {
+    top: auto;
+    bottom: 0;
+    left: calc(100% + 4px);
+    right: auto;
+    transform: none;
+  }
+  &.right-bottom {
+    top: 0;
+    bottom: auto;
+    left: calc(100% + 4px);
+    right: auto;
+    transform: none;
+  }
+
+  &.left-center {
+    top: 50%;
+    bottom: auto;
+    left: auto;
+    right: calc(100% + 4px);
+    transform: translateY(-50%);
+  }
+  &.left-top {
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: calc(100% + 4px);
+    transform: none;
+  }
+  &.left-bottom {
+    top: 0;
+    bottom: auto;
+    left: auto;
+    right: calc(100% + 4px);
+    transform: none;
+  }
 }
 
 .dropdown-toggle {

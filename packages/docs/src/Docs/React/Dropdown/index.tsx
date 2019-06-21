@@ -150,6 +150,12 @@ export const ReactDocsButton = () => {
         <li>top-left</li>
         <li>top-center</li>
         <li>top-right</li>
+        <li>left-top</li>
+        <li>left-center</li>
+        <li>left-bottom</li>
+        <li>right-top</li>
+        <li>right-center</li>
+        <li>right-bottom</li>
       </ul>
       <p>
         For Typescript, enum <code>DropdownMenuPosition</code> is available.
@@ -180,6 +186,30 @@ export const ReactDocsButton = () => {
                 menuPosition={DropdownMenuPosition['top-center']}
               >
                 <DropdownItem>Long Item to click</DropdownItem>
+              </Dropdown>
+            )
+          },
+          {
+            content: (
+              <Dropdown
+                buttonText="Left Center"
+                menuPosition={DropdownMenuPosition['left-center']}
+              >
+                <DropdownItem>Dropdown Item</DropdownItem>
+                <DropdownItem>Dropdown Item</DropdownItem>
+                <DropdownItem>Dropdown Item</DropdownItem>
+              </Dropdown>
+            )
+          },
+          {
+            content: (
+              <Dropdown
+                buttonText="Right Bottom"
+                menuPosition={DropdownMenuPosition['right-bottom']}
+              >
+                <DropdownItem>Dropdown Item</DropdownItem>
+                <DropdownItem>Dropdown Item</DropdownItem>
+                <DropdownItem>Dropdown Item</DropdownItem>
               </Dropdown>
             )
           }

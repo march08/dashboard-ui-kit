@@ -1,29 +1,35 @@
-import * as React from "react";
-import classnames from "classnames";
+import * as React from 'react';
+import classnames from 'classnames';
 
 import {
   OuterEventsHandler,
   OuterEventsHandlerProps
-} from "@duik/outer-events-handler";
-import { useOpenState, OpenStateControls } from "@duik/use-open-state";
-import { AnyTag } from "@duik/core";
+} from '@duik/outer-events-handler';
+import { useOpenState, OpenStateControls } from '@duik/use-open-state';
+import { AnyTag } from '@duik/core';
 
-import DropdownMenu from "./DropdownMenu";
-import DropdownButton from "./DropdownButton";
+import DropdownMenu from './DropdownMenu';
+import DropdownButton from './DropdownButton';
 
-export * from "./DropdownButton";
-export * from "./DropdownItem";
-export * from "./DropdownMenu";
+export * from './DropdownButton';
+export * from './DropdownItem';
+export * from './DropdownMenu';
 
-import cls from "./styles.scss";
+import cls from './styles.scss';
 
 export enum DropdownMenuPosition {
-  "top-left" = "top-left",
-  "top-right" = "top-right",
-  "top-center" = "top-center",
-  "bottom-left" = "bottom-left",
-  "bottom-right" = "bottom-right",
-  "bottom-center" = "bottom-center"
+  'left-top' = 'left-top',
+  'left-center' = 'left-center',
+  'left-bottom' = 'left-bottom',
+  'right-top' = 'right-top',
+  'right-center' = 'right-center',
+  'right-bottom' = 'right-bottom',
+  'top-left' = 'top-left',
+  'top-right' = 'top-right',
+  'top-center' = 'top-center',
+  'bottom-left' = 'bottom-left',
+  'bottom-right' = 'bottom-right',
+  'bottom-center' = 'bottom-center'
 }
 
 export type DropdownProps<
@@ -56,7 +62,7 @@ export const Dropdown = <
     MenuComponent = DropdownMenu,
     menuProps = {},
     children,
-    menuPosition = DropdownMenuPosition["bottom-right"],
+    menuPosition = DropdownMenuPosition['bottom-right'],
     buttonText,
     className,
     openControls: externalOpenControls,
@@ -68,7 +74,7 @@ export const Dropdown = <
 
   return (
     <OuterEventsHandler
-      className={classnames(cls["dropdown"], "btn-group", className)}
+      className={classnames(cls['dropdown'], 'btn-group', className)}
       onOuterEvent={openControls.isOpen ? openControls.handleToggle : null}
       {...rest}
     >
@@ -80,12 +86,12 @@ export const Dropdown = <
         {...openControls}
         menuPosition={menuPosition}
       >
-        {typeof children === "function" ? children(openControls) : children}
+        {typeof children === 'function' ? children(openControls) : children}
       </MenuComponent>
     </OuterEventsHandler>
   );
 };
 
-Dropdown.displayName = "Dropdown";
+Dropdown.displayName = 'Dropdown';
 
 export default Dropdown;

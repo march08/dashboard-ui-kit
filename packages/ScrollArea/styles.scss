@@ -8,3 +8,10 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
+
+.scroll-area-x-overflow-hack {
+  padding-left: 100vw;
+  padding-right: 100vw;
+  margin-left: -100vw;
+  margin-right: -100vw;
+}
