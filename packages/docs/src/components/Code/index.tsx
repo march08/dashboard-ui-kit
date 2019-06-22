@@ -1,28 +1,28 @@
-import * as React from "react";
-import prism from "prismjs";
-import classnames from "classnames";
+import * as React from 'react';
+import prism from 'prismjs';
+import classnames from 'classnames';
 
-import { Button } from "@duik/it";
-import { Icon } from "@duik/icon";
-import { copyToClipboard } from "utils";
-import cls from "./code.module.scss";
+import { Button } from '@duik/it';
+import { Icon } from '@duik/icon';
+import { copyToClipboard } from 'utils';
+import cls from './code.module.scss';
 
-import "prismjs/components/prism-javascript";
-import "prismjs/components/prism-jsx";
-import "prismjs/components/prism-markup";
-import "prismjs/components/prism-css";
-import "prismjs/components/prism-json";
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-jsx';
+import 'prismjs/components/prism-markup';
+import 'prismjs/components/prism-css';
+import 'prismjs/components/prism-json';
 
-import "./atom-dark.scss";
-import "./vs.scss";
+import './vs.scss';
+import './atom-dark.scss';
 
 export enum CodeLang {
-  javascript = "javascript",
-  markup = "markup",
-  jsx = "jsx"
+  javascript = 'javascript',
+  markup = 'markup',
+  jsx = 'jsx'
 }
 
-export type CodeProps = JSX.IntrinsicElements["div"] & {
+export type CodeProps = JSX.IntrinsicElements['div'] & {
   children?: string;
   language?: CodeLang;
   className?: String;
@@ -55,11 +55,11 @@ export class Code extends React.Component<CodeProps> {
     const handleCopy = () => copyToClipboard(children as string);
 
     return (
-      <div className={cls["code-wrapper"]} {...rest}>
+      <div className={cls['code-wrapper']} {...rest}>
         <Button
           onClick={handleCopy}
           clear
-          className={cls["button-copy"]}
+          className={cls['button-copy']}
           square
         >
           <Icon>multitasking</Icon>
@@ -67,7 +67,7 @@ export class Code extends React.Component<CodeProps> {
         <pre
           ref={this.codeRef}
           className={classnames(
-            "react-prism",
+            'react-prism',
             `language-${language}`,
             className
           )}

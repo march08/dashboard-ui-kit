@@ -25,6 +25,13 @@ $indigo: #6977ff;
 $red: #e6492d;
 $yellow: #facf55;
 
+$green-darker: darken(#38b249, 5%);
+$blue-darker: darken(#1665d8, 5%);
+$orange-darker: darken(#f6ab2f, 5%);
+$indigo-darker: darken(#6977ff, 5%);
+$red-darker: darken(#e6492d, 5%);
+$yellow-darker: darken(#facf55, 5%);
+
 // rbg for rgba func
 $green-rgb: hexToRgb($green);
 $blue-rgb: hexToRgb($blue);
@@ -48,6 +55,13 @@ $yellow-rgb: hexToRgb($yellow);
   --warning-rgb: #{$orange-rgb};
   --danger-rgb: #{$red-rgb};
   --info-rgb: #{$indigo-rgb};
+  // darken
+  --success-darker: #{$green-darker};
+  --secondary-darker: #{$green-darker};
+  --primary-darker: #{$blue-darker};
+  --warning-darker: #{$orange-darker};
+  --danger-darker: #{$red-darker};
+  --info-darker: #{$indigo-darker};
 
   // colors
   --green: #{$green};
@@ -56,6 +70,14 @@ $yellow-rgb: hexToRgb($yellow);
   --red: #{$red};
   --indigo: #{$indigo};
   --yellow: #{$yellow};
+  //darker
+  --green-darker: #{$green-darker};
+  --blue-darker: #{$blue-darker};
+  --orange-darker: #{$orange-darker};
+  --red-darker: #{$red-darker};
+  --indigo-darker: #{$indigo-darker};
+  --yellow-darker: #{$yellow-darker};
+
   // colors rgb
   --green-rgb: #{$green-rgb};
   --blue-rgb: #{$blue-rgb};

@@ -13,13 +13,15 @@ import {
 import { useLocalStorage } from 'utils';
 
 import cls from './topbar.module.scss';
+import Helmet from 'react-helmet';
 
 export const DocsTopBar = () => {
   const [isDark, setDark] = useLocalStorage('@duik-theme', false);
   return (
     <TopBar className={cls.docsTopBar}>
       {isDark && (
-        <style>{`body {
+        <>
+          <style>{`body {
     --bg-main: #252529;
     --bg-base: #2c2c31;
     --border-color-base: #34343a;
@@ -27,6 +29,10 @@ export const DocsTopBar = () => {
     --text-base: #ccc;
     --text-main: #ddd;
     }`}</style>
+          <Helmet>
+            <body data-dark-mode="true" />
+          </Helmet>
+        </>
       )}
       <TopBarSection>
         <TopBarTitle>Dashboard UI Kit</TopBarTitle>

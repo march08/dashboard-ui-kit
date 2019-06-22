@@ -15,117 +15,119 @@ hue-6:   #d19a66
 hue-6-2: #e6c07b
 */
 
-pre.refractor {
-  overflow-x: auto;
-  width: 100%;
-}
+body[data-dark-mode] {
+  pre.refractor {
+    overflow-x: auto;
+    width: 100%;
+  }
 
-/**
-	* xonokai theme for JavaScript, CSS and HTML
-	* based on: https://github.com/MoOx/sass-prism-theme-base by Maxime Thirouin ~ MoOx --> http://moox.fr/ , which is Loosely based on Monokai textmate theme by http://www.monokai.nl/
-	* license: MIT; http://moox.mit-license.org/
-	*/
-code[class*="language-"],
-pre[class*="language-"] {
-  -moz-tab-size: 2;
-  -o-tab-size: 2;
-  tab-size: 2;
-  display: block;
-  overflow-x: auto;
-  padding: 15px 20px;
-  border: none;
-  border-radius: 4px;
-  color: #9cdcfe;
-  /* background: #282c34; */
-  background: #303136;font-family: 'Roboto Mono',
-monospace;
-  font-size: .75rem;
-  line-height: 1.25rem;
-}
+  /**
+    * xonokai theme for JavaScript, CSS and HTML
+    * based on: https://github.com/MoOx/sass-prism-theme-base by Maxime Thirouin ~ MoOx --> http://moox.fr/ , which is Loosely based on Monokai textmate theme by http://www.monokai.nl/
+    * license: MIT; http://moox.mit-license.org/
+    */
+  code[class*='language-'],
+  pre[class*='language-'] {
+    -moz-tab-size: 2;
+    -o-tab-size: 2;
+    tab-size: 2;
+    display: block;
+    overflow-x: auto;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 4px;
+    color: #9cdcfe;
+    /* background: #282c34; */
+    background: #303136;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+  }
 
-:not(pre)>code[class*="language-"],
-pre[class*="language-"] {
-  background: #252529;
-}
+  :not(pre) > code[class*='language-'],
+  pre[class*='language-'] {
+    background: #252529;
+  }
 
-/* Inline code */
-:not(pre)>code[class*="language-"] {
-  padding: .1em;
-  border-radius: .3em;
-  white-space: normal;
-}
+  /* Inline code */
+  :not(pre) > code[class*='language-'] {
+    padding: 0.1em;
+    border-radius: 0.3em;
+    white-space: normal;
+  }
 
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: slategray;
-}
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    color: slategray;
+  }
 
-.token.punctuation {
-  color: #37c1b0;
-}
+  .token.punctuation {
+    color: #37c1b0;
+  }
 
-.namespace {
-  opacity: .7;
-}
+  .namespace {
+    opacity: 0.7;
+  }
 
-.token.property,
-.token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted {
-  color: #f92672;
-}
+  .token.property,
+  .token.tag,
+  .token.constant,
+  .token.symbol,
+  .token.deleted {
+    color: #f92672;
+  }
 
-.token.boolean,
-.token.number {
-  color: #ae81ff;
-}
+  .token.boolean,
+  .token.number {
+    color: #ae81ff;
+  }
 
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-  color: #a6e22e;
-}
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin,
+  .token.inserted {
+    color: #a6e22e;
+  }
 
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.variable {
-  color: #f8f8f2;
-}
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string,
+  .token.variable {
+    color: #f8f8f2;
+  }
 
-.token.atrule,
-.token.attr-value,
-.token.function,
-.token.class-name {
-  color: #e6db74;
-}
+  .token.atrule,
+  .token.attr-value,
+  .token.function,
+  .token.class-name {
+    color: #e6db74;
+  }
 
-.token.keyword {
-  color: #66d9ef;
-}
+  .token.keyword {
+    color: #66d9ef;
+  }
 
-.token.regex,
-.token.important {
-  color: #fd971f;
-}
+  .token.regex,
+  .token.important {
+    color: #fd971f;
+  }
 
-.token.important,
-.token.bold {
-  font-weight: bold;
-}
+  .token.important,
+  .token.bold {
+    font-weight: bold;
+  }
 
-.token.italic {
-  font-style: italic;
-}
+  .token.italic {
+    font-style: italic;
+  }
 
-.token.entity {
-  cursor: help;
+  .token.entity {
+    cursor: help;
+  }
 }

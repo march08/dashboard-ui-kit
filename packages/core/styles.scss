@@ -161,14 +161,14 @@ strong {
 
 code:not([class]) {
   display: inline-block;
-  border: 1px solid #dadee7;
+  background: rgba(0, 0, 0, 0.04);
   border-radius: 4px;
   font-size: inherit;
   line-height: 1.375rem;
   padding: 0px 5px;
   font-family: monospace;
   word-break: inherit;
-  color: $color-primary;
+  color: $text-main;
   margin-left: 1px;
   margin-right: 1px;
 }
