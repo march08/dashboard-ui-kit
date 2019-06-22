@@ -2,7 +2,7 @@
 
 .content {
   padding: 70px;
-  background: $text-on-color;
+  background: $bg-main;
   max-width: 1200px;
   position: relative;
   border-right: $border-default-base;
@@ -21,7 +21,7 @@
   & > h2,
   & > h3,
   & > h4 {
-    color: rgba(0, 0, 0, 0.8);
+    color: $text-main;
     font-weight: 400;
 
     & + p {

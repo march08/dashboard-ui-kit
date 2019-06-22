@@ -82,7 +82,12 @@ export const Dropdown = <
         if (el) {
           try {
             return React.cloneElement(el, {
-              onClick: openControls.handleClose
+              onClick: (e: React.MouseEvent) => {
+                openControls.handleClose();
+                if (el.props.onClick) {
+                  el.props.onClick(e);
+                }
+              }
             });
           } catch (e) {
             return el;
