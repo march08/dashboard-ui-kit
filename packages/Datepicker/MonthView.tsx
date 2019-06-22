@@ -1,7 +1,7 @@
-import React from "react";
-import classnames from "classnames";
+import React from 'react';
+import classnames from 'classnames';
 
-import cls from "./styles.scss";
+import cls from './styles.scss';
 
 import {
   getDaysInMonth,
@@ -11,9 +11,9 @@ import {
   isDateSelectedFirst,
   isDayDisabled,
   isDateInRange
-} from "./utils";
+} from './utils';
 
-type DatepickerDayProps = JSX.IntrinsicElements["button"] & {
+type DatepickerDayProps = JSX.IntrinsicElements['button'] & {
   date: Date;
   handleDateSelect?: (date: Date) => void;
   isCurrentMonth?: boolean;
@@ -55,29 +55,30 @@ const DatepickerDay = (props: DatepickerDayProps) => {
 
   return (
     <button
+      type="button"
       onClick={handleClick}
       key={date.toDateString()}
       disabled={isDayDisabled(date, minDate, maxDate)}
       onMouseOver={handleOnMouseOver}
-      className={classnames(cls["datepicker-day"], {
-        [cls["datepicker-day-current-month"]]: isCurrentMonth,
-        [cls["datepicker-day-not-current"]]: !isCurrentMonth,
-        [cls["datepicker-day-hover-range"]]: isDateInRange(
+      className={classnames(cls['datepicker-day'], {
+        [cls['datepicker-day-current-month']]: isCurrentMonth,
+        [cls['datepicker-day-not-current']]: !isCurrentMonth,
+        [cls['datepicker-day-hover-range']]: isDateInRange(
           date,
           selectedDateFrom,
           mouseOverDate
         ),
-        [cls["datepicker-day-selected"]]: isDateInRange(
+        [cls['datepicker-day-selected']]: isDateInRange(
           date,
           selectedDateFrom,
           selectedDateTo
         ),
-        [cls["datepicker-day-selected-first"]]: isDateSelectedFirst(
+        [cls['datepicker-day-selected-first']]: isDateSelectedFirst(
           date,
           selectedDateFrom,
           selectedDate
         ),
-        [cls["datepicker-day-selected-last"]]: isDateSelectedLast(
+        [cls['datepicker-day-selected-last']]: isDateSelectedLast(
           date,
           selectedDateFrom,
           selectedDateTo,
@@ -86,7 +87,7 @@ const DatepickerDay = (props: DatepickerDayProps) => {
       })}
       {...rest}
     >
-      <span className={cls["datepicker-day-content"]}>{date.getDate()}</span>
+      <span className={cls['datepicker-day-content']}>{date.getDate()}</span>
     </button>
   );
 };
@@ -97,7 +98,7 @@ export type MonthViewProps = {
    * set to 1 if you want to start with sunday
    */
   weekdayOffset?: number;
-  dayProps?: Omit<DatepickerDayProps, "date">;
+  dayProps?: Omit<DatepickerDayProps, 'date'>;
   renderWeekdayShort: (weekdayNumber: number) => React.ReactNode;
 };
 
@@ -127,11 +128,11 @@ export const MonthView = (props: MonthViewProps) => {
   const lengthOfPreviousMonth = (startDay + weekdayOffset) % 7;
 
   return (
-    <div className={cls["datepicker-month"]}>
+    <div className={cls['datepicker-month']}>
       {generateArrayOfLen(7, 7 - weekdayOffset)
         .map(v => v % 7)
         .map(weekday => (
-          <span key={`head-${weekday}`} className={cls["datepicker-day-name"]}>
+          <span key={`head-${weekday}`} className={cls['datepicker-day-name']}>
             {renderWeekdayShort(weekday)}
           </span>
         ))}
@@ -173,4 +174,4 @@ export const MonthView = (props: MonthViewProps) => {
   );
 };
 
-MonthView.displayName = "MonthView";
+MonthView.displayName = 'MonthView';

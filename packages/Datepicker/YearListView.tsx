@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import cls from "./styles.scss";
+import cls from './styles.scss';
 
-import { generateArrayOfLen, isYearDisabled } from "./utils";
+import { generateArrayOfLen, isYearDisabled } from './utils';
 
 export type YearListViewProps = {
   handleYearSelect: (yearNumber: number) => void;
@@ -16,16 +16,17 @@ export const YearListView = (props: YearListViewProps) => {
   const currentYear = visibleDate.getFullYear();
   const startYear = currentYear - (currentYear % 12);
   return (
-    <div className={cls["datepicker-year-list"]}>
+    <div className={cls['datepicker-year-list']}>
       {generateArrayOfLen(12, startYear).map(yearNumber => {
         const onClickMonth = () => {
           handleYearSelect(yearNumber);
         };
         return (
           <button
+            type="button"
             key={yearNumber}
             onClick={onClickMonth}
-            className={cls["datepicker-year-list-item"]}
+            className={cls['datepicker-year-list-item']}
             disabled={isYearDisabled(
               new Date(yearNumber, 1, 1),
               minDate,
@@ -40,4 +41,4 @@ export const YearListView = (props: YearListViewProps) => {
   );
 };
 
-YearListView.displayName = "YearListView";
+YearListView.displayName = 'YearListView';

@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import cls from "./styles.scss";
+import cls from './styles.scss';
 
-import { generateArrayOfLen, isMonthDisabled } from "./utils";
+import { generateArrayOfLen, isMonthDisabled } from './utils';
 
 export type MonthListViewProps = {
   handleMonthSelect: (monthNumber: number) => void;
@@ -24,16 +24,17 @@ export const MonthListView = (props: MonthListViewProps) => {
   const visibleYear = visibleDate.getFullYear();
 
   return (
-    <div className={cls["datepicker-month-list"]}>
+    <div className={cls['datepicker-month-list']}>
       {generateArrayOfLen(12, 0).map(monthNumber => {
         const onClickMonth = () => {
           handleMonthSelect(monthNumber);
         };
         return (
           <button
+            type="button"
             key={monthNumber}
             onClick={onClickMonth}
-            className={cls["datepicker-month-list-item"]}
+            className={cls['datepicker-month-list-item']}
             disabled={isMonthDisabled(
               new Date(visibleYear, monthNumber, 1),
               minDate,
@@ -48,4 +49,4 @@ export const MonthListView = (props: MonthListViewProps) => {
   );
 };
 
-MonthListView.displayName = "MonthListView";
+MonthListView.displayName = 'MonthListView';

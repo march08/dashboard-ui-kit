@@ -98,6 +98,7 @@ $yellow-rgb: hexToRgb($yellow);
   // borders
   --border-color-base: #eaedf3;
   --border-color-main: #d8dce6;
+  --border-color-main-2: #bdc2d1;
   --border-color-adverse: #2e2e33;
   --border-color-secondary: #2d9c3c;
 
@@ -120,11 +121,13 @@ $text-on-color: var(--text-on-color);
 
 $border-color-base: var(--border-color-base);
 $border-color-main: var(--border-color-main);
+$border-color-main-2: var(--border-color-main-2);
 $border-color-adverse: var(--border-color-adverse);
 $border-color-secondary: var(--border-color-secondary);
 
 $border-default-base: 1px solid var(--border-color-base);
 $border-default-main: 1px solid var(--border-color-main);
+$border-default-main-2: 1px solid var(--border-color-main-2);
 $border-default-adverse: 1px solid var(--border-color-adverse);
 
 $bg-base: var(--bg-base);
