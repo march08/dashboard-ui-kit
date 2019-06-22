@@ -1,6 +1,6 @@
 {
   "name": "@duik/alert",
-  "version": "0.1.7-next.1",
+  "version": "0.1.7",
   "description": "Dashboard UI Kit Alert",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
@@ -17,7 +17,7 @@
     "react-dom": "^16.8.0"
   },
   "dependencies": {
-    "@duik/core": "^0.1.7-next.1"
+    "@duik/core": "^0.1.7"
   },
   "gitHead": "efe4e90b5b41da75ba32d08b41f180519daca614"
 }
