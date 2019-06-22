@@ -61,9 +61,7 @@ export const ReactDocsButton = () => {
   return (
     <>
       <h2 id="props">Props</h2>
-      <Widget>
-        <PropTable itemProps={itemProps} />
-      </Widget>
+              <PropTable itemProps={itemProps} />
       <h2 id="DatepickerValue">DatepickerValue</h2>
       <p>
         Value varies based on the <code>isRange</code> prop.{" "}

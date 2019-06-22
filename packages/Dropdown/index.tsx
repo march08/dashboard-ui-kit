@@ -44,11 +44,12 @@ export type DropdownProps<
   buttonText?: React.ReactNode;
   openControls?: OpenStateControls;
   block?: boolean;
+  closeOnOptionClick?: boolean;
 } & Children;
 
 type Children =
   | { children?: (props: OpenStateControls) => React.ReactNode }
-  | { children?: React.ReactNode };
+  | { children?: JSX.Element | JSX.Element[] };
 
 export const Dropdown = <
   BC extends AnyTag = typeof DropdownButton,
@@ -61,16 +62,35 @@ export const Dropdown = <
     buttonProps = {},
     MenuComponent = DropdownMenu,
     menuProps = {},
-    children,
+    children: childrenProp,
     menuPosition = DropdownMenuPosition['bottom-right'],
     buttonText,
     className,
     openControls: externalOpenControls,
     block,
+    closeOnOptionClick = false,
     ...rest
   } = props;
 
   const openControls = externalOpenControls || useOpenState(false);
+
+  const children =
+    (typeof childrenProp === 'function' && childrenProp(openControls)) ||
+    (closeOnOptionClick &&
+      React.Children.map(childrenProp, (el: React.ReactElement<any>) => {
+        // adds onClick: handleClose
+        if (el) {
+          try {
+            return React.cloneElement(el, {
+              onClick: openControls.handleClose
+            });
+          } catch (e) {
+            return el;
+          }
+        }
+        return el;
+      })) ||
+    childrenProp;
 
   return (
     <OuterEventsHandler

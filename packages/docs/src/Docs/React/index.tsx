@@ -1,11 +1,11 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   RouteComponentProps,
   Switch,
   Route,
   Redirect,
   NavLink as RRNavLink
-} from "react-router-dom";
+} from 'react-router-dom';
 import {
   NavPanel,
   NavSection,
@@ -13,18 +13,18 @@ import {
   NavSectionTitle,
   NavTitle,
   ContainerHorizontal
-} from "@duik/it";
-import { PageScroll } from "components";
-import { Icon } from "@duik/icon";
+} from '@duik/it';
+import { PageScroll } from 'components';
+import { Icon } from '@duik/icon';
 
-import navSections, { GeneratedLinkData } from "./links";
+import navSections, { GeneratedLinkData } from './links';
 
 export const DocsReact = (props: RouteComponentProps) => {
   const { match, location } = props;
 
   return (
-    <ContainerHorizontal>
-      <NavPanel>
+    <ContainerHorizontal style={{ overflow: 'hidden' }}>
+      <NavPanel style={{ position: 'relative', zIndex: 10 }}>
         <NavTitle>React Docs</NavTitle>
 
         {navSections.map(section => (

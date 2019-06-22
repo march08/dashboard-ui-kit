@@ -82,6 +82,39 @@ export const ReactDocsButton = () => {
         ]}
       />
 
+      <h2 id="basics">Close on option click</h2>
+      <p>
+        By default, the dropdown doesn't close when you click on the dropdown
+        item. This is intentional. If you want to close the dropdown after
+        clicking the option, you can pass <code>closeOnOptionClick</code> prop
+        as true. If you want to have a better control and decide per item, then
+        check the <Link to="#control">example below</Link>.
+      </p>
+
+      <ExampleTable
+        data={[
+          {
+            content: (
+              <Dropdown
+                closeOnOptionClick
+                buttonText={<strong>Click me</strong>}
+              >
+                <DropdownItem>Item 1</DropdownItem>
+                <DropdownItem>Item 2</DropdownItem>
+                <DropdownItem Component={Link} to="#somewhere">
+                  Item as Link
+                </DropdownItem>
+              </Dropdown>
+            ),
+            code: `<Dropdown buttonText={<strong>Click me</strong>}>
+<DropdownItem>Item 1</DropdownItem>
+<DropdownItem>Item 2</DropdownItem>
+<DropdownItem Component={Link} to="#somewhere">Item as Link</DropdownItem>
+</Dropdown>`
+          }
+        ]}
+      />
+
       <h2 id="control">Better control over the dropdown</h2>
       <p>
         It wouldn't be really useful if you cannot control the state of the

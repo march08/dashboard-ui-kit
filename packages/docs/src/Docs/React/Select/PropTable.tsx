@@ -126,9 +126,7 @@ export const PropTableDropdown = () => {
         <PropTable itemProps={optionProps} />
       </Widget>
       <h2 id="props">Select Props</h2>
-      <Widget>
-        <PropTable itemProps={itemProps} />
-      </Widget>
+              <PropTable itemProps={itemProps} />
     </>
   );
 };

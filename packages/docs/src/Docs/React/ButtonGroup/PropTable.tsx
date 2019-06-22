@@ -25,9 +25,7 @@ export const ReactDocsButtonGroup = () => {
   return (
     <>
       <h2 id="props">Prop table</h2>
-      <Widget>
-        <PropTable itemProps={itemProps} />
-      </Widget>
+              <PropTable itemProps={itemProps} />
     </>
   );
 };

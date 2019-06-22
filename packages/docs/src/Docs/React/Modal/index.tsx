@@ -40,22 +40,41 @@ export const ReactDocsAvatar = () => {
         handleClose={modalOpenState.handleClose}
       >
         <ModalHeader>
-          <h2>Test</h2>
+          <h2>Simple Modal</h2>
         </ModalHeader>
-        <ModalBody>Test</ModalBody>
-        <ModalBodySecondary>Test</ModalBodySecondary>
-        <ModalBody>Test</ModalBody>
+        <ModalBody>
+          <p>This is a simple modal</p>
+        </ModalBody>
         <ModalFooter>
           <Button onClick={modalOpenState.handleClose}>Cancel</Button>
           <Button onClick={modalOpenState.handleClose} primary>
-            Create
+            Ok, got it!
           </Button>
         </ModalFooter>
       </Modal>
-      <H1>Avatar</H1>
-      <ImportPath name="Avatar" />
-      <br />
-      <p>Display user content with ease.</p>
+      <H1>Modal</H1>
+      <ImportPath
+        name="Modal"
+        subComponents={[
+          'ModalHeader',
+          'ModalBody',
+          'ModalBodySecondary',
+          'ModalFooter'
+        ]}
+      />
+      <p>
+        Dashboard UI Kit gives you several components to effectively build nice
+        and clean modals. Modals can be used anywhere in the code structure, the
+        actuall DOM will be rendered in the <code>body</code> with help of{' '}
+        <a
+          href="https://reactjs.org/docs/portals.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          react portal
+        </a>
+        .
+      </p>
 
       <h2 id="text-control">Text control</h2>
 

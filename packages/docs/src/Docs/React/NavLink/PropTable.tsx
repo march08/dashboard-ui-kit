@@ -53,9 +53,7 @@ export const PropTableNavLink = () => {
   return (
     <>
       <h2 id="props">NavLink Props</h2>
-      <Widget>
-        <PropTable itemProps={itemProps} />
-      </Widget>{" "}
+              <PropTable itemProps={itemProps} />{" "}
     </>
   );
 };

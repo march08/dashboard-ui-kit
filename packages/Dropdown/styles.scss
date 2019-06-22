@@ -179,11 +179,13 @@
 .dropdown-toggle {
   &.btn-square,
   &.dropdown-toggle-no-arrows {
-    padding-right: $btn-padding-base-x;
     &:before,
     &:after {
       display: none;
     }
+  }
+  &.dropdown-toggle-no-arrows {
+    padding-right: $btn-padding-base-x;
   }
 }
 

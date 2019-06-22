@@ -26,9 +26,7 @@ export const PropTableNavPanel = () => {
   return (
     <>
       <h2 id="props">NavPanel Props</h2>
-      <Widget>
-        <PropTable itemProps={itemProps} />
-      </Widget>{" "}
+              <PropTable itemProps={itemProps} />{" "}
     </>
   );
 };

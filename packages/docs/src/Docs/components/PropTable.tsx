@@ -1,49 +1,48 @@
-import * as React from "react";
-import { WidgetTable } from "@duik/it";
-import { ReactDocsProperty } from "./types";
+import * as React from 'react';
+import { WidgetTable, Widget, WidgetContainer } from '@duik/it';
+import { ReactDocsProperty } from './types';
 
-import cls from "./docspage.module.scss";
+import cls from './docspage.module.scss';
 
 type PropTableProps = {
   itemProps?: ReactDocsProperty[];
 };
 
 export const PropTable = ({ itemProps }: PropTableProps) => (
-  <WidgetTable className={cls.propTable}>
-    <thead>
-      <tr>
-        <th>Property</th>
-        <th>Type</th>
-        <th>Required</th>
-        <th>Default</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      {itemProps &&
-        itemProps.map(item => (
-          <tr key={Math.random()}>
-            <td>
-              <strong style={{ whiteSpace: "nowrap" }}>{item.prop}</strong>
-            </td>
-            <td style={{ wordBreak: "unset" }}>{item.propType}</td>
-            <td>
-              <p>{item.required ? "true" : "false"}</p>
-            </td>
-            <td>
-              <p>
-                {item.defaultValue === "null" ||
-                item.defaultValue === "false" ||
-                !item.defaultValue
-                  ? ""
-                  : item.defaultValue}
-              </p>
-            </td>
-            <td>{item.desc}</td>
-          </tr>
-        ))}
-    </tbody>
-  </WidgetTable>
+  <WidgetContainer className={cls.propTable}>
+    {itemProps &&
+      itemProps.map(item => (
+        <Widget key={Math.random()}>
+          <WidgetTable>
+            <tbody>
+              <tr>
+                <td style={{ fontSize: '1rem' }}>
+                  <strong style={{ whiteSpace: 'nowrap' }}>{item.prop}</strong>
+                </td>
+                <td style={{ textAlign: 'right' }}>
+                  <p>{item.required ? 'Required' : 'false'}</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>type:</span> {item.propType}
+                </td>
+                <td style={{ textAlign: 'right' }}>
+                  {item.defaultValue === 'null' ||
+                  item.defaultValue === 'false' ||
+                  !item.defaultValue ? null : (
+                    <p>default value: {item.defaultValue}</p>
+                  )}
+                </td>
+              </tr>
+              <tr>
+                <td>{item.desc}</td>
+              </tr>
+            </tbody>
+          </WidgetTable>
+        </Widget>
+      ))}
+  </WidgetContainer>
 );
 
 PropTable.defaultProps = {

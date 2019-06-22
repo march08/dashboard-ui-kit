@@ -35,9 +35,7 @@ export const PropTableProgress = () => {
   return (
     <>
       <h2 id="props">NavLink Props</h2>
-      <Widget>
-        <PropTable itemProps={itemProps} />
-      </Widget>{" "}
+              <PropTable itemProps={itemProps} />{" "}
     </>
   );
 };
