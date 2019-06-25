@@ -11,11 +11,16 @@ export const CustomizingTheme = () => {
     <DocsContentPage>
       <PageContent
         data={[
-          { id: 'example', label: 'Examples' },
-          { id: 'sizes', label: 'Sizes' }
+          { id: 'intro', label: 'Basic Introduction' },
+          { id: 'integration', label: 'Style integration' },
+          { id: 'overriding', label: 'CSS Overriding' },
+          { id: 'theming', label: 'Theming' },
+          { id: 'custom-theme', label: 'Creating custom theme' },
+          { id: 'css-vars', label: 'CSS Vars' },
+          { id: 'css-vars-list', label: 'List of variables' }
         ]}
       />
-      <H1>CSS and Theming</H1>
+      <H1 id="intro">CSS and Theming</H1>
       <p>
         Dashboard UI kit is developed in a friendly way towards CSS adjustments
         and theming. The core core componnets are styled with SCSS, which gives
@@ -34,14 +39,14 @@ export const CustomizingTheme = () => {
   Default
 </button>`}
       </Code>
-      <h2>Zero dependencies and no hassle integration</h2>
+      <h2 id="integration">Zero dependencies and no hassle integration</h2>
       <p>
         You don't need any stylesheet libraries, initialization is unnecessary
         and overriding styles is dead simple. To install the library, simple
         follow <Link to="/docs/react/installation">this guide</Link>. TLDR,
         install our kit, import styles and you are good to go!
       </p>
-      <h2>Overriding styles</h2>
+      <h2 id="overriding">Overriding styles</h2>
       <p>
         As seen in the code above, the class naming is very straightforward and
         easy to work with. Many components share the same class naming as
@@ -65,7 +70,7 @@ export const CustomizingTheme = () => {
         some exception, but otherwise, we tried our best to deliver the best
         developing experience.
       </p>
-      <h2>Theming with CSS Variables</h2>
+      <h2 id="theming">Theming with CSS Variables</h2>
       <p>
         This has been a big topic. We want to deliver an amazing experience for
         developers and this is no exception. We decided to leverage{' '}
@@ -90,7 +95,7 @@ export const CustomizingTheme = () => {
         </ExtLink>
         .
       </p>
-      <h3>Creating custom theme</h3>
+      <h3 id="custom-theme">Creating custom theme</h3>
       <p>
         This cannot be easier. On the right part of the top bar, you can switch
         between light and dark theme. By default, light theme is enabled. We
@@ -130,7 +135,7 @@ export const CustomizingTheme = () => {
   ...
 }`}
       </Code>
-      <h3>Using CSS variables in your (S)CSS</h3>
+      <h3 id="css-vars">Using CSS variables in your (S)CSS</h3>
       <p>You can use your css variables like so</p>
       <Code language={CodeLang.css}>
         {`.my-class {
@@ -147,7 +152,7 @@ export const CustomizingTheme = () => {
   color: $color-primary;
 }`}
       </Code>
-      <h3>List of CSS variables</h3>
+      <h3 id="css-vars-list">List of CSS variables</h3>
       <Widget className={cls.csstable}>
         <WidgetTable>
           {colors.map(item => (
