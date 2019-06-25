@@ -20,8 +20,8 @@ directories.forEach(dir => {
 
     // frikin fix for ts declaration gen
     const replaced = contentString.replace(
-      new RegExp('../core', 'g'),
-      '@duik/core'
+      new RegExp('"../core"', 'g'),
+      '"@duik/core"'
     );
     fs.writeFileSync(path.resolve(__dirname, dir, 'dist', file), replaced);
   });
