@@ -1,5 +1,5 @@
-import * as React from "react";
-import "./styles.scss";
+import * as React from 'react';
+import './styles.scss';
 
 /**
  * string or react component
@@ -22,7 +22,3 @@ export type PropsWithTagProps<
 > = React.ComponentProps<T> & Props;
 
 export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
-
-export default () => {
-  console.log("hello");
-};

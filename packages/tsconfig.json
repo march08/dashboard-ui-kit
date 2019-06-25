@@ -1,14 +1,10 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
-    "module": "esnext",
+    "module": "commonjs",
     "noImplicitAny": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -16,13 +12,8 @@
     "declaration": true,
     "noEmit": false,
     "jsx": "react",
-    "typeRoots": [
-      "src/index.d.ts",
-      "node_modules/@types"
-    ]
+    "baseUrl": ".",
+    "paths": { "@duik/core": ["./core"] }
   },
-  "exclude": [
-    "node_modules",
-    "./docs/*"
-  ]
+  "exclude": ["node_modules", "./docs/*"]
 }
