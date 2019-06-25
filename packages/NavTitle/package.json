@@ -1,6 +1,6 @@
 {
   "name": "@duik/nav-title",
-  "version": "0.1.8-alpha.0",
+  "version": "0.1.8-alpha.1",
   "description": "Dashboard UI Kit Nav Title",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,8 +18,8 @@
     "react-dom": "^16.8.0"
   },
   "dependencies": {
-    "@duik/core": "^0.1.8-alpha.0",
-    "@duik/create-simple-component": "^0.1.8-alpha.0"
+    "@duik/core": "^0.1.8-alpha.1",
+    "@duik/create-simple-component": "^0.1.8-alpha.1"
   },
   "gitHead": "efe4e90b5b41da75ba32d08b41f180519daca614"
 }

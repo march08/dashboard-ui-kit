@@ -1,6 +1,6 @@
 {
   "name": "@duik/utils",
-  "version": "0.1.7-next.1",
+  "version": "0.1.8-alpha.1",
   "description": "Dashboard UI Kit Utilities",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,7 +18,7 @@
     "react-dom": "^16.8.0"
   },
   "dependencies": {
-    "@duik/use-open-state": "^0.1.7-next.1"
+    "@duik/use-open-state": "^0.1.8-alpha.1"
   },
   "gitHead": "7eed8237276864892b18bf2999daaf73ffc04739"
 }

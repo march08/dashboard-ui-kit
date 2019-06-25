@@ -1,6 +1,6 @@
 {
   "name": "@duik/radio",
-  "version": "0.1.8-alpha.0",
+  "version": "0.1.8-alpha.1",
   "description": "Dashboard UI Kit Radio",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -18,7 +18,7 @@
     "react-dom": "^16.8.0"
   },
   "dependencies": {
-    "@duik/base-input": "^0.1.8-alpha.0"
+    "@duik/base-input": "^0.1.8-alpha.1"
   },
   "gitHead": "efe4e90b5b41da75ba32d08b41f180519daca614"
 }
