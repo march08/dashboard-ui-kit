@@ -1,6 +1,6 @@
 {
   "name": "@duik/widget",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Dashboard UI Kit Widget",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
@@ -17,7 +17,7 @@
     "react-dom": "^16.8.0"
   },
   "dependencies": {
-    "@duik/core": "^0.2.0"
+    "@duik/core": "^0.2.1"
   },
   "gitHead": "7eed8237276864892b18bf2999daaf73ffc04739"
 }
