@@ -1,7 +1,7 @@
-import * as React from "react";
-import { Link } from "react-router-dom";
-import { H1, Code, CodeLang } from "components";
-import { DocsContentPage, PageContent, DocsSection } from "../../components";
+import * as React from 'react';
+import { Link } from 'react-router-dom';
+import { H1, Code, CodeLang } from 'components';
+import { DocsContentPage, PageContent, DocsSection } from '../../components';
 
 export const ReactDocsInstall = () => {
   return (
@@ -12,8 +12,8 @@ export const ReactDocsInstall = () => {
       ]} /> */}
       <H1>Dashboard UI kit installation</H1>
       <p>
-        Install kit as npm package. Minimum React version is <code>16.8.x</code>{" "}
-        since the package is using react{" "}
+        Install kit as npm package. Minimum React version is <code>16.8.x</code>{' '}
+        since the package is using react{' '}
         <a
           href="https://reactjs.org/docs/hooks-reference.html"
           rel="noopener noreferrer"
@@ -25,7 +25,7 @@ export const ReactDocsInstall = () => {
 
       <h3>Install packages</h3>
       <Code language={CodeLang.markup}>
-        yarn add @duik/it classnames react react-dom
+        yarn add @duik/it@latest classnames react react-dom
       </Code>
       <h3>Include CSS</h3>
       <p>Include styling. Do this only once per app!</p>
@@ -41,7 +41,7 @@ import '@duik/{your-other-component}/dist/styles.css'
       </Code>
       <h3>Fonts</h3>
       <p>
-        Include fonts. The base font family of the Dashboard UI kit is{" "}
+        Include fonts. The base font family of the Dashboard UI kit is{' '}
         <a
           href="https://fonts.google.com/?selection.family=Roboto|Roboto+Mono:300,400,500&query=roboto+mon"
           rel="noopener noreferrer"
@@ -61,7 +61,7 @@ import '@duik/{your-other-component}/dist/styles.css'
         including the whole package in our build.
       </p>
       <Code>
-        {`import { Button } from '@duik/it
+        {`import { Button } from '@duik/it'
 
 const MyApp = () => {
   return (

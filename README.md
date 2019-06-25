@@ -6,7 +6,7 @@ Read the docs: https://march08.github.io/duik/
 
 installation:
 
-`yarn add @duik/it`
+`yarn add @duik/it@latest`
 
 use:
 
