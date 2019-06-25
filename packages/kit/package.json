@@ -1,6 +1,6 @@
 {
   "name": "@duik/it",
-  "version": "0.1.8-alpha.1",
+  "version": "0.1.9-alpha.0",
   "description": "Dashboard UI Kit",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -60,7 +60,7 @@
     "@duik/widget-container": "^0.1.8-alpha.1",
     "@duik/widget-content": "^0.1.8-alpha.1",
     "@duik/widget-header": "^0.1.8-alpha.1",
-    "@duik/widget-table": "^0.1.8-alpha.1"
+    "@duik/widget-table": "^0.1.9-alpha.0"
   },
   "gitHead": "7eed8237276864892b18bf2999daaf73ffc04739"
 }

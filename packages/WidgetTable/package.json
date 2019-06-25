@@ -1,6 +1,6 @@
 {
   "name": "@duik/widget-table",
-  "version": "0.1.8-alpha.1",
+  "version": "0.1.9-alpha.0",
   "description": "Dashboard UI Kit Widget Table",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
