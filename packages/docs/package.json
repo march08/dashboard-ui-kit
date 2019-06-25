@@ -1,12 +1,12 @@
 {
   "name": "@duik/docs",
-  "version": "0.1.8-alpha.0",
+  "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "@duik/core": "^0.1.8-alpha.0",
-    "@duik/create-simple-component": "^0.1.8-alpha.0",
-    "@duik/icon": "^0.1.8-alpha.0",
-    "@duik/it": "^0.1.8-alpha.0",
+    "@duik/core": "^0.2.0",
+    "@duik/create-simple-component": "^0.2.0",
+    "@duik/icon": "^0.2.0",
+    "@duik/it": "^0.2.0",
     "@duik/utils": "^0.1.7-next.1",
     "gh-pages": "^2.0.1",
     "react-helmet": "^5.2.1"

@@ -1,6 +1,6 @@
 {
   "name": "@duik/create-simple-component",
-  "version": "0.1.8-alpha.0",
+  "version": "0.2.0",
   "description": "Dashboard UI Kit createSimpleComponent",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
@@ -17,7 +17,7 @@
     "react-dom": "^16.8.0"
   },
   "dependencies": {
-    "@duik/core": "^0.1.8-alpha.0",
+    "@duik/core": "^0.2.0",
     "@types/react": "^16.8.16",
     "@types/react-dom": "^16.8.4"
   },
