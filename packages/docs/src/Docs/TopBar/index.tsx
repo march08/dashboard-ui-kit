@@ -26,7 +26,7 @@ export const DocsTopBar = () => {
     --bg-base: #2c2c31;
     --border-color-base: #34343a;
     --border-color-main: #44444e;
-    --border-color-main-2: #64646e;
+    --border-color-highlight: #64646e;
     --text-base: #ccc;
     --text-main: #ddd;
     }`}</style>

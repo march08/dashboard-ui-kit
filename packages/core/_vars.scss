@@ -25,13 +25,6 @@ $indigo: #6977ff;
 $red: #e6492d;
 $yellow: #facf55;
 
-$green-darker: darken(#38b249, 5%);
-$blue-darker: darken(#1665d8, 5%);
-$orange-darker: darken(#f6ab2f, 5%);
-$indigo-darker: darken(#6977ff, 5%);
-$red-darker: darken(#e6492d, 5%);
-$yellow-darker: darken(#facf55, 5%);
-
 // rbg for rgba func
 $green-rgb: hexToRgb($green);
 $blue-rgb: hexToRgb($blue);
@@ -48,6 +41,7 @@ $yellow-rgb: hexToRgb($yellow);
   --warning: #{$orange};
   --danger: #{$red};
   --info: #{$indigo};
+
   // colors by domain rgb
   --success-rgb: #{$green-rgb};
   --secondary-rgb: #{$green-rgb};
@@ -55,13 +49,6 @@ $yellow-rgb: hexToRgb($yellow);
   --warning-rgb: #{$orange-rgb};
   --danger-rgb: #{$red-rgb};
   --info-rgb: #{$indigo-rgb};
-  // darken
-  --success-darker: #{$green-darker};
-  --secondary-darker: #{$green-darker};
-  --primary-darker: #{$blue-darker};
-  --warning-darker: #{$orange-darker};
-  --danger-darker: #{$red-darker};
-  --info-darker: #{$indigo-darker};
 
   // colors
   --green: #{$green};
@@ -70,13 +57,6 @@ $yellow-rgb: hexToRgb($yellow);
   --red: #{$red};
   --indigo: #{$indigo};
   --yellow: #{$yellow};
-  //darker
-  --green-darker: #{$green-darker};
-  --blue-darker: #{$blue-darker};
-  --orange-darker: #{$orange-darker};
-  --red-darker: #{$red-darker};
-  --indigo-darker: #{$indigo-darker};
-  --yellow-darker: #{$yellow-darker};
 
   // colors rgb
   --green-rgb: #{$green-rgb};
@@ -98,16 +78,13 @@ $yellow-rgb: hexToRgb($yellow);
   // borders
   --border-color-base: #eaedf3;
   --border-color-main: #d8dce6;
-  --border-color-main-2: #bdc2d1;
+  --border-color-highlight: #bdc2d1;
   --border-color-adverse: #2e2e33;
-  --border-color-secondary: #2d9c3c;
 
   // backgrounds
   --bg-base: #fbfbfd;
   --bg-main: #ffffff;
   --bg-adverse-main: #252529;
-
-  --gradient-secondary: linear-gradient(0deg, #34aa44 0%, #38b249 100%);
 }
 
 // USE THESE
@@ -121,13 +98,13 @@ $text-on-color: var(--text-on-color);
 
 $border-color-base: var(--border-color-base);
 $border-color-main: var(--border-color-main);
-$border-color-main-2: var(--border-color-main-2);
+$border-color-highlight: var(--border-color-highlight);
 $border-color-adverse: var(--border-color-adverse);
 $border-color-secondary: var(--border-color-secondary);
 
 $border-default-base: 1px solid var(--border-color-base);
 $border-default-main: 1px solid var(--border-color-main);
-$border-default-main-2: 1px solid var(--border-color-main-2);
+$border-default-main-2: 1px solid var(--border-color-highlight);
 $border-default-adverse: 1px solid var(--border-color-adverse);
 
 $bg-base: var(--bg-base);

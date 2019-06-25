@@ -5,3 +5,4 @@ export * from './H1';
 export * from './CodeExample';
 export * from './Overlay';
 export * from './Modal';
+export * from './ExtLink';

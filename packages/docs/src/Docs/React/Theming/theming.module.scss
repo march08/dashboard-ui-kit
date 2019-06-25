@@ -1,0 +1,23 @@
+@import '@duik/core/_vars.scss';
+.csstable {
+  tr td {
+    font-size: 0.75rem;
+    font-family: 'Roboto Mono';
+  }
+  tr th {
+    color: $text-tertiary;
+  }
+}
+
+.cssValue {
+  height: 30px;
+  width: 30px;
+  border: 2px #eee solid;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.csstableDefaultValue {
+  display: flex;
+  align-items: center;
+}

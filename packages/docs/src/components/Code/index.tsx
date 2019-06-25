@@ -19,7 +19,8 @@ import './atom-dark.scss';
 export enum CodeLang {
   javascript = 'javascript',
   markup = 'markup',
-  jsx = 'jsx'
+  jsx = 'jsx',
+  css = 'css'
 }
 
 export type CodeProps = JSX.IntrinsicElements['div'] & {
