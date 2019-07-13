@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { ReactDocsProperty } from "./types";
 
 export type ReactDocsPropertyOptional = {
-  [K in keyof ReactDocsProperty]?: ReactDocsProperty[K];
+  [K in keyof ReactDocsProperty]?: ReactDocsProperty[K]
 };
 
 /* eslint-disable max-len */
@@ -95,6 +95,14 @@ export const properties = {
         {" for more information."}
       </span>
     ),
+    ...data
+  }),
+  formGroup: (data?: ReactDocsPropertyOptional) => ({
+    prop: "noWrap",
+    propType: "boolean",
+    required: false,
+    desc:
+      "When multiple elements are rendered, e.g. providing a label, the component will wrap the content with a FormGroup component for mroe consistent UI. pass noWrap={false} to disable the default behaviour.",
     ...data
   })
 };

@@ -44,10 +44,10 @@ body[data-dark-mode] {
     line-height: 1.25rem;
   }
 
-  :not(pre) > code[class*='language-'],
-  pre[class*='language-'] {
-    background: #252529;
-  }
+  // :not(pre) > code[class*='language-'],
+  // pre[class*='language-'] {
+  //   background: #252529;
+  // }
 
   /* Inline code */
   :not(pre) > code[class*='language-'] {

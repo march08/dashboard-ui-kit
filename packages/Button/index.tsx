@@ -40,7 +40,7 @@ export type ButtonProps<T extends AnyTag> = PropsWithTagProps<
 >;
 export type ButtonRefObject = React.RefObject<HTMLButtonElement>;
 
-export const ButtonWithoutForwardRef = <T extends AnyTag = "button">(
+export const BaseButton = <T extends AnyTag = "button">(
   props: ButtonProps<T>,
   ref: ButtonRefObject
 ) => {
@@ -108,7 +108,7 @@ export const ButtonWithoutForwardRef = <T extends AnyTag = "button">(
   );
 };
 
-export const Button = React.forwardRef(ButtonWithoutForwardRef);
+export const Button = React.forwardRef(BaseButton);
 
 Button.displayName = "Button";
 

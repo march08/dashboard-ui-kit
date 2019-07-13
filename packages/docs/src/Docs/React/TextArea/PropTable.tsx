@@ -28,6 +28,7 @@ const itemProps = [
     propType: "React.ReactNode",
     desc: "Displays success message and renders input in success state."
   },
+  properties.formGroup(),
   properties.rest({
     desc: <>Other properties are passed down to the wrapping textarea element</>
   })
@@ -37,7 +38,7 @@ export const ReactDocsButton = () => {
   return (
     <>
       <h2 id="props">Prop table</h2>
-              <PropTable itemProps={itemProps} />
+      <PropTable itemProps={itemProps} />
     </>
   );
 };

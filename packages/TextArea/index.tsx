@@ -1,5 +1,7 @@
 import * as React from "react";
 import classnames from "classnames";
+import { FormGroup } from "@duik/form-group";
+
 import "./styles.scss";
 
 export type TextAreaProps = JSX.IntrinsicElements["textarea"] & {
@@ -9,6 +11,7 @@ export type TextAreaProps = JSX.IntrinsicElements["textarea"] & {
   successMessage?: React.ReactNode;
   leftEl?: React.ReactNode;
   rightEl?: React.ReactNode;
+  noWrap?: boolean;
 };
 
 export const TextArea = (props: TextAreaProps) => {
@@ -21,10 +24,11 @@ export const TextArea = (props: TextAreaProps) => {
     leftEl,
     rightEl,
     id,
+    noWrap,
     ...rest
   } = props;
 
-  return (
+  const coreEl = (
     <>
       {label && <label htmlFor={id}>{label}</label>}
       <textarea
@@ -43,6 +47,8 @@ export const TextArea = (props: TextAreaProps) => {
       ) : null}
     </>
   );
+
+  return label && !noWrap ? <FormGroup>{coreEl}</FormGroup> : coreEl;
 };
 
 TextArea.displayName = "TextArea";
