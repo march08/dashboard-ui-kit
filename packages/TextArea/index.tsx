@@ -28,7 +28,7 @@ export const TextArea = (props: TextAreaProps) => {
     ...rest
   } = props;
 
-  const coreEl = (
+  const el = (
     <>
       {label && <label htmlFor={id}>{label}</label>}
       <textarea
@@ -48,7 +48,7 @@ export const TextArea = (props: TextAreaProps) => {
     </>
   );
 
-  return label && !noWrap ? <FormGroup>{coreEl}</FormGroup> : coreEl;
+  return noWrap ? el : <FormGroup>{el}</FormGroup>;
 };
 
 TextArea.displayName = "TextArea";

@@ -1,5 +1,7 @@
 import * as React from "react";
 import classnames from "classnames";
+import { FormGroup } from "@duik/form-group";
+
 import cls from "./styles.scss";
 
 export type TextFieldProps = JSX.IntrinsicElements["input"] & {
@@ -10,6 +12,7 @@ export type TextFieldProps = JSX.IntrinsicElements["input"] & {
   successMessage?: React.ReactNode;
   leftEl?: React.ReactNode;
   rightEl?: React.ReactNode;
+  noWrap?: boolean;
 };
 
 export const TextField = (props: TextFieldProps) => {
@@ -23,10 +26,11 @@ export const TextField = (props: TextFieldProps) => {
     leftEl,
     rightEl,
     id,
+    noWrap,
     ...rest
   } = props;
 
-  return (
+  const el = (
     <>
       {label && <label htmlFor={id}>{label}</label>}
       <div
@@ -58,6 +62,8 @@ export const TextField = (props: TextFieldProps) => {
       ) : null}
     </>
   );
+
+  return noWrap ? el : <FormGroup>{el}</FormGroup>;
 };
 
 TextField.displayName = "TextField";
