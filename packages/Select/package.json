@@ -20,7 +20,8 @@
     "@duik/content-title": "^0.2.1",
     "@duik/core": "^0.2.1",
     "@duik/dropdown": "^0.2.1",
-    "@duik/text-field": "^0.2.1"
+    "@duik/text-field": "^0.2.1",
+    "@duik/form-group": "^0.2.1"
   },
   "gitHead": "efe4e90b5b41da75ba32d08b41f180519daca614"
 }

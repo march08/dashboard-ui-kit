@@ -1,19 +1,20 @@
-import React from 'react';
-import classnames from 'classnames';
-import { Dropdown, DropdownItem, DropdownMenuPosition } from '@duik/dropdown';
-import { TextField } from '@duik/text-field';
-import { ContentTitle } from '@duik/content-title';
+import React from "react";
+import classnames from "classnames";
+import { Dropdown, DropdownItem, DropdownMenuPosition } from "@duik/dropdown";
+import { TextField } from "@duik/text-field";
+import { ContentTitle } from "@duik/content-title";
+import { FormGroup } from "@duik/form-group";
 
 import {
   SelectOption,
   SelectOnOptionFn,
   SelectActiveOption,
   SelectOptionProps
-} from './types';
-import { getDisplayValue } from './utils';
-import { SelectButton } from './SelectButton';
-import cls from './styles.scss';
-export * from './types';
+} from "./types";
+import { getDisplayValue } from "./utils";
+import { SelectButton } from "./SelectButton";
+import cls from "./styles.scss";
+export * from "./types";
 
 export type SelectMenuPosition = DropdownMenuPosition;
 
@@ -27,6 +28,7 @@ export type SelectProps<
   inputSearchProps?: React.ComponentProps<typeof TextField>;
   searchable?: boolean;
   label?: React.ReactNode;
+  noWrap?: boolean;
 } & SelectOptionProps<V, M>;
 
 export const Select = <V extends number | string, M extends boolean = false>(
@@ -36,7 +38,7 @@ export const Select = <V extends number | string, M extends boolean = false>(
     options,
     activeOption: activeOptionProp,
     defaultOption,
-    placeholder = 'Select Option',
+    placeholder = "Select Option",
     onOptionClick,
     name,
     inputSearchProps = {},
@@ -45,6 +47,7 @@ export const Select = <V extends number | string, M extends boolean = false>(
     multiple,
     className,
     label,
+    noWrap,
     ...rest
   } = props;
 
@@ -91,11 +94,11 @@ export const Select = <V extends number | string, M extends boolean = false>(
     }
   };
 
-  return (
+  const el = (
     <>
       {label && <ContentTitle>{label}</ContentTitle>}
       <Dropdown
-        className={classnames(cls['select'], className)}
+        className={classnames(cls["select"], className)}
         ButtonComponent={SelectButton}
         buttonProps={{
           ...buttonProps,
@@ -116,19 +119,19 @@ export const Select = <V extends number | string, M extends boolean = false>(
           return (
             <>
               {searchable && (
-                <div className={cls['select-search-box']}>
+                <div className={cls["select-search-box"]}>
                   <TextField
                     {...inputSearchProps}
                     autoFocus
                     className={classnames(
-                      cls['select-search-input'],
+                      cls["select-search-input"],
                       inputSearchProps.className
                     )}
                     rightEl={
-                      <div className={cls['select-search-wrapper']}>
-                        <div className={cls['select-search']}>
-                          <div className={cls['select-search-circle']} />
-                          <div className={cls['select-search-rectangle']} />
+                      <div className={cls["select-search-wrapper"]}>
+                        <div className={cls["select-search"]}>
+                          <div className={cls["select-search-circle"]} />
+                          <div className={cls["select-search-rectangle"]} />
                         </div>
                       </div>
                     }
@@ -145,7 +148,7 @@ export const Select = <V extends number | string, M extends boolean = false>(
                   {multiple &&
                     Array.isArray(activeOption) &&
                     activeOption.find(item => item.value === option.value) && (
-                      <span className={cls['select-option-selected-mark']} />
+                      <span className={cls["select-option-selected-mark"]} />
                     )}
                 </DropdownItem>
               ))}
@@ -155,4 +158,6 @@ export const Select = <V extends number | string, M extends boolean = false>(
       </Dropdown>
     </>
   );
+
+  return label && !noWrap ? <FormGroup>{el}</FormGroup> : el;
 };

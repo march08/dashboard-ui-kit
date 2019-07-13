@@ -34,6 +34,7 @@ const itemProps = [
     required: false,
     desc: "You can pass any prop that Datepicker accepts as well, e.g. minDate"
   },
+  properties.formGroup(),
   properties.rest({
     desc: (
       <>
@@ -48,7 +49,7 @@ export const ReactDocsButton = () => {
   return (
     <>
       <h2 id="props">Props</h2>
-              <PropTable itemProps={itemProps} />
+      <PropTable itemProps={itemProps} />
     </>
   );
 };

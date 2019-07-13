@@ -10,6 +10,7 @@ import {
 import { Dropdown } from "@duik/dropdown";
 import { ContentTitle } from "@duik/content-title";
 import { useOpenState } from "@duik/use-open-state";
+import { FormGroup } from "@duik/form-group";
 
 import cls from "./styles.scss";
 
@@ -25,6 +26,7 @@ export type SelectDateProps<M extends boolean> = React.ComponentProps<
     placeholder?: React.ReactNode;
     label?: React.ReactNode;
     renderValue?: SelectDateRenderValue<M>;
+    noWrap?: boolean;
   };
 
 export const SelectDate = <M extends boolean = false>(
@@ -48,6 +50,7 @@ export const SelectDate = <M extends boolean = false>(
     placeholder = "Select Date",
     label,
     renderValue = defaultRenderValue,
+    noWrap,
     // rest is dropdown props
     ...dropdownProps
   } = props;
@@ -92,7 +95,7 @@ export const SelectDate = <M extends boolean = false>(
     )
   } as any; // __TODO fix typing
 
-  return (
+  const el = (
     <>
       {label && <ContentTitle>{label}</ContentTitle>}
       <Dropdown
@@ -106,6 +109,8 @@ export const SelectDate = <M extends boolean = false>(
       </Dropdown>
     </>
   );
+
+  return label && !noWrap ? <FormGroup>{el}</FormGroup> : el;
 };
 
 SelectDate.displayName = "SelectDate";

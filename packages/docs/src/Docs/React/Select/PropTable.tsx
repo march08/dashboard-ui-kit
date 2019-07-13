@@ -106,6 +106,7 @@ const itemProps = [
     prop: "block",
     desc: "Expands the select button."
   }),
+  properties.formGroup(),
   properties.rest({
     desc: (
       <>
@@ -126,7 +127,7 @@ export const PropTableDropdown = () => {
         <PropTable itemProps={optionProps} />
       </Widget>
       <h2 id="props">Select Props</h2>
-              <PropTable itemProps={itemProps} />
+      <PropTable itemProps={itemProps} />
     </>
   );
 };
