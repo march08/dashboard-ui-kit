@@ -1,5 +1,5 @@
-import { camelToSnake, camelToText, createSortString } from 'utils';
-import { RouteComponentProps } from 'react-router-dom';
+import { camelToSnake, camelToText, createSortString } from "utils";
+import { RouteComponentProps } from "react-router-dom";
 
 export type ComponentType =
   | React.ComponentType<RouteComponentProps<any>>
@@ -11,57 +11,57 @@ export type GeneratedLinkData = {
   component: RouteComponentProps; // eslint-disable-line
 };
 
-const form = ['Checkbox', 'Toggle', 'Radio', 'TextField', 'TextArea', 'Select'];
+const form = ["Checkbox", "Toggle", "Radio", "TextField", "TextArea", "Select"];
 
-const date = ['Datepicker', 'SelectDate'];
+const date = ["Datepicker", "SelectDate"];
 
 const components = [
-  'Button',
-  'ButtonGroup',
-  'Icon',
-  'Dropdown',
-  'Progress',
-  'Avatar',
-  'Modal',
-  'Alert'
+  "Button",
+  "ButtonGroup",
+  "Icon",
+  "Dropdown",
+  "Progress",
+  "Avatar",
+  "Modal",
+  "Alert"
 ];
 
-const layout = ['ContainerVertical', 'ContainerHorizontal', 'ScrollArea'];
+const layout = ["ContainerVertical", "ContainerHorizontal", "ScrollArea"];
 
 const topBar = [
-  'TopBar',
-  'TopBarLink',
-  'TopBarLinkContainer',
-  'TopBarTitle',
-  'TopBarSection'
+  "TopBar",
+  "TopBarLink",
+  "TopBarLinkContainer",
+  "TopBarTitle",
+  "TopBarSection"
 ];
 const nav = [
-  'NavPanel',
-  'NavLink',
-  'NavTitle',
-  'NavSection',
-  'NavSectionTitle'
+  "NavPanel",
+  "NavLink",
+  "NavTitle",
+  "NavSection",
+  "NavSectionTitle"
 ];
-const tabNav = ['Tabs', 'TabItem'];
+const tabNav = ["Tabs", "TabItem"];
 
 const cookbook = [
-  'BuildingLayout',
-  'BuildingNavPanel',
-  'BuildingTopBar',
-  'BuildingTabNavigation',
-  'BuildingForms',
-  'ComponentProperty'
+  "BuildingLayout",
+  "BuildingNavPanel",
+  "BuildingTopBar",
+  "BuildingTabNavigation",
+  "BuildingForms",
+  "ComponentProperty"
 ];
 const guides = [
-  'UseWithTypescript',
-  'Overview',
+  "UseWithTypescript",
+  "Overview",
   {
-    label: 'Styling and Theming',
-    file: 'Theming'
+    label: "Styling and Theming",
+    file: "Theming"
   },
-  'Installation'
+  "Installation"
 ];
-const utilityComponents = ['OuterEventsHandler'];
+const utilityComponents = ["OuterEventsHandler"];
 
 type Item = string | { label: string; file: string };
 
@@ -71,7 +71,7 @@ function generateLinks(
 ): GeneratedLinkData[] {
   return list
     .map((item: Item) => {
-      if (typeof item === 'string') {
+      if (typeof item === "string") {
         return {
           text: isCamelToText ? camelToText(item) : item,
           to: `/${camelToSnake(item)}`,
@@ -84,48 +84,48 @@ function generateLinks(
         component: require(`./${item.file}`).default as RouteComponentProps // eslint-disable-line
       };
     })
-    .sort(createSortString('text'));
+    .sort(createSortString("text"));
 }
 
 export const generateMenuLinks = () => [
   {
-    title: 'Guides',
+    title: "Guides",
     links: generateLinks(guides, true)
   },
   {
-    title: 'Cookbook',
+    title: "Cookbook",
     links: generateLinks(cookbook, true)
   },
   {
-    title: 'Basic Components',
+    title: "Basic Components",
     links: generateLinks(components)
   },
   {
-    title: 'Form Components',
+    title: "Form Components",
     links: generateLinks(form)
   },
   {
-    title: 'Date',
+    title: "Date",
     links: generateLinks(date)
   },
   {
-    title: 'Layout Components',
+    title: "Layout Components",
     links: generateLinks(layout)
   },
   {
-    title: 'Top Bar',
+    title: "Top Bar",
     links: generateLinks(topBar)
   },
   {
-    title: 'Side Navigation',
+    title: "Side Navigation",
     links: generateLinks(nav)
   },
   {
-    title: 'Tab Navigation',
+    title: "Tab Navigation",
     links: generateLinks(tabNav)
   },
   {
-    title: 'Utility Components',
+    title: "Utility Components",
     links: generateLinks(utilityComponents)
   }
 ];

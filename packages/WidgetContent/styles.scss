@@ -1,9 +1,0 @@
-@import '@duik/core/_vars.scss';
-
-.card-body {
-  padding: 25px 30px;
-
-  &+& {
-    border-top: $border-default-base;
-  }
-}

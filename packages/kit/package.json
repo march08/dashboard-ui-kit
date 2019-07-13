@@ -55,11 +55,7 @@
     "@duik/top-bar-section": "^0.2.1",
     "@duik/top-bar-title": "^0.2.1",
     "@duik/use-open-state": "^0.1.7-next.1",
-    "@duik/widget": "^0.2.1",
-    "@duik/widget-container": "^0.2.1",
-    "@duik/widget-content": "^0.2.1",
-    "@duik/widget-header": "^0.2.1",
-    "@duik/widget-table": "^0.2.1"
+    "@duik/widget": "^0.2.1"
   },
   "gitHead": "7eed8237276864892b18bf2999daaf73ffc04739"
 }

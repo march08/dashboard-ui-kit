@@ -3,7 +3,7 @@ import cls from "./styles.scss";
 
 export const WidgetTable = createSimpleComponent<"table">({
   displayName: "WidgetTable",
-  className: cls["widget-table"],
+  className: cls["card-table"],
   Component: "table"
 });
 

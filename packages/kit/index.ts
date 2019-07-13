@@ -57,9 +57,5 @@ export * from "@duik/content-title";
 
 // widget
 export * from "@duik/widget";
-export * from "@duik/widget-table";
-export * from "@duik/widget-header";
-export * from "@duik/widget-content";
-export * from "@duik/widget-container";
 
 export * from "@duik/use-open-state";
