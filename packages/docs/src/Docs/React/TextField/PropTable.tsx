@@ -1,10 +1,5 @@
 import * as React from "react";
-import { Widget } from "@duik/it/index";
-
 import { PropTable, properties } from "../../components";
-
-// leftEl,
-// rightEl,
 
 const itemProps = [
   properties.className(),
@@ -43,6 +38,7 @@ const itemProps = [
     desc: "Pass down properties to the element that wraps the input and icons.",
     propType: 'Props of "div"'
   }),
+  properties.formGroup(),
   properties.rest({
     desc: <>Other properties are passed down to the input element</>
   })
@@ -52,7 +48,7 @@ export const ReactDocsButton = () => {
   return (
     <>
       <h2 id="props">Prop table</h2>
-              <PropTable itemProps={itemProps} />
+      <PropTable itemProps={itemProps} />
     </>
   );
 };

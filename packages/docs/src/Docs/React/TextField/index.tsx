@@ -107,6 +107,7 @@ export const ReactDocsOuterEventsHandler = () => {
           }
         ]}
       />
+      <PropTable />
     </DocsContentPage>
   );
 };

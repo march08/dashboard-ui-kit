@@ -88,11 +88,6 @@ export const ReactDocsOuterEventsHandler = () => {
         ]}
       />
       <PropTable />
-      <h2 id="migration">Migration from Dashboard UI Kit 3</h2>
-      <p>
-        "icon" and "iconPosition" properties are now removed in favor to
-        "leftEl" and "rightEl"
-      </p>
     </DocsContentPage>
   );
 };
