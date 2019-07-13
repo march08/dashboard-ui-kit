@@ -4,7 +4,7 @@
   "description": "Dashboard UI Kit Utilities",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
-  "homepage": "https://github.com/march08/duik",
+  "homepage": "https://developer.dashboard-ui.com",
   "author": "Roman Nguyen <march08@outlook.com>",
   "license": "MIT",
   "publishConfig": {
