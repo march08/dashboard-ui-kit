@@ -1,8 +1,8 @@
 # Dashboard UI kit
 
-![Dashboard UI Kit](http://preview.janlosert.com/OGDocumentation.jpg)
-
 React UI component library for rapid UI development. Written in Typescript.
+
+![Dashboard UI Kit](http://preview.janlosert.com/OGDocumentation.jpg)
 
 ### Links
 

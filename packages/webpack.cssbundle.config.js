@@ -1,50 +1,49 @@
-const path = require('path');
-const nodeExternals = require('webpack-node-externals');
-const CopyPlugin = require('copy-webpack-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const autoprefixer = require('autoprefixer');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const fs = require('fs');
+const path = require("path");
+const nodeExternals = require("webpack-node-externals");
+const CopyPlugin = require("copy-webpack-plugin");
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const autoprefixer = require("autoprefixer");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const fs = require("fs");
 
 const sassLoader = {
-  loader: 'sass-loader'
+  loader: "sass-loader"
 };
 
 const cssLoader = (isHashed = true) => ({
-  loader: 'css-loader',
+  loader: "css-loader",
   options: {
     // minimize: true,
     modules: true,
     camelCase: false,
     importLoaders: 3,
-    localIdentName: isHashed ? 'duik-[folder]__[local]__[hash:4]' : '[local]'
+    localIdentName: isHashed ? "duik-[folder]__[local]__[hash:4]" : "[local]"
   }
 });
 
 const postCssLoader = {
-  loader: 'postcss-loader',
+  loader: "postcss-loader",
   options: {
-    ident: 'postcss',
+    ident: "postcss",
     plugins: () => [autoprefixer()]
   }
 };
 
 module.exports = {
   resolve: {
-    extensions: ['.js']
+    extensions: [".js"]
   },
   entry: {
-    kit: path.resolve(__dirname, 'kit', 'cssbundle.js')
+    kit: path.resolve(__dirname, "kit", "cssbundle.js")
   },
   output: {
-    libraryTarget: 'umd',
-    filename: '[name]/dist/[name].js',
+    libraryTarget: "umd",
+    filename: "[name]/dist/[name].js",
     path: path.resolve(__dirname)
   },
-  mode: 'production',
+  mode: "production",
   node: {
-    fs: 'empty'
+    fs: "empty"
   },
   externals: [nodeExternals(), /^(@duik).*/i],
   optimization: {
@@ -58,11 +57,11 @@ module.exports = {
       {
         test: /^((?!module).)*(scss|css)$/,
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
+          fallback: "style-loader",
           use: [cssLoader(false), postCssLoader, sassLoader]
         })
       }
     ]
   },
-  plugins: [new ExtractTextPlugin('./[name]/dist/styles.css')]
+  plugins: [new ExtractTextPlugin("./[name]/dist/styles.css")]
 };
