@@ -1,13 +1,16 @@
 # Dashboard UI kit
 
-React UI component library for rapid UI development.
+![Dashboard UI Kit](http://preview.janlosert.com/OGDocumentation.jpg)
 
-Read the docs: https://march08.github.io/duik/
+React UI component library for rapid UI development. Written in Typescript.
 
-installation:
+### Links
 
-`yarn add @duik/it@latest`
+- Read the docs: https://developer.dashboard-ui.com
+- Quick 3 mins Installation guide: https://developer.dashboard-ui.com/docs/react/installation
+- Precoded screen previews: https://preview.dashboard-ui.com/
+- Download Design Kit and prevoded previews (Sketch, PS, XD): http://janlosert.com/dashboard
 
-use:
+## Usage
 
-`import { Component } from '@duik/it'`
+`import { Button } from '@duik/it'`

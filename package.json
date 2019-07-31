@@ -1,6 +1,7 @@
 {
   "name": "root",
   "npmClient": "yarn",
+  "homepage": "https://developer.dashboard-ui.com",
   "scripts": {
     "clean": "rimraf build/** build packages/**/dist packages/dist **/__generated_types",
     "clean-modules": "rimraf node_modules/** node_modules packages/**/node_modules/",
