@@ -1,6 +1,6 @@
 {
   "name": "@duik/use-open-state",
-  "version": "0.1.7-next.1",
+  "version": "0.3.0",
   "description": "Dashboard UI Kit Open State Hook",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
