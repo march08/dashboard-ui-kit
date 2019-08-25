@@ -51,6 +51,7 @@ ol {
     margin-bottom: 8px;
   }
 }
+
 p {
   margin: 0;
   line-height: 1.375rem;
@@ -59,14 +60,14 @@ p {
   color: $text-secondary;
 }
 
-* + p {
+*+p {
   margin-top: 0.4em;
 }
 
 p,
 ul,
 ol {
-  & + * {
+  &+* {
     margin-top: 1.125em;
   }
 }
@@ -102,18 +103,18 @@ h4 {
   font-size: 1.1rem;
 }
 
-* + h1,
-* + h2,
-* + h3,
-* + h4,
-* + h5 {
+*+h1,
+*+h2,
+*+h3,
+*+h4,
+*+h5 {
   margin-top: 1.125rem;
 }
 
-h1 + *,
-h2 + *,
-h3 + *,
-h4 + * {
+h1+*,
+h2+*,
+h3+*,
+h4+* {
   margin-top: 1em;
 }
 
@@ -183,6 +184,10 @@ pre {
 
 label {
   @include content-title();
+
+  * {
+    text-transform: none;
+  }
 }
 
 @include generateColorProperty('.bg', 'background-color');

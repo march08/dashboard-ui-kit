@@ -19,6 +19,7 @@
   "dependencies": {
     "@duik/alert": "^0.2.1",
     "@duik/avatar": "^0.2.1",
+    "@duik/base-input": "^0.2.1",
     "@duik/button": "^0.2.2-alpha.0",
     "@duik/button-group": "^0.2.1",
     "@duik/checkbox": "^0.2.1",

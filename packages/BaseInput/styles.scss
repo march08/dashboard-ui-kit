@@ -94,8 +94,8 @@
 
   .form-check-input:checked+.form-check-label {
     &:before {
-      background-image: $gradient-secondary;
-      border-color: $border-color-secondary;
+      background: $color-primary;
+      border-color: $color-primary;
     }
 
     // extra
@@ -141,8 +141,8 @@
 
   .form-check-input:checked+.form-check-label {
     &:before {
-      background: $color-secondary;
-      border: 1px solid $border-color-secondary;
+      background: $color-primary;
+      border-color: $color-primary;
     }
 
     &:after {
@@ -191,8 +191,8 @@
 
 .form-check-input[type="radio"]:checked+.form-check-label {
   &:before {
-    background-image: $gradient-secondary;
-    border-color: $border-color-secondary;
+    background: $color-primary;
+    border-color: $color-primary;
   }
 
   &:after {
