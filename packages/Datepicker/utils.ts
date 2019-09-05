@@ -18,10 +18,14 @@ export const getMonthStartDay = (date: Date) => {
 };
 
 export const generateArrayOfLen = (len: number, startNumber: number = 1) => {
-  const arr = new Array(len);
-  return arr.fill(1).map((value, index) => {
-    return index + startNumber;
-  });
+  let index = 0;
+  const arr = [];
+  while (index < len) {
+    arr.push(index + startNumber);
+    index += 1;
+  }
+
+  return arr;
 };
 
 export const isDateSelected = (
