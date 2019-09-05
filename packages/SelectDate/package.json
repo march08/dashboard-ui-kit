@@ -1,6 +1,6 @@
 {
   "name": "@duik/select-date",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Dashboard UI Kit Select Date",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
@@ -19,7 +19,7 @@
   "dependencies": {
     "@duik/content-title": "^0.3.0",
     "@duik/core": "^0.3.0",
-    "@duik/datepicker": "^0.3.0",
+    "@duik/datepicker": "^0.3.1",
     "@duik/dropdown": "^0.3.0",
     "@duik/form-group": "^0.3.0",
     "@duik/text-field": "^0.3.0",
