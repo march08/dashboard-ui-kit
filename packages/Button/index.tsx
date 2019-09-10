@@ -1,9 +1,9 @@
-import React from "react";
-import classnames from "classnames";
-import { AnyTag, PropsWithTagProps } from "@duik/core";
-import { LoaderDots } from "@duik/loader-dots";
+import React from 'react';
+import classnames from 'classnames';
+import { AnyTag, PropsWithTagProps } from '@duik/core';
+import { LoaderDots } from '@duik/loader-dots';
 
-import cls from "./styles.scss";
+import cls from './styles.scss';
 
 export type ButtonPropsBase = {
   children?: React.ReactNode;
@@ -40,10 +40,7 @@ export type ButtonProps<T extends AnyTag> = PropsWithTagProps<
 >;
 export type ButtonRefObject = React.RefObject<HTMLButtonElement>;
 
-export const BaseButton = <T extends AnyTag = "button">(
-  props: ButtonProps<T>,
-  ref: ButtonRefObject
-) => {
+export const Button = <T extends AnyTag = 'button'>(props: ButtonProps<T>) => {
   const {
     primary,
     error,
@@ -60,11 +57,11 @@ export const BaseButton = <T extends AnyTag = "button">(
     clear,
     isLoading,
     loading,
-    type = "button",
+    type = 'button',
     noBorder,
     isExpanded,
     block,
-    Component = "button",
+    Component = 'button',
     square,
     ...rest
   } = props;
@@ -72,25 +69,25 @@ export const BaseButton = <T extends AnyTag = "button">(
   const loadingState = isLoading || loading;
 
   const classes = classnames(
-    cls["btn"],
+    cls['btn'],
     {
-      [cls["btn-primary"]]: primary,
-      [cls["btn-error"]]: error || danger,
-      [cls["btn-success"]]: success,
-      [cls["btn-secondary"]]: dark || secondary,
-      [cls["btn-sm"]]: xs | sm,
-      [cls["btn-lg"]]: lg,
-      [cls["btn-clear"]]: clear,
-      [cls["btn-loading"]]: loadingState,
-      [cls["btn-transparent"]]: transparent,
+      [cls['btn-primary']]: primary,
+      [cls['btn-error']]: error || danger,
+      [cls['btn-success']]: success,
+      [cls['btn-secondary']]: dark || secondary,
+      [cls['btn-sm']]: xs | sm,
+      [cls['btn-lg']]: lg,
+      [cls['btn-clear']]: clear,
+      [cls['btn-loading']]: loadingState,
+      [cls['btn-transparent']]: transparent,
       [cls.noBorder]: noBorder,
-      [cls["btn-block"]]: isExpanded || block,
-      [cls["btn-square"]]: square
+      [cls['btn-block']]: isExpanded || block,
+      [cls['btn-square']]: square
     },
     className
   );
 
-  if (Component === "input") {
+  if (Component === 'input') {
     return <Component className={classes} {...rest} type={type} />;
   }
 
@@ -98,18 +95,15 @@ export const BaseButton = <T extends AnyTag = "button">(
     <Component
       className={classes}
       {...rest}
-      type={Component === "button" ? type : undefined}
+      type={Component === 'button' ? type : undefined}
       role="button"
-      ref={ref}
     >
       {children}
-      {(loadingState && <LoaderDots className={cls["btn-loader"]} />) || null}
+      {(loadingState && <LoaderDots className={cls['btn-loader']} />) || null}
     </Component>
   );
 };
 
-export const Button = React.forwardRef(BaseButton);
-
-Button.displayName = "Button";
+Button.displayName = 'Button';
 
 export default Button;

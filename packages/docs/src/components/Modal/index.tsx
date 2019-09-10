@@ -3,7 +3,6 @@ import classnames from 'classnames';
 import {
   OuterEventsHandlerProps,
   OuterEventsHandler,
-  Omit,
   Button
 } from '@duik/it';
 import { Overlay, OverlayControlProps } from '../Overlay';
