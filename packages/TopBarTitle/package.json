@@ -1,6 +1,6 @@
 {
   "name": "@duik/top-bar-title",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Dashboard UI Kit TopBarTitle",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
@@ -17,8 +17,8 @@
     "react-dom": "^16.8.0"
   },
   "dependencies": {
-    "@duik/core": "^0.3.0",
-    "@duik/create-simple-component": "^0.3.0"
+    "@duik/core": "^0.4.0",
+    "@duik/create-simple-component": "^0.4.0"
   },
   "gitHead": "7eed8237276864892b18bf2999daaf73ffc04739"
 }
