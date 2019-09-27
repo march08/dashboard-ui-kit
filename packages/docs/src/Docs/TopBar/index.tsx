@@ -7,13 +7,13 @@ import {
   Button,
   Dropdown,
   DropdownItem,
-  DropdownMenuPosition
+  DropdownMenuPosition,
 } from '@duik/it';
 
 import { useLocalStorage } from 'utils';
 
 import cls from './topbar.module.scss';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 export const DocsTopBar = () => {
   const [isDark, setDark] = useLocalStorage('@duik-theme', false);
@@ -43,7 +43,7 @@ export const DocsTopBar = () => {
         <Dropdown
           buttonProps={{
             clear: true,
-            square: true
+            square: true,
           }}
           menuPosition={DropdownMenuPosition['bottom-left']}
           closeOnOptionClick

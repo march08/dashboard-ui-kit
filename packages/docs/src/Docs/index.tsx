@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { RouteComponentProps, Switch, Route, Redirect } from 'react-router-dom';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import { ContainerVertical, TopBar } from '@duik/it';
 
 import { DocsTopBar } from './TopBar';

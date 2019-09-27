@@ -1,7 +1,5 @@
 import React from 'react';
-import { Select, SelectOption } from '@duik/it';
-import { Avatar } from '@duik/it';
-import { useInputControls } from 'utils';
+import { Avatar, Select } from '@duik/it';
 import * as assets from 'assets';
 import cls from './select.module.scss';
 
@@ -9,43 +7,43 @@ const optionsUsers = [
   {
     label: <Avatar sm imgUrl={assets.a01} name="Johny Gaudreau" />,
     value: 1,
-    name: 'Johny Gaudreau'
+    name: 'Johny Gaudreau',
   },
   {
     label: <Avatar sm imgUrl={assets.a02} name="Vilma Novak" />,
     value: 2,
-    name: 'Vilma Novak'
+    name: 'Vilma Novak',
   },
   {
     label: <Avatar sm imgUrl={assets.a03} name="Alice Queen" />,
     value: 3,
-    name: 'Alice Queen'
+    name: 'Alice Queen',
   },
   {
     label: <Avatar sm imgUrl={assets.a04} name="Evgeny Kuznetsov" />,
     value: 4,
-    name: 'Evgeny Kuznetsov'
+    name: 'Evgeny Kuznetsov',
   },
   {
     label: <Avatar sm imgUrl={assets.a05} name="Jana Johnsson" />,
     value: 5,
-    name: 'Jana Johnsson'
+    name: 'Jana Johnsson',
   },
   {
     label: <Avatar sm imgUrl={assets.a06} name="Karolina Kolarova" />,
     value: 6,
-    name: 'Karolina Kolarova'
+    name: 'Karolina Kolarova',
   },
   {
     label: <Avatar sm imgUrl={assets.a07} name="Klara Horton" />,
     value: 7,
-    name: 'Klara Horton'
+    name: 'Klara Horton',
   },
   {
     label: <Avatar sm imgUrl={assets.a08} name="Luu Thanh Nga" />,
     value: 8,
-    name: 'Luu Thanh Nga'
-  }
+    name: 'Luu Thanh Nga',
+  },
 ];
 
 export const ExampleSelectUsersSearch = () => {
@@ -55,7 +53,7 @@ export const ExampleSelectUsersSearch = () => {
     setKeyword(e.target.value);
 
   const filteredOptions = optionsUsers.filter(option =>
-    `${option.name}`.toLowerCase().includes(keyword.toLowerCase())
+    `${option.name}`.toLowerCase().includes(keyword.toLowerCase()),
   );
 
   return (
@@ -66,7 +64,7 @@ export const ExampleSelectUsersSearch = () => {
       searchable
       inputSearchProps={{
         value: keyword,
-        onChange: onChangeKeyword
+        onChange: onChangeKeyword,
       }}
     />
   );
@@ -124,7 +122,7 @@ export const ExampleSelectUsersSearch = () => {
       onOptionClick={handleOptionClick}
       options={filteredOptions}
       {/* enabling search (otherwise the search input won't be displayed */}
-      searchable 
+      searchable
       {/*
         * the input doesn't do anything on it's own
         * we need to pass some props to retrieve the search keyword
