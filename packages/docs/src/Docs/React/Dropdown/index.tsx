@@ -66,17 +66,27 @@ export const ReactDocsButton = () => {
           {
             content: (
               <Dropdown buttonText={<strong>Click me</strong>}>
-                <DropdownItem>Item 1</DropdownItem>
-                <DropdownItem>Item 2</DropdownItem>
+                <DropdownItem>
+                  <Icon mr>camera</Icon>Item 1
+                </DropdownItem>
+                <DropdownItem>
+                  <Icon mr>stats</Icon>Item 1
+                </DropdownItem>
                 <DropdownItem Component={Link} to="#somewhere">
-                  Item as Link
+                  <Icon mr>tap_click_force_touch</Icon>Item as Link
                 </DropdownItem>
               </Dropdown>
             ),
             code: `<Dropdown buttonText={<strong>Click me</strong>}>
-<DropdownItem>Item 1</DropdownItem>
-<DropdownItem>Item 2</DropdownItem>
-<DropdownItem Component={Link} to="#somewhere">Item as Link</DropdownItem>
+  <DropdownItem>
+    <Icon mr>camera</Icon>Item 1
+  </DropdownItem>
+  <DropdownItem>
+    <Icon mr>stats</Icon>Item 1
+  </DropdownItem>
+  <DropdownItem Component={Link} to="#somewhere">
+    <Icon mr>tap_click_force_touch</Icon>Item as Link
+  </DropdownItem>
 </Dropdown>`
           }
         ]}

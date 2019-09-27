@@ -29,6 +29,7 @@ export const DocsTopBar = () => {
     --border-color-highlight: #64646e;
     --text-base: #ccc;
     --text-main: #ddd;
+    --text-tertiary: #666;
     }`}</style>
           <Helmet>
             <body data-dark-mode="true" />

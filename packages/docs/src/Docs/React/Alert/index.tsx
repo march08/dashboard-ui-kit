@@ -160,7 +160,7 @@ export const ReactDocsAlert = () => {
                   Super nice kit, easy to compose and build UIs with a beautiful
                   design
                 </p>
-                <Button sm transparent>
+                <Button sm>
                   Explore Documentation
                 </Button>
               </Alert>
