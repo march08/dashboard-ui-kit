@@ -4,16 +4,14 @@
     "*.jsx": "javascript"
   },
   "editor.tabSize": 2,
-  "eslint.enable": true,
-  "eslint.autoFixOnSave": true,
   // Format a file on save. A formatter must be available, the file must not be auto-saved, and editor must not be shutting down.
-  "editor.formatOnSave": true,
-  "javascript.format.enable": false,
-  "javascript.validate.enable": false,
-  "typescript.format.enable": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.tslint": true,
-  },
+  // "editor.formatOnSave": true,
+  // "javascript.format.enable": false,
+  // "javascript.validate.enable": false,
+  // "typescript.format.enable": true,
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll.tslint": true,
+  // },
   "typescript.tsdk": "node_modules/typescript/lib"
   // Use 'prettier-eslint' instead of 'prettier'. Other settings will only be fallbacks in case they could not be inferred from eslint rules.
   // "prettier.eslintIntegration": true

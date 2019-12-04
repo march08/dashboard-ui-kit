@@ -1,15 +1,15 @@
-import * as React from "react";
-import { H1 } from "components";
-import { Dropdown, OuterEventsHandler } from "@duik/it";
-import { Link } from "react-router-dom";
+import * as React from 'react';
+import { H1 } from 'components';
+import { Dropdown, OuterEventsHandler } from '@duik/it';
+import { Link } from 'react-router-dom';
 import {
   DocsContentPage,
   ExampleTable,
   PageContent,
-  ImportPath
-} from "../../components";
+  ImportPath,
+} from '../../components';
 
-import PropTable from "./PropTable";
+import PropTable from './PropTable';
 
 export const ReactDocsOuterEventsHandler = () => {
   const [clicks, setClicks] = React.useState(0);
@@ -19,9 +19,9 @@ export const ReactDocsOuterEventsHandler = () => {
     <DocsContentPage>
       <PageContent
         data={[
-          { id: "basic-usage", label: "Basic Usage" },
-          { id: "more-events", label: "More trigger events" },
-          { id: "props", label: "Prop Table" }
+          { id: 'basic-usage', label: 'Basic Usage' },
+          { id: 'more-events', label: 'More trigger events' },
+          { id: 'props', label: 'Prop Table' },
         ]}
       />
       <H1>OuterEventsHandler</H1>
@@ -39,8 +39,8 @@ export const ReactDocsOuterEventsHandler = () => {
         Simply wrap your content with OuterEventsHandler and pass a single
         argument, a function that will be triggered when one of the supported
         events fires. By default, only outer clicks or hitting "esc" on your
-        keyboard will trigger a passed function. See more options in the{" "}
-        <Link to="#props">prop table description</Link> or live examples{" "}
+        keyboard will trigger a passed function. See more options in the{' '}
+        <Link to="#props">prop table description</Link> or live examples{' '}
         <Link to="#more-events">below</Link>.
       </p>
 
@@ -50,7 +50,7 @@ export const ReactDocsOuterEventsHandler = () => {
             content: (
               <OuterEventsHandler onOuterEvent={handleOuterEvent}>
                 <div
-                  style={{ padding: 50, background: "orange", color: "white" }}
+                  style={{ padding: 50, background: 'orange', color: 'white' }}
                 >
                   Try to click outside/inside this content or press esc
                   <br />
@@ -63,13 +63,13 @@ export const ReactDocsOuterEventsHandler = () => {
     Try to click outside/inside this content<br />
     Outer Events: {clicks}
   </div>
-</OuterEventsHandler>`
-          }
+</OuterEventsHandler>`,
+          },
         ]}
       />
       <p>
         This doesn't look that useful so far, let's see a real example of
-        OuterEventsHandler in action with{" "}
+        OuterEventsHandler in action with{' '}
         <Link to="/docs/react/dropdown">Dropdown</Link>, which is wrapped by
         OuterEventsHandler.
       </p>
@@ -79,12 +79,12 @@ export const ReactDocsOuterEventsHandler = () => {
           {
             content: (
               <Dropdown>
-                <div style={{ padding: 50, textAlign: "center" }}>
+                <div style={{ padding: 50, textAlign: 'center' }}>
                   Dropdown Content
                 </div>
               </Dropdown>
-            )
-          }
+            ),
+          },
         ]}
       />
       <h2 id="more-events">More trigger events</h2>
@@ -101,12 +101,12 @@ export const ReactDocsOuterEventsHandler = () => {
           {
             content: (
               <Dropdown triggerOnOuterScroll triggerOnWindowResize>
-                <div style={{ padding: 50, textAlign: "center" }}>
+                <div style={{ padding: 50, textAlign: 'center' }}>
                   Dropdown Content
                 </div>
               </Dropdown>
-            )
-          }
+            ),
+          },
         ]}
       />
       <PropTable />

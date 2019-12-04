@@ -1,6 +1,5 @@
 import * as React from 'react';
 import classnames from 'classnames';
-import { CSSTransition } from 'react-transition-group';
 import { OpenStateControls } from '@duik/use-open-state';
 import { DropdownMenuPosition } from './index';
 
@@ -29,7 +28,7 @@ export class DropdownMenu extends React.PureComponent<
     // set default
     this.state = {
       menuPosition: props.menuPosition || DropdownMenuPosition['bottom-left'],
-      repositioned: false
+      repositioned: false,
     };
   }
 
@@ -45,7 +44,7 @@ export class DropdownMenu extends React.PureComponent<
   }
 
   componentDidUpdate() {
-    if (!this.props.isOpen || this.state.repositioned) {
+    if (!this.props.isOpen || this.state.repositioned || !window) {
       return;
     }
 
@@ -84,7 +83,7 @@ export class DropdownMenu extends React.PureComponent<
       this.setState({
         menuPosition: nextMenuPosition as DropdownMenuPosition,
         // reposition only once
-        repositioned: true
+        repositioned: true,
       });
     }
   }
@@ -93,7 +92,7 @@ export class DropdownMenu extends React.PureComponent<
     const { menuPosition } = this.props;
     this.setState({
       menuPosition: menuPosition || DropdownMenuPosition['bottom-left'],
-      repositioned: false
+      repositioned: false,
     });
   };
 
@@ -108,7 +107,7 @@ export class DropdownMenu extends React.PureComponent<
       // using
       className,
       isOpen,
-      children
+      children,
     } = this.props;
 
     return (
@@ -116,7 +115,7 @@ export class DropdownMenu extends React.PureComponent<
         ref={this.ref}
         className={classnames(cls['dropdown-menu'], className, {
           [cls['show']]: isOpen,
-          [cls[this.state.menuPosition]]: this.state.menuPosition
+          [cls[this.state.menuPosition]]: this.state.menuPosition,
         })}
       >
         {children}
