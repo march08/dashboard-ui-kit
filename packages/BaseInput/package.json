@@ -1,6 +1,6 @@
 {
   "name": "@duik/base-input",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Dashboard UI Kit Base input for checkbox, toggle and radio",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
