@@ -1,7 +1,7 @@
 import * as React from 'react';
 import classnames from 'classnames';
 import cls from './styles.scss';
-import { CheckboxIcon } from './check';
+import { CheckboxIcon } from './Check';
 
 export type InputBaseProps = JSX.IntrinsicElements['input'] & {
   label?: React.ReactNode;
@@ -24,7 +24,7 @@ export const BaseInput = ({
     <label
       className={classnames(cls['form-check'], 'form-group', className, {
         [cls.toggle]: toggle,
-        [cls.radio]: isRadio
+        [cls.radio]: isRadio,
       })}
     >
       <input

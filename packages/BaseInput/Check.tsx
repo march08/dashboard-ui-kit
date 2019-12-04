@@ -1,11 +1,11 @@
-import * as React from "react";
+import * as React from 'react';
 
-import cls from "./styles.scss";
+import cls from './styles.scss';
 
 /* eslint-disable max-len */
 export const CheckboxIcon = () => (
   <svg
-    className={cls["form-check-icon"]}
+    className={cls['form-check-icon']}
     height="6px"
     version="1.1"
     viewBox="0 0 8 6"
@@ -35,4 +35,4 @@ export const CheckboxIcon = () => (
   </svg>
 );
 
-CheckboxIcon.displayName = "CheckboxIcon";
+CheckboxIcon.displayName = 'CheckboxIcon';
