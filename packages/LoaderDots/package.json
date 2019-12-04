@@ -1,6 +1,6 @@
 {
   "name": "@duik/loader-dots",
-  "version": "0.5.0",
+  "version": "0.5.3",
   "description": "Dashboard UI Kit Loader Dots",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
