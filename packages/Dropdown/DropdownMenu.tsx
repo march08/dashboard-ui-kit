@@ -2,6 +2,7 @@ import * as React from 'react';
 import classnames from 'classnames';
 import { OpenStateControls } from '@duik/use-open-state';
 import { DropdownMenuPosition } from './index';
+import { DropdownItem } from './DropdownItem'
 
 import cls from './styles.scss';
 
@@ -18,6 +19,9 @@ export class DropdownMenu extends React.PureComponent<
     repositioned: boolean;
   }
 > {
+
+  static Item = DropdownItem
+
   displayName = 'DropdownMenu';
 
   ref = React.createRef<HTMLDivElement>();
@@ -123,5 +127,7 @@ export class DropdownMenu extends React.PureComponent<
     );
   }
 }
+
+export const Dropdown = DropdownMenu
 
 export default DropdownMenu;

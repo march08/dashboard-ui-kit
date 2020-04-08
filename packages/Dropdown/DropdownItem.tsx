@@ -4,7 +4,7 @@ import classnames from "classnames";
 import { Button, ButtonProps } from "@duik/button";
 import cls from "./styles.scss";
 
-export const DropdownItem = <T extends AnyTag = "button">(
+export const DropdownItem: typeof Button = <T extends AnyTag = typeof Button>(
   props: ButtonProps<T>
 ) => {
   const { className, ...rest } = props;
