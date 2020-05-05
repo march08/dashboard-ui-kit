@@ -1,12 +1,12 @@
 {
   "name": "@duik/docs",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "private": true,
   "dependencies": {
     "@duik/core": "^0.5.3",
     "@duik/create-simple-component": "^0.5.3",
     "@duik/icon": "^0.5.3",
-    "@duik/it": "^0.5.3",
+    "@duik/it": "^0.5.4",
     "@duik/utils": "^0.5.3",
     "react-helmet": "^5.2.1"
   },
@@ -36,4 +36,3 @@
     "asyncScriptTags": true
   }
 }
-
