@@ -2,6 +2,10 @@ import * as React from "react";
 import classnames from "classnames";
 
 import cls from "./styles.scss";
+import WidgetContainer from "./WidgetContainer";
+import WidgetContent from "./WidgetContent";
+import WidgetHeader from "./WidgetHeader";
+import WidgetTable from "./WidgetTable";
 
 export type WidgetProps = JSX.IntrinsicElements["div"] & {
   padding?: boolean;
@@ -34,5 +38,11 @@ Widget.defaultProps = {
 };
 
 Widget.displayName = "Widget";
+Widget.Container = WidgetContainer
+Widget.Content = WidgetContent
+Widget.Header = WidgetHeader
+Widget.Table = WidgetTable
+
+export const Card = Widget
 
 export default Widget;
