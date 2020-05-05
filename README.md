@@ -10,7 +10,7 @@ React UI component library for rapid UI development. Written in Typescript.
 - Simple Component API
 - Lightweight
 
-![Dashboard UI Kit](http://preview.janlosert.com/OGDocumentation.jpg)
+![Dashboard UI Kit](http://preview.dashboard-ui.com/OGDocumentation.jpg)
 
 ### Links
 
