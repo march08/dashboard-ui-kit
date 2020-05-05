@@ -2,7 +2,7 @@ import React from 'react';
 import { Select, SelectOption } from '@duik/it';
 
 export const ExampleSelectControlledValue = () => {
-  const [activeOption, setActiveOption] = React.useState();
+  const [activeOption, setActiveOption] = React.useState<SelectOption | undefined>();
 
   const handleOptionClick = (option: SelectOption, name?: string) => {
     setActiveOption(option);

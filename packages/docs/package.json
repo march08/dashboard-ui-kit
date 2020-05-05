@@ -8,7 +8,6 @@
     "@duik/icon": "^0.5.3",
     "@duik/it": "^0.5.3",
     "@duik/utils": "^0.5.3",
-    "gh-pages": "^2.0.1",
     "react-helmet": "^5.2.1"
   },
   "scripts": {
@@ -18,7 +17,7 @@
     "eject": "../../node_modules/.bin/react-scripts eject",
     "predeploy": "yarn build",
     "postbuild": "react-snap",
-    "deploy": "yarn build && now --target production"
+    "deploy": "yarn build && now --prod"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,3 +36,4 @@
     "asyncScriptTags": true
   }
 }
+
