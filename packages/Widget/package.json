@@ -1,6 +1,6 @@
 {
   "name": "@duik/widget",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "Dashboard UI Kit Widget",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
