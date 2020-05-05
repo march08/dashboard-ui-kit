@@ -62,7 +62,7 @@ export const DocsReact = (props: RouteComponentProps) => {
                 />
               );
             })}
-          <Redirect to={`${match.path}/installation`} />
+          <Redirect to={`${match.path}/styleguide`} />
         </Switch>
       </PageScroll>
     </ContainerHorizontal>

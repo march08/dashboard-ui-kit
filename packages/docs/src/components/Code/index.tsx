@@ -26,7 +26,7 @@ export enum CodeLang {
 export type CodeProps = JSX.IntrinsicElements['div'] & {
   children?: string;
   language?: CodeLang;
-  className?: String;
+  className?: string;
 };
 
 export class Code extends React.Component<CodeProps> {

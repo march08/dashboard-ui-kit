@@ -2,6 +2,14 @@
 
 React UI component library for rapid UI development. Written in Typescript.
 
+### Features
+- Typescript
+- Light/Dark/Custom Theme support
+- Bootstrap friendly
+- Minimum dependencies
+- Simple Component API
+- Lightweight
+
 ![Dashboard UI Kit](http://preview.janlosert.com/OGDocumentation.jpg)
 
 ### Links

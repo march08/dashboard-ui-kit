@@ -41,7 +41,7 @@ module.exports = {
     filename: "[name]/dist/[name].js",
     path: path.resolve(__dirname)
   },
-  mode: "production",
+  mode: "development",
   node: {
     fs: "empty"
   },

@@ -53,6 +53,7 @@ const cookbook = [
   "ComponentProperty"
 ];
 const guides = [
+  "Styleguide",
   "UseWithTypescript",
   "Overview",
   {
