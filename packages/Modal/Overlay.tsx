@@ -2,12 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 
-import cls from './styles.module.scss';
-
-const portalEl = document.body;
+import cls from './styles.scss';
 
 export type OverlayControlProps = {
   isOpen?: boolean;
+  portalEl?: HTMLElement;
 };
 
 export type OverlayProps = OverlayControlProps & {
@@ -15,7 +14,7 @@ export type OverlayProps = OverlayControlProps & {
 };
 
 export const Overlay = (props: OverlayProps) => {
-  const { isOpen, children } = props;
+  const { isOpen, children, portalEl = document?.body } = props;
 
   if (portalEl) {
     return ReactDOM.createPortal(

@@ -62,7 +62,7 @@ export const Datepicker = <M extends boolean = false>(
   props: DatepickerProps<M>
 ) => {
   const view = useDatepickerView();
-  const [mouseOverDate, setMouseOverDate] = React.useState();
+  const [mouseOverDate, setMouseOverDate] = React.useState<null | undefined | Date>(null);
 
   const {
     renderTitle = defaultRenderTitle,

@@ -1,67 +1,71 @@
 import * as React from 'react';
-import { Avatar, Button, useOpenState } from '@duik/it';
-import * as assets from 'assets';
 import {
-  H1,
+  Button,
+  useOpenState,
+  Widget,
+  FormGroupContainer,
+  Radio,
   Modal,
-  ModalBody,
-  ModalHeader,
-  ModalFooter,
-  ModalBodySecondary
-} from 'components';
+} from '@duik/it';
+import { H1, CodeRH } from 'components';
 
 import {
   DocsContentPage,
-  ExampleTable,
   PageContent,
-  ImportPath
+  ImportPath,
+  PageMock,
 } from '../../components';
 
 import PropTable from './PropTable';
 
+const exampleModalContent = (
+  <>
+    <Modal.Header>
+      <Modal.Title>Can you guess the place?</Modal.Title>
+    </Modal.Header>
+    <img
+      src="https://images.unsplash.com/photo-1587732608058-5ccfedd3ea63?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+      alt="mountains"
+      style={{
+        width: '100%',
+      }}
+    />
+    <Modal.Body>
+      <FormGroupContainer>
+        <Radio name="question_1" label="Wyoming, US" />
+        <Radio name="question_1" label="Dolomiti, Italy" />
+        <Radio name="question_1" label="Pamir, Tajikistan" />
+      </FormGroupContainer>
+    </Modal.Body>
+    <Modal.Footer>
+      <Button primary>Submit Answer</Button>
+    </Modal.Footer>
+  </>
+);
+
 export const ReactDocsAvatar = () => {
-  const modalOpenState = useOpenState(true);
+  const modalOpenState = useOpenState(false);
 
   return (
     <DocsContentPage>
       <PageContent
         data={[
-          { id: 'text-control', label: 'Text Control' },
-          { id: 'sizes', label: 'Sizes' },
-          { id: 'multiple', label: 'Multiple Images' },
-          { id: 'placeholders', label: 'Placeholders' },
-          { id: 'other', label: 'Other elements' },
-          { id: 'props', label: 'Prop Table' }
+          { id: 'example', label: 'Example' },
+          { id: 'props', label: 'Prop Table' },
         ]}
       />
-      <Button onClick={modalOpenState.handleOpen}>Open Modal</Button>
+      <H1>Modal</H1>
+      <ImportPath name="Modal" />
+
       <Modal
         isOpen={modalOpenState.isOpen}
         handleClose={modalOpenState.handleClose}
+        closeOnOuterClick
+        sm
       >
-        <ModalHeader>
-          <h2>Simple Modal</h2>
-        </ModalHeader>
-        <ModalBody>
-          <p>This is a simple modal</p>
-        </ModalBody>
-        <ModalFooter>
-          <Button onClick={modalOpenState.handleClose}>Cancel</Button>
-          <Button onClick={modalOpenState.handleClose} primary>
-            Ok, got it!
-          </Button>
-        </ModalFooter>
+        {exampleModalContent}
       </Modal>
-      <H1>Modal</H1>
-      <ImportPath
-        name="Modal"
-        subComponents={[
-          'ModalHeader',
-          'ModalBody',
-          'ModalBodySecondary',
-          'ModalFooter'
-        ]}
-      />
+
       <p>
         Dashboard UI Kit gives you several components to effectively build nice
         and clean modals. Modals can be used anywhere in the code structure, the
@@ -76,212 +80,82 @@ export const ReactDocsAvatar = () => {
         .
       </p>
 
-      <h2 id="text-control">Text control</h2>
-
-      <ExampleTable
-        fixed
-        data={[
-          { content: <Avatar imgUrl={assets.a01} /> },
-          { content: <Avatar imgUrl={assets.a01} name="John Snow" /> },
-          {
-            content: (
-              <Avatar imgUrl={assets.a01} name={<strong>John Snow</strong>} />
-            )
-          },
-          {
-            content: (
-              <Avatar
-                imgUrl={assets.a21}
-                name={<strong>Natasha Special</strong>}
-                textTop="Created by"
-              />
-            )
-          },
-          {
-            content: (
-              <Avatar
-                imgUrl={assets.a21}
-                name={<strong>Natasha Special</strong>}
-                textBottom={
-                  <>
-                    <strong>Senior</strong> HR Manager
-                  </>
-                }
-              />
-            )
-          }
-        ]}
-      />
-      <h2 id="sizes">Sizes</h2>
-
-      <ExampleTable
-        fixed
-        data={[
-          {
-            content: (
-              <Avatar sm imgUrl={assets.a02} name={<strong>28px</strong>} />
-            )
-          },
-          {
-            content: <Avatar imgUrl={assets.a03} name={<strong>38px</strong>} />
-          },
-          {
-            content: (
-              <Avatar lg imgUrl={assets.a04} name={<strong>60px</strong>} />
-            )
-          },
-          {
-            content: (
-              <Avatar xl imgUrl={assets.a05} name={<strong>80px</strong>} />
-            )
-          },
-          {
-            content: (
-              <Avatar xxl imgUrl={assets.a06} name={<strong>100px</strong>} />
-            )
-          },
-          {
-            content: (
-              <Avatar jumbo imgUrl={assets.a07} name={<strong>120px</strong>} />
-            )
-          }
-        ]}
-      />
-      <h2 id="multiple">Multiple Images</h2>
-
-      <ExampleTable
-        fixed
-        data={[
-          {
-            content: (
-              <Avatar
-                lg
-                textTop="Group Conversation"
-                imgUrl={[assets.a05, assets.a15]}
-                name={<strong>Just us</strong>}
-              />
-            )
-          },
-          {
-            content: (
-              <Avatar
-                lg
-                textTop="Group Conversation"
-                imgUrl={[assets.a10, assets.a11, assets.a22]}
-                name={<strong>Reading strong</strong>}
-              />
-            )
-          },
-          {
-            content: (
-              <Avatar
-                lg
-                textTop="Group Conversation"
-                imgUrl={[assets.a09, assets.a07, assets.a25, assets.a23]}
-                name={<strong>Party people</strong>}
-              />
-            )
-          }
-        ]}
+      <PageMock center>
+        <Widget style={{ maxWidth: 560 }}>{exampleModalContent}</Widget>
+        <br />
+        <Button primary onClick={modalOpenState.handleOpen}>
+          Open as Modal
+        </Button>
+      </PageMock>
+      <CodeRH
+        code={`
+<Modal
+  isOpen={modalOpenState.isOpen}
+  handleClose={modalOpenState.handleClose}
+  closeOnOuterClick
+  sm
+>
+  <Modal.Header>
+    <Modal.Title>Can you guess the place?</Modal.Title>
+  </Modal.Header>
+  <img
+    src="https://images.unsplash.com/photo-1587732608058-5ccfedd3ea63?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+    style={{
+      width: '100%',
+    }}
+  />
+  <Modal.Body>
+    <FormGroupContainer>
+      <Radio name="question_1" label="Wyoming, US" />
+      <Radio name="question_1" label="Dolomiti, Italy" />
+      <Radio name="question_1" label="Pamir, Tajikistan" />
+    </FormGroupContainer>
+  </Modal.Body>
+  <Modal.Footer>
+    <Button primary>Submit Answer</Button>
+  </Modal.Footer>
+</Modal>
+      `}
+        content={
+          <Modal
+            isOpen={modalOpenState.isOpen}
+            handleClose={modalOpenState.handleClose}
+            sm
+          >
+            <Modal.Header>
+              <Modal.Title>Can you guess the place?</Modal.Title>
+            </Modal.Header>
+            <img
+              src="https://images.unsplash.com/photo-1587732608058-5ccfedd3ea63?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+              alt="mountains"
+              style={{
+                width: '100%',
+              }}
+            />
+            <Modal.Body>
+              <FormGroupContainer>
+                <Radio name="question_1" label="Wyoming, US" />
+                <Radio name="question_1" label="Dolomiti, Italy" />
+                <Radio name="question_1" label="Pamir, Tajikistan" />
+              </FormGroupContainer>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button primary>Submit Answer</Button>
+            </Modal.Footer>
+          </Modal>
+        }
+        contentHtml={
+          <Modal
+            isOpen={modalOpenState.isOpen}
+            handleClose={modalOpenState.handleClose}
+            sm
+            disablePortal
+          >
+            {exampleModalContent}
+          </Modal>
+        }
       />
 
-      <h2 id="placeholders">Placeholders</h2>
-
-      <ExampleTable
-        fixed
-        data={[
-          {
-            content: (
-              <Avatar
-                sm
-                avatarPlaceholder={{
-                  content: 'PH',
-                  color: 'indigo'
-                }}
-                name={<strong>28px</strong>}
-              />
-            )
-          },
-          {
-            content: (
-              <Avatar
-                avatarPlaceholder={{
-                  content: 'PH',
-                  color: 'blue'
-                }}
-                name={<strong>38px</strong>}
-              />
-            )
-          },
-          {
-            content: (
-              <Avatar
-                lg
-                avatarPlaceholder={{
-                  content: 'PH',
-                  color: 'green'
-                }}
-                name={<strong>60px</strong>}
-              />
-            )
-          },
-          {
-            content: (
-              <Avatar
-                xl
-                avatarPlaceholder={{
-                  content: 'PH',
-                  color: 'red'
-                }}
-                name={<strong>80px</strong>}
-              />
-            )
-          },
-          {
-            content: (
-              <Avatar
-                xxl
-                avatarPlaceholder={{
-                  content: 'PH',
-                  color: 'orange'
-                }}
-                name={<strong>100px</strong>}
-              />
-            )
-          },
-          {
-            content: (
-              <Avatar
-                jumbo
-                avatarPlaceholder={{
-                  content: 'PH',
-                  color: 'yellow'
-                }}
-                name={<strong>120px</strong>}
-              />
-            )
-          }
-        ]}
-      />
-
-      <h2 id="other">Other elements</h2>
-      <p>Top help you render status etc.</p>
-
-      <ExampleTable
-        fixed
-        data={[
-          {
-            content: (
-              <Avatar
-                lg
-                imgUrl={assets.a04}
-                leftEl={<span>O</span>}
-                name={<strong>60px</strong>}
-              />
-            )
-          }
-        ]}
-      />
       <PropTable />
     </DocsContentPage>
   );

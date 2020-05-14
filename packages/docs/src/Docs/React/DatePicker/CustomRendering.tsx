@@ -1,21 +1,19 @@
-import * as React from "react";
-import { Link } from "react-router-dom";
-import { Button } from "@duik/it/index";
+import * as React from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from '@duik/it/index';
 
-import { Code } from "components";
+import { Code } from 'components';
 
-import { DocsSection } from "../../components";
-
-import PropTable from "./PropTable";
+import { DocsSection } from '../../components';
 
 export const ReactDocsButton = () => {
   return (
     <>
       <h2 id="custom-rendering">{`Using Button as <a> or <Link> from react-router-dom`}</h2>
       <p>
-        By default, using <code>{`<Button>Text</Button>`}</code> renders{" "}
+        By default, using <code>{`<Button>Text</Button>`}</code> renders{' '}
         <code>{`<button>Text</button>`}</code>. You can simply change this by
-        passing Component prop. You can read more aboout Component prop on{" "}
+        passing Component prop. You can read more aboout Component prop on{' '}
         <Link to="/docs/react/component-property">this page</Link>.
       </p>
       <DocsSection>

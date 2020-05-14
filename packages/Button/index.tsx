@@ -22,10 +22,6 @@ export type ButtonPropsBase = {
   clear?: boolean;
   isLoading?: boolean;
   loading?: boolean;
-  // icon properties
-  // DEPRECATED icon?: React.ReactNode,
-  // DEPRECATED iconRight?: boolean,
-  // DEPRECATED iconOnly?: boolean,
   noBorder?: boolean;
   dark?: boolean;
   secondary?: boolean;
@@ -82,7 +78,7 @@ export const Button = <T extends AnyTag = 'button'>(props: ButtonProps<T>) => {
       [cls['btn-transparent']]: transparent,
       [cls.noBorder]: noBorder,
       [cls['btn-block']]: isExpanded || block,
-      [cls['btn-square']]: square
+      [cls['btn-square']]: square,
     },
     className
   );

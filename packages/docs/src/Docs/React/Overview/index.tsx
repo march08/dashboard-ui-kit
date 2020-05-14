@@ -1,17 +1,16 @@
-import * as React from "react";
-import { H1 } from "components";
-import { LoaderDots, Button } from "@duik/it";
-import { DocsContentPage, PageContent } from "../../components";
+import * as React from 'react';
+import { H1 } from 'components';
+import { DocsContentPage, PageContent } from '../../components';
 
 export const ReactDocsOuterEventsHandler = () => {
   return (
     <DocsContentPage>
       <PageContent
         data={[
-          { id: "example", label: "Basic Example" },
-          { id: "vertical-split", label: "Vertical Splitting" },
-          { id: "horizontal-split", label: "Horizontal Splitting" },
-          { id: "full-example", label: "Full Example With DUIK" }
+          { id: 'example', label: 'Basic Example' },
+          { id: 'vertical-split', label: 'Vertical Splitting' },
+          { id: 'horizontal-split', label: 'Horizontal Splitting' },
+          { id: 'full-example', label: 'Full Example With DUIK' },
         ]}
       />
       <H1>Dashboard UI Kit</H1>

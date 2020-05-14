@@ -1,17 +1,10 @@
-import * as React from "react";
-import ReactDOM from "react-dom/server";
-import { Link, BrowserRouter } from "react-router-dom";
-import { Button } from "@duik/it";
-import { H1, Code } from "components";
+import * as React from 'react';
+import ReactDOM from 'react-dom/server';
+import { Link, BrowserRouter } from 'react-router-dom';
+import { Button } from '@duik/it';
+import { H1, Code } from 'components';
 
-import {
-  DocsContentPage,
-  ExampleTable,
-  PageContent,
-  ImportPath
-} from "../../components";
-
-import PropTable from "./PropTable";
+import { DocsContentPage } from '../../components';
 
 export const ReactDocsAlert = () => {
   return (
@@ -79,7 +72,7 @@ export const ReactDocsAlert = () => {
 
       <p>
         Of course, you can pass any React component as a prop value as well. The
-        simples example would be <code>Link</code> from{" "}
+        simples example would be <code>Link</code> from{' '}
         <code>react-router-dom</code> to render, because we want the button
         styled link to navigate to a different page.
       </p>

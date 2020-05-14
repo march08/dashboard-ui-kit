@@ -1,8 +1,7 @@
-import * as React from "react";
-import { Link } from "react-router-dom";
-import { Widget } from "@duik/it/index";
+import * as React from 'react';
+import { Link } from 'react-router-dom';
 
-import { PropTable, properties, DocsTable } from "../../components";
+import { PropTable, properties } from '../../components';
 
 // renderTitle?: (visibleDate: Date, activeView: DatepickerView) => React.ReactNode,
 // renderMonthName?: (monthNumber: number) => React.ReactNode,
@@ -15,34 +14,32 @@ import { PropTable, properties, DocsTable } from "../../components";
 // initialVisibleDate?: Date,
 // weekdayOffset?: number,
 
-const DatepickerValue = <Link to="#DatepickerValue">DatepickerValue</Link>;
-
 const itemProps = [
   {
-    prop: "placeholder",
-    propType: "React.ReactNode",
-    required: false
+    prop: 'placeholder',
+    propType: 'React.ReactNode',
+    required: false,
   },
   {
-    prop: "label",
-    propType: "React.ReactNode",
+    prop: 'label',
+    propType: 'React.ReactNode',
     required: false,
-    desc: "Label to be displayed above the select."
+    desc: 'Label to be displayed above the select.',
   },
   {
     prop: <Link to="/docs/react/datepicker#props">Datepicker</Link>,
     required: false,
-    desc: "You can pass any prop that Datepicker accepts as well, e.g. minDate"
+    desc: 'You can pass any prop that Datepicker accepts as well, e.g. minDate',
   },
   properties.formGroup(),
   properties.rest({
     desc: (
       <>
-        Rest of the properties are passed down to{" "}
+        Rest of the properties are passed down to{' '}
         <Link to="/docs/react/dropdown">Dropdown</Link>.
       </>
-    )
-  })
+    ),
+  }),
 ];
 
 export const ReactDocsButton = () => {

@@ -11,7 +11,7 @@ type PropTableProps = {
 export const PropTable = ({ itemProps }: PropTableProps) => (
   <WidgetContainer className={cls.propTable}>
     {itemProps &&
-      itemProps.map(item => (
+      itemProps.map((item) => (
         <Widget key={Math.random()}>
           <WidgetTable>
             <tbody>
@@ -20,7 +20,7 @@ export const PropTable = ({ itemProps }: PropTableProps) => (
                   <strong style={{ whiteSpace: 'nowrap' }}>{item.prop}</strong>
                 </td>
                 <td style={{ textAlign: 'right' }}>
-                  <p>{item.required ? 'Required' : 'false'}</p>
+                  <p>Required: {item.required ? 'Required' : 'false'}</p>
                 </td>
               </tr>
               <tr>
@@ -46,7 +46,7 @@ export const PropTable = ({ itemProps }: PropTableProps) => (
 );
 
 PropTable.defaultProps = {
-  itemProps: []
+  itemProps: [],
 };
 
 export default PropTable;

@@ -8,9 +8,9 @@ const fs = require('fs');
 
 const packages = fs
   .readdirSync(__dirname)
-  .filter(item => !item.endsWith('.js'))
+  .filter((item) => !item.endsWith('.js'))
   .filter(
-    item =>
+    (item) =>
       ![
         '_vars.scss',
         '__generated_types',

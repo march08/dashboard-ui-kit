@@ -1,7 +1,7 @@
 @import '~@duik/core/_vars.scss';
 
 .content {
-  padding: 70px;
+  padding: 50px;
   background: $bg-main;
   max-width: 1440px;
   position: relative;
@@ -9,50 +9,54 @@
   margin-right: 350px;
   min-height: 100vh;
 
+  p {
+    max-width: 760px;
+  }
+
   // p {
   //   max-width: 760px;
   // }
 
-  &>*+p {
+  & > * + p {
     margin-top: 0.7rem;
   }
 
-  &>h1,
-  &>h2,
-  &>h3,
-  &>h4 {
+  & > h1,
+  & > h2,
+  & > h3,
+  & > h4 {
     color: $text-main;
     font-weight: 400;
 
-    &+p {
+    & + p {
       margin-top: 1em;
     }
   }
 
-  &>h1 {
+  & > h1 {
     font-size: 3rem;
   }
 
-  &>h2 {
+  & > h2 {
     font-size: 1.6rem;
   }
 
-  &>*+h1,
-  &>*+h2,
-  &>*+h3,
-  &>*+h4,
-  &>*+h5,
-  &>*+h6 {
+  & > * + h1,
+  & > * + h2,
+  & > * + h3,
+  & > * + h4,
+  & > * + h5,
+  & > * + h6 {
     margin-top: 2em;
   }
 
-  &>ul,
-  &>ol {
+  & > ul,
+  & > ol {
     padding-left: 30px;
   }
 }
 
-*+.section {
+* + .section {
   margin-top: 1.5rem;
 }
 
@@ -64,7 +68,7 @@
   margin-left: -70px;
   margin-right: -70px;
 
-  &+p {
+  & + p {
     margin-top: 2rem !important;
   }
 }
@@ -106,7 +110,7 @@
   position: sticky;
   top: 70px;
 
-  &+h1 {
+  & + h1 {
     margin-top: 0 !important;
   }
 }
@@ -140,7 +144,7 @@
     font-size: 0.75rem;
   }
 
-  &>tbody>tr>td {
+  & > tbody > tr > td {
     padding: 0 !important;
 
     table {
@@ -170,6 +174,12 @@
 .page-mock {
   padding: 30px;
   background: $border-color-base;
+  &.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
 }
 
 .white {

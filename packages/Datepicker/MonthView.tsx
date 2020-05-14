@@ -22,7 +22,7 @@ type DatepickerDayProps = JSX.IntrinsicElements['button'] & {
   selectedDate?: Date | null;
   minDate?: Date;
   maxDate?: Date;
-  mouseOverDate?: Date;
+  mouseOverDate?: null | Date;
   handleMouseOver?: (date: Date) => void;
 };
 

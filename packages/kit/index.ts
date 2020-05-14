@@ -57,5 +57,6 @@ export * from '@duik/content-title';
 
 // widget
 export * from '@duik/widget';
+export * from '@duik/modal';
 
 export * from '@duik/use-open-state';

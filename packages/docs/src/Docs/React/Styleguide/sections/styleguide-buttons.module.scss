@@ -1,16 +1,26 @@
 .btnGroup {
   display: flex;
   margin: -8px;
-  &>* {
+  & > * {
     margin: 8px;
     flex-grow: 1;
   }
 }
 
-.groupDivider {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-column-gap: 30px;
+.groupDivider,
+.inputGrid {
+  display: flex;
+  margin: -15px;
+  flex-wrap: wrap;
+  & > * {
+    margin: 15px;
+  }
+}
+
+.inputGrid {
+  & > * {
+    min-width: 240px;
+  }
 }
 
 .avatarGroup {
@@ -19,8 +29,8 @@
   justify-content: flex-start;
   margin: 0 -15px;
   padding-top: 14px;
-  &>* {
-    margin: 0 15px
+  & > * {
+    margin: 0 15px;
   }
 }
 
@@ -31,11 +41,4 @@
   p {
     margin-top: 16px;
   }
-}
-
-.inputGrid {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-column-gap: 30px;
-  grid-row-gap: 16px;
 }

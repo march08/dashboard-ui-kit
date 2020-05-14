@@ -1,24 +1,23 @@
-import * as React from "react";
-import { TextField } from "@duik/it";
-import { Icon } from "@duik/icon";
-import { Link } from "react-router-dom";
-import { H1 } from "components";
+import * as React from 'react';
+import { TextField } from '@duik/it';
+import { Icon } from '@duik/icon';
+import { H1 } from 'components';
 import {
   DocsContentPage,
   ExampleTable,
   PageContent,
-  ImportPath
-} from "../../components";
+  ImportPath,
+} from '../../components';
 
-import PropTable from "./PropTable";
+import PropTable from './PropTable';
 
 export const ReactDocsOuterEventsHandler = () => {
   return (
     <DocsContentPage>
       <PageContent
         data={[
-          { id: "basic-usage", label: "Basic Usage" },
-          { id: "props", label: "Prop Table" }
+          { id: 'basic-usage', label: 'Basic Usage' },
+          { id: 'props', label: 'Prop Table' },
         ]}
       />
       <H1>TextField</H1>
@@ -28,10 +27,10 @@ export const ReactDocsOuterEventsHandler = () => {
       <ExampleTable
         data={[
           {
-            content: <TextField defaultValue="Default text" />
+            content: <TextField defaultValue="Default text" />,
           },
           {
-            content: <TextField label="Label" placeholder="Write Something" />
+            content: <TextField label="Label" placeholder="Write Something" />,
           },
           {
             content: (
@@ -40,7 +39,7 @@ export const ReactDocsOuterEventsHandler = () => {
                 errorMessage="There is a problem"
                 placeholder="Write Something"
               />
-            )
+            ),
           },
           {
             content: (
@@ -49,7 +48,7 @@ export const ReactDocsOuterEventsHandler = () => {
                 successMessage="It's ok!"
                 placeholder="Write Something"
               />
-            )
+            ),
           },
           {
             content: (
@@ -58,7 +57,7 @@ export const ReactDocsOuterEventsHandler = () => {
                 leftEl={<Icon>search_left</Icon>}
                 placeholder="Write Something"
               />
-            )
+            ),
           },
           {
             content: (
@@ -67,7 +66,7 @@ export const ReactDocsOuterEventsHandler = () => {
                 rightEl={<Icon>search_left</Icon>}
                 placeholder="Write Something"
               />
-            )
+            ),
           },
           {
             content: (
@@ -77,15 +76,15 @@ export const ReactDocsOuterEventsHandler = () => {
                 rightEl={<Icon>search_left</Icon>}
                 placeholder="Write Something"
               />
-            )
+            ),
           },
           {
             content: (
               <TextField readOnly label="Label" placeholder="Write Something" />
-            )
+            ),
           },
           {
-            content: <TextField clear placeholder="Write Something" />
+            content: <TextField clear placeholder="Write Something" />,
           },
           {
             content: (
@@ -94,7 +93,7 @@ export const ReactDocsOuterEventsHandler = () => {
                 leftEl={<Icon>search_left</Icon>}
                 placeholder="Write Something"
               />
-            )
+            ),
           },
           {
             content: (
@@ -103,8 +102,8 @@ export const ReactDocsOuterEventsHandler = () => {
                 rightEl={<Icon>search_left</Icon>}
                 placeholder="Write Something"
               />
-            )
-          }
+            ),
+          },
         ]}
       />
       <PropTable />

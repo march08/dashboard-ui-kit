@@ -1,5 +1,5 @@
 import React from 'react';
-import { Select, SelectOption } from '@duik/it';
+import { Select } from '@duik/it';
 import { Avatar } from '@duik/it';
 import * as assets from 'assets';
 import cls from './select.module.scss';
@@ -8,7 +8,10 @@ const optionsUsers = [
   { label: <Avatar sm imgUrl={assets.a01} name="Johny Gaudreau" />, value: 1 },
   { label: <Avatar sm imgUrl={assets.a02} name="Vilma Novak" />, value: 2 },
   { label: <Avatar sm imgUrl={assets.a03} name="Alice Queen" />, value: 3 },
-  { label: <Avatar sm imgUrl={assets.a04} name="Evgeny Kuznetsov" />, value: 4 }
+  {
+    label: <Avatar sm imgUrl={assets.a04} name="Evgeny Kuznetsov" />,
+    value: 4,
+  },
 ];
 
 export const ExampleSelectUsers = () => {

@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
 import { H1, Code, CodeLang } from 'components';
-import { DocsContentPage, PageContent, DocsSection } from '../../components';
+import { DocsContentPage } from '../../components';
 
 export const ReactDocsInstall = () => {
   return (

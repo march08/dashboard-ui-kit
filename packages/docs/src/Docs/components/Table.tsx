@@ -1,6 +1,6 @@
-import * as React from "react";
-import cls from "./docspage.module.scss";
-import { Widget, WidgetTable } from "@duik/it/index";
+import * as React from 'react';
+import cls from './docspage.module.scss';
+import { Widget, WidgetTable } from '@duik/it/index';
 
 export type DocsTableProps = {
   children: React.ReactNode;
@@ -8,7 +8,7 @@ export type DocsTableProps = {
 };
 
 export const DocsTable = (props: DocsTableProps) => {
-  const { children, fixed } = props;
+  const { children } = props;
 
   return (
     <Widget className={cls.propTable}>

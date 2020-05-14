@@ -2,8 +2,8 @@
 .modal {
   background: $bg-main;
   border-radius: 4px;
-  border: $border-default-base;
-  width: 90%;
+  // border: $border-default-base;
+  width: 100%;
   max-width: 760px;
   position: relative;
 
@@ -12,6 +12,9 @@
   }
   &.lg {
     max-width: 1200px;
+  }
+  &.full {
+    max-width: none;
   }
 
   h1,
@@ -48,7 +51,6 @@
 .modal-footer {
   padding: 20px 30px;
   display: flex;
-  justify-content: space-between;
 }
 
 .modal-btn-close {
@@ -77,5 +79,38 @@
   }
   &:after {
     transform: rotate(-45deg);
+  }
+}
+
+// Overlay
+.overlay {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  & > * {
+    margin: auto;
+  }
+  padding: 5%;
+  @media screen and (max-width: 768px) {
+    padding: 30px;
+  }
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(#131820, 0.6);
+  z-index: 30000;
+  top: 0;
+  left: 0;
+
+  transition: 0.2s all;
+
+  &:global(.enter) {
+    opacity: 0;
+  }
+
+  &:global(.exit) {
+    opacity: 0;
   }
 }
