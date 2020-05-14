@@ -1,6 +1,6 @@
 {
   "name": "@duik/dropdown",
-  "version": "0.5.6",
+  "version": "0.6.0",
   "description": "Dashboard UI Kit Dropdown",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
@@ -17,10 +17,10 @@
     "react-dom": "^16.8.0"
   },
   "dependencies": {
-    "@duik/button": "^0.5.3",
-    "@duik/core": "^0.5.3",
-    "@duik/outer-events-handler": "^0.5.3",
-    "@duik/use-open-state": "^0.5.3"
+    "@duik/button": "^0.6.0",
+    "@duik/core": "^0.6.0",
+    "@duik/outer-events-handler": "^0.6.0",
+    "@duik/use-open-state": "^0.6.0"
   },
   "gitHead": "aac1068af093da764b29262df63f965ec26083d5"
 }

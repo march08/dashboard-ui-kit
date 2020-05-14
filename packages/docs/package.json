@@ -1,13 +1,13 @@
 {
   "name": "@duik/docs",
-  "version": "0.5.6",
+  "version": "0.6.0",
   "private": true,
   "dependencies": {
-    "@duik/core": "^0.5.3",
-    "@duik/create-simple-component": "^0.5.3",
-    "@duik/icon": "^0.5.3",
-    "@duik/it": "^0.5.6",
-    "@duik/utils": "^0.5.3",
+    "@duik/core": "^0.6.0",
+    "@duik/create-simple-component": "^0.6.0",
+    "@duik/icon": "^0.6.0",
+    "@duik/it": "^0.6.0",
+    "@duik/utils": "^0.6.0",
     "react-helmet": "^5.2.1"
   },
   "scripts": {

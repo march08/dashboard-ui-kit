@@ -1,6 +1,6 @@
 {
   "name": "@duik/modal",
-  "version": "0.5.3",
+  "version": "0.6.0",
   "description": "Dashboard UI Kit Modal",
   "main": "dist/index.js",
   "repository": "https://github.com/march08/duik",
@@ -12,10 +12,10 @@
   },
   "private": false,
   "dependencies": {
-    "@duik/core": "^0.5.3",
-    "@duik/button": "^0.5.3",
-    "@duik/create-simple-component": "^0.5.3",
-    "@duik/outer-events-handler": "^0.5.3"
+    "@duik/button": "^0.6.0",
+    "@duik/core": "^0.6.0",
+    "@duik/create-simple-component": "^0.6.0",
+    "@duik/outer-events-handler": "^0.6.0"
   },
   "peerDependencies": {
     "classnames": "^2.2.6",
