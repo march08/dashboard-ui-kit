@@ -25,7 +25,7 @@ const itemProps = [
   },
   {
     prop: 'onDateChange',
-    propType: <>(value: {DatepickerValue}) => void</>,
+    propType: <>(value: {DatepickerValue}) =&gt; void</>,
     desc: 'This gives you the ability to handle the date selection.',
   },
   properties.bool({

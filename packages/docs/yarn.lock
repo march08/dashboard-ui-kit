@@ -2,376 +2,387 @@
 # yarn lockfile v1
 
 
-"@duik/alert@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/alert/-/alert-0.5.3.tgz#3b835cd97dbaa2849ee58a96a59374f619f1b091"
-  integrity sha512-seRoWPftkW0iEwV7j3EK9JAqEn3Y4S2RhsgwSxGDqJlNdvxLCFubPyBrjdi23XYbKrrzYnwC9znR80VuYFrbNA==
+"@duik/alert@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/alert/-/alert-0.6.0.tgz#8538cf728fcfa4fdd357ddc0e9ed9a8b0205619c"
+  integrity sha512-dO+LgBAhfKj8WejNdmiWFql8resIgD5uj4kOhJgrW91YGXkwxoZkeIMgEjPUb7uqjKVerhu55aGQHcrRWkNF/w==
   dependencies:
-    "@duik/core" "^0.5.3"
+    "@duik/core" "^0.6.0"
 
-"@duik/avatar@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/avatar/-/avatar-0.5.3.tgz#941831583149d36dc14a02c5ee544883ef122ce0"
-  integrity sha512-qCOasvjXOlf19RtUV5T2F0aPL1DUqRO65erNED7QZJvxSUKMNWi2OyikQ7Z4VuKndHu6NeeKDWyrGGWtQQAXZg==
+"@duik/avatar@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/avatar/-/avatar-0.6.0.tgz#cead7f90301637b3e9b1a919ca9e1c745539b38f"
+  integrity sha512-pLyFYo+O8QCSWoOeuznW+fw/8fcy25/GmqKw1ZVIuVs23SjMj96gg/llMHr/F4EdQ5QPt/MEpD0UYanI0BbL+Q==
   dependencies:
-    "@duik/core" "^0.5.3"
-    "@duik/loader-dots" "^0.5.3"
+    "@duik/core" "^0.6.0"
+    "@duik/loader-dots" "^0.6.0"
 
-"@duik/base-input@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/base-input/-/base-input-0.5.3.tgz#d7f2693062e193cb37b79b09c9b39008289e7ba6"
-  integrity sha512-SoJg6OrRHK3ls+6ou+dXepqiM830KIXd5yPstkHvS7uaMSUiAS99g7ZHKrOv+NCCImINW7urP6X4YZLB3Bv2jw==
+"@duik/base-input@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/base-input/-/base-input-0.6.0.tgz#22d80e8cd098f748c78f8da28f54aceb0ee28f16"
+  integrity sha512-3KtWdDqSPAiINmuPhTpjR1fjm/GerAdsf/JSXiNjtD7Icv4mMx4YZ0BqeY58+op5ZRRnYyMTs+0VqLQvlPoVaA==
   dependencies:
-    "@duik/core" "^0.5.3"
+    "@duik/core" "^0.6.0"
 
-"@duik/button-group@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/button-group/-/button-group-0.5.3.tgz#c4ca44b82cff048df44d8597cb1d6241c9738700"
-  integrity sha512-CmRjC3rp3g8YyLDqfrQlwklFZEC671grHxpOP3J/ocspNVPezJFgW5s6vlwQG+KloKyDQnc927DaYdciqYUOCw==
+"@duik/button-group@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/button-group/-/button-group-0.6.0.tgz#7cbf63230e85ad3ea784fcb9574bb799ef8ad741"
+  integrity sha512-WyilwljwbP4kSwSLFZmjRAgrieAuiac9Id5MPzTEYoOgO2hG2hOXxTu+rgZhEAf9bgooNmp41gkMo/N4gcgutQ==
   dependencies:
-    "@duik/core" "^0.5.3"
+    "@duik/core" "^0.6.0"
 
-"@duik/button@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/button/-/button-0.5.3.tgz#9cfbf665ae3d275ceef2e12e5f2a05d850644e59"
-  integrity sha512-BI1ea3lCAAN3eso/zMMajC505Gk0rJUuHuayNLhUs6dAg79WxndTR1aYTckZbz0218TTuuBxUWRBp6FDz7WNsg==
+"@duik/button@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/button/-/button-0.6.0.tgz#17fa9863e8b3aabd54f6cf0511b31b8e6d920269"
+  integrity sha512-Mgdvsv67AQZPLLpow0N87594GmpLqF3kfAGhqvIW9Jx+4Y7esNv7Uh4/KaRmEnLCVZFX1c+uLfBchojg3pobAQ==
   dependencies:
-    "@duik/core" "^0.5.3"
-    "@duik/loader-dots" "^0.5.3"
+    "@duik/core" "^0.6.0"
+    "@duik/loader-dots" "^0.6.0"
 
-"@duik/checkbox@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/checkbox/-/checkbox-0.5.3.tgz#977a1157965bb611666b1ce79aaa253f4f500137"
-  integrity sha512-iG1ZpeF1XPX71Mys5NXUz/6ltUEx30/fNkt98LsayMBpFmndiS2h8T/BOjqssBGXOfDDzqghVivFxYBP7jfXeQ==
+"@duik/checkbox@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/checkbox/-/checkbox-0.6.0.tgz#a437e95d219f57b7a4416e87ba06ca019721bcb0"
+  integrity sha512-lXWLBVQut6s1ykPvNcr78Grxn4yTroexDvYI8asecGdLW3WdMf8+6FgMQI9Opj/bWvn60KmxXKgCg7tKBL4aRA==
   dependencies:
-    "@duik/base-input" "^0.5.3"
+    "@duik/base-input" "^0.6.0"
 
-"@duik/container-horizontal@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/container-horizontal/-/container-horizontal-0.5.3.tgz#b141cb05e9ce4b7a005a5094fd8c4246d9bb2b0b"
-  integrity sha512-Hba9dpd9c6HZHdDKhAKTul/Qua8KnKEYmaFYDHG5S4EjG434KGbKft3AM4j/piD4Qj12hjK8POmXqI6U/jdJsA==
+"@duik/container-horizontal@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/container-horizontal/-/container-horizontal-0.6.0.tgz#4bd4c6c2546e8650d0fb4fc7c02ca81f2575e03e"
+  integrity sha512-93r2jkfmIIX6D3S4DsKF8W2AQ18jBtQNtoW/Di9g4FSrDQTDPL3cD8Vnl0oR3bgjV1ZyP7CInKvrrtAQ/QJqYQ==
   dependencies:
-    "@duik/core" "^0.5.3"
-    "@duik/create-simple-component" "^0.5.3"
+    "@duik/core" "^0.6.0"
+    "@duik/create-simple-component" "^0.6.0"
 
-"@duik/container-vertical@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/container-vertical/-/container-vertical-0.5.3.tgz#29a6cc31de7a7275e45513c06bcc6b6555b3ff8d"
-  integrity sha512-HctnrXk4AGYO8I8chLGkSC3n3vzUr7abu1iJ8qKflaEEFqUTQdxTosV65hBBlsfNCarutjWqL0LnpHgVrh0hDA==
+"@duik/container-vertical@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/container-vertical/-/container-vertical-0.6.0.tgz#f930359632a8bf78c13bc0e41e971483d8ddc491"
+  integrity sha512-vLHnTBbGAuA5L7bz7tsY0IrYgbQF9ddgamo5elxGrf2bNOefIPzDCF7reWlaQKZeYPitEvOXLk4Kq/1BZpyufw==
   dependencies:
-    "@duik/core" "^0.5.3"
-    "@duik/create-simple-component" "^0.5.3"
+    "@duik/core" "^0.6.0"
+    "@duik/create-simple-component" "^0.6.0"
 
-"@duik/content-title@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/content-title/-/content-title-0.5.3.tgz#0c0857a9575b225fa83f75b95b2f5ebbc6167907"
-  integrity sha512-WIuVJGR+GEKXZ+f6fVyfyTw0Oee0oGRGL/Fu49+wn/gqrnUw+3Nec0Q+LjNUVWXT+vy+JrF2JgTwQa8G3KlvIA==
+"@duik/content-title@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/content-title/-/content-title-0.6.0.tgz#27a321f7bba04af6ed30f7fde04a3b291fd64146"
+  integrity sha512-jX4tcciYlmwfQfhSLc9Y20CppXMuKNUwq9H7RhZu/17XvatHiWQjBOuCzGzO4ojMR5avnTkXQc4QBkvMkxJtYg==
   dependencies:
-    "@duik/core" "^0.5.3"
-    "@duik/create-simple-component" "^0.5.3"
+    "@duik/core" "^0.6.0"
+    "@duik/create-simple-component" "^0.6.0"
 
-"@duik/core@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/core/-/core-0.5.3.tgz#ad1b3b811b35f81702aa3696d9a8dc0c137e89b8"
-  integrity sha512-cSWqOXRSwt2k1SMa0ajcXmkci75xPMbzC7FcIFIjmwmqP1ECHpnI7Ny8EPr0I31FKQYdrSSH1uPHgYGV6mXZ0g==
+"@duik/core@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/core/-/core-0.6.0.tgz#be3732331a1878ef3105f7ca2812bcd4fb424d29"
+  integrity sha512-Ct9tZ9TvbfSNWRo4C3GlZ/kI8FD8d9aMQwHpGGcC6XK2Hp/NcrKdLgcsO0H/UlqywZsX+AkSCNfsb2Ni9OHpiQ==
   dependencies:
     "@types/react" "^16.8.16"
     "@types/react-dom" "^16.8.4"
 
-"@duik/create-simple-component@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/create-simple-component/-/create-simple-component-0.5.3.tgz#3bb710f0360ea1c1066244ef8b73623037885478"
-  integrity sha512-6GmezvZLnhQkMIQwR29dPfLKEHAEjpJNj+tXil4oiof6cc0ZM/kKKy6NmePY/xGnL9NoejwaEuMVv+CBBSWklA==
+"@duik/create-simple-component@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/create-simple-component/-/create-simple-component-0.6.0.tgz#a841eb27a745c00325ccb098736097c60445b485"
+  integrity sha512-eGr+lAYfM6/Tg/Orob5nT5sk54u9LVg1qt00S8N/aHrU4h9cI4kic/P6foKk7nkebP7Fvhv7fsE9oSRDcdCoDQ==
   dependencies:
-    "@duik/core" "^0.5.3"
+    "@duik/core" "^0.6.0"
     "@types/react" "^16.8.16"
     "@types/react-dom" "^16.8.4"
 
-"@duik/datepicker@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/datepicker/-/datepicker-0.5.3.tgz#35210ec0627d759ac7963193ddabf1ae631037b5"
-  integrity sha512-BewRlPjV8FM7DpouPnUT3igl3vXqa+KF6VjJbXII3E6c7Vc87r/Akj+obmGMYeJ9G04i98jkL4QsUdGMDRGKmw==
+"@duik/datepicker@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/datepicker/-/datepicker-0.6.0.tgz#d27df1f6795164531f9bb9eff4e6342ee941e954"
+  integrity sha512-kWl/fkNszNwR9/Y0GAmjQiv58z12dIwRGB/CwoV2vNQLhHhne6HyM2mpr0m2MNrels5NRU98Pn2EAiSJNmodFw==
   dependencies:
-    "@duik/core" "^0.5.3"
-    "@duik/create-simple-component" "^0.5.3"
+    "@duik/core" "^0.6.0"
+    "@duik/create-simple-component" "^0.6.0"
 
-"@duik/divider@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/divider/-/divider-0.5.3.tgz#cee9eb0eb00e39b05283a04414c786c59c8386fb"
-  integrity sha512-Qn4UNs+doSxlfu9fsaAnZON0eYepZb0LjiCXZG/puRUG0SPnRg4eq2aUf71mR6AnR4or3a3MbDMNRtztj3qgPw==
+"@duik/divider@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/divider/-/divider-0.6.0.tgz#1525d9152fda8f8c319efee1ae08aa7b1bff8894"
+  integrity sha512-FIRP7CI8BxUxaoLKOZN/JCfMkAA8SivZ6Wp+S6Zk31D9MT26n0He9AzV1aP/GsU1Ix0qeu05MkfxxAUV7NEFeg==
   dependencies:
-    "@duik/core" "^0.5.3"
+    "@duik/core" "^0.6.0"
 
-"@duik/dropdown@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/dropdown/-/dropdown-0.5.3.tgz#e615f8a15e665e8c4e31999c9153e423fd6bfb3e"
-  integrity sha512-BDrsKo4ct8hMCS6B1usOul08KO419OqcPh4t6HRBPXbw9Ew6IN5WR1XQ3eVZzZiN0RfwdXnXqr4PT6aJjB4yaA==
+"@duik/dropdown@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/dropdown/-/dropdown-0.6.0.tgz#cf1e2fbcef6ac6535b299e2764e8cf45bd512b88"
+  integrity sha512-GspCBI5m0M54BP6mCwdudHylfyAv9NydEOXM4f2Ap1OoNGo/H9dHTegP0Cs5up2cu9NTWZCXnlR46RSYOjP21Q==
   dependencies:
-    "@duik/button" "^0.5.3"
-    "@duik/core" "^0.5.3"
-    "@duik/outer-events-handler" "^0.5.3"
-    "@duik/use-open-state" "^0.5.3"
+    "@duik/button" "^0.6.0"
+    "@duik/core" "^0.6.0"
+    "@duik/outer-events-handler" "^0.6.0"
+    "@duik/use-open-state" "^0.6.0"
 
-"@duik/form-group-container@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/form-group-container/-/form-group-container-0.5.3.tgz#8d2fad5c0269c3b9f3c98869158832246ca267f9"
-  integrity sha512-aCl2dSBDgUoM3zfs7FbDP7DYuZqduVmIXJcTrs9CQSxZIniqf9bnUs+6GGRUgvYHgKV8RbtOErfjhyTPLq6+tA==
+"@duik/form-group-container@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/form-group-container/-/form-group-container-0.6.0.tgz#9810afaea855b88e4e6cd8f9d47fcb6ae6037d5c"
+  integrity sha512-IHOit1o5vXiX2bkDwAYNlqfNqWZyQpq4hU+0TES/BKiHuHx76oOTtlHeFUF+1zcMR9UcSj1wP+W3MtcP7TIpPw==
 
-"@duik/form-group@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/form-group/-/form-group-0.5.3.tgz#a8416da5674e9b86c6bebd3eb243ff18ecb6e268"
-  integrity sha512-29zyvWYynknf1q6RIFZ1CCsCOJK5VQZhBwrEynrC6uc+IJM6DWx72KNqbo9weHMHpb275SyvX0daO8yExVcWjQ==
+"@duik/form-group@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/form-group/-/form-group-0.6.0.tgz#6f06556ad05f24a02bb2fe8906ded41f3b3b7b1d"
+  integrity sha512-ngixNUr1NDP310kDzQGhCFufeT1stJkStwqzV0KFXamiIzV4anopHZn7qfg9tqmw3Je1/gac6xEUCEhPiThm3g==
   dependencies:
-    "@duik/core" "^0.5.3"
-    "@duik/create-simple-component" "^0.5.3"
+    "@duik/core" "^0.6.0"
+    "@duik/create-simple-component" "^0.6.0"
 
-"@duik/icon@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/icon/-/icon-0.5.3.tgz#c6b2611b7aadffa82964cf214612cf54e16e27bf"
-  integrity sha512-dYxX2LqSJ2o7b6+kiGg8n9mYnrMjlae0YoTcPoasCR5/2CxNA9MvPJtCovUHI6cUXGuq2JP16Da4ZTfoXXTvwQ==
+"@duik/icon@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/icon/-/icon-0.6.0.tgz#3ec5c2857c0cef44d75ee71d68236ca39a073665"
+  integrity sha512-5WSwBuubakgeCkCchk7UgdOpdtFeJndchFGePso5JEU0w63NuMVCo1BNGvYU34CE2WvfEb0aYJPoqbxXiDK7Ng==
   dependencies:
-    "@duik/create-simple-component" "^0.5.3"
+    "@duik/create-simple-component" "^0.6.0"
 
-"@duik/it@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/it/-/it-0.5.3.tgz#01ed4bbd00d25045dd24d9b5fc5d16a4e44d5622"
-  integrity sha512-8zoJ6vYRemvOasmTBo8XWwzn4tLq+lWpLalElYpnJ6PR6NE+pzX2Of2cstJr0lYkgX87dcYERpIIHaTJLp8XVg==
+"@duik/it@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/it/-/it-0.6.0.tgz#8448e29006c4d0fa349b0bc8588efd4270116850"
+  integrity sha512-xOKkRErznhD3x20uRVBnclgUgCaHoCjyNKZHwlAdrLe9C9/iEXgEbtELjXOP+YwprUBIjclunu48fS/yV1QXIw==
   dependencies:
-    "@duik/alert" "^0.5.3"
-    "@duik/avatar" "^0.5.3"
-    "@duik/base-input" "^0.5.3"
-    "@duik/button" "^0.5.3"
-    "@duik/button-group" "^0.5.3"
-    "@duik/checkbox" "^0.5.3"
-    "@duik/container-horizontal" "^0.5.3"
-    "@duik/container-vertical" "^0.5.3"
-    "@duik/content-title" "^0.5.3"
-    "@duik/core" "^0.5.3"
-    "@duik/create-simple-component" "^0.5.3"
-    "@duik/datepicker" "^0.5.3"
-    "@duik/divider" "^0.5.3"
-    "@duik/dropdown" "^0.5.3"
-    "@duik/form-group" "^0.5.3"
-    "@duik/form-group-container" "^0.5.3"
-    "@duik/loader-dots" "^0.5.3"
-    "@duik/nav-link" "^0.5.3"
-    "@duik/nav-panel" "^0.5.3"
-    "@duik/nav-section" "^0.5.3"
-    "@duik/nav-section-title" "^0.5.3"
-    "@duik/nav-title" "^0.5.3"
-    "@duik/outer-events-handler" "^0.5.3"
-    "@duik/progress" "^0.5.3"
-    "@duik/radio" "^0.5.3"
-    "@duik/scroll-area" "^0.5.3"
-    "@duik/select" "^0.5.3"
-    "@duik/select-date" "^0.5.3"
-    "@duik/tabs" "^0.5.3"
-    "@duik/text-area" "^0.5.3"
-    "@duik/text-field" "^0.5.3"
-    "@duik/toggle" "^0.5.3"
-    "@duik/top-bar" "^0.5.3"
-    "@duik/top-bar-link" "^0.5.3"
-    "@duik/top-bar-link-container" "^0.5.3"
-    "@duik/top-bar-menu-divider" "^0.5.3"
-    "@duik/top-bar-section" "^0.5.3"
-    "@duik/top-bar-title" "^0.5.3"
-    "@duik/use-open-state" "^0.5.3"
-    "@duik/widget" "^0.5.3"
+    "@duik/alert" "^0.6.0"
+    "@duik/avatar" "^0.6.0"
+    "@duik/base-input" "^0.6.0"
+    "@duik/button" "^0.6.0"
+    "@duik/button-group" "^0.6.0"
+    "@duik/checkbox" "^0.6.0"
+    "@duik/container-horizontal" "^0.6.0"
+    "@duik/container-vertical" "^0.6.0"
+    "@duik/content-title" "^0.6.0"
+    "@duik/core" "^0.6.0"
+    "@duik/create-simple-component" "^0.6.0"
+    "@duik/datepicker" "^0.6.0"
+    "@duik/divider" "^0.6.0"
+    "@duik/dropdown" "^0.6.0"
+    "@duik/form-group" "^0.6.0"
+    "@duik/form-group-container" "^0.6.0"
+    "@duik/loader-dots" "^0.6.0"
+    "@duik/modal" "^0.6.0"
+    "@duik/nav-link" "^0.6.0"
+    "@duik/nav-panel" "^0.6.0"
+    "@duik/nav-section" "^0.6.0"
+    "@duik/nav-section-title" "^0.6.0"
+    "@duik/nav-title" "^0.6.0"
+    "@duik/outer-events-handler" "^0.6.0"
+    "@duik/progress" "^0.6.0"
+    "@duik/radio" "^0.6.0"
+    "@duik/scroll-area" "^0.6.0"
+    "@duik/select" "^0.6.0"
+    "@duik/select-date" "^0.6.0"
+    "@duik/tabs" "^0.6.0"
+    "@duik/text-area" "^0.6.0"
+    "@duik/text-field" "^0.6.0"
+    "@duik/toggle" "^0.6.0"
+    "@duik/top-bar" "^0.6.0"
+    "@duik/top-bar-link" "^0.6.0"
+    "@duik/top-bar-link-container" "^0.6.0"
+    "@duik/top-bar-menu-divider" "^0.6.0"
+    "@duik/top-bar-section" "^0.6.0"
+    "@duik/top-bar-title" "^0.6.0"
+    "@duik/use-open-state" "^0.6.0"
+    "@duik/widget" "^0.6.0"
 
-"@duik/loader-dots@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/loader-dots/-/loader-dots-0.5.3.tgz#25cc44ee8e2b3092bc9f890643054cc7a126e236"
-  integrity sha512-r8dUGFIrY5OkCp5ach5KMI2Sm2lnEjHOrruEyEH3wC/T6FTe6U7N2y32oi3qtpX/AkBcbm/nIuJt/7ckZVl8mA==
+"@duik/loader-dots@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/loader-dots/-/loader-dots-0.6.0.tgz#dcd2b80228c552a6754070f0e7b6270de4b06ac6"
+  integrity sha512-UhxkKcJzXz0qRiZ15JCFgZX6QZW6n2QsvGl6tdYtYquBRDpHHiiq7VEV+iMFsLx0n8Y4YXW5fyPoB5sNZvhjNg==
   dependencies:
     "@types/react" "^16.8.16"
 
-"@duik/nav-link@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/nav-link/-/nav-link-0.5.3.tgz#01e065e4ec5f0309a0c3fc459f3847513c6a9be3"
-  integrity sha512-x3buOo79Erapbq365o89g7pStfCSSs8+du79nizcZdL6Mg1QEgWlqcjBrEuDpptVLgf7d6zdTjJOzDC1lmEqFA==
+"@duik/modal@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/modal/-/modal-0.6.0.tgz#7e1e0e3dde2f04f638afb1c4e7f5bd95dd093d19"
+  integrity sha512-kapgVqKkpQlEqnGaUimvzxjWbk1OmPqy7BpNVhPiE5FuxqL1q+HZIGLO/eWdivjDXU+GoZuJxW5jUFsI//2Jiw==
   dependencies:
-    "@duik/core" "^0.5.3"
+    "@duik/button" "^0.6.0"
+    "@duik/core" "^0.6.0"
+    "@duik/create-simple-component" "^0.6.0"
+    "@duik/outer-events-handler" "^0.6.0"
 
-"@duik/nav-panel@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/nav-panel/-/nav-panel-0.5.3.tgz#c0b7a4b06ba40796cb382344f0db7fa64ca6c044"
-  integrity sha512-JDC4rJdvXaOERxvu5UzpIE3Hqjw9lIHjyg3T672aiBaEuFnKjK3ItzjYnOVe04CNvxmBlL9QL5arwn0CRG5MRQ==
+"@duik/nav-link@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/nav-link/-/nav-link-0.6.0.tgz#14ee26e445bc94d7185beb9bd1e825051b5d5ef3"
+  integrity sha512-+rqUfsXwHdIkX0LoOvhcuSHUhxDNLUxiZkxBvYTKkfcRnEm3FmpSMi7vR/NSXTHIDHaqdWkRkrBTZeiciFuVGw==
   dependencies:
-    "@duik/core" "^0.5.3"
+    "@duik/core" "^0.6.0"
 
-"@duik/nav-section-title@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/nav-section-title/-/nav-section-title-0.5.3.tgz#9c383498b02fb606dfcd1eef6bd9ec19b8ab9b8b"
-  integrity sha512-67cX4xXEKWi02VGcn9NtTTlRKF701+GSRuAzDe5nI0NonxSAV8iMz9AcH+3HShKTNs7DgY9k2IK0OZYwYWSPlA==
+"@duik/nav-panel@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/nav-panel/-/nav-panel-0.6.0.tgz#6db88ffaa87c502ac67499c5bc72b8122a8c987b"
+  integrity sha512-oPFVybXbpGy9cm/eS9LkGvnxFSjcE+d6E3M4SQgPK/TW8oVy3VrXOX6/BZ3LIvbD7LdHxM/h+HvtFZa90Qkxew==
   dependencies:
-    "@duik/core" "^0.5.3"
-    "@duik/create-simple-component" "^0.5.3"
+    "@duik/core" "^0.6.0"
 
-"@duik/nav-section@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/nav-section/-/nav-section-0.5.3.tgz#7b677dfa4d873a909f79725969f6a1cada218e43"
-  integrity sha512-AHvhaLDHMbx/sOaG8UDfj7kO7DRTypqEknveTu6P+FOveJ1oqbFpTing6N4sxr+DqySvJRGt6btk18DIjDAt5g==
+"@duik/nav-section-title@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/nav-section-title/-/nav-section-title-0.6.0.tgz#42fc3cde979f743584ba2b293649088d66bd1231"
+  integrity sha512-5LkPSb2jYDlcPT8BVqYPhPbufn+5K31gsGD7VMaVbLNoRkJrcXdhQfmuKZhK4pLHpLM8uws+WnCTpiJlaIxdPw==
   dependencies:
-    "@duik/create-simple-component" "^0.5.3"
+    "@duik/core" "^0.6.0"
+    "@duik/create-simple-component" "^0.6.0"
 
-"@duik/nav-title@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/nav-title/-/nav-title-0.5.3.tgz#343f3a9efa6c658edbf705c3e34b80815cdf0575"
-  integrity sha512-6OroxxrrI8xSNlCp6rBun/FA8nULLppNQqZVSoPXXU27LNr1AZ4OKn2hxhxNJKegFzGfXoHpVPVbgZiCJv9hiw==
+"@duik/nav-section@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/nav-section/-/nav-section-0.6.0.tgz#23069881c345cef33a5711f9cd4c0d6d3b993450"
+  integrity sha512-/w1B7XsgfFHTgTGReEjMXToiveGt7D0LfFX5vHTo/95B8rRjxGTumrxLPnT87ICOVn+mfsIIuddgaJynB7oPHg==
   dependencies:
-    "@duik/core" "^0.5.3"
-    "@duik/create-simple-component" "^0.5.3"
+    "@duik/create-simple-component" "^0.6.0"
 
-"@duik/outer-events-handler@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/outer-events-handler/-/outer-events-handler-0.5.3.tgz#78a7c3674e6bf3529cc13ec56d47ae316f047749"
-  integrity sha512-8cTjvNvetDB8HFuont1Hx8/y/3NPRLNJeCwF2+aQZXvrQ3w0tI/EomGmSionnBX1KVzN9jjHxqofaQW8jdnryw==
+"@duik/nav-title@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/nav-title/-/nav-title-0.6.0.tgz#be89fa6e88b5b6e1039dc6a3321d4c67b7004eda"
+  integrity sha512-i3cBfryNpljODlEEyu2d4pMa4nwXtFMbhRzyGVuj9BYPw2ob9Lw0wf/q6ZGK/pg797nZU11LVTeXrYvnVcy6UA==
   dependencies:
-    "@duik/core" "^0.5.3"
+    "@duik/core" "^0.6.0"
+    "@duik/create-simple-component" "^0.6.0"
 
-"@duik/progress@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/progress/-/progress-0.5.3.tgz#9571016324d133dc743e157ac3a5bf17f08466cc"
-  integrity sha512-/jPtBNW8sOC/y7O2zJGLzLJ/lJ6XMmpRQ9eLav1+7BNw1bVQUEbDSOz1Ucygi38Ipd1kkdI7CzEoOg6OY/vnfw==
+"@duik/outer-events-handler@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/outer-events-handler/-/outer-events-handler-0.6.0.tgz#c47d840f92c03f29f2ba681019cab84039c95e15"
+  integrity sha512-cw/H29S9yoxuzQ+82d0Bd25AvLuVjsgOByO5BzXmkU+tDFc3/YZcTsbnNb6vGnomoYvNimYt2Rv8h/AOXLPBwA==
   dependencies:
-    "@duik/core" "^0.5.3"
+    "@duik/core" "^0.6.0"
 
-"@duik/radio@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/radio/-/radio-0.5.3.tgz#285c924e1681668c37972e04716a2416ff24a88c"
-  integrity sha512-kn23dXjLGMEq9p8ADZii1AygnLSRE1hSaXJmgW6AjvZYFaM0LzP/Be2kQNk5OOmrmcmjzitwURcX/pca304/8g==
+"@duik/progress@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/progress/-/progress-0.6.0.tgz#3fad0dc9b476f04b0c705ec84885675b4f092f90"
+  integrity sha512-AGDKNKJKJEf5zav5qZmTjNPsdzsMY+SfQmveCP5UqwaLFzICA6AOhyFKhbgcQ6nqImE9DrTvzgkQpPvGJya79g==
   dependencies:
-    "@duik/base-input" "^0.5.3"
+    "@duik/core" "^0.6.0"
 
-"@duik/scroll-area@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/scroll-area/-/scroll-area-0.5.3.tgz#f279f910d6f521d9ae0877bd1239219cacebbe82"
-  integrity sha512-8/2+P+EVurCgAvckTpSRqcxt6OKQBE/tCU2ynygx29u9W+8jj6hh1/ycLvFKG2k2EDWZwLmCa+uMac8fMqFAwQ==
+"@duik/radio@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/radio/-/radio-0.6.0.tgz#0fd85938c0e657ccefed46fbaa280e7bc1bfa5be"
+  integrity sha512-tJmCOy1alxAJSwSIIVtcaPT+zGy+U3SCv0vxEq9Mo6LXO6UBgjm/e5HP9T0Hkypuiq9uVQpnuEbU7czwb76GDw==
   dependencies:
-    "@duik/core" "^0.5.3"
-    "@duik/create-simple-component" "^0.5.3"
+    "@duik/base-input" "^0.6.0"
 
-"@duik/select-date@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/select-date/-/select-date-0.5.3.tgz#9c9af9bf338c22409b401be2e3d3545564ee4713"
-  integrity sha512-nolp59qAeJNkJ/l1RPchbYIvU9lmOYHY8oc/smu3dsQ3nJtfqwmjo8uABDPNiW4pA1djbALLjEisGBeTauUg8g==
+"@duik/scroll-area@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/scroll-area/-/scroll-area-0.6.0.tgz#57879d60e34a0f15951b9ab64ae5aed310178019"
+  integrity sha512-jYmfdLeE6ghnP+TseOewiKWhyWxEWt/pRhDd5sTQluu1fDjOne/ahvyscNTzxGsLsR6Ef7maOTbjQuOTyza26g==
   dependencies:
-    "@duik/content-title" "^0.5.3"
-    "@duik/core" "^0.5.3"
-    "@duik/datepicker" "^0.5.3"
-    "@duik/dropdown" "^0.5.3"
-    "@duik/form-group" "^0.5.3"
-    "@duik/text-field" "^0.5.3"
-    "@duik/use-open-state" "^0.5.3"
+    "@duik/core" "^0.6.0"
+    "@duik/create-simple-component" "^0.6.0"
 
-"@duik/select@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/select/-/select-0.5.3.tgz#4bd9ef81e12436a844a49486e3ab357193967ca7"
-  integrity sha512-GZus8hK0F/dCi9vwX5j3uSXEva8c96d0igNGvMdQiOHoJNMytWlrEPxweRDLIMIqKnIvF94XixJKjjmEQqPAyA==
+"@duik/select-date@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/select-date/-/select-date-0.6.0.tgz#4b4832cdd62abbb3158745b10f73e1fe7f6aa52a"
+  integrity sha512-vjcoLtalbqyxaOLMKXc/HEIrVPtG1TTbobDCcqz7Xhy1Lfaho4X88Zq7/b/seRfzlAbCz/vDJc5uMiPUYsygTg==
   dependencies:
-    "@duik/content-title" "^0.5.3"
-    "@duik/core" "^0.5.3"
-    "@duik/dropdown" "^0.5.3"
-    "@duik/form-group" "^0.5.3"
-    "@duik/text-field" "^0.5.3"
+    "@duik/content-title" "^0.6.0"
+    "@duik/core" "^0.6.0"
+    "@duik/datepicker" "^0.6.0"
+    "@duik/dropdown" "^0.6.0"
+    "@duik/form-group" "^0.6.0"
+    "@duik/text-field" "^0.6.0"
+    "@duik/use-open-state" "^0.6.0"
 
-"@duik/tabs@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/tabs/-/tabs-0.5.3.tgz#ac9118908ca608d177d825691a3d39e810b25370"
-  integrity sha512-dbYjwJ41uipTZsorGo3WSAtxKj+3xDrNQdam7ltpwLozr2ZA1SglZT4XrNe6ESmyjGutXhj8WUt4fVqCe04NKw==
+"@duik/select@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/select/-/select-0.6.0.tgz#33a66e0fb23107313505f43078f7e1180a3a80d6"
+  integrity sha512-6dW3RDXLmtUmoONUuYF+1zURC0VTFQtiUZu3YzUdo3rCqaEZai2/LeIqIx4Tcp+5zQ5/tRL6Q1BRjaVf+J8FzA==
   dependencies:
-    "@duik/core" "^0.5.3"
+    "@duik/content-title" "^0.6.0"
+    "@duik/core" "^0.6.0"
+    "@duik/dropdown" "^0.6.0"
+    "@duik/form-group" "^0.6.0"
+    "@duik/text-field" "^0.6.0"
 
-"@duik/text-area@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/text-area/-/text-area-0.5.3.tgz#c6d38966be6f86a31e0eca237958fc3fd46eac29"
-  integrity sha512-PvGD8ZVlXrWHmmd/+4xLxwhfZTtNRH9b5oOfdtmzqLn37miQFQpkasI1/amd4Crw9QiDQIsYKL5UzEK+IYrxAQ==
+"@duik/tabs@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/tabs/-/tabs-0.6.0.tgz#cb3e629c21c871baaa4799b5f325be370ee5ec62"
+  integrity sha512-2mpSzQ8gaLUJtOZYrukCT+7R+kIoW5fd+XWicGsmZZGVOOzCjJW9snC8qcurFSGW2p00uuRckCuG0oHelTIRAg==
   dependencies:
-    "@duik/core" "^0.5.3"
-    "@duik/form-group" "^0.5.3"
+    "@duik/core" "^0.6.0"
 
-"@duik/text-field@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/text-field/-/text-field-0.5.3.tgz#4ca594333fc763331049fab6f56555798f66f362"
-  integrity sha512-dV1kfErJR/Ddw3QSmBN6rt5vbthxAlGxTnxcFsK5BxdXFhZDN+97/wa1+DF/1xe0ZD82sFEQSKe6sG6TUhLRfA==
+"@duik/text-area@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/text-area/-/text-area-0.6.0.tgz#a38c595322eb526491e321e35008ca1e03dfdf30"
+  integrity sha512-CsA5ckFTlXcwiE5faVLZ7l0SmW/j+Mf8SlfVV5kRuWRhjx4Zm4FeVNO5KbeKk/UVMry4ODwr/YpVPFlujmmxFg==
   dependencies:
-    "@duik/core" "^0.5.3"
-    "@duik/form-group" "^0.5.3"
+    "@duik/core" "^0.6.0"
+    "@duik/form-group" "^0.6.0"
 
-"@duik/toggle@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/toggle/-/toggle-0.5.3.tgz#b3793a6b529eaea0003c0506355f3dad4c16dbb1"
-  integrity sha512-ygXvffsn1HM+g9RsgXXcfN/YQ+GNSFRlNNWuPM3Zp6uESk1sm/u6JVXd4MKolZQ5QhYVhk226QbdN0lfowZAHg==
+"@duik/text-field@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/text-field/-/text-field-0.6.0.tgz#062f9d36421042d3e7bdcd3df06b7a4b30b5c5e8"
+  integrity sha512-20Jv4PCi5nu7XiwMazuk6PAG7wZUagbY4rwvdxN9I4qc9zvoBgtO9jHW4cCFjkQgI7t2VRfOTziiV4WyKXJBiQ==
   dependencies:
-    "@duik/base-input" "^0.5.3"
+    "@duik/core" "^0.6.0"
+    "@duik/form-group" "^0.6.0"
 
-"@duik/top-bar-link-container@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/top-bar-link-container/-/top-bar-link-container-0.5.3.tgz#80062b32e9d152ac8e5ace94325ae6d38e757741"
-  integrity sha512-PnlOHWlIgfWUH1vsm3DSyI4/A2Gv3ApKs8wHco2JumKnQLq6Jvw8LtFnk+xtwPolARXOvanUb2N+7m9sDR0jgA==
+"@duik/toggle@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/toggle/-/toggle-0.6.0.tgz#1d176706e799041281a6997deb11fd8dc501968e"
+  integrity sha512-HR7u7JFy+v5U83I4xqygZKfs1JjAkrM+16jJz11MCoYKmvuaYEJxHjHWKVrSvDw+wumZo/Osl37PMK+Su/6KDg==
   dependencies:
-    "@duik/core" "^0.5.3"
-    "@duik/create-simple-component" "^0.5.3"
+    "@duik/base-input" "^0.6.0"
 
-"@duik/top-bar-link@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/top-bar-link/-/top-bar-link-0.5.3.tgz#1f0cafc463d53bb0839004ba85c658ccc9306556"
-  integrity sha512-ci+sXf4voWVk1mfBiH3iQqS/rWTXlKiSVK70cXrq+oIo12beuweYaMIvlDsVL4SXsWkov6YwfOh6F4ITusAgiQ==
+"@duik/top-bar-link-container@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/top-bar-link-container/-/top-bar-link-container-0.6.0.tgz#7c1fad7702a0f585b305c05a6298e18d70ced6de"
+  integrity sha512-pLFsAgzMkGrjhEm0vaBRtNJ9BHZZjFCGQzw093Bb8zUXkngU5hbNnG1BOC//a4a3Jiwp66mhT4xcHx8tN+jDEw==
   dependencies:
-    "@duik/core" "^0.5.3"
-    "@duik/create-simple-component" "^0.5.3"
+    "@duik/core" "^0.6.0"
+    "@duik/create-simple-component" "^0.6.0"
 
-"@duik/top-bar-menu-divider@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/top-bar-menu-divider/-/top-bar-menu-divider-0.5.3.tgz#adbba5f4b33657d89f4a19a33eb0dea3db6b767c"
-  integrity sha512-A3g0nKqSCgefL+y8lE/3KKolj5IyHmEvdmrdgBJh+WVHwfJqFDjgyeSIhz6eG9FEsUajjJR/FbEMZlb4DjcFzQ==
+"@duik/top-bar-link@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/top-bar-link/-/top-bar-link-0.6.0.tgz#b608e3282d10948d573bd96c7f12b33b137340a6"
+  integrity sha512-/M7+XPLP8uSPoSAMx1TSNhhk+ojgrTDHIGJ1CIt/z56vqwUSg+byXp7cSPhjhTtOs2ZfWF5Q6Zo4vzyjUFwkPQ==
   dependencies:
-    "@duik/core" "^0.5.3"
-    "@duik/create-simple-component" "^0.5.3"
+    "@duik/core" "^0.6.0"
+    "@duik/create-simple-component" "^0.6.0"
 
-"@duik/top-bar-section@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/top-bar-section/-/top-bar-section-0.5.3.tgz#a6b8f58bfea8ed346c037b736eba5c28473e1c54"
-  integrity sha512-41JpRoQ+UBpRYZvTHw2EIlns0KjsGT+DJLINYEJfhQx657ONsNzPFiLrOSgEdSjt0py/E+Q8ypFO8rib4gl3cA==
+"@duik/top-bar-menu-divider@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/top-bar-menu-divider/-/top-bar-menu-divider-0.6.0.tgz#261e1f7498fd8a50b455e44bb7ffbfad5e160238"
+  integrity sha512-G6lcji5jrcqOhT2hRCSy/R5M1d68erNN7hUIlEjBPhWmpqiljpxB8dYOVznYCk3PUdmyHx5QLzkNeS0kmFxv8A==
   dependencies:
-    "@duik/core" "^0.5.3"
-    "@duik/create-simple-component" "^0.5.3"
+    "@duik/core" "^0.6.0"
+    "@duik/create-simple-component" "^0.6.0"
 
-"@duik/top-bar-title@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/top-bar-title/-/top-bar-title-0.5.3.tgz#38edd02b4944eef8cb8c442cbdb42aa2be2b7577"
-  integrity sha512-vAZfltRLb1n7gr1IzbKDIAu/nHGO1gd3otNM9u2/WbpkthIFUiJ1idK2dUR+HCMKvtvsRmInPqbRXwdkH1EHKg==
+"@duik/top-bar-section@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/top-bar-section/-/top-bar-section-0.6.0.tgz#13dcc500c8a92839c5376dee9327acc64488886d"
+  integrity sha512-uqdvWlJmF9HTzRQwRaP9SE9oIRWnJm8VVYksMYEUBUtL3WyxrSlpALpb131zizgd30EwXFMbgKv4wimD16VOGg==
   dependencies:
-    "@duik/core" "^0.5.3"
-    "@duik/create-simple-component" "^0.5.3"
+    "@duik/core" "^0.6.0"
+    "@duik/create-simple-component" "^0.6.0"
 
-"@duik/top-bar@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/top-bar/-/top-bar-0.5.3.tgz#d68027cdc9f785177a1f3dbc2a89f55cb96087d7"
-  integrity sha512-9URlsIvXFCk+1PbTugRSYHT1TU0Jjsf38HRSHVVxKMK0zOW3y41/mpd5xsNM96cjC25RSLxkzEN6KxRqQmDuiw==
+"@duik/top-bar-title@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/top-bar-title/-/top-bar-title-0.6.0.tgz#87c81748b3da6f6a874a98b6b4148b04b182a91d"
+  integrity sha512-5gy6JEFR9W5Y1OrMRArDiXSE2aTdb19ltxOgpUGbUI9EJuA6G+BiFcaTNhmLuRWnMsVt64Iv2UMikosmway5jw==
   dependencies:
-    "@duik/core" "^0.5.3"
-    "@duik/create-simple-component" "^0.5.3"
+    "@duik/core" "^0.6.0"
+    "@duik/create-simple-component" "^0.6.0"
 
-"@duik/use-open-state@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/use-open-state/-/use-open-state-0.5.3.tgz#23acf9a90fc9d2218d05adcc460dba171d1a09e2"
-  integrity sha512-pvZz9syA+5+0pwACBv3GQDnX7SB34OdqCQmRYWIWGA+q/zDff3lCGrC22VjteZ7uZab2wq+dQXk+VZAK5T82Sw==
-
-"@duik/utils@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/utils/-/utils-0.5.3.tgz#9f8e3a4ceb53357fd243f8481993706de92638ea"
-  integrity sha512-vDkfMN9z3QDAN9voiUKL/LaoszDg0hzVw0zSKS7YngTdyWgDx1qTKtZVSddWG5uBVTveoBN4VeaXFdKLM/Odtg==
+"@duik/top-bar@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/top-bar/-/top-bar-0.6.0.tgz#6ae7dc04cc1fad4802c1ff158e2712ba84d6120b"
+  integrity sha512-wcFGFeawm0THtJHGxZsgoOs3Goqg8+LrArp53jhhNvame6aM8N3D5tK/RN/LhVhhTScm/M+b8cZFMMDOcVp5oQ==
   dependencies:
-    "@duik/use-open-state" "^0.5.3"
+    "@duik/core" "^0.6.0"
+    "@duik/create-simple-component" "^0.6.0"
 
-"@duik/widget@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@duik/widget/-/widget-0.5.3.tgz#f57e3472d6015195102452d44e51922f73b7e28b"
-  integrity sha512-n3oGqnlbyiVe/cCb1N5oKrNp93Tvsz4WlEkZ+EAmetPLbXs5OL+yM1mhKEQ7CWbXCCp8rZrV/UR0mgw96IjqFQ==
+"@duik/use-open-state@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/use-open-state/-/use-open-state-0.6.0.tgz#797ce5b7f74700abef6973dc351a66fb0826f166"
+  integrity sha512-mbCZYYTNnwTLTYcjQ1rC+66JUNQ8MPTAI80zXXHcZ6i67RhZVKPqMRAkD37V8Fw0f+efyfWJ/h+jzHLnPDokCg==
+
+"@duik/utils@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/utils/-/utils-0.6.0.tgz#85e5b2309efbce0c8052b2e93ea0ac6828ccaea5"
+  integrity sha512-bE5MFwJb7Yc1pMqBG5sq1WB9TP9DniKvnuD0ou+s1WwiLB5J69jziUWF/0vEs4fJJN9RycG6gDveqn2B91u4yA==
   dependencies:
-    "@duik/core" "^0.5.3"
-    "@duik/create-simple-component" "^0.5.3"
+    "@duik/use-open-state" "^0.6.0"
+
+"@duik/widget@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@duik/widget/-/widget-0.6.0.tgz#ec94c99895fcf219729579bc66055d23c56dc20b"
+  integrity sha512-G3Q5CxsXzrDQmlrjr2TKfpRrFwl+r96gK9CAspLzdp/HqPfsro7h8DqoXN9tQ6YKy6iKwGf712pv1cDu1bMVtg==
+  dependencies:
+    "@duik/core" "^0.6.0"
+    "@duik/create-simple-component" "^0.6.0"
 
 "@types/node@*":
   version "12.0.2"

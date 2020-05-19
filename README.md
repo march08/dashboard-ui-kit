@@ -3,6 +3,7 @@
 React UI component library for rapid UI development. Written in Typescript.
 
 ### Features
+
 - Typescript
 - Light/Dark/Custom Theme support
 - Bootstrap friendly
@@ -22,3 +23,7 @@ React UI component library for rapid UI development. Written in Typescript.
 ## Usage
 
 `import { Button } from '@duik/it'`
+
+---
+
+Need help with your project? Feel free to contact me [march08@outlook.com](mailto:march08@outlook.com)
