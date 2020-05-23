@@ -106,6 +106,9 @@
 
   transition: 0.2s all;
 
+  overflow-y: scroll;
+  max-height: 100%;
+  
   &:global(.enter) {
     opacity: 0;
   }
