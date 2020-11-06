@@ -13,8 +13,15 @@ type DateNull = Date | null;
  */
 export const getMonthStartDay = (date: Date) => {
   const d = new Date(date);
+
   d.setDate(1);
-  return d.getDay() - 1; // monday is 0
+
+  const day = d.getDay();
+  if (day === 0) { // Sunday is 0
+    return 6;
+  }
+
+  return day - 1; // Monday is 1, Tuesday is 2 and so on.
 };
 
 export const generateArrayOfLen = (len: number, startNumber: number = 1) => {
