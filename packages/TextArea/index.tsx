@@ -32,11 +32,11 @@ export const TextArea = (props: TextAreaProps) => {
     <>
       {label && <label htmlFor={id}>{label}</label>}
       <textarea
-        className={classnames("form-control", className, {
+        className={classnames("form-control", {
           ["is-invalid"]: errorMessage,
           ["is-valid"]: successMessage,
           ["clear"]: clear
-        })}
+        }, className)}
         {...rest}
       />
       {errorMessage ? (
