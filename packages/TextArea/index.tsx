@@ -35,7 +35,8 @@ export const TextArea = (props: TextAreaProps) => {
         className={classnames("form-control", {
           ["is-invalid"]: errorMessage,
           ["is-valid"]: successMessage,
-          ["clear"]: clear
+          ["clear"]: clear,
+          [className]: className,
         })}
         {...rest}
       />
