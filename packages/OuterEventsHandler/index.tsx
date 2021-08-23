@@ -21,6 +21,7 @@ export type OuterEventsHandlerProps = Omit<
   triggerOnOuterScroll?: boolean;
   triggerOnWindowResize?: boolean;
   triggerOnOuterClick?: boolean;
+  triggerOnOuterFocus?: boolean;
   triggerOnOuterFucus?: boolean;
   triggerOnEsc?: boolean;
 };
@@ -35,6 +36,7 @@ export class OuterEventsHandler extends React.PureComponent<
     triggerOnOuterScroll: false,
     triggerOnWindowResize: false,
     triggerOnOuterClick: true,
+    triggerOnOuterFocus: true,
     triggerOnOuterFucus: true,
     triggerOnEsc: true,
     className: null,
@@ -118,13 +120,14 @@ export class OuterEventsHandler extends React.PureComponent<
     }
     const {
       triggerOnOuterClick,
+      triggerOnOuterFocus,
       triggerOnOuterFucus,
       triggerOnOuterScroll,
       triggerOnWindowResize,
       triggerOnEsc,
     } = this.props;
 
-    if (triggerOnOuterFucus) {
+    if (triggerOnOuterFocus && triggerOnOuterFucus) {
       document.body.addEventListener('focus', this.handleFocus, true);
     }
     if (triggerOnOuterClick) {
