@@ -1,3 +1,7 @@
+⚠️ This repository is no longer maintained ⚠️
+
+___
+
 # Dashboard UI kit
 
 React UI component library for rapid UI development. Written in Typescript.
