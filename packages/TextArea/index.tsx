@@ -36,7 +36,7 @@ export const TextArea = (props: TextAreaProps) => {
           ["is-invalid"]: errorMessage,
           ["is-valid"]: successMessage,
           ["clear"]: clear
-        })}
+        }, className)}
         {...rest}
       />
       {errorMessage ? (
