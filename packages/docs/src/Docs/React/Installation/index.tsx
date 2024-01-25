@@ -31,6 +31,8 @@ export const ReactDocsInstall = () => {
       <Code>
         {`// include everything
 import '@duik/it/dist/styles.css'
+// include the icon stylesheet (if you would like to use them)
+import '@duik/icon/dist/styles.css';
 
 // including only some component styles
 import '@duik/core/dist/styles.css'
