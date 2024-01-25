@@ -14,7 +14,7 @@ type DateNull = Date | null;
 export const getMonthStartDay = (date: Date) => {
   const d = new Date(date);
   d.setDate(1);
-  return d.getDay() - 1; // monday is 0
+  return (d.getDay() + 6) % 7; // monday is 0
 };
 
 export const generateArrayOfLen = (len: number, startNumber: number = 1) => {
